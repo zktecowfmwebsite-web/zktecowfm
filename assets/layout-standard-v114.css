@@ -27,9 +27,10 @@ html body .zk-global-header .zk-nav-shell{
   gap:24px!important;overflow:visible!important;box-sizing:border-box!important;
 }
 html body .zk-global-header .zk-brand{
-  width:182px!important;min-width:182px!important;height:100%!important;display:flex!important;
+  width:182px!important;min-width:182px!important;height:auto!important;display:flex!important;
   align-items:center!important;justify-content:flex-start!important;padding:0!important;margin:0!important;
   flex:0 0 182px!important;line-height:0!important;box-sizing:border-box!important;
+  position:static!important;left:auto!important;top:auto!important;transform:none!important;
 }
 html body .zk-global-header .zk-brand .zk-brand-logo{
   display:block!important;width:176px!important;height:auto!important;max-width:176px!important;max-height:46px!important;
@@ -41,22 +42,31 @@ html body .zk-global-header .zk-menu{
   justify-content:flex-end!important;flex:1 1 auto!important;min-width:0!important;margin:0 0 0 auto!important;
   padding:0!important;gap:4px!important;flex-wrap:nowrap!important;white-space:nowrap!important;box-sizing:border-box!important;
 }
-html body .zk-global-header .zk-menu>a,
+html body .zk-global-header .zk-menu>a:not(.zk-talk),
 html body .zk-global-header .zk-drop>a{
   height:100%!important;min-height:100%!important;display:flex!important;align-items:center!important;
   padding:0 9px!important;margin:0!important;box-sizing:border-box!important;color:#282d52!important;
   font-size:12.5px!important;font-weight:800!important;line-height:1.15!important;text-decoration:none!important;white-space:nowrap!important;
 }
-html body .zk-global-header .zk-menu>a:hover,
+html body .zk-global-header .zk-menu>a:not(.zk-talk):hover,
 html body .zk-global-header .zk-drop>a:hover{color:#78bd43!important}
 html body .zk-global-header .zk-drop{height:100%!important;display:flex!important;align-items:center!important;position:relative!important}
 html body .zk-global-header .zk-talk{
-  height:42px!important;min-height:42px!important;padding:0 15px!important;margin:0 0 0 5px!important;
+  height:auto!important;min-height:0!important;padding:10px 16px!important;margin:0 0 0 5px!important;
   display:inline-flex!important;align-items:center!important;justify-content:center!important;border-radius:8px!important;
-  background:#78bd43!important;color:#fff!important;line-height:1!important;
+  background:linear-gradient(135deg,#91cf54 0%,#78bd43 52%,#66ab32 100%)!important;color:#fff!important;line-height:1!important;
 }
 html body .zk-global-header .zk-drop-menu{
   top:calc(var(--zk-global-header-h) - 1px)!important;margin-top:0!important;z-index:10000!important;
+}
+/* Desktop navigation: center the link group, with even breathing room on either side. */
+@media(min-width:981px){
+  html body .zk-global-header .zk-nav-shell{position:relative!important}
+  html body .zk-global-header .zk-menu{
+    position:absolute!important;inset:0!important;width:100%!important;
+    justify-content:center!important;gap:26px!important;margin:0!important;
+  }
+  html body .zk-global-header .zk-talk{position:absolute!important;right:0!important;top:50%!important;transform:translateY(-50%)!important}
 }
 /* Apply first-section hero spacing consistently, while leaving internal section design intact. */
 body>main>section:first-child,body>section:first-of-type:not(.zk-global-header){
@@ -88,7 +98,7 @@ body>main>section:first-child .company-hero-grid>:first-child,body>main>section:
   html body .zk-global-header .zk-brand .zk-brand-logo{width:136px!important;max-width:136px!important;max-height:38px!important}
   html body .zk-global-header .zk-menu{gap:0!important}
   html body .zk-global-header .zk-menu>a,html body .zk-global-header .zk-drop>a{font-size:10.3px!important;padding-left:4px!important;padding-right:4px!important}
-  html body .zk-global-header .zk-talk{height:36px!important;min-height:36px!important;font-size:10.3px!important;padding-left:8px!important;padding-right:8px!important}
+  html body .zk-global-header .zk-talk{height:auto!important;min-height:0!important;font-size:10.3px!important;padding:8px 10px!important}
 }
 @media(max-width:760px){
   :root{--zk-global-gutter:15px;--zk-global-hero-top:34px;--zk-global-hero-bottom:40px}
@@ -97,9 +107,9 @@ body>main>section:first-child .company-hero-grid>:first-child,body>main>section:
   html body .zk-global-header .zk-brand{height:44px!important;width:148px!important;min-width:148px!important;flex-basis:148px!important}
   html body .zk-global-header .zk-brand .zk-brand-logo{width:142px!important;max-width:142px!important;max-height:39px!important}
   html body .zk-global-header .zk-menu{height:auto!important;min-height:0!important;flex:1 1 100%!important;width:100%!important;justify-content:flex-start!important;flex-wrap:wrap!important;gap:2px!important}
-  html body .zk-global-header .zk-menu>a,html body .zk-global-header .zk-drop>a{height:auto!important;min-height:0!important;font-size:11px!important;padding:8px 7px!important}
+  html body .zk-global-header .zk-menu>a:not(.zk-talk),html body .zk-global-header .zk-drop>a{height:auto!important;min-height:0!important;font-size:11px!important;padding:8px 7px!important}
   html body .zk-global-header .zk-drop{height:auto!important}
-  html body .zk-global-header .zk-talk{height:34px!important;min-height:34px!important;margin-left:0!important;padding:0 10px!important}
+  html body .zk-global-header .zk-talk{height:auto!important;min-height:0!important;margin-left:0!important;padding:8px 10px!important}
   html body .zk-global-header .zk-drop-menu{top:34px!important}
 }
 
