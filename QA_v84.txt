@@ -1,0 +1,7 @@
+v84 QA
+HTML pages: 75
+Missing local refs: 0
+Broken anchors: 0
+Duplicate-ID pages: 0
+Header/nav changes vs v83: 0
+Public Research/Source note hits: 0

@@ -1,0 +1,17 @@
+ZKTeco WFM Full Site v117 QA
+
+Why ZKTeco WFM flagship page rebuilt around lifecycle control.
+- 7-section conversion story
+- New hero: We Do Not Assemble the Solution. We Control It.
+- Specialized-by-design category positioning
+- Fragmentation vs coordinated control model
+- Six-part control lifecycle
+- Manufacturing translated into 4 customer outcomes
+- Distinct Workday and Software Partner paths
+- Lifecycle partnership + decisive brand close
+
+Automated package QA results appended during build.
+
+Automated link/file check:
+- HTML pages: 76
+- Missing local references: 0

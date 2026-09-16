@@ -1,0 +1,19 @@
+{
+  "html_pages": 75,
+  "insight_articles": 55,
+  "local_refs_checked": 3725,
+  "missing_refs": 0,
+  "duplicate_id_pages": [],
+  "header_variants": 2,
+  "insight_inline_font_declarations": [],
+  "changed_from_v69": [
+    "assets/insight-enhancements.css",
+    "assets/privacy.css",
+    "assets/site-enhancements.css",
+    "index.html",
+    "thought-leadership.html",
+    "why-zkteco-wfm.html"
+  ],
+  "font_stack": "Inter, \"Segoe UI\", Arial, sans-serif",
+  "visual_qa": "Chromium render attempted but timed out in this execution environment; static DOM/CSS/link QA passed."
+}

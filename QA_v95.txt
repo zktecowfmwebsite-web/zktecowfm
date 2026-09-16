@@ -1,0 +1,90 @@
+ZKTeco WFM v95 QA
+HTML pages: 75
+Pages with new header logo: 75
+Pages still using old text-only zk-brand: 0
+Missing local references: 0
+Broken anchors: 0
+Duplicate IDs: 0
+
+Changed header pages:
+why-zkteco-wfm.html
+ultima-series.html
+index.html
+timetrack.html
+use-cases.html
+support.html
+educational-disclaimer.html
+software-partners.html
+cookie-policy.html
+resources.html
+customer-stories.html
+privacy.html
+security-trust.html
+terms.html
+workday.html
+contact.html
+cirrusconnect.html
+thought-leadership.html
+manufacturing-facilities.html
+accessibility.html
+insights/workday-time-clock-implementation.html
+insights/hardware-partner-roadmap.html
+insights/enterprise-grade-time-clock.html
+insights/remote-diagnostics-time-clocks.html
+insights/shift-types-workforce-design.html
+insights/partner-device-management.html
+insights/workday-go-live-testing.html
+insights/time-clock-buyers-guide.html
+insights/intelligent-enforcement-point.html
+insights/software-partner-expectations.html
+insights/biometric-consent-workforce.html
+insights/employee-self-service-clock.html
+insights/data-quality-starts-at-source.html
+insights/device-management-at-scale.html
+insights/biometric-template-vs-image.html
+insights/manufacturing-matters.html
+insights/supply-chain-product-feature.html
+insights/duplicate-punch-prevention.html
+insights/manager-override-controls.html
+insights/data-mapping-time-labor.html
+insights/screen-size-workforce-ux.html
+insights/ota-update-governance.html
+insights/software-partner-build-vs-buy.html
+insights/workday-beyond-certification.html
+insights/apis-not-device-strategy.html
+insights/department-transfer-split-punch.html
+insights/schedule-lockout-design.html
+insights/employee-attestation-strategy.html
+insights/sdk-app-middleware-choice.html
+insights/certificate-lockout-safety.html
+insights/workday-mixed-workforce.html
+insights/purpose-built-vs-tablet.html
+insights/android-lifecycle-enterprise.html
+insights/security-workforce-edge.html
+insights/attendance-vs-labor-data.html
+insights/api-vs-sftp-integration.html
+insights/authentication-strategy-time-clocks.html
+insights/ai-workforce-edge.html
+insights/workday-third-party-scheduling.html
+insights/labor-codes-worktags-edge.html
+insights/future-time-clock.html
+insights/auditability-workforce-data.html
+insights/offline-resilience.html
+insights/workday-time-clock-strategy.html
+insights/workday-data-flow.html
+insights/connectivity-power-time-clocks.html
+insights/product-lifecycle-time-clocks.html
+insights/workday-labor-worktags.html
+insights/workday-legacy-clock-replacement.html
+insights/rugged-time-clocks.html
+insights/rounding-rules-timekeeping.html
+insights/meal-rest-break-controls.html
+insights/partner-reseller-device-ops.html
+insights/cloud-middleware-role.html
+insights/partner-android-platform.html
+
+Missing refs:
+
+Broken anchors:
+
+Duplicate IDs:

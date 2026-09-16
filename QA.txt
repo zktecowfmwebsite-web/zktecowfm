@@ -1,0 +1,41 @@
+ZKTeco WFM Full Site v56 - Static QA
+====================================
+HTML pages: 75
+Insight/blog pages: 55
+Local links checked: 3,444
+Total links checked: 3,713
+Image references checked: 19
+CSS/JS references checked: 225
+
+Results:
+- Broken local targets: 0
+- Broken same-page anchors: 0
+- Broken cross-page anchors: 0
+- Duplicate HTML IDs: 0
+- Unlinked Insight articles from Thought Leadership hub: 0
+- Missing global navigation/footer: 0
+- Missing required article disclaimer signal: 0
+- Missing article ZKTeco WFM perspective section: 0
+- Active links to trust.zktecowfm.com: 0 (intentionally inactive until launch)
+
+New pre-launch pages:
+- cirrusconnect.html
+- resources.html
+- use-cases.html
+- customer-stories.html
+- security-trust.html
+- contact.html
+- privacy.html
+- cookie-policy.html
+- terms.html
+- accessibility.html
+- educational-disclaimer.html
+
+Global launch layer:
+- assets/site-enhancements.css
+- assets/privacy.css
+- assets/privacy.js
+- Cookie Accept All / Reject Non-Essential / Manage Preferences
+- Footer Cookie Preferences control on every HTML page
+
+Legal/privacy pages require final review by ZKTeco WFM counsel/privacy professionals before production publication.

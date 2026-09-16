@@ -1,0 +1,10 @@
+ZKTeco WFM Full Static Site v115 — QA Summary
+Date: 2026-09-15
+
+- Complete standalone static site package based on v114.
+- Added final Workday insight: “Don’t Just Record the Punch. Control It.”
+- Added new insight to Thought Leadership index/filter library.
+- Total HTML pages: 76.
+- Automated internal reference check: 0 missing local HTML/CSS/JS/image targets.
+- Intended testing method: unzip package, open index.html in a modern browser, and navigate the site normally.
+- WordPress conversion intentionally deferred until static site review is complete.

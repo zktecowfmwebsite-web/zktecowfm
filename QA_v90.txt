@@ -1,0 +1,22 @@
+ZKTeco WFM v90 QA
+=================
+HTML pages: 75
+Local references checked: 3501
+Missing local files/assets: 0
+Broken anchors: 0
+Duplicate IDs: 0
+Header/navigation differences vs v89: 0
+Public Research/Source Notes markers: 0
+
+Scan-first copy audit (marketing/resource pages; legal body copy excluded):
+Sections audited: 81
+Maximum section headline length: 11 words
+Headlines over 12 words: 0
+Maximum lead/intro paragraph length: 22 words
+Lead/intro paragraphs over 35 words: 0
+
+Editorial standard:
+- Headline target: 4-9 words where practical, max 12.
+- Supporting line: 10-18 words where practical.
+- Intro copy: <=35 words; omit if visual already carries the message.
+- Thought Leadership bodies remain long-form educational content.

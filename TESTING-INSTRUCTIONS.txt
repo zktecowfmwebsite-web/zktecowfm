@@ -1,0 +1,9 @@
+ZKTeco WFM v56 LOCAL TESTING
+
+1. Extract the entire ZIP.
+2. Do not move index.html, assets/, or insights/ separately.
+3. Double-click index.html.
+4. Test menus, products, Resources, Support, legal pages, customer stories, Trust, and Insight articles.
+5. For production-like cookie preference persistence, serve the entire folder through a local/staging web server.
+
+The Drata trust.zktecowfm.com destination is intentionally inactive until launch.

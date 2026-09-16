@@ -1,0 +1,12 @@
+ZKTeco WFM v68 Full-Site QA
+HTML pages: 75
+Insights articles: 55
+Local references checked: 3744
+Unique question blocks: 55/55
+Unique perspective blocks: 55/55
+Unique takeaway blocks: 55/55
+Insight word count: min 629, avg 741, max 1545
+Inline style blocks in Insights: 0
+Insight CSS isolated from global header/nav/footer: PASS
+Responsive global menu no longer disappears: PASS
+Issues: 0

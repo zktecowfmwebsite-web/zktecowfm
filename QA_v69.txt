@@ -1,0 +1,23 @@
+{
+  "html_pages": 75,
+  "insight_articles": 55,
+  "local_refs_checked": 3725,
+  "header_label_variants": 1,
+  "header_pages": 75,
+  "unique_cta": 55,
+  "unique_perspective": 55,
+  "unique_takeaway": 55,
+  "field_notes_added": 51,
+  "word_min": [
+    691,
+    "partner-reseller-device-ops.html"
+  ],
+  "word_avg": 819.9,
+  "word_max": [
+    1545,
+    "supply-chain-product-feature.html"
+  ],
+  "repeated_long_editorial_blocks_excluding_disclaimer": 1,
+  "issues": [],
+  "browser_visual_qa": "Attempted with Chromium/Playwright, but local navigation is blocked by the execution environment. Static HTML/CSS/link QA completed."
+}

@@ -1,0 +1,25 @@
+HTML 75 refs 3499 missing 0 badanchors 0 dupids 0 nav_variants 2 parse_errors 0
+NAV 20 (('Workday Solution', 'workday.html'), ('Software Partners', 'software-partners.html'), ('Products', 'ultima-series.html'), ('Why ZKTeco WFM', 'why-zkteco-wfm.html'), ('Resources', 'resources.html'), ('Support', 'support.html'), ('Talk to an Expert', 'contact.html'))
+NAV 55 (('Workday Solution', '../workday.html'), ('Software Partners', '../software-partners.html'), ('Products', '../ultima-series.html'), ('Why ZKTeco WFM', '../why-zkteco-wfm.html'), ('Resources', '../resources.html'), ('Support', '../support.html'), ('Talk to an Expert', '../contact.html'))
+CHANGED 12
+thought-leadership.html
+QA_v76.txt
+QA_FULL_v76.txt
+insights/enterprise-grade-time-clock.html
+insights/product-lifecycle-time-clocks.html
+insights/connectivity-power-time-clocks.html
+insights/purpose-built-vs-tablet.html
+insights/screen-size-workforce-ux.html
+insights/offline-resilience.html
+insights/authentication-strategy-time-clocks.html
+insights/time-clock-buyers-guide.html
+insights/rugged-time-clocks.html
+time-clock-buyers-guide.html h1= The Enterprise Time Clock Buyer’s Guide: 12 Questions to Ask Before You Standardize questions= 0 persp= 1 takeaway= 1 disclaimer= 1 cta= 1 words= 1203
+purpose-built-vs-tablet.html h1= Purpose-Built Time Clock or Tablet? Compare the Real Enterprise Cost and Lifecycle questions= 1 persp= 1 takeaway= 1 disclaimer= 1 cta= 1 words= 1034
+rugged-time-clocks.html h1= Rugged or Standard? Match Time-Clock Design to the Environment questions= 1 persp= 1 takeaway= 1 disclaimer= 1 cta= 1 words= 795
+screen-size-workforce-ux.html h1= 5-, 7- or 10-Inch? Design the Time-Clock Screen Around the Employee Workflow questions= 1 persp= 1 takeaway= 1 disclaimer= 1 cta= 1 words= 747
+connectivity-power-time-clocks.html h1= Ethernet, Wi-Fi, Cellular, PoE or Battery? Design Time-Clock Connectivity Around the Site questions= 1 persp= 1 takeaway= 1 disclaimer= 1 cta= 1 words= 794
+enterprise-grade-time-clock.html h1= What “Enterprise-Grade” Should Mean in a Time-Clock Strategy questions= 1 persp= 1 takeaway= 1 disclaimer= 1 cta= 1 words= 840
+product-lifecycle-time-clocks.html h1= Product Lifecycle: The Time-Clock Decision You Will Still Be Living With Years From Now questions= 1 persp= 1 takeaway= 1 disclaimer= 1 cta= 1 words= 833
+authentication-strategy-time-clocks.html h1= Biometrics, Badges, QR, NFC or Wallet Credentials? Build an Authentication Strategy That Fits the Workforce questions= 1 persp= 1 takeaway= 1 disclaimer= 1 cta= 1 words= 842
+offline-resilience.html h1= When the Network Goes Down: Designing Time Collection That Keeps Working questions= 1 persp= 1 takeaway= 1 disclaimer= 1 cta= 1 words= 862

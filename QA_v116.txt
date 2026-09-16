@@ -1,0 +1,14 @@
+ZKTeco WFM Full Site v116 QA
+
+HTML pages: 76
+Updated lockout article word count: 2553
+Numbered lockout sections: 7
+Real-world example cards: 7
+Lockout detail cards: 21
+ZKTeco WFM Perspective words: 124
+Key Takeaway words: 104
+Missing local references: 0
+New logo dimensions: 1097 x 295 px, transparent PNG
+
+Missing references:
+None

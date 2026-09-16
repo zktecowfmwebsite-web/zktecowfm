@@ -1,0 +1,4 @@
+ZKTeco WFM Full Site v125 QA
+HTML pages: 76
+Missing local references: 0
+PASS: No missing local page/CSS/JS/image references found.
