@@ -256,6 +256,11 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 #cirrusdcs .split>div:first-child>p:nth-of-type(2),
 #cirrusdcs .feature-list{display:none!important}
 
+/* Removed Workday Value Proposition section */
+section:has(.cmp-grid)>.wrap>.section-head,
+section:has(.cmp-grid)>.wrap>.cmp-grid{display:none!important}
+section#workday-offering{display:none!important}
+
 /* Consistent action corners */
 .btn{border-radius:12px!important}
 @media(max-width:650px){.btn{border-radius:16px!important}}
