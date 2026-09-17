@@ -1,7 +1,25 @@
 # ZKTeco WFM Full Website v59 — Normalized Pre-Launch Build
 
 ## Start here
-Open **index.html** in the root folder. Keep the complete folder structure together. Do not move individual HTML pages out of the folder.
+Run the Astro development server from the project folder. The site pages live in `src/pages/`.
+
+## Astro migration
+
+The project now includes an Astro + TypeScript application alongside the legacy static pages.
+
+```powershell
+npm.cmd install
+npm.cmd run dev
+npm.cmd run build
+```
+
+- Shared site chrome lives in `src/components/Header.astro` and `src/components/Footer.astro`.
+- Shared metadata, styles and layout live in `src/layouts/SiteLayout.astro`.
+- Insight articles are managed as Markdown entries under `src/content/insights/` and rendered from `src/pages/insights/[slug].astro`.
+- Every previous static page is now an Astro page under `src/pages/`, including the Insight articles under `src/pages/insights/`.
+- Existing CSS is retained as the visual source of truth during migration.
+- Tailwind CSS is available through `src/styles/tailwind.css`. It uses the `tw-` prefix (for example, `tw-flex`) and has Preflight disabled, so it cannot override the existing site styles during the gradual component migration.
+- The build runs `scripts/sync-public.mjs` first, keeping the home page and static assets synchronized with their existing sources.
 
 ## Included
 - Corporate homepage

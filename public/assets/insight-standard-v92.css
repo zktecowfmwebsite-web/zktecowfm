@@ -1,0 +1,30 @@
+/* ZKTeco WFM Insights — visual consistency patch v92 */
+.insight-page .article-body{font-size:16.5px!important;line-height:1.62!important;color:#20234d}
+.insight-page .article-body p{line-height:1.62}
+.insight-page .article-body h2{font-size:28px!important;line-height:1.18!important;letter-spacing:-.018em!important;color:#201f62!important;margin:32px 0 10px!important}
+.insight-page .article-body h3{font-size:19px!important;line-height:1.25!important;color:#201f62!important}
+.insight-page .article-body .lead{font-size:19px!important;line-height:1.58!important}
+.insight-page .side-box h4{font-size:16px!important}.insight-page .side-box a{font-size:14px!important}.insight-page .side-note{font-size:13px!important}
+/* Any dark editorial module must carry light typography. */
+.insight-page .questions,.insight-page .tl-overlook,.insight-page .risk-section,.insight-page .operating-scenario,.insight-page .decision-quote,.insight-page .article-cta,.insight-page .dark-panel,.insight-page .deep-dive-dark{color:#fff!important}
+.insight-page .questions h2,.insight-page .questions h3,.insight-page .questions p,.insight-page .questions li,
+.insight-page .tl-overlook h2,.insight-page .tl-overlook h3,.insight-page .tl-overlook p,.insight-page .tl-overlook li,
+.insight-page .risk-section h2,.insight-page .risk-section h3,.insight-page .risk-section p,.insight-page .risk-section li,
+.insight-page .operating-scenario h2,.insight-page .operating-scenario h3,.insight-page .operating-scenario p,.insight-page .operating-scenario li,
+.insight-page .dark-panel h2,.insight-page .dark-panel h3,.insight-page .dark-panel p,.insight-page .dark-panel li,
+.insight-page .deep-dive-dark h2,.insight-page .deep-dive-dark h3,.insight-page .deep-dive-dark p,.insight-page .deep-dive-dark li,
+.insight-page .article-cta h2,.insight-page .article-cta h3,.insight-page .article-cta p{color:#fff!important}
+.insight-page .perspective{margin:30px 0!important;padding:25px 27px!important;border:1px solid #d9e3ef!important;border-left:5px solid #201f62!important;border-radius:14px!important;background:linear-gradient(135deg,#f7f9fd,#f2f6fb)!important}
+.insight-page .perspective .label{font-size:11px!important;color:#5d8e37!important;font-weight:900!important;letter-spacing:.14em!important;text-transform:uppercase!important}
+.insight-page .perspective h2{font-size:26px!important;margin:7px 0 10px!important;color:#171b48!important}
+.insight-page .perspective p{color:#3d4760!important}
+.insight-page .takeaway{margin:27px 0!important;padding:24px 27px!important;background:linear-gradient(135deg,#e8f4df,#f4f9ef)!important;border:1px solid #cce2bd!important;border-left:6px solid #79be3f!important;border-radius:14px!important;box-shadow:0 10px 24px rgba(60,100,30,.06)!important}
+.insight-page .takeaway h2{font-size:23px!important;color:#173e2a!important;margin:0 0 8px!important}
+.insight-page .takeaway p{font-size:17px!important;line-height:1.57!important;color:#29443a!important;margin-bottom:0!important}
+.insight-page .use-case{margin:27px 0 30px;padding:24px 26px;border-radius:16px;background:linear-gradient(135deg,#151a4d,#222968);color:#fff;box-shadow:0 12px 28px rgba(17,21,62,.10)}
+.insight-page .use-case .kicker,.insight-page .overlook .kicker,.insight-page .proof-block .kicker{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:#9dd36c;margin-bottom:6px}
+.insight-page .use-case h2,.insight-page .use-case h3,.insight-page .use-case p,.insight-page .use-case li{color:#fff!important}.insight-page .use-case h2{margin-top:0!important}
+.insight-page .overlook{margin:26px 0;padding:22px 24px;border-radius:14px;background:#fff8f1;border:1px solid #efdac6}.insight-page .overlook .kicker{color:#9a5d23}.insight-page .overlook h2{margin-top:0!important;color:#5a3416!important}
+.insight-page .proof-block{margin:26px 0;padding:22px 24px;border-radius:14px;background:#f5f8fc;border:1px solid #dce5ef}.insight-page .proof-block h2{margin-top:0!important}.insight-page .proof-block ul{margin-bottom:0}
+.insight-page .mini-flow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #dce3eb;border-radius:13px;overflow:hidden;margin:22px 0 28px}.insight-page .mini-flow div{padding:16px 12px;text-align:center;background:#fff;font-size:13px;font-weight:800;color:#26305b}.insight-page .mini-flow div+div{border-left:1px solid #e2e7ee}.insight-page .mini-flow small{display:block;font-weight:500;color:#69748a;margin-top:4px;line-height:1.35}
+@media(max-width:700px){.insight-page .mini-flow{grid-template-columns:1fr 1fr}.insight-page .mini-flow div:nth-child(3){border-left:0;border-top:1px solid #e2e7ee}.insight-page .mini-flow div:nth-child(4){border-top:1px solid #e2e7ee}}

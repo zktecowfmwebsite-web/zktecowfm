@@ -1,0 +1,69 @@
+/* ZKTeco WFM v103 — final global header geometry + cropped logo lockup */
+:root{
+  --zk-global-header-h:72px;
+  --zk-global-content-max:1220px;
+  --zk-global-gutter:24px;
+  --zk-global-hero-top:44px;
+  --zk-global-hero-bottom:52px;
+}
+.wrap,.zk-wrap,.sp85-shell,.zk-nav-shell,.zk-footer-shell{
+  width:min(var(--zk-global-content-max),calc(100% - (var(--zk-global-gutter)*2)))!important;
+  max-width:none!important;margin-left:auto!important;margin-right:auto!important;
+  padding-left:0!important;padding-right:0!important;box-sizing:border-box!important;
+}
+.zk-global-header{
+  height:var(--zk-global-header-h)!important;min-height:var(--zk-global-header-h)!important;
+  max-height:var(--zk-global-header-h)!important;padding:0!important;margin:0!important;
+  display:block!important;overflow:visible!important;box-sizing:border-box!important;
+}
+.zk-global-header .zk-nav-shell{
+  height:100%!important;min-height:100%!important;max-height:100%!important;
+  padding:0!important;display:flex!important;align-items:center!important;box-sizing:border-box!important;
+}
+.zk-global-header .zk-brand{
+  height:100%!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;
+  padding:0!important;margin:0!important;box-sizing:border-box!important;line-height:0!important;
+}
+.zk-global-header .zk-brand .zk-brand-logo{
+  display:block!important;width:158px!important;height:auto!important;max-height:42px!important;
+  object-fit:contain!important;object-position:left center!important;margin:0!important;padding:0!important;
+  align-self:center!important;transform:none!important;
+}
+.zk-global-header .zk-menu{
+  height:100%!important;min-height:100%!important;display:flex!important;align-items:center!important;
+  margin-top:0!important;margin-bottom:0!important;
+}
+.zk-global-header .zk-menu>a,.zk-global-header .zk-drop>a{
+  height:100%!important;display:flex!important;align-items:center!important;padding-top:0!important;padding-bottom:0!important;box-sizing:border-box!important;
+}
+.zk-global-header .zk-talk{height:auto!important;padding:11px 16px!important}
+.zk-global-header .zk-drop-menu{top:var(--zk-global-header-h)!important}
+body>main>section:first-child,body>section:first-of-type:not(.zk-global-header){
+  min-height:0!important;padding-top:var(--zk-global-hero-top)!important;padding-bottom:var(--zk-global-hero-bottom)!important;margin-top:0!important;
+}
+body>main>section:first-child>.hero-inner,body>main>section:first-child>.wrap.hero-inner,
+body>main>section:first-child>.hero-grid,body>main>section:first-child>.wrap.hero-grid,
+body>main>section:first-child>.sp85-shell.sp85-hero-grid,body>main>section:first-child>.zk-wrap,
+body>main>section:first-child>.wrap>.hero-inner,body>main>section:first-child .article-hero-inner,
+body>main>section:first-child .company-hero-grid,body>main>section:first-child .hero-grid,
+body>main>section:first-child .sp85-hero-grid{
+  min-height:0!important;padding-top:0!important;padding-bottom:0!important;margin-top:0!important;
+}
+body>main>section:first-child .hero-grid>:first-child,body>main>section:first-child .sp85-hero-grid>:first-child,
+body>main>section:first-child .company-hero-grid>:first-child,body>main>section:first-child .hero-inner>:first-child{align-self:start!important}
+@media(max-width:980px){
+  :root{--zk-global-header-h:66px;--zk-global-gutter:18px;--zk-global-hero-top:38px;--zk-global-hero-bottom:46px}
+  .zk-global-header .zk-brand .zk-brand-logo{width:142px!important;max-height:38px!important}
+  .zk-global-header .zk-menu>a,.zk-global-header .zk-drop>a{padding-left:6px!important;padding-right:6px!important}
+  .zk-global-header .zk-talk{padding:9px 11px!important}
+}
+@media(max-width:760px){
+  :root{--zk-global-gutter:15px;--zk-global-hero-top:34px;--zk-global-hero-bottom:40px}
+  .zk-global-header{height:auto!important;max-height:none!important;min-height:0!important}
+  .zk-global-header .zk-nav-shell{height:auto!important;max-height:none!important;min-height:0!important;padding-top:8px!important;padding-bottom:8px!important;flex-wrap:wrap!important}
+  .zk-global-header .zk-brand{height:42px!important;align-items:center!important}
+  .zk-global-header .zk-brand .zk-brand-logo{width:132px!important;max-height:34px!important}
+  .zk-global-header .zk-menu{height:auto!important;min-height:0!important;flex:1 1 100%!important;width:100%!important;flex-wrap:wrap!important}
+  .zk-global-header .zk-menu>a,.zk-global-header .zk-drop>a{height:auto!important;padding-top:8px!important;padding-bottom:8px!important}
+  .zk-global-header .zk-drop-menu{top:34px!important}
+}
