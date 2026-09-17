@@ -78,6 +78,14 @@ footer{background:#0d1233;color:#fff;padding:54px 0 24px}.foot-grid{display:grid
 @media(max-width:1050px){.warranty.warranty-no-cta{grid-template-columns:auto 1fr}}
 @media(max-width:720px){.warranty.warranty-no-cta{grid-template-columns:1fr}}
 
+/* Keep the migration cards close to the warranty banner that follows. */
+section:not(.hero):not(.cta-section):has(.program-grid){padding-bottom:24px!important}
+section:not(.hero):not(.cta-section):has(.cmp-grid){padding-top:24px!important}
+@media(max-width:720px){
+  section:not(.hero):not(.cta-section):has(.program-grid){padding-bottom:20px!important}
+  section:not(.hero):not(.cta-section):has(.cmp-grid){padding-top:20px!important}
+}
+
 .full-site-footer{grid-template-columns:1.35fr 1fr 1fr 1fr 1.15fr!important}@media(max-width:1050px){.full-site-footer{grid-template-columns:repeat(3,1fr)!important}}@media(max-width:720px){.full-site-footer{grid-template-columns:1fr 1fr!important}}@media(max-width:480px){.full-site-footer{grid-template-columns:1fr!important}}
 
 /* v30 final Workday flow */
@@ -305,6 +313,35 @@ section#workday-offering{display:none!important}
   filter:brightness(1.075);
   box-shadow:inset 0 1px 0 rgba(237,255,216,.5),0 16px 28px rgba(68,139,35,.25)!important;
 }
+
+/* Final Workday CTA actions */
+.cta-section .hero-actions .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  min-width:300px;
+  transition:transform .45s cubic-bezier(.22,1,.36,1),filter .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1)!important;
+}
+.cta-section .hero-actions .btn:after{
+  content:"→";
+  font-size:24px;
+  line-height:1;
+  transition:transform .45s cubic-bezier(.22,1,.36,1);
+}
+.cta-section .hero-actions .btn.primary:hover,.cta-section .hero-actions .btn.secondary:hover{transform:translateY(-3px)}
+.cta-section .hero-actions .btn:hover:after{transform:translateX(5px)}
+.cta-section .hero-actions .btn.secondary{
+  background:radial-gradient(circle at 14% 8%,rgba(255,255,255,.98),transparent 48%),linear-gradient(135deg,#fff 0%,#f1f4f9 100%)!important;
+  border:1px solid rgba(255,255,255,.8)!important;
+  color:#102044!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 14px 30px rgba(8,14,51,.22)!important;
+}
+.cta-section .hero-actions .btn.secondary:hover{
+  filter:brightness(1.025);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.98),0 18px 34px rgba(8,14,51,.3)!important;
+}
+@media(max-width:720px){.cta-section .hero-actions .btn{min-width:0;width:100%}}
 @media(prefers-reduced-motion:reduce){
   .punch-layout .btn.secondary[href="ultima-series"]:after{animation:none}
 }
@@ -313,16 +350,16 @@ section#workday-offering{display:none!important}
 .implementation-step{
   min-height:194px;
   transition:box-shadow .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);
-  animation:implementation-stage-highlight 18s cubic-bezier(.22,1,.36,1) infinite;
+  animation:implementation-stage-highlight 30s cubic-bezier(.22,1,.36,1) infinite;
   will-change:transform,box-shadow;
 }
 .implementation-step p{display:none}
 .implementation-step:nth-child(1){animation-delay:0s}
-.implementation-step:nth-child(2){animation-delay:3s}
-.implementation-step:nth-child(3){animation-delay:6s}
-.implementation-step:nth-child(4){animation-delay:9s}
-.implementation-step:nth-child(5){animation-delay:12s}
-.implementation-step:nth-child(6){animation-delay:15s}
+.implementation-step:nth-child(2){animation-delay:5s}
+.implementation-step:nth-child(3){animation-delay:10s}
+.implementation-step:nth-child(4){animation-delay:15s}
+.implementation-step:nth-child(5){animation-delay:20s}
+.implementation-step:nth-child(6){animation-delay:25s}
 @keyframes implementation-stage-highlight{
   0%,16.5%{
     z-index:2;
@@ -366,6 +403,46 @@ section#workday-offering{display:none!important}
 .implementation-step h3{margin:0;max-width:155px}
 @media(max-width:1100px){.implementation-path{gap:16px}.implementation-step{min-height:198px}}
 @media(max-width:720px){.implementation-path{gap:12px}.implementation-step{min-height:0;text-align:left;align-items:flex-start}.step-top{justify-content:flex-start}.step-icon{margin:0 0 14px}.implementation-step h3{max-width:none}}
+
+/* Branded implementation stages */
+.implementation-step{
+  border:0!important;
+  background:linear-gradient(135deg,#2e307d 0%,#444da0 52%,#5962ae 100%);
+  color:#fff;
+  transform-origin:center center;
+  box-shadow:0 14px 28px rgba(17,21,62,.14);
+}
+.implementation-step:before{display:none}
+.implementation-step .step-num{
+  background:#fff!important;
+  color:#10143b!important;
+  box-shadow:0 2px 8px rgba(8,11,49,.2);
+}
+.implementation-step .step-icon{
+  background:rgba(255,255,255,.12)!important;
+  border-color:rgba(255,255,255,.22)!important;
+  color:#fff!important;
+}
+.implementation-step h3{color:#fff!important}
+@keyframes implementation-stage-highlight{
+  0%,16.5%{
+    z-index:2;
+    transform:translateY(-8px) scale(1.08);
+    background:linear-gradient(135deg,#a7e46f 0%,#78c536 48%,#5baa24 100%);
+    box-shadow:0 22px 42px rgba(83,160,35,.32);
+  }
+  16.6%,100%{
+    z-index:auto;
+    transform:translateY(0) scale(1);
+    background:linear-gradient(135deg,#2e307d 0%,#444da0 52%,#5962ae 100%);
+    box-shadow:0 14px 28px rgba(17,21,62,.14);
+  }
+}
+@media(max-width:720px){
+  .implementation-step{text-align:center;align-items:center}
+  .implementation-step .step-top{justify-content:center}
+  .implementation-step .step-icon{margin:0 auto 14px}
+}
 
 /* Workday hero headline */
 @media(min-width:1051px){
