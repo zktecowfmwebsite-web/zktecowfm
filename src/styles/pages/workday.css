@@ -20,6 +20,10 @@ footer{background:#0d1233;color:#fff;padding:54px 0 24px}.foot-grid{display:grid
 @media(max-width:1050px){.menu{display:none}.hero-grid,.split,.punch-layout,.value-grid,.subhero-grid{grid-template-columns:1fr}.proof-grid{grid-template-columns:repeat(2,1fr)}.proof-item{border-bottom:1px solid rgba(255,255,255,.1)}.eco-grid,.why-grid,.deep-grid{grid-template-columns:1fr 1fr}.control-flow{grid-template-columns:repeat(3,1fr)}.step:nth-child(3):after,.step:last-child:after{display:none}.impl-flow{grid-template-columns:repeat(4,1fr)}.support-grid{grid-template-columns:repeat(2,1fr)}.warranty{grid-template-columns:auto 1fr}.warranty .btn{grid-column:1/3;justify-self:start}}
 @media(max-width:720px){.wrap{width:min(100% - 30px,1220px)}header{height:82px}.brand{width:170px}.brand img{width:165px}.hero-grid{padding:42px 0;min-height:auto}.hero h1{font-size:44px}.hero-flow{grid-template-columns:1fr}.flow-arrow{transform:rotate(90deg)}.proof-grid,.eco-grid,.punch-options,.why-grid,.deep-grid,.content-grid{grid-template-columns:1fr}.control-flow,.impl-flow,.support-grid{grid-template-columns:1fr}.step:after{display:none}.warranty{grid-template-columns:1fr;text-align:center}.warranty-badge{margin:auto}.warranty .btn{grid-column:auto;justify-self:center}.foot-grid{grid-template-columns:1fr 1fr}.hero-panel{padding:20px}.hero-partner{width:58px}}
 
+/* The Workday Select Partner badge is intentionally omitted from the hero. */
+.hero-partner{display:none!important}
+.trust-lockup img{display:none!important}
+
 /* v21 brand-system alignment */
 .brand-promise{font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:13px}
 .hero-position{font-size:clamp(47px,5vw,50px)!important;line-height:1.01!important;letter-spacing:-.05em!important;margin:0 0 18px!important;color:var(--navy)!important}
@@ -407,7 +411,7 @@ section#workday-offering{display:none!important}
 /* Branded implementation stages */
 .implementation-step{
   border:0!important;
-  background:linear-gradient(135deg,#2e307d 0%,#444da0 52%,#5962ae 100%);
+  background:linear-gradient(to bottom right,#232866 0%,#1f1d59 35%,var(--navy) 68%,var(--navy) 100%);
   color:#fff;
   transform-origin:center center;
   box-shadow:0 14px 28px rgba(17,21,62,.14);
@@ -423,7 +427,16 @@ section#workday-offering{display:none!important}
   border-color:rgba(255,255,255,.22)!important;
   color:#fff!important;
 }
+.implementation-step .step-icon img{display:block;width:34px;height:34px;object-fit:contain}
 .implementation-step h3{color:#fff!important}
+
+/* Match the display-heading style while retaining the warranty panel's white type. */
+.warranty h3{font-size:clamp(48px,5vw,50px)!important;line-height:1.01!important;letter-spacing:-.05em!important;color:#fff!important;margin:0 0 20px!important}
+
+/* Center the descriptions in the migration and global-capabilities section headers. */
+.section-head:has(+ .program-grid) p,.section-head:has(+ .capability-grid) p{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+.implementation-path:before{content:"";position:absolute;z-index:0;left:8%;right:8%;top:50%;height:2px;background:rgba(32,31,98,.34);border-radius:999px}
+.implementation-step{z-index:1}
 @keyframes implementation-stage-highlight{
   0%,16.5%{
     z-index:2;
@@ -434,11 +447,13 @@ section#workday-offering{display:none!important}
   16.6%,100%{
     z-index:auto;
     transform:translateY(0) scale(1);
-    background:linear-gradient(135deg,#2e307d 0%,#444da0 52%,#5962ae 100%);
+    background:linear-gradient(to bottom right,#303887 0%,#272570 35%,var(--navy) 68%,var(--navy) 100%);
     box-shadow:0 14px 28px rgba(17,21,62,.14);
   }
 }
+@media(max-width:1100px){.implementation-path:before{display:none}}
 @media(max-width:720px){
+  .implementation-path:before{display:none}
   .implementation-step{text-align:center;align-items:center}
   .implementation-step .step-top{justify-content:center}
   .implementation-step .step-icon{margin:0 auto 14px}
@@ -449,15 +464,67 @@ section#workday-offering{display:none!important}
   .hero-grid{grid-template-columns:1.22fr .78fr!important}
 }
 .hero-position{
-  font-size:clamp(43px,4.25vw,50px)!important;
-  line-height:1.15!important;
-  letter-spacing:-.055em!important;
-  background:linear-gradient(100deg,#201f62 5%,#31499a 58%,#5d8d79 100%);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent!important;
+  font-size:clamp(48px,5vw,50px)!important;
+  line-height:1.01!important;
+  letter-spacing:-.05em!important;
+  color:var(--navy)!important;
+  margin:0 0 20px!important;
 }
 .hero-position span{display:block;white-space:nowrap}
 @media(max-width:1050px){
   .hero-position span{white-space:normal}
 }
+
+/* Display headings paired with section labels */
+.section-head h2,.manufacturing-copy h2,.mfg-compact-copy h2,.punch-layout h2[style],.cta-section h2{font-size:clamp(48px,5vw,50px)!important;line-height:1.01!important;letter-spacing:-.05em!important;margin:0 0 20px!important}
+.punch-layout h2[style]{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:var(--navy)!important}
+
+/* Commercial value-card bullets */
+.commercial-proof{display:grid;gap:10px;margin-top:18px}
+.commercial-proof span{position:relative;display:block;padding:0 0 0 16px;border:0;background:none;border-radius:0;color:#eef3ff;font-size:14px;font-weight:400;line-height:1.35}
+.commercial-proof span:before{content:"";position:absolute;left:0;top:.48em;width:6px;height:6px;border-radius:50%;background:#fff}
+
+/* Deep navy grid field */
+.commercial{background-color:#171b50;background-image:linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(19,49,57,.9) 0%,rgba(23,32,87,.97) 44%,#23276d 100%);background-size:66px 66px,66px 66px,100% 100%;background-position:0 0,0 0,0 0}
+.cta-section{border-top:0}
+
+/* Commercial card treatment */
+.commercial-card{border:1px solid rgba(255,255,255,.13);border-radius:26px;padding:34px 38px;background:rgba(42,51,101,.88);box-shadow:none}
+
+@media(min-width:1051px){
+  section:has(.capability-grid) .section-head{max-width:none}
+  section:has(.capability-grid) .section-head p{font-size:18px;white-space:nowrap}
+  section:has(.program-grid) .section-head{max-width:none}
+  section:has(.program-grid) .section-head p{font-size:18px;white-space:nowrap}
+}
+@media(min-width:1051px){.punch-layout{grid-template-columns:.92fr 1.08fr!important;gap:40px!important}}
+
+/* Title-supporting descriptions */
+.hero-offering,.punch-layout h2[style]+p,#cirrusdcs .split>div:first-child>p:first-of-type,.implementation-head p{font-size:18px!important;line-height:1.65!important;color:var(--muted)!important;max-width:650px;margin:0 0 28px!important;text-align:center}
+.implementation-head p{margin-left:auto!important;margin-right:auto!important}
+.section-head:not(.left),.implementation-head{display:flex!important;flex-direction:column!important;align-items:center!important;width:100%!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+.implementation-head>p{width:100%!important;max-width:650px!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+.commercial .section-head p{font-size:18px!important;line-height:1.65!important;color:#fff!important;max-width:650px;margin:0 auto 28px!important}
+.cta-section p{font-size:18px!important;line-height:1.65!important;color:#fff!important;max-width:650px;margin:0 auto 28px!important;text-align:center}
+.hero-offering,.punch-layout h2[style]+p,#cirrusdcs .split>div:first-child>p:first-of-type{text-align:left!important;margin-left:0!important;margin-right:0!important}
+@media(min-width:1051px){section:has(.capability-grid) .section-head p,section:has(.program-grid) .section-head p{max-width:none!important;white-space:nowrap;text-align:center!important;margin-left:auto!important;margin-right:auto!important}}
+
+/* Keep these descriptions as centered blocks instead of a single over-wide line. */
+.section-head:has(+ .program-grid) p,.section-head:has(+ .capability-grid) p{width:100%!important;max-width:900px!important;white-space:normal!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+
+.warranty p,.warranty small{font-size:18px!important}
+.compact-warranty{margin-top:12px!important}
+
+/* Feature the warranty seal on the right side of its banner. */
+.warranty{grid-template-columns:1fr auto!important;padding:56px 34px!important}
+.warranty{position:relative;overflow:hidden;background:linear-gradient(135deg,#10143b 0%,#171d55 54%,#202568 100%)!important}
+.warranty:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 9% 8%,rgba(117,189,59,.22),transparent 24%),radial-gradient(circle at 92% 14%,rgba(117,189,59,.10),transparent 26%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:auto,auto,44px 44px,44px 44px}
+.warranty>*{position:relative;z-index:1}
+
+/* Use the same reference navy grid field for the final CTA. */
+.cta-section{position:relative;overflow:hidden;background:linear-gradient(135deg,#10143b 0%,#171d55 54%,#202568 100%)!important}
+.cta-section:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 9% 8%,rgba(117,189,59,.22),transparent 24%),radial-gradient(circle at 92% 14%,rgba(117,189,59,.10),transparent 26%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:auto,auto,44px 44px,44px 44px}
+.cta-section>.wrap{position:relative;z-index:1}
+.warranty-badge{grid-column:2!important;width:180px!important;height:180px!important;font-size:21px!important;line-height:1.08!important;justify-self:end;transform:translateX(-18px)}
+.warranty>div:not(.warranty-badge){grid-column:1!important;grid-row:1;padding-inline:18px;box-sizing:border-box}
+@media(max-width:720px){.warranty-badge{grid-column:1!important;grid-row:1!important;justify-self:center;width:140px!important;height:140px!important;font-size:16px!important;transform:none}.warranty>div:not(.warranty-badge){grid-column:1!important;grid-row:2!important}}

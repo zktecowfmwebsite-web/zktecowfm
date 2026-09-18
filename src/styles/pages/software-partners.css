@@ -128,3 +128,4 @@ section{padding:82px 0}.section-head{max-width:800px;margin:0 auto 44px;text-ali
 }
 
 @media(min-width:721px){.hero{padding-top:58px!important;padding-bottom:62px!important}}
+@media(min-width:721px){.sp85-paths .sp85-copy{max-width:none;white-space:nowrap}}

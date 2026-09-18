@@ -17,6 +17,13 @@ footer{background:#0d1233;color:#fff;padding:54px 0 24px}.foot-grid{display:grid
 @media(max-width:1100px){.detail,.detail.reverse{grid-template-columns:1fr;gap:28px}.detail.reverse .device-panel{order:0}.device-panel{min-height:300px}.detail-copy{max-width:820px;margin:0 auto;width:100%}.detail-copy h3{font-size:34px}.detail-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.detail-grid{grid-template-columns:1fr}.detail-copy h3{font-size:30px}.detail-copy h4{font-size:16px}.device-panel{min-height:250px;padding:22px}.device-panel img{max-height:210px}}
 
+/* Keep anchored product sections clear of the sticky site header. */
+#ultima5,#ultima7,#ultima7p,#ultima10{scroll-margin-top:132px}
+@media(max-width:640px){#ultima5,#ultima7,#ultima7p,#ultima10{scroll-margin-top:108px}}
+
+/* Hide the standalone datasheet link placed after the Ultima 5 detail block. */
+#ultima5+a.btn.secondary{display:none}
+
 
 /* Ultima configuration options */
 .configuration-section{}
@@ -57,3 +64,12 @@ footer{background:#0d1233;color:#fff;padding:54px 0 24px}.foot-grid{display:grid
 section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:64px!important}.cta-section{padding-top:64px!important;padding-bottom:64px!important}@media(max-width:720px){section:not(.hero),.cta-section{padding-top:52px!important;padding-bottom:52px!important}}
 
 .hero-grid{}
+
+/* Keep the centered Ultima section introductions to two desktop lines. */
+@media (min-width:721px){
+  #models .section-head > p,
+  .configuration-section .section-head > p,
+  #compare .section-head > p{
+    max-width:980px!important;
+  }
+}
