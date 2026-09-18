@@ -121,6 +121,12 @@
 .journey-stage:nth-child(5) .journey-icon{background:#fff;color:#fff!important;-webkit-mask:url("assets/Deliver-icon.svg") center/contain no-repeat;mask:url("assets/Deliver-icon.svg") center/contain no-repeat}
 .journey-stage:nth-child(5) .journey-icon img{display:none}
 
+/* Root-relative asset paths also work after Astro moves this stylesheet into /assets/. */
+.ultima-visual img{content:url("/assets/ultima-combo.png")}
+.journey-stage:nth-child(2) .journey-icon{-webkit-mask:url("/assets/capture-icon.svg") center/contain no-repeat;mask:url("/assets/capture-icon.svg") center/contain no-repeat}
+.journey-stage:nth-child(4) .journey-icon{-webkit-mask:url("/assets/connect-icon.svg") center/contain no-repeat;mask:url("/assets/connect-icon.svg") center/contain no-repeat}
+.journey-stage:nth-child(5) .journey-icon{-webkit-mask:url("/assets/Deliver-icon.svg") center/contain no-repeat;mask:url("/assets/Deliver-icon.svg") center/contain no-repeat}
+
 /* CirrusConnect brand mark in the partner-connectivity card. */
 .partner-path .arch112-path-copy{padding-right:202px}
 .cirrusconnect-card-logo{position:absolute;top:50%;right:30px;display:grid;place-items:center;box-sizing:border-box;width:180px;height:102px;padding:20px 22px;border-radius:18px;background:linear-gradient(135deg,#9bd64d,#75bd3b);box-shadow:0 10px 22px rgba(72,139,38,.24);transform:translateY(-50%)}
