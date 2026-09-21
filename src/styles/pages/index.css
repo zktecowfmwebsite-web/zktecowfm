@@ -432,7 +432,7 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 @media(max-width:620px){.ultima-model-grid{gap:30px 15px;padding:0;margin:20px auto 34px}.ultima-model-card{min-height:194px;padding:20px 9px 36px;border-radius:12px}.ultima-model-card:before{top:-10px;width:19px;height:19px}.ultima-model-card img{width:100%;max-width:180px;height:108px}.ultima-model-name{bottom:-11px;font-size:12px;padding:4px 6px}}
 
 /* CirrusDCS Workday path: centered brand treatment on navy. */
-.architecture-v112 .workday-path{background:var(--navy)!important;border-color:rgba(255,255,255,.18)!important;color:#fff!important}
+.architecture-v112 .workday-path{background:var(--navy)!important;border-color:rgba(255,255,255,.18)!important;border-top:0!important;color:#fff!important}
 .architecture-v112 .workday-path .arch112-route-tag{color:#fff!important}
 .architecture-v112 .workday-path .arch112-path-copy{width:100%;padding-right:0!important;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .architecture-v112 .workday-path .arch112-path-copy small,.architecture-v112 .workday-path .arch112-path-copy p{color:#fff!important}
@@ -444,13 +444,13 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 @media(max-width:620px){.cirrusdcs-inline-logo{width:min(280px,88%)}.cirrusdcs-inline-logo img{max-height:86px}}
 
 /* CirrusConnect partner path: centered brand treatment on green. */
-.architecture-v112 .partner-path{background:var(--green)!important;border-color:rgba(255,255,255,.34)!important;color:var(--navy)!important}
-.architecture-v112 .partner-path .arch112-route-tag{color:var(--navy)!important}
+.architecture-v112 .partner-path{background:#163832!important;border-color:rgba(255,255,255,.34)!important;border-top:0!important;color:#fff!important}
+.architecture-v112 .partner-path .arch112-route-tag{color:#fff!important}
 .architecture-v112 .partner-path .arch112-path-copy{width:100%;padding-right:0!important;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.architecture-v112 .partner-path .arch112-path-copy small,.architecture-v112 .partner-path .arch112-path-copy p{color:var(--navy)!important}
+.architecture-v112 .partner-path .arch112-path-copy small,.architecture-v112 .partner-path .arch112-path-copy p{color:#fff!important}
 .architecture-v112 .partner-path .arch112-path-copy p{margin:12px 0 18px!important;font-weight:600}
 .cirrusconnect-inline-logo{width:min(300px,70%);margin:10px auto 0}
 .cirrusconnect-inline-logo img{display:block;width:100%;height:auto;max-height:96px}
 .architecture-v112 .partner-path .arch112-chips{justify-content:center}
-.architecture-v112 .partner-path .arch112-chips span{background:rgba(255,255,255,.24)!important;border-color:rgba(255,255,255,.38)!important;color:var(--navy)!important}
+.architecture-v112 .partner-path .arch112-chips span{background:rgba(255,255,255,.24)!important;border-color:rgba(255,255,255,.38)!important;color:#fff!important}
 @media(max-width:620px){.cirrusconnect-inline-logo{width:min(280px,88%)}.cirrusconnect-inline-logo img{max-height:86px}}
