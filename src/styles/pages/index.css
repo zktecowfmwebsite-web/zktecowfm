@@ -315,6 +315,7 @@
   box-shadow:inset 0 1px 0 rgba(225,230,255,.16),0 14px 30px rgba(20,23,83,.2)!important;
 }
 
+
 /* Consistent action corners */
 .audience-btn,.segment-link,.ultima-cta,.final-cta-button{border-radius:12px!important}
 
@@ -346,6 +347,14 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 .section-label+h2{margin-top:32px!important}
 @media(min-width:1000px){.why-intro{width:calc(100vw - 80px)!important;max-width:none!important;margin-left:50%!important;transform:translateX(-50%)}.why-intro h2{white-space:nowrap}}
 @media(prefers-reduced-motion:reduce){.architecture .section-label:before{animation:none}}
+
+/* Home hero key title */
+.hero-copy>.eyebrow{display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;font-size:12px;font-weight:850;letter-spacing:.17em;text-transform:uppercase;color:var(--green)}
+.hero-copy>.eyebrow:before{content:"";width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:#9bdd67;box-shadow:0 0 0 0 rgba(155,221,103,.65);animation:ultima-label-pulse 2s cubic-bezier(.22,1,.36,1) infinite}
+@media(prefers-reduced-motion:reduce){.hero-copy>.eyebrow:before{animation:none}}
+
+/* The two solution-card labels intentionally do not use a leading marker. */
+.segments-grid .segment-kicker::before{content:none!important;display:none!important}
 
 .audience-btn,.ultima-cta{transition:box-shadow .5s cubic-bezier(.22,1,.36,1),filter .5s cubic-bezier(.22,1,.36,1)!important}
 .audience-btn:hover,.ultima-cta:hover{filter:brightness(1.075)}
@@ -383,10 +392,12 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 
 .workday-dest-kicker{margin-bottom:7px;color:#7b8095;font-size:9px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
 
-/* Center the home hero ecosystem artwork within the existing orbit backdrop. */
-.hero .visual .orbit{top:50%!important;z-index:0;transform:translateY(-50%)}
-.hero-image{position:relative;z-index:1;display:block;width:560px;max-width:none;height:auto;max-height:500px;object-fit:contain}
-@media(max-width:720px){.hero-image{width:500px;max-width:none}}
+/* Home hero ecosystem artwork without the previous orbit treatment. */
+.hero{background:#fff!important}
+.hero .hero-home-visual{height:auto;min-height:0;transform:none!important}
+.hero .hero-home-visual .hero-image{display:block;width:min(100%,560px);max-width:100%;height:auto;max-height:none;object-fit:contain}
+@media(min-width:721px){.hero .hero-home-visual{transform:translateY(-24px)!important}}
+@media(max-width:720px){.hero .hero-home-visual{height:auto;margin:0;transform:none!important}.hero .hero-home-visual .hero-image{width:100%;max-width:560px}}
 
 /* Center the Capture card heading with its product visual. */
 .arch112-foundation>.arch112-kicker,.arch112-foundation>h3{text-align:center}
@@ -396,3 +407,50 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 @keyframes journey-green-progress{0%{transform:scaleX(0)}20%{transform:scaleX(.25)}40%{transform:scaleX(.5)}60%{transform:scaleX(.75)}80%,100%{transform:scaleX(1)}}
 @media(max-width:900px){.journey-rail:after{display:none!important}}
 @media(prefers-reduced-motion:reduce){.journey-rail:after{animation:none!important;transform:scaleX(1)!important;opacity:.75}}
+
+/* Solution cards animate in sequence only after their section enters the viewport. */
+.segments-grid{gap:38px!important}
+.segments-grid .segment-card{padding-right:30px;transform-origin:center center;box-shadow:0 0 0 rgba(24,29,74,0);transition:transform .25s linear,box-shadow .25s linear}
+.segments-grid .segment-card.is-card-focused .segment-link{transform:translateY(-3px);filter:brightness(1.08)}
+.segments-grid .segment-card.is-card-focused .segment-link span{transform:translateX(6px)}
+.segments-grid .segment-card{cursor:pointer}
+.segments-grid .segment-card:focus-visible{outline:3px solid var(--green);outline-offset:4px}
+@media(max-width:800px){.segments-grid{gap:22px!important}}
+
+/* Individual Ultima models, matching the four-card product reference. */
+.ultima-model-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:54px;width:min(1180px,100%);margin:26px auto 34px;padding:0 8px}
+.ultima-model-card{position:relative;min-height:276px;display:flex;align-items:center;justify-content:center;padding:26px 18px 45px;border:1px solid rgba(126,93,210,.42);border-radius:17px;background:linear-gradient(100deg,rgba(113,79,184,.54),rgba(26,29,91,.16));box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 15px 32px rgba(5,7,38,.19)}
+.ultima-model-card:focus-visible{outline:3px solid #fff;outline-offset:5px}
+.ultima-model-card:before{content:"";position:absolute;top:-14px;left:50%;width:25px;height:25px;transform:translateX(-50%);border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.08)}
+.ultima-model-card img{display:block;position:relative;z-index:1;max-width:100%;width:min(250px,100%);height:190px;object-fit:contain;filter:drop-shadow(0 12px 14px rgba(0,0,0,.28));transition:transform .28s cubic-bezier(.22,1,.36,1)}
+.ultima-model-name{position:absolute;z-index:2;bottom:-14px;left:50%;transform:translateX(-50%);padding:6px 10px;border:1px solid #d9d6eb;border-radius:5px;background:#fff;color:#1d2261;font-size:17px;font-weight:850;line-height:1;white-space:nowrap;box-shadow:0 2px 7px rgba(0,0,0,.28);transition:transform .28s cubic-bezier(.22,1,.36,1),background-color .28s ease,color .28s ease,border-color .28s ease}
+.ultima-model-name b{display:inline-block;margin-left:2px;padding:2px 4px;border-radius:1px;background:#7ecb40;color:#fff;font-size:.84em}
+.ultima-model-card:hover img{transform:scale(1.1)}
+.ultima-model-card:hover .ultima-model-name{transform:translateX(-50%) scale(1.08);background:var(--green);border-color:#a8e274;color:#fff}
+.ultima-model-card:hover .ultima-model-name b{background:rgba(255,255,255,.22);color:#fff}
+@media(max-width:980px){.ultima-model-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 38px;max-width:660px}}
+@media(max-width:620px){.ultima-model-grid{gap:30px 15px;padding:0;margin:20px auto 34px}.ultima-model-card{min-height:194px;padding:20px 9px 36px;border-radius:12px}.ultima-model-card:before{top:-10px;width:19px;height:19px}.ultima-model-card img{width:100%;max-width:180px;height:108px}.ultima-model-name{bottom:-11px;font-size:12px;padding:4px 6px}}
+
+/* CirrusDCS Workday path: centered brand treatment on navy. */
+.architecture-v112 .workday-path{background:var(--navy)!important;border-color:rgba(255,255,255,.18)!important;color:#fff!important}
+.architecture-v112 .workday-path .arch112-route-tag{color:#fff!important}
+.architecture-v112 .workday-path .arch112-path-copy{width:100%;padding-right:0!important;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.architecture-v112 .workday-path .arch112-path-copy small,.architecture-v112 .workday-path .arch112-path-copy p{color:#fff!important}
+.architecture-v112 .workday-path .arch112-path-copy p{margin:12px 0 18px!important}
+.cirrusdcs-inline-logo{width:min(330px,75%);margin:10px auto 0}
+.cirrusdcs-inline-logo img{display:block;width:100%;height:auto;max-height:108px}
+.architecture-v112 .workday-path .arch112-chips{justify-content:center}
+.architecture-v112 .workday-path .arch112-chips span{background:rgba(255,255,255,.14)!important;border-color:rgba(255,255,255,.18)!important;color:#fff!important}
+@media(max-width:620px){.cirrusdcs-inline-logo{width:min(280px,88%)}.cirrusdcs-inline-logo img{max-height:86px}}
+
+/* CirrusConnect partner path: centered brand treatment on green. */
+.architecture-v112 .partner-path{background:var(--green)!important;border-color:rgba(255,255,255,.34)!important;color:var(--navy)!important}
+.architecture-v112 .partner-path .arch112-route-tag{color:var(--navy)!important}
+.architecture-v112 .partner-path .arch112-path-copy{width:100%;padding-right:0!important;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.architecture-v112 .partner-path .arch112-path-copy small,.architecture-v112 .partner-path .arch112-path-copy p{color:var(--navy)!important}
+.architecture-v112 .partner-path .arch112-path-copy p{margin:12px 0 18px!important;font-weight:600}
+.cirrusconnect-inline-logo{width:min(300px,70%);margin:10px auto 0}
+.cirrusconnect-inline-logo img{display:block;width:100%;height:auto;max-height:96px}
+.architecture-v112 .partner-path .arch112-chips{justify-content:center}
+.architecture-v112 .partner-path .arch112-chips span{background:rgba(255,255,255,.24)!important;border-color:rgba(255,255,255,.38)!important;color:var(--navy)!important}
+@media(max-width:620px){.cirrusconnect-inline-logo{width:min(280px,88%)}.cirrusconnect-inline-logo img{max-height:86px}}

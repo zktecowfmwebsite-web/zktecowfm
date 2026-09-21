@@ -96,7 +96,7 @@ section:not(.hero):not(.cta-section):has(.cmp-grid){padding-top:24px!important}
 .compact-warranty{margin-top:28px;grid-template-columns:auto 1fr}.compact-warranty h3{font-size:24px}.compact-warranty .warranty-badge{width:82px;height:82px;font-size:11px}
 
 /* v35 compact manufacturing proof */
-.mfg-compact{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(280px,.65fr);gap:48px;align-items:center;padding-top:12px;padding-bottom:12px}.mfg-compact-copy h2{max-width:850px;margin-bottom:18px}.mfg-compact-copy p{max-width:900px}.atlanta-proof{background:#211d63;border-radius:22px;padding:30px 30px 28px;color:#fff;position:relative;overflow:hidden;box-shadow:0 18px 42px rgba(23,28,78,.14)}.atlanta-proof:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:#86c62b}.atlanta-flag{font-size:34px;line-height:1;margin-bottom:15px}.atlanta-tag{font-size:12px;letter-spacing:.15em;font-weight:900;color:#99d337;margin-bottom:8px}.atlanta-proof h3{font-size:29px;margin:0 0 7px;color:#fff}.atlanta-proof p{font-size:16px;line-height:1.5;margin:0;color:rgba(255,255,255,.88);font-weight:650}@media(max-width:820px){.mfg-compact{grid-template-columns:1fr;gap:24px}.atlanta-proof{max-width:none}}
+.mfg-compact{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(280px,.65fr);gap:48px;align-items:center;padding-top:12px;padding-bottom:12px}.mfg-compact-copy h2{max-width:850px;margin-bottom:18px}.mfg-compact-copy p{max-width:900px}.atlanta-proof{background:#211d63;border-radius:22px;padding:30px 30px 28px;color:#fff;position:relative;overflow:hidden;box-shadow:0 18px 42px rgba(23,28,78,.14)}.atlanta-proof:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:#86c62b}.atlanta-flag{line-height:1;margin-bottom:15px}.atlanta-flag img{display:block;width:52px;height:auto}.atlanta-tag{font-size:12px;letter-spacing:.15em;font-weight:900;color:#99d337;margin-bottom:8px}.atlanta-proof h3{font-size:29px;margin:0 0 7px;color:#fff}.atlanta-proof p{font-size:16px;line-height:1.5;margin:0;color:rgba(255,255,255,.88);font-weight:650}@media(max-width:820px){.mfg-compact{grid-template-columns:1fr;gap:24px}.atlanta-proof{max-width:none}}
 
 /* Shared site navigation */
 .nav .menu{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
@@ -125,11 +125,40 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 
 @media(min-width:721px){.hero-grid{min-height:auto!important;padding-top:54px!important;padding-bottom:58px!important}}
 
+/* Workday hero illustration and a more generous top inset. */
+@media(min-width:721px){.hero-grid{padding-top:78px!important}}
+.hero .workday-hero-visual{min-height:0;display:flex;align-items:center;justify-content:center}
+.hero .workday-hero-image{display:block;width:100%;max-width:620px;height:auto;object-fit:contain}
+@media(max-width:720px){.hero .workday-hero-image{max-width:560px}}
+
+/* Flexible Punch Options product visual. */
+.punch-layout .workday-products-image{display:block;width:100%;max-width:560px;border-radius:16px}
+
+/* Flexible Punch Options content sits above the two-column detail layout. */
+.flexible-punch-section .punch-section-head{max-width:1280px;margin:0 auto 46px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.flexible-punch-section .punch-section-head .eyebrow{display:inline-flex;align-items:center;justify-content:center}
+.flexible-punch-section .punch-section-head h2{max-width:1100px;margin:0 0 20px;color:var(--navy);font-size:clamp(48px,5vw,50px);line-height:1.01;letter-spacing:-.05em}
+.flexible-punch-section .punch-section-head p{max-width:980px;margin:0;color:var(--muted);font-size:18px;line-height:1.65}
+.flexible-punch-section .device-family{display:flex;justify-content:center}
+@media(max-width:720px){.flexible-punch-section .punch-section-head{margin-bottom:32px}.flexible-punch-section .punch-section-head h2{font-size:42px}}
+
+/* CirrusDCS is a dedicated white, vertical section. */
+.cirrusdcs-section{background:#fff!important}
+.cirrusdcs-section .wrap{display:flex;flex-direction:column;align-items:center;gap:42px}
+.cirrusdcs-section .cirrusdcs-top{max-width:1050px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.cirrusdcs-section .cirrusdcs-top .eyebrow{display:inline-flex;align-items:center;justify-content:center}
+.cirrusdcs-section .cirrusdcs-top h2{max-width:960px;margin:0 0 20px!important;text-align:center}
+.cirrusdcs-section .cirrusdcs-top p{max-width:900px!important;margin:0 auto 16px!important;text-align:center!important}
+.cirrusdcs-section .cirrusdcs-top .feature-list{width:min(900px,100%);margin:22px auto 0;text-align:left}
+.cirrusdcs-section .visual-card{width:min(1040px,100%);padding:22px;border-radius:16px}
+.cirrusdcs-section .visual-card img{border-radius:12px}
+@media(max-width:720px){.cirrusdcs-section .wrap{gap:30px}.cirrusdcs-section .visual-card{padding:12px}}
+
 /* Unified key-title treatment */
 .eyebrow{
   display:inline-flex;
   align-items:center;
-  gap:10px;
+  gap:7px;
   font-size:12px;
   line-height:1.2;
 }
@@ -459,6 +488,81 @@ section#workday-offering{display:none!important}
   .implementation-step .step-icon{margin:0 auto 14px}
 }
 
+/* Wider stage separation with synchronized progress arrows. */
+.implementation-step .step-num,.implementation-step .step-top{display:none!important}
+@media(min-width:1101px){
+  .implementation-path{gap:38px}
+  .implementation-step{padding-left:10px;padding-right:10px}
+  .implementation-step h3{max-width:142px}
+  .implementation-step:not(:last-child)::after{
+    content:"→";
+    position:absolute;
+    z-index:4;
+    top:50%;
+    right:-29px;
+    width:40px;
+    height:40px;
+    display:grid;
+    place-items:center;
+    transform:translateY(-50%) scale(.76);
+    border-radius:50%;
+    background:var(--green);
+    color:var(--navy2);
+    font-size:24px;
+    font-weight:900;
+    box-shadow:0 0 0 5px #fff,0 8px 18px rgba(81,157,35,.22);
+    opacity:.5;
+    animation:implementation-progress-arrow 30s cubic-bezier(.22,1,.36,1) infinite;
+  }
+  .implementation-step:nth-child(1)::after{animation-delay:0s}
+  .implementation-step:nth-child(2)::after{animation-delay:5s}
+  .implementation-step:nth-child(3)::after{animation-delay:10s}
+  .implementation-step:nth-child(4)::after{animation-delay:15s}
+  .implementation-step:nth-child(5)::after{animation-delay:20s}
+}
+@keyframes implementation-progress-arrow{
+  0%,2%{opacity:.5;transform:translateY(-50%) scale(.76)}
+  5%,13%{opacity:1;transform:translateY(-50%) scale(1.12);box-shadow:0 0 0 5px #fff,0 10px 24px rgba(81,157,35,.36)}
+  16.5%,100%{opacity:.5;transform:translateY(-50%) scale(.76)}
+}
+@media(prefers-reduced-motion:reduce){.implementation-step:not(:last-child)::after{animation:none!important}}
+
+/* Compact implementation stages with fixed connector arrows. */
+@media(min-width:1101px){
+  .implementation-path{gap:50px}
+  .implementation-step{min-height:174px;padding:18px 7px 16px;border-radius:18px;justify-content:center}
+  .implementation-step h3{max-width:128px;font-size:15px;line-height:1.16}
+  .implementation-step .step-icon{width:44px;height:44px;margin:0 auto 12px;border-radius:12px}
+  .implementation-step .step-icon img{width:27px;height:27px}
+  .implementation-step:not(:last-child)::after{
+    right:-38px;
+    width:26px;
+    height:26px;
+    font-size:17px;
+    opacity:1;
+    transform:translateY(-50%) scale(1);
+    animation:none!important;
+    box-shadow:0 5px 12px rgba(81,157,35,.22);
+  }
+}
+
+/* Highlight color and shadow only; cards and midpoint arrows stay fixed. */
+.implementation-step{background:var(--navy)}
+@keyframes implementation-stage-highlight{
+  0%,16.5%{
+    z-index:2;
+    transform:translateY(0) scale(1);
+    background:var(--green);
+    box-shadow:0 22px 42px rgba(83,160,35,.32);
+  }
+  16.6%,100%{
+    z-index:auto;
+    transform:translateY(0) scale(1);
+    background:var(--navy);
+    box-shadow:0 14px 28px rgba(17,21,62,.14);
+  }
+}
+
 /* Workday hero headline */
 @media(min-width:1051px){
   .hero-grid{grid-template-columns:1.22fr .78fr!important}
@@ -525,6 +629,80 @@ section#workday-offering{display:none!important}
 .cta-section{position:relative;overflow:hidden;background:linear-gradient(135deg,#10143b 0%,#171d55 54%,#202568 100%)!important}
 .cta-section:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 9% 8%,rgba(117,189,59,.22),transparent 24%),radial-gradient(circle at 92% 14%,rgba(117,189,59,.10),transparent 26%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:auto,auto,44px 44px,44px 44px}
 .cta-section>.wrap{position:relative;z-index:1}
-.warranty-badge{grid-column:2!important;width:180px!important;height:180px!important;font-size:21px!important;line-height:1.08!important;justify-self:end;transform:translateX(-18px)}
+.warranty-badge{grid-column:2!important;position:relative;width:250px!important;height:250px!important;border:0!important;border-radius:0!important;background:url("/assets/Warrenty badge bg.svg?v=workday-warranty-v2") center/contain no-repeat!important;clip-path:none;color:transparent!important;content:normal;font-size:0!important;font-weight:600!important;line-height:1!important;justify-self:end;padding:48px 32px 82px;filter:drop-shadow(0 12px 18px rgba(3,11,44,.26));transform:translateX(-72px)}.warranty-badge:before,.warranty-badge:after{position:absolute;left:0;right:0;text-align:center;background:none;-webkit-background-clip:border-box;background-clip:border-box;font-size:18px;font-weight:600;line-height:1.3;letter-spacing:.01em;text-shadow:0 2px 4px rgba(9,52,101,.58)}.warranty-badge:before{content:"LIFETIME";top:62px;color:var(--green);font-weight:600}.warranty-badge:after{content:"HARDWARE\A WARRANTY";top:85px;white-space:pre;color:#fff}
+.compact-warranty{padding-top:16px!important;padding-bottom:16px!important}
 .warranty>div:not(.warranty-badge){grid-column:1!important;grid-row:1;padding-inline:18px;box-sizing:border-box}
-@media(max-width:720px){.warranty-badge{grid-column:1!important;grid-row:1!important;justify-self:center;width:140px!important;height:140px!important;font-size:16px!important;transform:none}.warranty>div:not(.warranty-badge){grid-column:1!important;grid-row:2!important}}
+@media(min-width:721px){.warranty>div:not(.warranty-badge){transform:translateX(20px)}}
+@media(max-width:720px){.warranty-badge{grid-column:1!important;grid-row:1!important;justify-self:center;width:190px!important;height:190px!important;padding:37px 25px 62px;transform:none}.warranty-badge:before{top:54px;font-size:16px;line-height:1.3}.warranty-badge:after{top:75px;font-size:16px;line-height:1.3}.warranty>div:not(.warranty-badge){grid-column:1!important;grid-row:2!important}}
+
+/* Match the Home solution-card motion on the two migration cards. */
+.migration-motion-section .program-grid{max-width:none;margin-left:auto;margin-right:auto;gap:38px}
+.migration-motion-section .program-card{transform-origin:center center;box-shadow:0 0 0 rgba(24,29,74,0);transition:transform .25s linear,box-shadow .25s linear}
+.migration-motion-section .program-card.is-card-focused{box-shadow:0 0 22px rgba(117,189,59,.28)}
+/* Match the paired Home solution-card color treatment. */
+.migration-motion-section .program-card:first-child{background:#201f62;border-color:#201f62;color:#fff}
+.migration-motion-section .program-card:first-child h3{color:#fff}
+.migration-motion-section .program-card:first-child p{color:#c7cfdd}
+.migration-motion-section .program-card:first-child .program-tag{color:var(--green);background:transparent;padding:0;border-radius:0}
+.migration-motion-section .program-card .program-tag{background:transparent!important;padding:0;border-radius:0}
+.migration-motion-section .program-card:nth-child(2){background:#f4f7fa;border-color:#dce3eb;color:var(--navy)}
+.migration-motion-section .program-card:nth-child(2) h3{color:var(--navy)}
+.migration-motion-section .program-card:nth-child(2) p{color:var(--muted)}
+.migration-motion-section .program-card{display:flex;flex-direction:column}
+.migration-motion-section .program-link{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;padding:13px 16px;border-radius:10px;background:var(--green);color:var(--navy2);font-size:12px;font-weight:900;letter-spacing:.03em;line-height:1.3}
+.migration-motion-section .program-link span{font-size:20px;line-height:1;transition:transform .25s ease}
+.migration-motion-section .program-link:hover span{transform:translateX(4px)}
+@media(max-width:1000px){.migration-motion-section .program-grid{max-width:none;gap:18px}}
+@media(prefers-reduced-motion:reduce){.migration-motion-section .program-card{transition:none}}
+/* Manufacturing workshop background with a left-to-right navy overlay. */
+.manufacturing-control-section {
+  background-image:
+    linear-gradient(90deg, rgba(32, 31, 98, 1) 0%, rgba(32, 31, 98, .96) 38%, rgba(32, 31, 98, .55) 61%, rgba(32, 31, 98, 0) 100%),
+    url("/assets/SMT%20workshop.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.manufacturing-control-section .mfg-compact-copy h2,
+.manufacturing-control-section .mfg-compact-copy p {
+  color: #fff !important;
+}
+
+.manufacturing-control-section .mfg-compact-copy .eyebrow {
+  color: var(--green) !important;
+}
+
+.manufacturing-control-section .mfg-gallery-strip {
+  background: rgba(255, 255, 255, .96);
+}
+
+@media (max-width: 820px) {
+  .manufacturing-control-section {
+    background-image:
+      linear-gradient(180deg, rgba(32, 31, 98, .96), rgba(32, 31, 98, .76)),
+      url("/assets/SMT%20workshop.jpg");
+  }
+}
+
+/* Atlanta manufacturing proof card. */
+.manufacturing-control-section .atlanta-proof {
+  background: var(--green);
+}
+
+.manufacturing-control-section .atlanta-proof::before {
+  background: transparent;
+}
+
+.manufacturing-control-section .atlanta-proof,
+.manufacturing-control-section .atlanta-proof .atlanta-tag,
+.manufacturing-control-section .atlanta-proof h3,
+.manufacturing-control-section .atlanta-proof p {
+  color: var(--navy) !important;
+}
+
+/* Give the Workday integration architecture more visual presence. */
+.cirrusdcs-section .visual-card {
+  width: min(1180px, 100%);
+  padding: 14px;
+}
