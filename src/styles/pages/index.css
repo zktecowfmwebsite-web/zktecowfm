@@ -146,7 +146,7 @@
 .why-close{margin:34px auto 0;padding:22px 24px;border:1px solid rgba(117,189,59,.42);border-radius:16px;background:rgba(255,255,255,.055);box-shadow:none}
 .why-close:after{display:none}
 .why-close strong{font-size:24px;color:#fff}
-.why-close span{margin-top:5px;font-size:15px;color:#d3daea}
+.why-close span{margin-top:5px;font-size:18px;color:#d3daea}
 .why-close span em{color:#a9d774}
 @media(max-width:900px){.journey-rail:before{display:none}.journey-stage{padding:0 10px}}
 @media(max-width:620px){.why-section{padding:62px 0}.why-intro{margin-bottom:24px}.journey-rail{gap:28px}.why-close{margin-top:26px}}
@@ -204,7 +204,7 @@
 .workday-logo{display:block;width:164px;height:auto;margin-inline:auto}
 .workday-dest .workday-destination{align-self:center;justify-self:center;transform-origin:center!important}
 .workday-arc{width:82px;height:32px;border:7px solid #f6a800;border-left-color:transparent;border-right-color:transparent;border-bottom-color:transparent;border-radius:50%/100% 100% 0 0;margin-bottom:-9px}
-.workday-word{font-size:29px;font-weight:850;letter-spacing:-.045em;color:#243363;line-height:1}.workday-word sup{font-size:8px;vertical-align:top;margin-left:2px}.dest-caption{margin-top:9px;font-size:9px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:#7a8095}
+.workday-word{font-size:29px;font-weight:850;letter-spacing:-.045em;color:#243363;line-height:1}.workday-word sup{font-size:8px;vertical-align:top;margin-left:2px}.dest-caption{margin-top:9px;font-size:13px;font-weight:800;letter-spacing:.05em;color:#66708a}
 .dest-platform{width:185px!important;padding:20px 16px 22px!important;border-radius:18px!important;display:flex;flex-direction:column;align-items:center;gap:4px;background:linear-gradient(145deg,#252069,#17164d)!important;box-shadow:0 16px 35px rgba(28,25,91,.20),inset 0 -5px 0 var(--green)!important}
 .dest-platform small{font-size:8px;letter-spacing:.14em;opacity:.72}.dest-platform strong{font-size:22px;letter-spacing:-.02em}.dest-platform span{font-size:10px;font-weight:650;opacity:.76}
 .partner-dest .dest-platform{height:164px!important;box-sizing:border-box!important;justify-content:center!important;padding:20px!important;border:1px solid #e0e5ef!important;background:linear-gradient(145deg,#fff,#f8f9fc)!important;box-shadow:0 15px 34px rgba(25,31,73,.09)!important}
@@ -212,7 +212,7 @@
 .partner-dest-kicker{margin-bottom:7px;color:#7b8095;font-size:9px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
 .partner-dest .dest-platform{height:180px!important;gap:5px}
 .partner-dest .dest-platform img{width:106px;height:106px}
-.dest-platform-caption{color:#66708a;font-size:9px;font-weight:800;letter-spacing:.05em;text-align:center;white-space:nowrap}
+.dest-platform-caption{color:#66708a;font-size:13px;font-weight:800;letter-spacing:.05em;text-align:center;white-space:nowrap}
 .arch-close{margin-top:42px!important;padding:15px 20px;border-radius:999px;background:#fff;border:1px solid #e3e7ef;box-shadow:0 10px 28px rgba(24,29,74,.06);max-width:760px;font-size:15px!important}
 .arch-close span{font-weight:650!important;color:#5d647c!important;margin-left:5px}
 @media(max-width:900px){.arch-arrow{height:48px!important}.arch-arrow .flow-line{top:4px;bottom:4px;left:50%;right:auto;width:2px;height:auto;background:linear-gradient(180deg,rgba(126,194,58,.15),var(--green),rgba(38,31,112,.65))}.arch-arrow .flow-line:before,.arch-arrow .flow-line:after{left:50%;transform:translate(-50%,-50%)}.arch-arrow .flow-line:before{top:0}.arch-arrow .flow-line:after{top:100%;right:auto}.arch-arrow .flow-symbol{transform:rotate(90deg)}.arch-list{grid-template-columns:1fr 1fr}.arch-list span:first-child{grid-column:1/-1}.arch-card.capture{padding-top:52px!important}}
@@ -345,6 +345,16 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 .hero p,.final-cta p{text-align:left!important;margin-left:0!important;margin-right:0!important}
 .ultima-head p,.architecture .section-head p,.segments-intro p,.resources-intro p{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
 .section-label+h2{margin-top:32px!important}
+
+/* Keep the final CTA action visually connected to its copy. */
+.final-cta-inner{flex-direction:column;justify-content:center!important;align-items:center!important;gap:26px!important;text-align:center}
+.final-cta-copy{max-width:none!important;width:max-content;text-align:center}
+.final-cta p{max-width:none!important;white-space:nowrap;text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+@media(max-width:850px){.final-cta-inner{gap:24px!important}.final-cta-copy{width:100%}.final-cta p{white-space:normal}}
+
+/* Ultima capability values use a clear semibold weight. */
+.ultima-benefit span{font-size:14px!important;font-weight:600!important}
+@media(min-width:1050px){.segments-intro{max-width:1200px!important}.segments-intro h2{white-space:nowrap}}
 @media(min-width:1000px){.why-intro{width:calc(100vw - 80px)!important;max-width:none!important;margin-left:50%!important;transform:translateX(-50%)}.why-intro h2{white-space:nowrap}}
 @media(prefers-reduced-motion:reduce){.architecture .section-label:before{animation:none}}
 
@@ -454,3 +464,10 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 .architecture-v112 .partner-path .arch112-chips{justify-content:center}
 .architecture-v112 .partner-path .arch112-chips span{background:rgba(255,255,255,.24)!important;border-color:rgba(255,255,255,.38)!important;color:#fff!important}
 @media(max-width:620px){.cirrusconnect-inline-logo{width:min(280px,88%)}.cirrusconnect-inline-logo img{max-height:86px}}
+
+.arch112-flow-note,.arch112-flow-note strong,.arch112-flow-note span{font-size:16px!important}
+@media(min-width:901px){.architecture-v112 .arch112-flow-note{width:100%;max-width:1120px;white-space:nowrap}}
+
+/* Consistent sizing for the architecture route labels and capture pills. */
+.architecture-v112 .arch112-path-label,.architecture-v112 .arch112-route-tag,.architecture-v112 .arch112-path-copy small{font-size:10px!important}
+.architecture-v112 .partner-dest-kicker,.architecture-v112 .workday-dest-kicker,.architecture-v112 .arch112-destination>small{font-size:10px!important}
