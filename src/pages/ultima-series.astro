@@ -1,5 +1,6 @@
 ---
 import '../styles/pages/ultima-series.css';
+import '../styles/pages/ultima-zoho.css';
 ---
 <!DOCTYPE html>
 
@@ -24,8 +25,39 @@ import '../styles/pages/ultima-series.css';
 <a href="https://zktecowfm.com/events/">Events</a><a href="support">Support</a>
 <a class="zk-talk" href="contact">Talk to an Expert</a>
 </nav></div></header>
+<div class="zoho-modal" id="zoho-form" data-zoho-modal aria-hidden="true">
+  <div class="zoho-modal__backdrop" data-zoho-form-close></div>
+  <div class="zoho-modal__panel">
+    <button class="zoho-modal__close" type="button" aria-label="Close form" data-zoho-form-close>&times;</button>
+    <section class="zoho-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="zoho-form-title">
+      <div class="zoho-modal__scroll">
+        <h2 id="zoho-form-title">Talk to an Expert</h2>
+        <p>Tell us a little about your organization and our team will be in touch.</p>
+        <div id="crmWebToEntityForm" class="zcwf_lblRight crmWebToEntityForm">
+          <form id="webform4421205000000933108" action="https://crm.zoho.com/crm/WebToLeadForm" name="WebToLeads4421205000000933108" method="POST" accept-charset="UTF-8">
+            <input type="text" class="zoho-honeypot" name="xnQsjsdp" value="872c03678ecc4b4111f9efb8966fe6493cfe1c936260305fabd0fc9f63bb7b30" tabindex="-1" autocomplete="off"/>
+            <input type="hidden" name="zc_gad" id="zc_gad" value=""/>
+            <input type="text" class="zoho-honeypot" name="xmIwtLD" value="b9ccac7a7188bc20e9b7429bee83b067f0d7147775c97d6170c432c4f02eebfede4959ae7b605fba17994219441f08cb" tabindex="-1" autocomplete="off"/>
+            <input type="text" class="zoho-honeypot" name="actionType" value="TGVhZHM=" tabindex="-1" autocomplete="off"/>
+            <input type="text" class="zoho-honeypot" name="returnURL" value="https://www.zktecowfm.com" tabindex="-1" autocomplete="off"/>
+            <label>Company <b>*</b><input id="Company" name="Company" maxlength="200" required/></label>
+            <div class="zoho-form__grid"><label>First name <b>*</b><input id="First_Name" name="First Name" maxlength="40" required/></label><label>Last name <b>*</b><input id="Last_Name" name="Last Name" maxlength="80" required/></label></div>
+            <label>Email <b>*</b><input id="Email" name="Email" type="email" maxlength="100" required/></label>
+            <label>Customer type <b>*</b><select id="LEADCF1" name="LEADCF1" required><option value="-None-">Select one</option><option value="Workday End User">Workday End User</option><option value="Workforce Management Software Provider">Workforce Management Software Provider</option><option value="Time Attendance Dealer">Time Attendance Dealer</option><option value="Workday - Account Manager">Workday - Account Manager</option><option value="Workday - Implementer">Workday - Implementer</option><option value="Other" selected>Other</option></select></label>
+            <label>How can we help?<textarea id="Description" name="Description" rows="4"></textarea></label>
+            <label>Enter the CAPTCHA <b>*</b><input id="captchaField4421205000000933108" name="enterdigest" maxlength="10" required/></label>
+            <div class="zoho-captcha"><img id="imgid4421205000000933108" src="https://crm.zoho.com/crm/CaptchaServlet?formId=b9ccac7a7188bc20e9b7429bee83b067f0d7147775c97d6170c432c4f02eebfede4959ae7b605fba17994219441f08cb&amp;grpid=872c03678ecc4b4111f9efb8966fe6493cfe1c936260305fabd0fc9f63bb7b30" alt="CAPTCHA"/><button type="button" data-zoho-captcha-reload>Reload</button></div>
+            <input type="text" class="zoho-honeypot" name="aG9uZXlwb3Q" value="" tabindex="-1" autocomplete="off"/>
+            <div class="zoho-form__actions"><button type="submit" class="formsubmit">Submit</button><button type="reset" class="zoho-reset">Reset</button></div>
+          </form>
+        </div>
+        <iframe name="captchaFrame" class="zoho-honeypot" title="CAPTCHA"></iframe>
+      </div>
+    </section>
+  </div>
+</div>
 <main>
-<section class="hero tw-overflow-hidden tw-bg-[linear-gradient(135deg,#fff_0%,#fff_56%,#f1f5fa_100%)]"><div class="wrap hero-grid tw-grid tw-min-h-[560px] tw-grid-cols-2 tw-items-center tw-gap-[60px] tw-pt-[48px] tw-pb-[52px] max-[1000px]:tw-grid-cols-1 max-[640px]:tw-pt-[42px] max-[640px]:tw-pb-[42px]"><div><div class="eyebrow">Ultima Series</div><h1>Time Clocks Built to Fit Your Workforce</h1><h2>Flexible. Modular. Powerful.</h2><p>Choose the screen, authentication, connectivity, power and environmental protection that fit each workforce.</p><div class="hero-actions"><a class="btn primary" href="#compare">Compare All Models <span>→</span></a><a class="btn secondary" href="#resources">View Resources <span>→</span></a></div></div><div class="family"><img alt="ZKTeco WFM Ultima 5, Ultima 7, Ultima 7P and Ultima 10 time clocks" src="assets/Hero-Ultima-Series.png?v=ultima-hero-v2"/></div></div></section><div class="quicknav"><div class="wrap"><a href="#ultima10">Ultima 10</a><a href="#ultima7p">Ultima 7P</a><a href="#ultima7">Ultima 7</a><a href="#ultima5">Ultima 5</a><a href="#compare">Model Comparison</a><a href="#configuration">Configuration Options</a></div></div>
+<section class="hero tw-overflow-hidden tw-bg-[linear-gradient(135deg,#fff_0%,#fff_56%,#f1f5fa_100%)]"><div class="wrap hero-grid tw-grid tw-min-h-[560px] tw-grid-cols-2 tw-items-center tw-gap-[60px] tw-pt-[48px] tw-pb-[52px] max-[1000px]:tw-grid-cols-1 max-[640px]:tw-pt-[42px] max-[640px]:tw-pb-[42px]"><div><div class="eyebrow">Ultima Series</div><h1>Time Clocks Built to Fit Your Workforce</h1><h2>Flexible. Modular. Powerful.</h2><p>Choose the screen, authentication, connectivity, power and environmental protection that fit each workforce.</p><div class="hero-actions"><a class="btn primary" href="#compare">Compare All Models <span>→</span></a><a class="btn secondary" href="#resources">View Resources <span>→</span></a></div></div><div class="family"><img alt="ZKTeco WFM Ultima 5, Ultima 7, Ultima 7P and Ultima 10 time clocks" src="assets/Hero-Ultima-Series.png?v=ultima-hero-v3"/></div></div></section><div class="quicknav"><div class="wrap"><a href="#ultima10">Ultima 10</a><a href="#ultima7p">Ultima 7P</a><a href="#ultima7">Ultima 7</a><a href="#ultima5">Ultima 5</a><a href="#compare">Model Comparison</a><a href="#configuration">Configuration Options</a></div></div>
 <section id="models"><div class="wrap"><div class="section-head"><div class="eyebrow">Designed Around Your Requirements</div><h2>One Platform<br/>The Right Clock for Each Workforce</h2><p>One Ultima platform spans different screens, credentials, biometrics, connectivity and environments—without changing the workforce data strategy.</p></div><div class="models tw-grid tw-grid-cols-4 tw-gap-[18px] max-[1000px]:tw-grid-cols-2 max-[640px]:tw-grid-cols-1"><article class="model-card tw-flex tw-min-h-[510px] tw-flex-col tw-rounded-[18px] tw-border tw-border-[var(--line)] tw-bg-white tw-p-[22px] tw-shadow-[0_12px_34px_rgba(20,25,70,.07)]"><div class="model-image"><img alt="Ultima 10 time clock" src="assets/Utima-10.png"/></div><div class="model-kicker">More Screen. More Interaction.</div><h3>Ultima 10</h3><p>A larger 10-inch interface for schedules, job or labor selections, attestations, messages and richer employee interaction at the clock.</p><div class="facts"><div class="fact">10-inch touchscreen</div><div class="fact">Broad biometric &amp; credential options</div><div class="fact">Wi-Fi + Ethernet + optional 4G LTE</div><div class="fact">Designed for richer workflows</div><div class="fact">Same Ultima platform</div></div><div class="card-actions"><a class="text-link green" href="#ultima10">Full Details →</a></div></article><article class="model-card tw-flex tw-min-h-[510px] tw-flex-col tw-rounded-[18px] tw-border tw-border-[var(--line)] tw-bg-white tw-p-[22px] tw-shadow-[0_12px_34px_rgba(20,25,70,.07)]"><div class="model-image"><img alt="Ultima 7P rugged portable time clock" src="assets/Utima-7P.png"/></div><div class="model-kicker">Rugged. Portable. Ready.</div><h3>Ultima 7P</h3><p>The 7-inch Ultima experience with rugged protection and portable deployment for environments where a traditional indoor clock is not enough.</p><div class="facts"><div class="fact">7-inch touchscreen</div><div class="fact">IP66 water &amp; dust resistance</div><div class="fact">4G LTE + Wi-Fi + Ethernet</div><div class="fact">High-capacity battery</div><div class="fact">Portable or fixed deployment</div></div><div class="card-actions"><a class="text-link green" href="#ultima7p">Full Details →</a></div></article><article class="model-card tw-flex tw-min-h-[510px] tw-flex-col tw-rounded-[18px] tw-border tw-border-[var(--line)] tw-bg-white tw-p-[22px] tw-shadow-[0_12px_34px_rgba(20,25,70,.07)] featured tw-relative tw-border-2 tw-border-[var(--green)]"><span class="badge">Most Flexible</span><div class="model-image"><img alt="Ultima 7 time clock" src="assets/Utima-7.png"/></div><div class="model-kicker">Versatile. Flexible. Proven.</div><h3>Ultima 7</h3><p>More screen space and configuration flexibility for schedules, job or labor selection, attestations and broader employee workflows.</p><div class="facts"><div class="fact">7-inch touchscreen</div><div class="fact">Broad biometric &amp; credential options</div><div class="fact">Wi-Fi + Ethernet</div><div class="fact">Flexible power options</div><div class="fact">Strong all-around deployment fit</div></div><div class="card-actions"><a class="text-link green" href="#ultima7">Full Details →</a></div></article><article class="model-card tw-flex tw-min-h-[510px] tw-flex-col tw-rounded-[18px] tw-border tw-border-[var(--line)] tw-bg-white tw-p-[22px] tw-shadow-[0_12px_34px_rgba(20,25,70,.07)]"><div class="model-image"><img alt="Ultima 5 time clock" src="assets/Utima-5.png"/></div><div class="model-kicker">Compact. Full Capability.</div><h3>Ultima 5</h3><p>Full Ultima capability in a smaller footprint—ideal for straightforward time and labor data collection when a larger screen is not a priority.</p><div class="facts"><div class="fact">5-inch touchscreen</div><div class="fact">Flexible biometric &amp; credential options</div><div class="fact">Wi-Fi + Ethernet</div><div class="fact">Optional PoE+</div><div class="fact">Same Ultima platform</div></div><div class="card-actions"><a class="text-link green" href="#ultima5">Full Details →</a></div></article></div></div></section>
 <section class="configuration-section tw-border-y tw-border-[var(--line)] tw-bg-[linear-gradient(180deg,#fff_0%,#f6f8fb_100%)] tw-py-[82px] max-[640px]:tw-py-[58px]" id="configuration">
 <div class="wrap">
@@ -37,11 +69,11 @@ import '../styles/pages/ultima-series.css';
 <div class="configuration-grid tw-grid tw-grid-cols-4 tw-items-stretch tw-gap-[18px] max-[1000px]:tw-grid-cols-2 max-[640px]:tw-grid-cols-1">
 <article class="configuration-card tw-min-w-0 tw-rounded-[18px] tw-border tw-border-[var(--line)] tw-bg-white tw-px-[22px] tw-pt-[25px] tw-pb-[22px] tw-shadow-[0_12px_34px_rgba(20,25,70,.06)] max-[640px]:tw-px-[18px] max-[640px]:tw-py-[21px]">
 <div aria-hidden="true" class="configuration-icon">
-<svg role="img" viewBox="0 0 48 48"><path d="M15 18c0-6 4-10 9-10s9 4 9 10v5c0 7-4 13-9 17M10 20c0-9 6-16 14-16s14 7 14 16v5M19 18c0-3 2-5 5-5s5 2 5 5v7c0 5-2 9-5 12M14 27c1 7 5 13 10 17M34 29c-1 5-3 10-7 14"></path></svg>
+<img src="assets/Bio metic icon for ultima series page.svg?v=brand-green-v2" alt=""/>
 </div>
 <h3>Biometrics</h3>
 <p>Choose the identity method that fits your workforce and environment.</p>
-<div class="option-pills"><span>Fingerprint</span><span>Face</span><span>Palm</span></div>
+<div class="option-pills"><img src="assets/fingerprint-k.svg" alt="Fingerprint"/><img src="assets/FaceID-k.svg" alt="Face"/><img src="assets/palm-k.svg" alt="Palm"/></div>
 </article>
 <article class="configuration-card tw-min-w-0 tw-rounded-[18px] tw-border tw-border-[var(--line)] tw-bg-white tw-px-[22px] tw-pt-[25px] tw-pb-[22px] tw-shadow-[0_12px_34px_rgba(20,25,70,.06)] max-[640px]:tw-px-[18px] max-[640px]:tw-py-[21px]">
 <div aria-hidden="true" class="configuration-icon">
@@ -49,7 +81,7 @@ import '../styles/pages/ultima-series.css';
 </div>
 <h3>Credentials</h3>
 <p>Support the credential technologies your employees already use.</p>
-<div class="option-pills"><span>RFID / Proximity</span><span>Smart Cards</span><span>NFC</span><span>QR / Barcode</span><span>Mobile Wallet</span></div>
+<div class="option-pills"><img src="assets/rfid-k.svg" alt="RFID / Proximity"/><img src="assets/multicard-k.svg" alt="Smart Cards"/><img src="assets/nfc-k.svg" alt="NFC"/><img src="assets/QR-k.svg" alt="QR"/><img src="assets/barcode-k.svg" alt="Barcode"/><img src="assets/wallet-k.svg" alt="Mobile Wallet"/></div>
 </article>
 <article class="configuration-card tw-min-w-0 tw-rounded-[18px] tw-border tw-border-[var(--line)] tw-bg-white tw-px-[22px] tw-pt-[25px] tw-pb-[22px] tw-shadow-[0_12px_34px_rgba(20,25,70,.06)] max-[640px]:tw-px-[18px] max-[640px]:tw-py-[21px]">
 <div aria-hidden="true" class="configuration-icon">
@@ -57,7 +89,7 @@ import '../styles/pages/ultima-series.css';
 </div>
 <h3>Connectivity</h3>
 <p>Connect each deployment using the network option appropriate to the site.</p>
-<div class="option-pills"><span>Ethernet</span><span>Wi-Fi</span><span>4G / Cellular</span></div>
+<div class="option-pills"><img src="assets/ethernet-k.svg" alt="Ethernet"/><img src="assets/wifi-k.svg" alt="Wi-Fi"/><img src="assets/4g-k.svg" alt="4G / Cellular"/></div>
 </article>
 <article class="configuration-card tw-min-w-0 tw-rounded-[18px] tw-border tw-border-[var(--line)] tw-bg-white tw-px-[22px] tw-pt-[25px] tw-pb-[22px] tw-shadow-[0_12px_34px_rgba(20,25,70,.06)] max-[640px]:tw-px-[18px] max-[640px]:tw-py-[21px]">
 <div aria-hidden="true" class="configuration-icon">
@@ -65,11 +97,11 @@ import '../styles/pages/ultima-series.css';
 </div>
 <h3>Power Options</h3>
 <p>Choose the power approach that best fits installation and continuity needs.</p>
-<div class="option-pills"><span>AC Adapter</span><span>PoE / PoE+</span><span>Battery</span></div>
+<div class="option-pills"><img src="assets/AC-power-k.svg" alt="AC Adapter"/><img src="assets/PoE+-k.svg" alt="PoE / PoE+"/><img src="assets/backup-k.svg" alt="Battery"/></div>
 </article>
 </div>
 <div class="configuration-footer tw-mt-[22px] tw-flex tw-items-center tw-justify-between tw-gap-[28px] tw-rounded-[16px] tw-border-t-4 tw-border-[var(--green)] tw-bg-[var(--navy)] tw-px-[26px] tw-py-[22px] tw-text-white max-[1000px]:tw-flex-col max-[1000px]:tw-items-start max-[1000px]:tw-gap-[8px] max-[640px]:tw-p-[20px]">
-<strong>One Ultima platform. Flexible configurations for different workforce requirements.</strong>
+<strong>One Ultima platform, Flexible configurations for different workforce requirements</strong>
 <span>Choose the capabilities each location needs without creating a different technology strategy for every deployment.</span>
 </div>
 </div>
@@ -86,9 +118,9 @@ import '../styles/pages/ultima-series.css';
 <tr><th>Facial recognition</th><td class="yes">Available</td><td class="yes">Available</td><td class="yes">Available</td><td class="yes">Available</td></tr>
 <tr><th>Palm recognition</th><td class="yes">Available</td><td class="yes">Available</td><td class="yes">Available</td><td class="yes">Available</td></tr>
 <tr><th>Multi-card / NFC</th><td class="yes">Available</td><td class="yes">Available</td><td class="yes">Available</td><td class="yes">Available</td></tr>
-<tr><th>QR code</th><td class="yes">Available</td><td class="yes">Available</td><td>By configuration</td><td class="yes">Available</td></tr>
+<tr><th>QR code</th><td class="yes">Available</td><td class="yes">Available</td><td>Not Available</td><td class="yes">Available</td></tr>
 <tr><th>Barcode / magnetic stripe</th><td>Special configuration / MOQ</td><td>Special configuration / MOQ</td><td>Not primary configuration</td><td class="yes">Available options</td></tr>
-<tr><th>Ethernet</th><td>10/100</td><td>10/100/1000</td><td>10/100</td><td>Gigabit</td></tr>
+<tr><th>Ethernet</th><td>10/100</td><td>10/100/1000</td><td>10/100/1000</td><td>Gigabit</td></tr>
 <tr><th>Dual-band Wi-Fi</th><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
 <tr><th>4G LTE</th><td>—</td><td>—</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
 <tr><th>PoE+</th><td>Optional</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
@@ -122,4 +154,31 @@ import '../styles/pages/ultima-series.css';
       window.setInterval(() => show(current + 1), 2000);
     }
   });
+</script><script is:inline>
+  const comparisonTable = document.querySelector('#compare table');
+  if (comparisonTable) {
+    const productColumnOrder = [4, 2, 3, 1]; // Ultima 10, 7, 7P, 5
+    comparisonTable.querySelectorAll('tr').forEach((row) => {
+      const cells = [...row.children];
+      row.replaceChildren(cells[0], ...productColumnOrder.map((index) => cells[index]));
+    });
+  }
+</script><script is:inline>
+  document.querySelectorAll('.cta-section .hero-actions .btn').forEach((button) => {
+    const label = button.textContent.replace(/\s*→\s*$/, '').trim();
+    const arrow = document.createElement('span');
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = '→';
+    button.replaceChildren(document.createTextNode(label), arrow);
+  });
+</script><script is:inline>document.querySelector('#models .section-head p').textContent='One Ultima platform spans different screens, credentials, biometrics, connectivity and environments, without changing the workforce data strategy.';</script><script is:inline>
+  const zohoModal = document.querySelector('[data-zoho-modal]');
+  let zohoLastTrigger;
+  const closeZohoLeadForm = () => { zohoModal?.setAttribute('aria-hidden', 'true'); document.body.classList.remove('zoho-modal-open'); zohoLastTrigger?.focus(); };
+  const openZohoLeadForm = (trigger) => { zohoLastTrigger = trigger; zohoModal?.setAttribute('aria-hidden', 'false'); document.body.classList.add('zoho-modal-open'); zohoModal?.querySelector('#Company')?.focus(); };
+  document.querySelectorAll('.cta-section .btn.primary[href="contact"], .zk-talk[href="contact"]').forEach((trigger) => trigger.addEventListener('click', (event) => { event.preventDefault(); openZohoLeadForm(trigger); }));
+  zohoModal?.querySelectorAll('[data-zoho-form-close]').forEach((button) => button.addEventListener('click', closeZohoLeadForm));
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && zohoModal?.getAttribute('aria-hidden') === 'false') closeZohoLeadForm(); });
+  zohoModal?.querySelector('[data-zoho-captcha-reload]')?.addEventListener('click', () => { const captcha = document.getElementById('imgid4421205000000933108'); captcha.src = captcha.src.replace(/&d\d+$/, '') + '&d' + Date.now(); });
+  zohoModal?.querySelector('form')?.addEventListener('submit', (event) => { const form = event.currentTarget; if (!form.checkValidity()) { event.preventDefault(); form.reportValidity(); return; } form.querySelector('.formsubmit')?.setAttribute('disabled', 'disabled'); });
 </script><script is:inline src="assets/privacy.js"></script></body></html>

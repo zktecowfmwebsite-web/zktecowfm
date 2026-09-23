@@ -1,0 +1,9 @@
+/* Compact final CTA buttons. */
+.brand-close .btn{gap:10px;padding:14px 20px}
+
+/* Match the Workday Solution CTA typography. */
+.brand-close{font-family:Inter,"Segoe UI",Arial,sans-serif}
+.brand-close .kicker{margin-bottom:15px;color:#a2da49;font-size:11px;font-weight:900;line-height:1.2;letter-spacing:.18em}
+.brand-close h2{margin:0 auto 20px;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:clamp(48px,5vw,50px);font-weight:700;line-height:1.01;letter-spacing:-.05em}
+.brand-close p{max-width:650px;margin:0 auto 28px;color:#fff;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:18px;font-weight:400;line-height:1.65}
+.brand-close .btn{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;font-weight:800;line-height:1.2}

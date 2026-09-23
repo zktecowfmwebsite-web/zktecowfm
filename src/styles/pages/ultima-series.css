@@ -7,7 +7,7 @@ section{padding:88px 0}.mist{background:var(--mist)}.section-head{text-align:cen
 .detail{display:grid;grid-template-columns:390px 1fr;gap:54px;align-items:center;margin-bottom:62px}.detail:last-child{margin-bottom:0}.detail.reverse{grid-template-columns:1fr 390px}.detail.reverse .device-panel{order:2}.device-panel{min-height:340px;border-radius:22px;background:linear-gradient(150deg,#fff,#eef3f8);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:30px;position:relative;overflow:hidden}.device-panel:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;border:1px solid rgba(117,189,59,.25);box-shadow:0 0 0 40px rgba(117,189,59,.04)}.device-panel img{max-width:100%;max-height:250px;position:relative;z-index:2}.detail-copy h3{font-size:38px;color:var(--navy);margin:4px 0 8px;letter-spacing:-.03em}.detail-copy h4{font-size:18px;margin:0 0 15px}.detail-copy p{font-size:15px;color:var(--muted);line-height:1.65}.spec-chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.chip{font-size:11px;font-weight:800;background:#eef6e8;color:#305915;border:1px solid #d5e8c4;padding:7px 9px;border-radius:6px}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin:20px 0}.detail-grid div{border-top:1px solid var(--line);padding-top:9px;font-size:12px;color:var(--muted)}.detail-grid strong{display:block;color:var(--ink);font-size:12px;margin-bottom:3px}
 .compare-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 12px 34px rgba(20,25,70,.06)}table{border-collapse:collapse;width:100%;min-width:900px}th,td{padding:14px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:12px;vertical-align:top}thead th{background:var(--navy);color:#fff;font-size:13px}tbody th{color:var(--navy);width:185px;background:#fafbfd}.yes{color:#397d16;font-weight:850}.note{font-size:11px;color:var(--muted);line-height:1.5;margin-top:15px}
 .use-grid{}.use{}.use b{font-size:17px;color:var(--navy)}.use p{font-size:13px;line-height:1.55;color:var(--muted);margin-bottom:0}
-.resource-grid{}.resource{}.resource .icon{width:38px;height:38px;border-radius:9px;background:#eef6e8;display:grid;place-items:center;font-weight:900;color:#4a8a20;margin-bottom:16px}.resource h3{font-size:17px;color:var(--navy);margin:0 0 8px}.resource p{font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 15px}.resource a{margin-top:auto;color:var(--navy);font-size:12px;font-weight:850}.cta-section{}.cta-section .eyebrow{color:#bfe78f}.cta-section h2{font-size:44px;margin:8px 0 12px}.cta-section p{color:#d2d6e6;font-size:16px}.cta-section .btn.secondary{border-color:#fff;color:#fff;background:transparent}
+.resource-grid{}.resource{}.resource .icon{width:38px;height:38px;border-radius:9px;background:#f7fbf3;display:grid;place-items:center;font-weight:900;color:#4a8a20;margin-bottom:16px}.resource h3{font-size:17px;color:var(--navy);margin:0 0 8px}.resource p{font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 15px}.resource a{margin-top:auto;color:var(--navy);font-size:12px;font-weight:850}.cta-section{}.cta-section .eyebrow{color:#bfe78f}.cta-section h2{font-size:44px;margin:8px 0 12px}.cta-section p{color:#d2d6e6;font-size:16px}.cta-section .btn.secondary{border-color:#fff;color:#fff;background:transparent}
 footer{background:#0d1233;color:#fff;padding:54px 0 24px}.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:38px}.foot-logo img{width:190px}.foot-logo p,.foot-col a,.foot-col p{font-size:12px;line-height:1.7;color:#b8bfd7}.foot-col h4{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#fff;margin:0 0 14px}.foot-col a{display:block;margin:4px 0}.copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:34px;padding-top:20px;color:#8f98b6;font-size:11px}
 @media(max-width:1000px){.menu{display:none}.hero-grid{grid-template-columns:1fr}.family{min-height:330px}.models{grid-template-columns:1fr 1fr}.use-grid{grid-template-columns:1fr 1fr}.detail,.detail.reverse{grid-template-columns:1fr}.detail.reverse .device-panel{order:0}.resource-grid{grid-template-columns:1fr 1fr}.quicknav .wrap{grid-template-columns:repeat(3,1fr)}.foot-grid{grid-template-columns:1fr 1fr}.band-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.wrap{width:min(100% - 28px,1220px)}header{height:84px}.nav{height:84px}.brand{width:180px}.brand img{width:175px}.brand small{font-size:9px}.hero-grid{padding:42px 0}.hero h1{font-size:44px}.models,.resource-grid,.use-grid,.foot-grid{grid-template-columns:1fr}.quicknav .wrap{grid-template-columns:1fr 1fr}.band-grid{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr}section{padding:66px 0}}
@@ -30,12 +30,40 @@ footer{background:#0d1233;color:#fff;padding:54px 0 24px}.foot-grid{display:grid
 .configuration-head{margin-bottom:34px}
 .configuration-grid{}
 .configuration-card{}
-.configuration-icon{width:50px;height:50px;border-radius:13px;background:#eef6e8;display:grid;place-items:center;margin-bottom:17px}
-.configuration-icon svg{width:31px;height:31px;fill:none;stroke:#1c2162;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.configuration-icon{width:50px;height:50px;border-radius:13px;background:#f9fcf6;display:grid;place-items:center;margin-bottom:17px}
+
+.model-card .text-link.green{font-size:15px}
+
+#ultima10 .spec-chips .chip:last-child{display:none}
+
+/* Model-card display order: Ultima 10, 7, 7P, then 5. */
+.models .model-card:nth-child(1){order:1}
+.models .model-card:nth-child(2){order:3}
+.models .model-card:nth-child(3){order:2}
+.models .model-card:nth-child(4){order:4}
+
+/* Workflow-choice cards follow the same product sequence. */
+.use-grid .use:nth-child(1){order:4}
+.use-grid .use:nth-child(2){order:2}
+.use-grid .use:nth-child(3){order:3}
+.use-grid .use:nth-child(4){order:1}
+.configuration-icon svg{width:31px;height:31px;fill:none;stroke:#75bd3b;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.configuration-icon img{display:block;width:31px;height:31px;object-fit:contain}
+.configuration-icon img[src$="biometrics-fingerprint-scan.svg"]{width:23px;height:23px}
+.configuration-icon img[src$="Bio metic icon for ultima series page.svg"]{width:32px;height:26px;object-fit:fill}
 .configuration-card h3{font-size:21px;line-height:1.2;color:var(--navy);margin:0 0 8px}
 .configuration-card p{font-size:13px;line-height:1.55;color:var(--muted);margin:0 0 17px;min-height:61px}
 .option-pills{display:flex;gap:7px;flex-wrap:wrap;align-content:flex-start}
 .option-pills span{display:inline-flex;align-items:center;min-height:30px;padding:6px 9px;border-radius:8px;background:#f6faef;border:1px solid #dceacb;color:#314110;font-size:11px;font-weight:800;line-height:1.15}
+.option-pills img{display:block;width:52px;height:52px;object-fit:contain;padding:9px;border:1px solid #dceacb;border-radius:8px;background:#f6faef}
+.option-pills img[src$="rfid-k.svg"],.option-pills img[src$="multicard-k.svg"]{padding:5px}
+.option-pills img[src$="nfc-k.svg"],.option-pills img[src$="QR-k.svg"]{padding:12px}
+
+/* Compact the configuration icon tiles so the credential options stay on one row. */
+.option-pills{gap:4px}
+.option-pills img{width:37px;height:37px;padding:5px}
+.option-pills img[src$="nfc-k.svg"],.option-pills img[src$="QR-k.svg"]{padding:5px}
+.configuration-card:nth-child(2) .option-pills{justify-content:space-between}
 .configuration-footer{}
 .configuration-footer strong{font-size:16px;line-height:1.4;max-width:430px}
 .configuration-footer span{font-size:12px;line-height:1.55;color:#d4d8e9;max-width:540px}
@@ -96,7 +124,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 
 /* The supplied hero artwork includes its own orbit and backdrop. */
 .hero .family:before{display:none}
-.hero .family img{width:82%;max-width:520px;transform:translateY(-18px)}
+.hero .family img{width:88%;max-width:560px;transform:translateY(-18px)}
 
 .configuration-section{background:#fff!important}
 .configuration-section .configuration-card{background:#fff!important}
@@ -110,7 +138,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 
 .configuration-footer{flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:14px!important;border-radius:16px!important;text-align:center}
 .configuration-footer strong,.configuration-footer span{max-width:780px;text-align:center}
-.configuration-footer strong{font-size:20px;line-height:1.3}
+.configuration-footer strong{font-size:26px;line-height:1.3;color:var(--green)}
 .configuration-footer span{font-size:16px}
 @media(min-width:1001px){.configuration-footer strong,.configuration-footer span{max-width:none;white-space:nowrap}}
 .device-panel:before{display:none}
@@ -147,10 +175,39 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 .model-details .section-head{order:0;margin-bottom:-24px}
 .model-details .detail{margin-bottom:0}
 .model-details #ultima10{order:1}
-.model-details #ultima7p{order:2}
-.model-details #ultima7{order:3}
+.model-details #ultima7{order:2}
+.model-details #ultima7p{order:3}
 .model-details #ultima5{order:4}
 .model-details .wrap>a.btn{order:5}
+
+/* Alternate image and copy placement through the desktop model sequence. */
+@media(min-width:1101px){
+  .model-details #ultima7{grid-template-columns:390px 1fr}
+  .model-details #ultima7 .device-panel{order:initial}
+  .model-details #ultima7p{grid-template-columns:1fr 390px}
+  .model-details #ultima7p .device-panel{order:2}
+}
+
+/* Show one static product image per model detail instead of a carousel. */
+.ultima-carousel .ultima-carousel-control,.ultima-carousel .ultima-carousel-viewport{display:none}
+.model-details .device-panel.ultima-carousel{min-height:0;padding:0;border:0;background:transparent;overflow:visible}
+.model-details .device-panel.ultima-carousel:before{display:none}
+.ultima-carousel:after{content:"";position:relative;z-index:2;display:block;width:100%;height:390px;background:center / 115% auto no-repeat}
+#ultima5 .ultima-carousel:after{background-image:url("/assets/Ultima 5 image.png")}
+#ultima7 .ultima-carousel:after{background-image:url("/assets/Ultima 7 image.png")}
+#ultima7p .ultima-carousel:after{background-image:url("/assets/Ultima 7p image.png")}
+#ultima10 .ultima-carousel:after{background-image:url("/assets/Ultima 10 image.png")}
+#ultima7p .ultima-carousel:after{background-size:140% auto}
+@media(max-width:700px){.ultima-carousel:after{height:260px;background-size:105% auto}}
+@media(max-width:700px){#ultima7p .ultima-carousel:after{background-size:125% auto}}
+
+/* Resource-card icons. */
+#resources .resource .icon{font-size:0!important;background-position:center;background-repeat:no-repeat;background-size:25px}
+#resources .resource:nth-child(1) .icon{background-image:url("/assets/resource-datasheet.svg")}
+#resources .resource:nth-child(1) .icon{background-size:29px 25px}
+#resources .resource:nth-child(2) .icon{background-image:url("/assets/resource-installation-guide.svg")}
+#resources .resource:nth-child(3) .icon{background-image:url("/assets/resource-user-manual.svg")}
+#resources .resource:nth-child(4) .icon{background-image:url("/assets/resource-product-images.svg")}
 
 /* Start alternating comparison-row shading at the fourth data row. */
 .compare-wrap tbody tr:nth-child(2n + 4)>*{background:#f6f8fb}
@@ -160,3 +217,48 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 #resources .resource{border:1px solid var(--line)!important;border-radius:14px;background:#fff}
 #resources .resource p{font-size:15px}
 .detail-grid div{font-size:15px}
+
+/* Match the Workday CTA action treatment. */
+.cta-section .hero-actions{gap:20px}
+.cta-section .hero-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:300px;padding:14px 20px;border:1px solid transparent;border-radius:14px;font-size:16px;transition:transform .45s cubic-bezier(.22,1,.36,1),filter .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1)}
+.cta-section .hero-actions .btn span{font-size:24px;line-height:1;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.cta-section .hero-actions .btn.primary{background:radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.42),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%);border-color:#a8e274;color:#102044;box-shadow:inset 0 1px 0 rgba(237,255,216,.4),0 14px 30px rgba(0,0,0,.18)}
+.cta-section .hero-actions .btn.secondary{background:radial-gradient(circle at 14% 8%,rgba(255,255,255,.98),transparent 48%),linear-gradient(135deg,#fff 0%,#f1f4f9 100%);border-color:rgba(255,255,255,.8);color:#102044;box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 14px 30px rgba(8,14,51,.22)}
+.cta-section .hero-actions .btn:hover{transform:translateY(-3px)}
+.cta-section .hero-actions .btn:hover span{transform:translateX(5px)}
+.cta-section .hero-actions .btn.primary:hover{filter:brightness(1.075);box-shadow:inset 0 1px 0 rgba(237,255,216,.5),0 16px 28px rgba(68,139,35,.25)}
+.cta-section .hero-actions .btn.secondary:hover{filter:brightness(1.025);box-shadow:inset 0 1px 0 rgba(255,255,255,.98),0 18px 34px rgba(8,14,51,.3)}
+@media(max-width:720px){.cta-section .hero-actions .btn{min-width:0;width:100%}}
+
+/* Workday CTA background treatment. */
+.cta-section{position:relative;overflow:hidden;border-top:0!important;background:linear-gradient(135deg,#10143b 0%,#171d55 54%,#202568 100%)!important}
+.cta-section:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 9% 8%,rgba(117,189,59,.22),transparent 24%),radial-gradient(circle at 92% 14%,rgba(117,189,59,.10),transparent 26%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:auto,auto,44px 44px,44px 44px}
+.cta-section>.wrap{position:relative;z-index:1}
+
+/* Match the Workday Solution hero CTA appearance and motion. */
+.hero .hero-actions .btn{transition:transform .45s cubic-bezier(.22,1,.36,1),filter .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1)}
+.hero .hero-actions .btn span{font-size:24px;line-height:1;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.hero .hero-actions .btn.primary{background:radial-gradient(ellipse 80% 145% at 8% 6%,rgba(84,95,190,.18),transparent 62%),radial-gradient(ellipse 68% 120% at 94% 95%,rgba(33,31,110,.2),transparent 72%),linear-gradient(115deg,#2d347e 0%,#2b2a79 54%,#24236b 100%);border:1px solid rgba(113,126,220,.78);color:#fff;box-shadow:inset 0 1px 0 rgba(225,230,255,.16),0 14px 30px rgba(20,23,83,.2)}
+.hero .hero-actions .btn.secondary{background:radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.34),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%);border:1px solid rgba(158,218,105,.8);color:#102044;box-shadow:inset 0 1px 0 rgba(237,255,216,.34),0 14px 30px rgba(68,139,35,.18)}
+.hero .hero-actions .btn:hover{transform:translateY(-4px);filter:brightness(1.06)}
+.hero .hero-actions .btn:hover span{transform:translateX(5px)}
+
+/* Workday CTA typography scale. */
+.cta-section{font-family:Inter,"Segoe UI",Arial,sans-serif}
+.cta-section .eyebrow{margin-bottom:15px;color:#a2da49;font-size:11px;font-weight:900;line-height:1.2;letter-spacing:.18em}
+.cta-section h2{margin:0 auto 20px;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:clamp(48px,5vw,50px);font-weight:700;line-height:1.01;letter-spacing:-.05em}
+.cta-section p{max-width:650px;margin:0 auto 28px;color:#fff;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:18px;font-weight:400;line-height:1.65}
+.cta-section .hero-actions .btn{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;font-weight:800;line-height:1.2}
+
+/* Keep model navigation consistent with the product-family order. */
+.quicknav a:nth-child(2){order:3}.quicknav a:nth-child(3){order:2}
+
+/* Use the approved Ultima 10 asset for the leading product view. */
+#ultima10 .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%2010%20image.png")}
+
+/* Use the approved Ultima 7 asset for the leading product view. */
+#ultima7 .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%207%20image.png")}
+
+/* Use the approved Ultima 7P and Ultima 5 assets for their leading product views. */
+#ultima7p .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%207p%20image.png")}
+#ultima5 .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%205%20image.png")}

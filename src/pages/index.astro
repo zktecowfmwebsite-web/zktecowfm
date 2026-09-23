@@ -66,8 +66,8 @@ import '../styles/pages/index.css';
 </div>
 <div class="ultima-model-grid" aria-label="Ultima product family">
   <a class="ultima-model-card ultima-model-10" href="ultima-series#ultima10"><img src="assets/Utima-10.png" alt="Ultima 10 time clock" /><span class="ultima-model-name">Ultima <b>10</b></span></a>
-  <a class="ultima-model-card ultima-model-7p" href="ultima-series#ultima7p"><img src="assets/Utima-7P.png" alt="Ultima 7P portable time clock" /><span class="ultima-model-name">Ultima <b>7P</b></span></a>
   <a class="ultima-model-card ultima-model-7" href="ultima-series#ultima7"><img src="assets/Utima-7.png" alt="Ultima 7 time clock" /><span class="ultima-model-name">Ultima <b>7</b></span></a>
+  <a class="ultima-model-card ultima-model-7p" href="ultima-series#ultima7p"><img src="assets/Utima-7P.png" alt="Ultima 7P portable time clock" /><span class="ultima-model-name">Ultima <b>7P</b></span></a>
   <a class="ultima-model-card ultima-model-5" href="ultima-series#ultima5"><img src="assets/Utima-5.png" alt="Ultima 5 time clock" /><span class="ultima-model-name">Ultima <b>5</b></span></a>
 </div>
 <div class="ultima-benefits tw-my-[18px] tw-mb-[26px] tw-grid tw-w-full tw-grid-cols-4 tw-gap-[12px] max-[980px]:tw-mx-auto max-[980px]:tw-max-w-[760px] max-[980px]:tw-grid-cols-2 max-[620px]:tw-gap-[9px]">
@@ -186,13 +186,13 @@ import '../styles/pages/index.css';
 <div class="segments-intro tw-mx-auto tw-mb-[44px] tw-max-w-[850px] tw-text-center">
 <div class="section-label">Solutions by Market</div>
 <h2>One Foundation<br/>Built for Workday and Software Partners</h2>
-<p>Choose the solution designed for your organization—or the time clock technology strategy that fits your software platform.</p>
+<p>Choose the solution designed for your organization, or the time clock technology strategy that fits your software platform.</p>
 </div>
 <div class="segments-grid tw-grid tw-grid-cols-2 tw-gap-[22px] max-[800px]:tw-grid-cols-1">
 <article class="segment-card workday-segment">
 <div class="segment-kicker">For Workday Customers</div>
 <h3>Time &amp; Labor Data Collection Built for Workday</h3>
-<p>Complete Workforce Data Collection — Flexible Punch Options. Implementation. CirrusDCS. Customization. Workday Integration. Lifetime Warranty. Ongoing Support.</p>
+<p>Complete Workforce Data Collection, Flexible Punch Options. Implementation. CirrusDCS. Customization. Workday Integration. Lifetime Warranty. Ongoing Support.</p>
 <div class="segment-value">Certified. Managed. Protected.</div>
 <img alt="Workday" class="segment-workday-bottom" src="assets/logo-web-workday-white.svg"/>
 <a class="segment-link" href="workday">Explore the Workday Solution <span>→</span>
@@ -249,10 +249,38 @@ import '../styles/pages/index.css';
 <h2>Make Every Punch Matter</h2>
 <p>Talk with our team about the right workforce data collection technology for your organization or software platform.</p>
 </div>
-<a class="final-cta-button" href="contact">Talk to an Expert <span>→</span>
-</a>
+<button class="final-cta-button" type="button" data-zoho-form-open aria-haspopup="dialog" onclick="openZohoLeadForm()">Talk to an Expert <span>→</span></button>
 </div>
 </section>
+<div class="zoho-modal" id="zoho-form" data-zoho-modal aria-hidden="true">
+  <div class="zoho-modal__backdrop" data-zoho-form-close></div>
+  <div class="zoho-modal__panel">
+    <button class="zoho-modal__close" type="button" aria-label="Close form" data-zoho-form-close onclick="closeZohoLeadForm()">&times;</button>
+    <section class="zoho-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="zoho-form-title">
+    <div class="zoho-modal__scroll">
+    <h2 id="zoho-form-title">Talk to an Expert</h2>
+    <p>Tell us a little about your organization and our team will be in touch.</p>
+    <div id="crmWebToEntityForm" class="zcwf_lblRight crmWebToEntityForm"><form id="webform4421205000000933108" action="https://crm.zoho.com/crm/WebToLeadForm" name="WebToLeads4421205000000933108" method="POST" accept-charset="UTF-8" onsubmit="document.charset='UTF-8';return checkMandatory4421205000000933108()">
+      <input type="text" class="zoho-honeypot" name="xnQsjsdp" value="872c03678ecc4b4111f9efb8966fe6493cfe1c936260305fabd0fc9f63bb7b30" tabindex="-1" autocomplete="off"/>
+      <input type="hidden" name="zc_gad" id="zc_gad" value=""/>
+      <input type="text" class="zoho-honeypot" name="xmIwtLD" value="b9ccac7a7188bc20e9b7429bee83b067f0d7147775c97d6170c432c4f02eebfede4959ae7b605fba17994219441f08cb" tabindex="-1" autocomplete="off"/>
+      <input type="text" class="zoho-honeypot" name="actionType" value="TGVhZHM=" tabindex="-1" autocomplete="off"/>
+      <input type="text" class="zoho-honeypot" name="returnURL" value="https://www.zktecowfm.com" tabindex="-1" autocomplete="off"/>
+      <label>Company <b>*</b><input id="Company" name="Company" maxlength="200" required/></label>
+      <div class="zoho-form__grid"><label>First name <b>*</b><input id="First_Name" name="First Name" maxlength="40" required/></label><label>Last name <b>*</b><input id="Last_Name" name="Last Name" maxlength="80" required/></label></div>
+      <label>Email <b>*</b><input id="Email" name="Email" type="email" maxlength="100" required/></label>
+      <label>Customer type <b>*</b><select id="LEADCF1" name="LEADCF1" required><option value="-None-">Select one</option><option value="Workday End User">Workday End User</option><option value="Workforce Management Software Provider">Workforce Management Software Provider</option><option value="Time Attendance Dealer">Time Attendance Dealer</option><option value="Workday - Account Manager">Workday - Account Manager</option><option value="Workday - Implementer">Workday - Implementer</option><option value="Other" selected>Other</option></select></label>
+      <label>How can we help?<textarea id="Description" name="Description" rows="4"></textarea></label>
+      <label>Enter the CAPTCHA <b>*</b><input id="captchaField4421205000000933108" name="enterdigest" maxlength="10" required/></label>
+      <div class="zoho-captcha"><img id="imgid4421205000000933108" src="https://crm.zoho.com/crm/CaptchaServlet?formId=b9ccac7a7188bc20e9b7429bee83b067f0d7147775c97d6170c432c4f02eebfede4959ae7b605fba17994219441f08cb&amp;grpid=872c03678ecc4b4111f9efb8966fe6493cfe1c936260305fabd0fc9f63bb7b30" alt="CAPTCHA"/><button type="button" data-zoho-captcha-reload>Reload</button></div>
+      <input type="text" class="zoho-honeypot" name="aG9uZXlwb3Q" value="" tabindex="-1" autocomplete="off"/>
+      <div class="zoho-form__actions"><button type="submit" class="formsubmit">Submit</button><button type="reset" class="zoho-reset">Reset</button></div>
+    </form></div>
+    <iframe name="captchaFrame" class="zoho-honeypot" title="CAPTCHA"></iframe>
+    </div>
+  </section>
+  </div>
+</div>
 </main>
 <footer class="zk-global-footer"><div class="zk-footer-shell"><div class="zk-footer-grid"><div class="zk-footer-brand"><strong>ZKTeco WFM</strong><p>The Workforce Data Collection Company.<br/>Every Punch Matters.</p></div><div class="zk-footer-col"><h4>Solutions</h4><a href="workday">Workday Customers</a><a href="software-partners">Software Partners</a><a href="use-cases">Industry Use Cases</a><a href="customer-stories">Customer Stories</a></div><div class="zk-footer-col"><h4>Products</h4><a href="ultima-series">Ultima Series</a><a href="timetrack">TimeTrack</a><a href="cirrusconnect">CirrusConnect</a><a href="workday#cirrusdcs">CirrusDCS</a></div><div class="zk-footer-col"><h4>Resources &amp; Trust</h4><a href="resources">Resource Hub</a><a href="thought-leadership">Thought Leadership</a><a href="security-trust">Security &amp; Trust</a><span aria-disabled="true" class="zk-link-disabled">Trust Center — Coming Soon</span><a href="support">Support</a></div><div class="zk-footer-col"><h4>Company</h4><a href="why-zkteco-wfm">Why ZKTeco WFM</a><a href="contact">Contact</a><a href="https://zktecowfm.com/careers/">Careers</a><a href="https://zktecowfm.com/events/">Events</a><a href="https://zktecowfm.com/biometric-privacy-policy/">Biometric Privacy</a></div></div><div class="zk-footer-bottom"><span>© 2026 ZKTeco WFM. All rights reserved.</span><div class="zk-footer-legal"><a href="privacy">Privacy &amp; GDPR</a><a href="cookie-policy">Cookies</a><button data-cookie-settings="">Cookie Preferences</button><a href="terms">Terms</a><a href="accessibility">Accessibility</a><a href="educational-disclaimer">Educational Disclaimer</a></div></div></div></footer>
 <script is:inline>
@@ -368,5 +396,22 @@ import '../styles/pages/index.css';
     }
   }
 </script>
+<script is:inline>
+  const zohoModal = document.querySelector('[data-zoho-modal]');
+  const zohoOpen = document.querySelector('[data-zoho-form-open]');
+  const zohoClose = zohoModal?.querySelectorAll('[data-zoho-form-close]');
+  window.closeZohoLeadForm = () => { zohoModal?.setAttribute('aria-hidden', 'true'); document.body.classList.remove('zoho-modal-open'); zohoOpen?.focus(); };
+  window.openZohoLeadForm = () => { zohoModal?.setAttribute('aria-hidden', 'false'); document.body.classList.add('zoho-modal-open'); zohoModal?.querySelector('#Company')?.focus(); };
+  zohoClose?.forEach((button) => button.addEventListener('click', window.closeZohoLeadForm));
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && zohoModal?.getAttribute('aria-hidden') === 'false') window.closeZohoLeadForm(); });
+  document.querySelector('[data-zoho-captcha-reload]')?.addEventListener('click', () => { const captcha = document.getElementById('imgid4421205000000933108'); captcha.src = captcha.src.replace(/&d\d+$/, '') + '&d' + Date.now(); });
+  window.checkMandatory4421205000000933108 = () => {
+    const form = document.forms.WebToLeads4421205000000933108;
+    if (!form?.checkValidity()) { form?.reportValidity(); return false; }
+    form.querySelector('.formsubmit')?.setAttribute('disabled', 'disabled');
+    return true;
+  };
+</script>
+<script src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=5ab2c0380d107e1a406a0cae3f11476c9a7adebdc176073ed7289c8c934e2320d44997fc6359f4c1714d1dfb2237988egid08564871dac2bc222ce5e226a350b5d6311c1a464b78c31dda231d40edb2b9d6gidf27626c84bbf8b0e027f44330daac1d459371cf1249667a117ab6a65f8d867cbgid2b8f08e3fa333fc6648f1484b8e3d032b22b988f6b489d9ba504f9be0b4e1281&amp;tw=db04ac58c2e24c12f9eaff8a91209eb68bb6501c9f067c4cda4f7a49dc3d9e69&amp;version=v2"></script>
 <script is:inline src="assets/privacy.js"></script></body>
 </html>

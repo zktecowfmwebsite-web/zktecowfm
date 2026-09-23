@@ -150,7 +150,8 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 
 /* Workday partner identity lockup. */
 .trust-lockup .workday-select-partner{display:block!important;width:160px;height:102px;object-fit:contain;flex:0 0 160px}
-.trust-lockup .trust-divider{width:2px;height:34px;background:#d8dde8;flex:0 0 2px}
+.trust-lockup .trust-divider{display:none}
+.trust-lockup{gap:12px}
 .trust-lockup div{font-size:15px!important}
 .trust-lockup strong{font-size:15px!important}
 @media(max-width:520px){.trust-lockup .workday-select-partner{width:116px;height:76px;flex-basis:116px}.trust-lockup .trust-divider{height:30px}}
@@ -404,17 +405,17 @@ section#workday-offering{display:none!important}
 .implementation-step{
   min-height:194px;
   transition:box-shadow .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);
-  animation:implementation-stage-highlight 8s cubic-bezier(.22,1,.36,1) infinite;
+  animation:implementation-stage-highlight 6s cubic-bezier(.22,1,.36,1) infinite;
   animation-delay:var(--stage-delay,0s);
   will-change:transform,box-shadow;
 }
 .implementation-step p{display:none}
 .implementation-step:nth-child(1){--stage-delay:0s}
-.implementation-step:nth-child(2){--stage-delay:1.333s}
-.implementation-step:nth-child(3){--stage-delay:2.666s}
-.implementation-step:nth-child(4){--stage-delay:4s}
-.implementation-step:nth-child(5){--stage-delay:5.333s}
-.implementation-step:nth-child(6){--stage-delay:6.666s}
+.implementation-step:nth-child(2){--stage-delay:1s}
+.implementation-step:nth-child(3){--stage-delay:2s}
+.implementation-step:nth-child(4){--stage-delay:3s}
+.implementation-step:nth-child(5){--stage-delay:4s}
+.implementation-step:nth-child(6){--stage-delay:5s}
 @keyframes implementation-stage-highlight{
   0%,16.5%{
     z-index:2;
@@ -502,7 +503,7 @@ section#workday-offering{display:none!important}
     box-shadow:0 14px 28px rgba(17,21,62,.14);
   }
 }
-.implementation-step h3,.implementation-step .step-icon img{animation:implementation-stage-foreground 8s cubic-bezier(.22,1,.36,1) infinite;animation-delay:var(--stage-delay,0s)}
+.implementation-step h3,.implementation-step .step-icon img{animation:implementation-stage-foreground 6s cubic-bezier(.22,1,.36,1) infinite;animation-delay:var(--stage-delay,0s)}
 @keyframes implementation-stage-foreground{
   0%,16.5%{color:var(--navy);filter:brightness(0) saturate(100%) invert(12%) sepia(42%) saturate(2426%) hue-rotate(220deg) brightness(80%) contrast(105%)}
   16.6%,100%{color:#fff;filter:none}
@@ -687,7 +688,7 @@ section#workday-offering{display:none!important}
 .migration-motion-section .program-card:nth-child(2) h3{color:var(--navy)}
 .migration-motion-section .program-card:nth-child(2) p{color:var(--muted)}
 .migration-motion-section .program-card{display:flex;flex-direction:column}
-.migration-motion-section .program-link{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;padding:13px 16px;border-radius:10px;background:var(--green);color:var(--navy2);font-size:12px;font-weight:900;letter-spacing:.03em;line-height:1.3}
+.migration-motion-section .program-link{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;padding:13px 16px;border-radius:10px;background:#fff;color:var(--navy2);font-size:12px;font-weight:900;letter-spacing:.03em;line-height:1.3}
 .migration-motion-section .program-link span{font-size:20px;line-height:1;transition:transform .25s ease}
 .migration-motion-section .program-link:hover span{transform:translateX(4px)}
 @media(max-width:1000px){.migration-motion-section .program-grid{max-width:none;gap:18px}}
@@ -759,8 +760,48 @@ section#workday-offering{display:none!important}
   background:radial-gradient(ellipse 80% 145% at 8% 6%,rgba(84,95,190,.18),transparent 62%),radial-gradient(ellipse 68% 120% at 94% 95%,rgba(33,31,110,.2),transparent 72%),linear-gradient(115deg,#2d347e 0%,#2b2a79 54%,#24236b 100%);
 }
 
+/* Updated Workday Select Partner badge asset. */
+.workday-select-partner{content:url("/assets/workday-select-partner-badge_01.svg")}
+
+
 .cirrusdcs-top > p{font-size:18px!important}
 
 .commercial-card{padding:26px 18px 26px 34px}
 .commercial-card h3{max-width:190px}
 .commercial .section-head{margin-bottom:24px}
+
+/* Use the approved Ultima product-family artwork. */
+.punch-layout .workday-static-models{display:block!important;align-self:center;aspect-ratio:5 / 4;width:100%;max-width:560px;padding:0!important;border-radius:22px;background:#f6f8fb url('/assets/Workday-products.png') center / contain no-repeat}
+.punch-layout .workday-static-models>*{display:none}
+
+/* Shared Zoho lead form for Workday program CTAs. */
+body.zoho-modal-open{overflow:hidden}
+.zoho-modal{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:24px;visibility:hidden;opacity:0;transition:opacity .2s ease,visibility .2s ease}
+.zoho-modal[aria-hidden="false"]{visibility:visible;opacity:1}
+.zoho-modal__backdrop{position:absolute;inset:0;background:rgba(11,16,56,.72)}
+.zoho-modal__panel{position:relative;z-index:1;width:min(100%,640px);max-height:90vh}
+.zoho-modal__dialog{width:100%;max-height:90vh;overflow:hidden;border-radius:18px;background:#fff;box-shadow:0 28px 70px rgba(0,0,0,.35)}
+.zoho-modal__scroll{width:calc(100% - 16px);max-height:90vh;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;border-radius:inherit;padding:0 32px 56px}
+.zoho-modal__scroll::-webkit-scrollbar{width:10px}.zoho-modal__scroll::-webkit-scrollbar-track{margin:14px 0;background:transparent}.zoho-modal__scroll::-webkit-scrollbar-thumb{border:3px solid #fff;border-radius:99px;background:#97a0ae}
+.zoho-modal__dialog h2{margin:0 0 8px;color:var(--navy);font-size:30px}.zoho-modal__scroll>p{margin:0 0 24px;color:var(--muted);font-size:15px;line-height:1.5}
+.zoho-modal__close{position:absolute;z-index:2;top:-17px;right:-17px;width:42px;height:38px;border:1px solid #fff;border-radius:8px;display:grid;place-items:center;background:#d83b35;color:#fff;font-size:32px;font-weight:800;line-height:1;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.22)}
+.zoho-modal form{display:grid;gap:14px}.zoho-modal label{display:block;color:var(--navy);font-size:13px;font-weight:800}.zoho-modal label b{color:#d83b35}.zoho-modal label input:not(.zoho-honeypot),.zoho-modal label select,.zoho-modal label textarea{display:block;margin-top:6px}
+.zoho-modal input:not(.zoho-honeypot),.zoho-modal select,.zoho-modal textarea{width:100%;border:1px solid #cfd7e3;border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;color:#17244d;background:#fff}.zoho-modal textarea{resize:vertical}
+.zoho-form__grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.zoho-honeypot{display:none!important}.zoho-captcha{display:flex;align-items:center;gap:12px}.zoho-captcha img{max-height:42px}.zoho-captcha button{border:0;background:transparent;color:#416f20;font-weight:800;cursor:pointer}
+.zoho-form__actions{display:flex;align-items:center;flex-wrap:wrap;gap:24px;margin-top:6px}.zoho-form__actions .formsubmit{border:0;border-radius:9px;background:var(--green);color:#102044;padding:12px 19px;font-weight:900;cursor:pointer}.zoho-form__actions .formsubmit:disabled{opacity:.6;cursor:wait}.zoho-form__actions .zoho-reset{border:2px solid var(--navy);border-radius:9px;background:#fff;color:var(--navy);padding:10px 17px;font-weight:900;cursor:pointer}.zoho-form__actions .zoho-reset:hover{background:var(--navy);color:#fff}
+@media(max-width:560px){.zoho-modal{padding:12px}.zoho-modal__panel{width:calc(100% - 20px);max-height:88vh}.zoho-modal__dialog{max-height:88vh}.zoho-modal__scroll{width:calc(100% - 12px);max-height:88vh;padding:0 20px 44px}.zoho-modal__close{top:-12px;right:-8px}.zoho-form__grid{grid-template-columns:1fr}}
+
+/* Keep the manufacturing strip static; the CTA remains "Explore Facilities →". */
+.manufacturing-control-section .mfg-gallery-strip:hover{box-shadow:0 6px 18px rgba(20,34,78,.05);transform:none}
+
+/* The facilities strip stays static; only its CTA is interactive. */
+.manufacturing-control-section .mfg-gallery-strip,.manufacturing-control-section .mfg-gallery-strip span{pointer-events:none}
+.manufacturing-control-section .mfg-gallery-strip b{display:inline-block;pointer-events:auto;cursor:pointer;transition:transform .2s ease,color .2s ease}
+.manufacturing-control-section .mfg-gallery-strip b:hover{transform:translateX(5px);color:#447f22}
+
+/* Prevent the page-wide section spacing rule from unbalancing the form modal. */
+.zoho-modal section.zoho-modal__dialog{padding:0!important}
+.zoho-modal .zoho-modal__scroll{padding:32px!important}
+@media(max-width:560px){.zoho-modal .zoho-modal__scroll{padding:26px 20px!important}}
+
+@media(min-width:701px){.migration-motion-section .section-head h2{white-space:nowrap}}

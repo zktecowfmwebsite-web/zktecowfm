@@ -189,7 +189,7 @@ section{padding:82px 0}.section-head{max-width:800px;margin:0 auto 44px;text-ali
 .sp85-path-scale{margin-top:20px!important}
 .sp85-path-cards{margin-top:18px!important;gap:14px!important}
 .sp85-path-card{padding:17px 18px 15px!important}
-.sp85-path-num{width:28px!important;height:28px!important;margin-bottom:9px!important}
+.sp85-path-num{display:none!important}
 .sp85-path-card h3{margin:3px 0 6px!important;font-size:21px!important}
 .sp85-path-short{margin-bottom:9px!important;min-height:40px!important;line-height:1.4!important}
 .sp85-path-stack{gap:4px!important;margin:8px 0!important}
@@ -214,6 +214,9 @@ section{padding:82px 0}.section-head{max-width:800px;margin:0 auto 44px;text-ali
 .sp128-value-card li:before{font-size:17px}
 @media(max-width:980px){.sp128-value-card{grid-template-columns:68px 1fr;min-height:0;padding:26px}.sp128-value-icon{width:60px;height:60px;font-size:26px}}
 
+/* Compact the three partner-value cards while keeping each benefit on one line. */
+@media(min-width:981px){.sp128-value-band .sp85-shell{max-width:1920px}.sp128-value-grid{gap:16px}.sp128-value-card{grid-template-columns:44px minmax(0,1fr);gap:10px;min-height:0;padding:24px 26px}.sp128-value-card h2{font-size:27px;margin:1px 0 10px}.sp128-value-card ul{gap:8px}.sp128-value-card li{font-size:15px;line-height:1.25;white-space:nowrap}}
+
 
 
 /* Reference base styles for the three integration paths. */
@@ -229,14 +232,12 @@ section{padding:82px 0}.section-head{max-width:800px;margin:0 auto 44px;text-ali
 
 @media(min-width:981px){.sp85-hero-grid>div:first-child{padding-top:40px}}
 
-.sp85-hero-actions .sp85-btn{min-height:56px;padding:13px 20px;border-radius:14px;font-size:16px;font-weight:700;line-height:1.2;box-shadow:0 14px 30px rgba(20,23,83,.16)}
-.sp85-hero-actions .sp85-btn span{margin-left:8px;font-size:24px;line-height:1}
-.sp85-hero-actions .sp85-btn-primary{border:1px solid #a8e274;background:linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%);color:#102044}
-.sp85-hero-actions .sp85-btn-outline{border:1px solid #cfd7e3;background:#fff;color:#102044;box-shadow:none}
-.sp85-hero-actions .sp85-btn-primary{border-color:#5258b8;background:linear-gradient(110deg,#454bb2 0%,#30359a 45%,#24277c 100%);color:#fff}
-.sp85-hero-actions .sp85-btn-outline{border-color:#a8dc71;background:linear-gradient(110deg,#87cf4b 0%,#7bc53d 52%,#70b638 100%);color:#102044;box-shadow:0 14px 30px rgba(100,170,49,.16)}
-.sp85-hero-actions .sp85-btn-primary:hover{background:linear-gradient(110deg,#343b9c 0%,#252a82 48%,#1d2069 100%);border-color:#343b9c;color:#fff;transform:translateY(-2px);box-shadow:0 18px 34px rgba(28,31,111,.28)}
-.sp85-hero-actions .sp85-btn-outline:hover{background:linear-gradient(110deg,#94db56 0%,#82ca42 52%,#76ba39 100%);border-color:#94db56;color:#102044;transform:translateY(-2px);box-shadow:0 18px 34px rgba(102,174,49,.27)}
+.sp85-hero-actions .sp85-btn{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:58px;padding:10px 20px;border-radius:20px;font-size:14px;font-weight:800;line-height:1.2;text-decoration:none;white-space:nowrap;transition:transform .45s cubic-bezier(.22,1,.36,1),filter .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1)}
+.sp85-hero-actions .sp85-btn span{margin-left:0;font-size:24px;line-height:1;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.sp85-hero-actions .sp85-btn-primary{border:.5px solid rgba(113,126,220,.78);background:radial-gradient(ellipse 80% 145% at 8% 6%,rgba(84,95,190,.18),transparent 62%),radial-gradient(ellipse 68% 120% at 94% 95%,rgba(33,31,110,.2),transparent 72%),linear-gradient(115deg,#2d347e 0%,#2b2a79 54%,#24236b 100%);color:#fff;box-shadow:inset 0 1px 0 rgba(225,230,255,.16),0 14px 30px rgba(20,23,83,.2)}
+.sp85-hero-actions .sp85-btn-outline{border:.5px solid rgba(158,218,105,.8);background:radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.34),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%);color:#102044;box-shadow:inset 0 1px 0 rgba(237,255,216,.34),0 14px 30px rgba(68,139,35,.18)}
+.sp85-hero-actions .sp85-btn:hover{transform:translateY(-4px);filter:brightness(1.06);text-decoration:none}
+.sp85-hero-actions .sp85-btn:hover span{transform:translateX(5px)}
 
 /* The same Ultima product-family panel used in the Workday Solution page. */
 .sp85-workday-products{display:flex;flex-direction:column;align-items:center;gap:30px;width:100%;padding:32px 28px 26px;border-radius:18px;background:var(--navy);pointer-events:none}

@@ -1,0 +1,201 @@
+/* Final CTA aligned with the Workday Solution treatment. */
+.tt-eyebrow{display:inline-flex;align-items:center;gap:10px}
+.tt-eyebrow::before{content:"";width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:#9bdd67;box-shadow:0 0 0 0 rgba(155,221,103,.65);animation:shared-eyebrow-pulse 2s cubic-bezier(.22,1,.36,1) infinite}
+@keyframes shared-eyebrow-pulse{0%{box-shadow:0 0 0 0 rgba(155,221,103,.58)}100%{box-shadow:0 0 0 8px rgba(155,221,103,0)}}
+@media(prefers-reduced-motion:reduce){.tt-eyebrow::before{animation:none}}
+
+.tt-final {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0 !important;
+  background: linear-gradient(135deg, #10143b 0%, #171d55 54%, #202568 100%) !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.tt-final::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 9% 8%, rgba(117, 189, 59, .22), transparent 24%),
+    radial-gradient(circle at 92% 14%, rgba(117, 189, 59, .1), transparent 26%),
+    linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px, 44px 44px;
+}
+
+.tt-final > .wrap {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.tt-final .tt-eyebrow {
+  margin-bottom: 15px;
+  color: #a2da49;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: .18em;
+}
+
+.tt-final h2 {
+  max-width: 1100px;
+  margin: 0 auto 20px;
+  color: #fff;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: clamp(48px, 5vw, 50px);
+  font-weight: 700;
+  line-height: 1.01;
+  letter-spacing: -.05em;
+}
+
+.tt-final p {
+  max-width: 780px;
+  margin: 0 auto 28px;
+  color: #fff;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.tt-final .tt-btns {
+  justify-content: center;
+  gap: 20px;
+}
+
+.tt-final .tt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  min-height: 0;
+  padding: 14px 20px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.2;
+  transition: transform .45s cubic-bezier(.22, 1, .36, 1), filter .45s cubic-bezier(.22, 1, .36, 1), box-shadow .45s cubic-bezier(.22, 1, .36, 1);
+}
+
+.tt-final .tt-btn.light {
+  background: radial-gradient(ellipse 78% 130% at 8% 8%, rgba(196, 239, 137, .42), transparent 62%), linear-gradient(115deg, #84c94b 0%, #78bd43 54%, #70b73e 100%);
+  border-color: #a8e274;
+  color: #102044;
+  box-shadow: inset 0 1px 0 rgba(237, 255, 216, .4), 0 14px 30px rgba(0, 0, 0, .18);
+}
+
+.tt-final .tt-btn.outline-light {
+  background: radial-gradient(circle at 14% 8%, rgba(255, 255, 255, .98), transparent 48%), linear-gradient(135deg, #fff 0%, #f1f4f9 100%);
+  border-color: rgba(255, 255, 255, .8);
+  color: #102044;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95), 0 14px 30px rgba(8, 14, 51, .22);
+}
+
+.tt-final .tt-btn:hover { transform: translateY(-3px); }
+
+.tt-final .tt-btn.light:hover {
+  filter: brightness(1.075);
+  box-shadow: inset 0 1px 0 rgba(237, 255, 216, .55), 0 20px 38px rgba(99, 190, 53, .25);
+}
+
+.tt-final .tt-btn.outline-light:hover {
+  filter: brightness(1.025);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 20px 38px rgba(8, 14, 51, .3);
+}
+
+.tt-final .brand-value { display: none; }
+
+@media (max-width: 720px) {
+  .tt-final { padding: 52px 0 !important; }
+  .tt-final .tt-btn { width: 100%; min-width: 0; }
+}
+
+/* Reference eyebrow typography. */
+.tt-eyebrow,.tt-final .tt-eyebrow{color:#75bd3b;font-size:11px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;margin-bottom:15px}
+
+/* Match the Workday display-heading treatment. */
+.tt-hero h1{color:#201f62;font-size:clamp(48px,5vw,50px);font-weight:700;line-height:1.01;letter-spacing:-.05em}
+.tt-hero h1 span:nth-child(2){margin:12px 0 18px;color:#201f62;font-size:25px;font-weight:700;line-height:1.25;letter-spacing:normal}
+
+@media (min-width:921px){
+  .tt-hero-grid{grid-template-columns:1.25fr .75fr}
+  .tt-hero h1 span:first-child{white-space:nowrap}
+}
+
+.tt-hero{padding-top:0!important}
+
+/* Use the supplied Ultima 7 device artwork in the TimeTrack hero. */
+.tt-hero .hero-ultima{content:url("/assets/Ultima%207%20image.png")}
+
+/* Use the supplied TimeTrack experience illustration in place of the constructed map. */
+.experience-powered-art{max-width:1000px;margin:0 auto;overflow:hidden;border-radius:20px}
+.experience-powered-art img{display:block;width:100%;height:auto;border-radius:20px}
+.experience-section .experience-map,.experience-section .experience-line{display:none}
+
+.experience-section .tt-center p{font-size:18px;max-width:none}
+@media (min-width:721px){.experience-section .tt-center p{white-space:nowrap}}
+.tt-section.mist .tt-center p{font-size:18px}
+
+/* Position the timestamp content immediately after the hero as its own white section. */
+.ttv147{display:flex;flex-direction:column}
+.tt-hero{order:1}
+#timestamp{order:2;background:#fff}
+.experience-section{order:3}
+.flexibility-section{order:4}
+.tt-section.mist:not(#timestamp){order:5}
+.tt-final{order:6}
+#timestamp .question{background:#f5f7fa}
+#timestamp .question h3{font-size:20px;font-weight:600}
+#timestamp .question small{font-size:13px}
+
+/* Refined timestamp and architecture heading punctuation. */
+#timestamp .tt-center h2{font-size:0}
+#timestamp .tt-center h2:after{content:"More Than a Timestamp";font-size:clamp(36px,4vw,48px);line-height:1.05}
+.tt-section.mist:not(#timestamp) .tt-center h2{font-size:0}
+.tt-section.mist:not(#timestamp) .tt-center h2:after{content:"One Workforce Application,\A Multiple Workforce Environments";white-space:pre;font-size:clamp(36px,4vw,48px);line-height:1.05}
+
+/* Match the Workday hero display-heading treatment in the flexibility cards. */
+.flex-card h3{color:#201f62;font-size:24px;font-weight:700;line-height:1.01;letter-spacing:-.05em;margin:12px 0 20px}
+.flex-card.dark h3{color:#fff}
+.flex-card.dark h3{font-size:0}
+.flex-card.dark h3:after{content:"Designed to fit the workforce";font-size:24px;font-weight:700;line-height:1.01;letter-spacing:-.05em}
+@media (min-width:921px){.flex-card h3{white-space:nowrap}}
+.flex-card .clean-item{font-size:18px;font-weight:400}
+@media (min-width:721px){.flex-caption{max-width:none;white-space:nowrap}}
+.flex-plus{color:#201f62;font-weight:600}
+
+/* Match the TimeTrack hero subheading treatment in architecture cards. */
+.arch-tag{font-size:21px;font-weight:760;color:#313664}
+.arch-card.partner .arch-tag{font-size:0}
+.arch-card.partner .arch-tag:after{content:"Extend employee interactions to your platform";font-size:21px;font-weight:760;color:#313664}
+.arch-card:not(.partner) .arch-tag{font-size:0}
+.arch-card:not(.partner) .arch-tag:after{content:"Time & Labor Data Collection, Built for Workday";font-size:21px;font-weight:760;color:#313664}
+
+@media (min-width:721px){
+  .tt-final h2{font-size:0;white-space:nowrap}
+  .tt-final h2:after{content:"Better Workforce Data Starts Here";font-size:clamp(48px,5vw,50px);font-weight:700;line-height:1.01;letter-spacing:-.05em}
+}
+
+@media (min-width:921px){
+  .arch-flow{gap:5px;flex-wrap:nowrap}
+  .flow-chip{padding:8px 6px;font-size:12px;white-space:nowrap}
+}
+
+/* Home-page solution-card CTA treatment. */
+.arch-card a{display:flex;align-items:center;justify-content:space-between;gap:18px;width:100%;margin-top:25px;min-height:58px;padding:10px 20px;border-radius:14px;font-size:0;font-weight:800;line-height:1.2;text-decoration:none;white-space:nowrap;transition:transform .45s cubic-bezier(.22,1,.36,1),filter .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1)}
+.arch-card a:before{font-size:14px}.arch-card a:after{content:"→";display:inline-flex;font-size:24px;line-height:1;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.arch-card:not(.partner) a{background:radial-gradient(ellipse 80% 145% at 8% 6%,rgba(84,95,190,.18),transparent 62%),radial-gradient(ellipse 68% 120% at 94% 95%,rgba(33,31,110,.2),transparent 72%),linear-gradient(115deg,#2d347e 0%,#2b2a79 54%,#24236b 100%);border:.5px solid rgba(113,126,220,.78);color:#fff;box-shadow:inset 0 1px 0 rgba(225,230,255,.16),0 14px 30px rgba(20,23,83,.2)}
+.arch-card:not(.partner) a:before{content:"Explore Workday Solution"}
+.arch-card.partner a{background:radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.34),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%);border:.5px solid rgba(158,218,105,.8);color:#102044;box-shadow:inset 0 1px 0 rgba(237,255,216,.34),0 14px 30px rgba(68,139,35,.18)}
+.arch-card.partner a:before{content:"Explore Partner Technology"}
+.arch-card a:hover{transform:translateY(-4px);filter:brightness(1.06);text-decoration:none}
+.arch-card a:hover:after{transform:translateX(5px)}
+@media(prefers-reduced-motion:reduce){.arch-card a,.arch-card a:after{transition:none}.arch-card a:hover,.arch-card a:hover:after{transform:none}}
+
+/* Larger, lighter architecture-flow labels without desktop wrapping. */
+@media(min-width:921px){.arch-flow{gap:5px;flex-wrap:nowrap}.flow-chip{padding:9px 9px;font-size:13px;font-weight:400;white-space:nowrap}.flow-arrow{font-weight:700}}
