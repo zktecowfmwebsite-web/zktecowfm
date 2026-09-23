@@ -278,6 +278,6 @@ section{padding:82px 0}.section-head{max-width:800px;margin:0 auto 44px;text-ali
 .sp85-path-card button{font-size:13px}
 .sp85-path-scale-line:after{border-radius:99px 0 0 99px}
 .sp85-life-step span{font-size:15px}
-.sp85-lifecycle{background:linear-gradient(rgba(23,36,77,.8),rgba(23,36,77,.8)),url("../../../assets/bg image.jpg") center/cover no-repeat}
+.sp85-lifecycle{background:linear-gradient(rgba(23,36,77,.8),rgba(23,36,77,.8)),url("/assets/bg%20image.jpg") center/cover no-repeat}
 .sp85-atlanta-description{font-size:14px}
 .sp85-hero{border-bottom:0}
