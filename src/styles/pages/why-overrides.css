@@ -7,3 +7,38 @@
 .brand-close h2{margin:0 auto 20px;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:clamp(48px,5vw,50px);font-weight:700;line-height:1.01;letter-spacing:-.05em}
 .brand-close p{max-width:650px;margin:0 auto 28px;color:#fff;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:18px;font-weight:400;line-height:1.65}
 .brand-close .btn{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;font-weight:800;line-height:1.2}
+
+/* Remove the secondary hero action from the Why ZKTeco WFM page. */
+.why-hero .hero-actions .btn.secondary[href="#control"]{display:none}
+.why-hero .hero-actions .btn.primary{flex:0 0 auto}
+
+/* Give the lifecycle cards a little more room on larger screens. */
+.control-step p{font-size:14px;max-width:180px}
+@media(min-width:901px){.control-model .wrap{width:min(1320px,calc(100% - 44px))}.control-steps{gap:16px}}
+
+/* End the connector at the first and last lifecycle icons. */
+@media(min-width:901px){.control-band:before{left:calc(100% / 12);right:calc(100% / 12)}}
+
+/* Lifecycle icons sourced from the provided SVG asset set. */
+.control-step .step-icon svg{display:none}
+.control-step .step-icon:after{content:"";width:26px;height:26px;background:#201f62;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat}
+.control-step:nth-child(1) .step-icon:after{-webkit-mask-image:url("/assets/design-k.svg");mask-image:url("/assets/design-k.svg")}
+.control-step:nth-child(2) .step-icon:after{-webkit-mask-image:url("/assets/Engineering-k.svg");mask-image:url("/assets/Engineering-k.svg")}
+.control-step:nth-child(3) .step-icon:after{-webkit-mask-image:url("/assets/Supply-Control-k-1.svg");mask-image:url("/assets/Supply-Control-k-1.svg")}
+.control-step:nth-child(4) .step-icon:after{-webkit-mask-image:url("/assets/Connect-k.svg");mask-image:url("/assets/Connect-k.svg")}
+.control-step:nth-child(5) .step-icon:after{-webkit-mask-image:url("/assets/Integration-k.svg");mask-image:url("/assets/Integration-k.svg")}
+.control-step:nth-child(6) .step-icon:after{-webkit-mask-image:url("/assets/Integration-k-1.svg");mask-image:url("/assets/Integration-k-1.svg")}
+
+.control-payoff .payoff{font-size:16px}
+
+@media(min-width:981px){
+  .why-hero .control-visual>img{max-width:580px}
+  .manufacturing .mfg-layout{grid-template-columns:.86fr 1.14fr}
+  .manufacturing .mfg-wheel{min-height:400px}
+}
+
+.mfg-card .k{font-size:14px}
+
+/* Use the supplied manufacturing visual beneath a legible brand-navy overlay. */
+.manufacturing{background:linear-gradient(rgba(16,27,82,.85),rgba(16,27,82,.85)),url("/assets/GLOBAL%20MANUFACTURING%20ADVANTAGE.jpg") center/cover no-repeat}
+.manufacturing .mfg-card{background:rgba(32,41,99,.72)}

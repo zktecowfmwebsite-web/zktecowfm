@@ -1,6 +1,7 @@
 
 /* ZKTeco WFM v56 global navigation, footer and launch-layer styles */
 :root{--zk-navy:#11153e;--zk-navy2:#201f62;--zk-green:#78bd43;--zk-orange:#f36a21;--zk-ink:#171b48;--zk-muted:#667085;--zk-border:#e5e7ef;--zk-bg:#f6f8fb}
+html,body{max-width:100%;overflow-x:hidden}
 .zk-global-header{position:relative!important;top:auto!important;z-index:9998!important;background:#fff!important;border-bottom:1px solid #e7e9f2!important;box-shadow:0 3px 18px rgba(17,21,62,.04)!important;color:var(--zk-ink)!important;font-family:Inter,"Segoe UI",Arial,sans-serif!important}
 .zk-nav-shell{max-width:1240px;margin:auto;padding:0 24px;min-height:76px;display:flex;align-items:center;gap:26px}
 .zk-brand{display:flex;flex-direction:column;text-decoration:none!important;color:var(--zk-navy)!important;font-weight:900;font-size:21px;line-height:1.05;white-space:nowrap}.zk-brand small{font-size:9px;letter-spacing:1.8px;color:var(--zk-green);margin-top:5px}
@@ -50,3 +51,14 @@ body :is(.zk-eyebrow,.eyebrow,.section-label,.section-kicker,.scenario-kicker,.d
 @media(min-width:721px){
   .zk-section-head>h2{font-size:36px;}
 }
+
+/* Reuse the approved header lockup in every global footer. */
+.zk-footer-logo{display:block;width:180px;max-width:100%;height:auto;margin:0 0 12px;object-fit:contain;object-position:left center}
+@media(max-width:760px){.zk-footer-logo{width:156px;margin-bottom:10px}}
+
+/* One centered, consistent action for every bottom CTA. */
+.cta-section,.tt-final,.brand-close,.cc-final,.sp85-final,.close,.final-cta{padding-top:64px!important;padding-bottom:64px!important}
+.cta-section .hero-actions,.tt-final .tt-btns,.brand-close .hero-actions,.cc-final .cc-actions,.sp85-final-inner,.close{justify-content:center!important;text-align:center!important}
+.zk-standard-bottom-cta{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:14px!important;min-width:0!important;padding:18px 28px!important;border:1px solid #a8e274!important;border-radius:14px!important;background:linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%)!important;color:#102044!important;font-size:16px!important;font-weight:800!important;line-height:1.2!important;box-shadow:inset 0 1px 0 rgba(237,255,216,.4),0 14px 30px rgba(0,0,0,.18)!important;text-decoration:none!important}
+.zk-standard-bottom-cta:after{content:none}.zk-standard-bottom-cta>span{display:inline-flex;font-size:24px;font-weight:800;line-height:1}
+.zk-global-bottom-cta{padding:64px 24px!important;background:linear-gradient(135deg,#10143b 0%,#171d55 54%,#202568 100%);text-align:center}.zk-global-bottom-cta__inner{display:flex;justify-content:center;align-items:center;min-height:56px}

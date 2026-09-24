@@ -168,7 +168,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 .ultima-carousel-control:after{display:none}
 .ultima-carousel-control svg{width:18px;height:18px;fill:none;stroke:#201f62;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
 .ultima-carousel-control:hover svg{stroke:#fff}
-@media(min-width:701px){.ultima-carousel-viewport{height:280px}.ultima-carousel-viewport img{max-width:112%;max-height:280px}}
+@media(min-width:701px){.ultima-carousel-viewport{height:280px}.ultima-carousel-viewport img{max-width:100%;max-height:280px}}
 
 /* Present the model details from the largest screen to the most compact model. */
 .model-details .wrap{display:flex;flex-direction:column;row-gap:64px}
@@ -250,8 +250,26 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 .cta-section p{max-width:650px;margin:0 auto 28px;color:#fff;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:18px;font-weight:400;line-height:1.65}
 .cta-section .hero-actions .btn{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;font-weight:800;line-height:1.2}
 
-/* Keep model navigation consistent with the product-family order. */
-.quicknav a:nth-child(2){order:3}.quicknav a:nth-child(3){order:2}
+/* Keep every product-navigation label on one horizontal row. */
+.quicknav .wrap{display:flex;flex-wrap:nowrap;width:100%;max-width:none;padding:0;overflow-x:auto}
+.quicknav a{flex:1 0 auto;white-space:nowrap}
+
+/* Preserve the model-card kicker size while keeping its phrase together. */
+.model-kicker{white-space:nowrap}
+
+@media(max-width:640px){.model-kicker{white-space:normal}}
+@media(max-width:1000px){.model-card{min-width:0}.model-kicker{max-width:100%;white-space:normal;overflow-wrap:break-word}}
+
+/* Make the model specifications easier to read without allowing line wraps. */
+.fact{font-size:13px;white-space:nowrap}
+
+/* Keep the final model-selection phrase on its own centered line. */
+.mist .section-head:has(+ .use-grid) p{max-width:760px;margin-left:auto;margin-right:auto}
+
+/* Scale the static Ultima 10 image down so its complete device outline is visible. */
+#ultima5 .ultima-carousel:after,
+#ultima7 .ultima-carousel:after,
+#ultima10 .ultima-carousel:after{background-size:88% auto}
 
 /* Use the approved Ultima 10 asset for the leading product view. */
 #ultima10 .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%2010%20image.png")}
@@ -262,3 +280,4 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 /* Use the approved Ultima 7P and Ultima 5 assets for their leading product views. */
 #ultima7p .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%207p%20image.png")}
 #ultima5 .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%205%20image.png")}
+.cta-section .hero-actions{justify-content:center!important}.cta-section .hero-actions .btn.secondary{display:none!important}

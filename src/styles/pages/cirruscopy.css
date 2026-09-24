@@ -28,3 +28,42 @@
 
 /* Reference eyebrow typography. */
 .zk-eyebrow,.cc-final .zk-eyebrow{color:#75bd3b;font-size:11px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;margin-bottom:15px}
+
+/* Match the Software Partners final CTA treatment exactly. */
+.cc-final{position:relative;overflow:hidden;padding:64px 0!important;background:linear-gradient(135deg,#10143b 0%,#171d55 54%,#202568 100%)!important}
+.cc-final:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 9% 8%,rgba(117,189,59,.22),transparent 24%),radial-gradient(circle at 92% 14%,rgba(117,189,59,.10),transparent 26%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:auto,auto,44px 44px,44px 44px}
+.cc-final:after{display:none}
+.cc-final>.zk-wrap{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px}
+.cc-final .zk-eyebrow{justify-content:center;color:#a2da49;margin:0 0 14px;font-size:11px;font-weight:900;line-height:1.2;letter-spacing:.18em}
+.cc-final h2{max-width:1100px;margin:0 0 20px;color:#fff;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:clamp(48px,5vw,50px);font-weight:700;line-height:1.01;letter-spacing:-.05em}
+.cc-final>div>p{max-width:650px;margin:0 auto 28px;color:#fff;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:18px;font-weight:400;line-height:1.65}
+.cc-final>div>p:after{content:none}
+.cc-final .zk-btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-width:300px;padding:18px 26px;border:1px solid #a8e274;border-radius:14px;background:radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.42),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%);color:#102044!important;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;font-weight:800;line-height:1.2;box-shadow:inset 0 1px 0 rgba(237,255,216,.4),0 14px 30px rgba(0,0,0,.18);transition:transform .45s cubic-bezier(.22,1,.36,1),filter .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1)}
+.cc-final .zk-btn span{font-size:24px;line-height:1;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.cc-final .zk-btn:hover{transform:translateY(-3px);filter:brightness(1.075);box-shadow:inset 0 1px 0 rgba(237,255,216,.5),0 16px 28px rgba(68,139,35,.25)}
+.cc-final .zk-btn:hover span{transform:translateX(5px)}
+@media(max-width:720px){.cc-final .zk-btn{min-width:0;width:100%}}
+
+/* Headline punctuation removed for the CirrusConnect page. */
+.cc-hero h1,.cc-remote-copy h2,#platform .cc-section-head h2,.cc-section-head:has(+.cc-partner-arch) h2{font-size:0!important}
+.cc-hero h1:after,.cc-remote-copy h2:after,#platform .cc-section-head h2:after,.cc-section-head:has(+.cc-partner-arch) h2:after{display:block;color:currentColor;font-weight:inherit;letter-spacing:inherit}
+.cc-hero h1:after{content:"Connect Your Platform\A Control the Entire Experience";font-size:50px;line-height:1.04;white-space:pre-line}
+.cc-remote-copy h2:after{content:"Be There\A Without Being There";font-size:42px;line-height:1.06;white-space:pre-line}
+#platform .cc-section-head h2:after{content:"The Technology Layer Behind the Clock";font-size:38px;line-height:1.12}
+.cc-section-head:has(+.cc-partner-arch) h2:after{content:"Your Platform\A Our Technology Behind the Clock";font-size:38px;line-height:1.12;white-space:pre-line}
+@media(max-width:900px){.cc-hero h1:after{font-size:42px}}
+@media(max-width:600px){.cc-hero h1:after{font-size:37px}.cc-remote-copy h2:after,#platform .cc-section-head h2:after,.cc-section-head:has(+.cc-partner-arch) h2:after{font-size:32px}}
+
+/* Keep the scale heading to its intended two lines without periods. */
+.cc-scale h2{font-size:0!important}
+.cc-scale h2:after{content:"One Customer or Thousands\A One Clock or an Entire Fleet";display:block;color:currentColor;font-size:39px;font-weight:inherit;line-height:1.08;letter-spacing:inherit;white-space:pre}
+@media(max-width:600px){.cc-scale h2:after{font-size:32px}}
+
+/* Connected-workforce heading without terminal punctuation. */
+.cc-section.soft .cc-section-head h2{font-size:0!important}
+.cc-section.soft .cc-section-head h2:after{content:"Your Platform to the Clock\A And Back Again";display:block;color:currentColor;font-size:38px;font-weight:inherit;line-height:1.12;letter-spacing:inherit;white-space:pre-line}
+@media(max-width:600px){.cc-section.soft .cc-section-head h2:after{font-size:32px}}
+
+/* Keep the platform description on one desktop line. */
+#platform .cc-section-head{max-width:none}
+#platform .cc-section-head p{max-width:none;white-space:nowrap}

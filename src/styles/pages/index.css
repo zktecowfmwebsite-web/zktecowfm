@@ -283,10 +283,10 @@
 .final-cta .section-label{display:inline-flex;align-items:center;gap:10px;font-size:12px;color:#a9d774!important}
 .final-cta .section-label:before{content:"";width:6px;height:6px;border-radius:50%;background:#9bdd67;box-shadow:0 0 0 0 rgba(155,221,103,.65);animation:ultima-label-pulse 2s cubic-bezier(.22,1,.36,1) infinite}
 .final-cta-button{min-width:0!important;justify-content:space-between;padding:13px 20px!important;border:2px solid #b8e985!important;border-radius:12px!important;background:radial-gradient(ellipse 80% 150% at 8% 5%,rgba(193,237,134,.48),transparent 60%),linear-gradient(115deg,#8bce50 0%,#78bd43 52%,#69ac39 100%)!important;color:#101b52!important;font-size:16px!important;line-height:1.2!important;box-shadow:inset 0 1px 0 rgba(239,255,218,.38),0 8px 18px rgba(42,104,25,.18)!important;will-change:transform;transition:transform .6s cubic-bezier(.22,1,.36,1),box-shadow .6s cubic-bezier(.22,1,.36,1),filter .6s cubic-bezier(.22,1,.36,1)!important}
-.final-cta-button span{display:inline-flex;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.final-cta-button .cta-arrow{width:20px;height:20px;flex:0 0 20px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .6s cubic-bezier(.22,1,.36,1)}
 .final-cta-button:hover{transform:translateY(-3px);filter:brightness(1.08);box-shadow:inset 0 1px 0 rgba(239,255,218,.5),0 16px 28px rgba(42,104,25,.27)!important}
-.final-cta-button:hover span{transform:translate3d(6px,0,0)}
-@media(prefers-reduced-motion:reduce){.final-cta .section-label:before{animation:none}.final-cta-button,.final-cta-button span{transition:none!important}.final-cta-button:hover,.final-cta-button:hover span{transform:none}}
+.final-cta-button:hover .cta-arrow{transform:translate3d(6px,0,0)}
+@media(prefers-reduced-motion:reduce){.final-cta .section-label:before{animation:none}.final-cta-button,.final-cta-button .cta-arrow{transition:none!important}.final-cta-button:hover,.final-cta-button:hover .cta-arrow{transform:none}}
 
 /* Use the Ultima CTA treatment for green calls to action. */
 .workday-segment .segment-link,.final-cta-button{border:1px solid #a8e274!important;border-radius:14px!important;background:radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.42),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%)!important;color:#102044!important;font-size:16px!important;font-weight:700!important;box-shadow:inset 0 1px 0 rgba(237,255,216,.4),0 14px 30px rgba(0,0,0,.18)!important}
