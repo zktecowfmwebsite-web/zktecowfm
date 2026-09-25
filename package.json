@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "css:build": "tailwindcss -i ./src/styles/tailwind.css -o ./public/assets/tailwind.css --minify",
     "dev": "npm run css:build && astro dev",
