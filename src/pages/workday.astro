@@ -179,4 +179,4 @@ import '../styles/pages/workday.css';
     if (!form.checkValidity()) { event.preventDefault(); form.reportValidity(); return; }
     form.querySelector('.formsubmit')?.setAttribute('disabled', 'disabled');
   });
-</script><script is:inline>document.querySelector('.cta-section .btn.primary')?.replaceChildren('Request a Demo');document.querySelector('.migration-motion-section .section-head h2')?.replaceChildren('Make the Switch, Get More');</script><script is:inline src="assets/privacy.js"></script></body></html>
+</script><script is:inline>const workdayCta=document.querySelector('.cta-section .btn.primary');if(workdayCta){const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent=String.fromCharCode(0x2192);workdayCta.replaceChildren('Request a Demo ',arrow);workdayCta.classList.add('zk-standard-bottom-cta')}document.querySelector('.migration-motion-section .section-head h2')?.replaceChildren('Make the Switch, Get More');</script><script is:inline src="assets/privacy.js"></script></body></html>

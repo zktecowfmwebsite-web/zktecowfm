@@ -31,21 +31,42 @@
 /* Standardize local-page bottom CTAs and route them to the shared Home Zoho form. */
 (()=>{
   const labels={
-    index:'Find Your Solution', workday:'Request a Demo', 'software-partners':'Explore Partnership', 'use-cases':'Find Your Solution',
+    index:'Find Your Solution', workday:'Request a Demo', 'use-cases':'Find Your Solution',
     'customer-stories':"Let's Talk", 'ultima-series':'Find Your Ultima', timetrack:'Request a Demo',
-    cirrusconnect:'Request a Demo', 'why-zkteco-wfm':"Let's Talk", 'manufacturing-facilities':'Explore Solutions',
-    resources:'Ask an Expert', 'thought-leadership':"Let's Talk", 'security-trust':'Talk Security',
+    'why-zkteco-wfm':"Let's Talk", 'manufacturing-facilities':'Explore Solutions',
+    'thought-leadership':"Let's Talk",
     support:'Get Support', contact:"Let's Talk"
   };
-  const page=location.pathname.split('/').filter(Boolean).pop()||'index';
+  const page=(location.pathname.split('/').filter(Boolean).pop()||'index').replace(/\.html$/,'');
+  document.body.classList.add('zk-page-'+page);
+  const zohoCtas={
+    'software-partners':'.sp85-final .sp85-btn-primary',
+    'why-zkteco-wfm':'.brand-close .btn.primary',
+    'thought-leadership':'.close .btn',
+    events:'.ev-final .ev-btn.primary',
+    support:'main > section:last-of-type .btn.primary'
+  };
+  const zohoCta=zohoCtas[page];
+  if(zohoCta)document.addEventListener('click',(event)=>{const target=event.target.closest(zohoCta);if(!target)return;event.preventDefault();event.stopImmediatePropagation();document.dispatchEvent(new CustomEvent('zoho:open',{detail:target}));},true);
   const label=labels[page];
   if(!label)return;
-  let scope=document.querySelector('.cta-section,.tt-final,.brand-close,.cc-final,.sp85-final,.close,.final-cta');
+  let scope=document.querySelector('.cta-section,.tt-final,.brand-close,.cc-final,.sp85-final,.close,.final-cta,body.zk-page-support main>section:last-of-type');
   if(!scope){
     scope=document.createElement('section');
     scope.className='zk-global-bottom-cta';
     scope.innerHTML='<div class="zk-global-bottom-cta__inner"><a class="zk-standard-bottom-cta" href="/?openZohoForm=1#contact"></a></div>';
     (document.querySelector('.zk-global-footer,footer')||document.body).before(scope);
+  }
+  if(page==='thought-leadership'){
+    const description=scope.querySelector('p');
+    if(description)description.innerHTML='ZKTeco WFM can evaluate your environment and recommend<br>an appropriate technology and integration approach.';
+    const headline=scope.querySelector('h2');
+    if(headline&&!scope.querySelector('.zk-cta-eyebrow')){
+      const eyebrow=document.createElement('div');
+      eyebrow.className='eyebrow zk-cta-eyebrow';
+      eyebrow.textContent='THOUGHT LEADERSHIP';
+      headline.before(eyebrow);
+    }
   }
   const actions=[...scope.querySelectorAll('a.btn,a.zk-btn,a.tt-btn,button.final-cta-button')];
   const primary=actions.find(el=>!el.classList.contains('secondary')&&!el.classList.contains('outline-light'))||actions[0];
@@ -55,6 +76,7 @@
   const arrow=document.createElement('span');
   arrow.setAttribute('aria-hidden','true');
   arrow.textContent='→';
+  arrow.textContent=String.fromCharCode(0x2192);
   primary.append(arrow);
   primary.classList.add('zk-standard-bottom-cta');
   if(primary.tagName==='A')primary.href='/?openZohoForm=1#contact';

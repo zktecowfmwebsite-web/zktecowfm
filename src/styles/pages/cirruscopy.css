@@ -44,6 +44,12 @@
 .cc-final .zk-btn:hover span{transform:translateX(5px)}
 @media(max-width:720px){.cc-final .zk-btn{min-width:0;width:100%}}
 
+/* The shared standard CTA is also used by TimeTrack; preserve its arrow rules
+   against the older CirrusConnect-specific span styling above. */
+html body .cc-final .zk-btn.zk-standard-bottom-cta>span{display:inline-flex;font-size:inherit;font-weight:inherit;line-height:1;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+html body .cc-final .zk-btn.zk-standard-bottom-cta:hover>span{transform:translate3d(6px,0,0)}
+
+
 /* Headline punctuation removed for the CirrusConnect page. */
 .cc-hero h1,.cc-remote-copy h2,#platform .cc-section-head h2,.cc-section-head:has(+.cc-partner-arch) h2{font-size:0!important}
 .cc-hero h1:after,.cc-remote-copy h2:after,#platform .cc-section-head h2:after,.cc-section-head:has(+.cc-partner-arch) h2:after{display:block;color:currentColor;font-weight:inherit;letter-spacing:inherit}

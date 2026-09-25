@@ -249,10 +249,38 @@ import '../styles/pages/index.css';
 <h2>Make Every Punch Matter.</h2>
 <p>Talk with our team about the right workforce data collection technology for your organization or software platform.</p>
 </div>
-<a class="final-cta-button" href="contact">Talk to an Expert <span>→</span>
+<a class="final-cta-button" href="contact">Find Your Solution <span>→</span>
 </a>
 </div>
 </section>
+<div class="zoho-modal" id="zoho-form" data-zoho-modal aria-hidden="true">
+  <div class="zoho-modal__backdrop" data-zoho-form-close></div>
+  <div class="zoho-modal__panel">
+    <button class="zoho-modal__close" type="button" aria-label="Close form" data-zoho-form-close>&times;</button>
+    <section class="zoho-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="zoho-form-title">
+      <div class="zoho-modal__scroll">
+        <h2 id="zoho-form-title">Talk to an Expert</h2>
+        <p>Tell us a little about your organization and our team will be in touch.</p>
+        <form id="webform4421205000000933108" action="https://crm.zoho.com/crm/WebToLeadForm" name="WebToLeads4421205000000933108" method="POST" accept-charset="UTF-8">
+          <input class="zoho-honeypot" type="text" name="xnQsjsdp" value="872c03678ecc4b4111f9efb8966fe6493cfe1c936260305fabd0fc9f63bb7b30" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+          <input class="zoho-honeypot" type="text" name="xmIwtLD" value="b9ccac7a7188bc20e9b7429bee83b067f0d7147775c97d6170c432c4f02eebfede4959ae7b605fba17994219441f08cb" tabindex="-1" autocomplete="off" />
+          <input class="zoho-honeypot" type="text" name="actionType" value="TGVhZHM=" tabindex="-1" autocomplete="off" />
+          <input class="zoho-honeypot" type="text" name="returnURL" value="https://www.zktecowfm.com" tabindex="-1" autocomplete="off" />
+          <label>Company <b>*</b><input id="Company" name="Company" maxlength="200" required /></label>
+          <div class="zoho-form__grid"><label>First name <b>*</b><input name="First Name" maxlength="40" required /></label><label>Last name <b>*</b><input name="Last Name" maxlength="80" required /></label></div>
+          <label>Email <b>*</b><input name="Email" type="email" maxlength="100" required /></label>
+          <label>Customer type <b>*</b><select name="LEADCF1" required><option value="-None-">Select one</option><option value="Workday End User">Workday End User</option><option value="Workforce Management Software Provider">Workforce Management Software Provider</option><option value="Time Attendance Dealer">Time Attendance Dealer</option><option value="Workday - Account Manager">Workday - Account Manager</option><option value="Workday - Implementer">Workday - Implementer</option><option value="Other">Other</option></select></label>
+          <label>How can we help?<textarea name="Description" rows="4"></textarea></label>
+          <label>Enter the CAPTCHA <b>*</b><input id="captchaField4421205000000933108" name="enterdigest" maxlength="10" required /></label>
+          <div class="zoho-captcha"><img id="imgid4421205000000933108" src="https://crm.zoho.com/crm/CaptchaServlet?formId=b9ccac7a7188bc20e9b7429bee83b067f0d7147775c97d6170c432c4f02eebfede4959ae7b605fba17994219441f08cb&amp;grpid=872c03678ecc4b4111f9efb8966fe6493cfe1c936260305fabd0fc9f63bb7b30" alt="CAPTCHA" /><button type="button" data-zoho-captcha-reload>Reload</button></div>
+          <input class="zoho-honeypot" type="text" name="aG9uZXlwb3Q" value="" tabindex="-1" autocomplete="off" />
+          <div class="zoho-form__actions"><button type="submit" class="formsubmit">Submit</button><button type="reset" class="zoho-reset">Reset</button></div>
+        </form>
+      </div>
+    </section>
+  </div>
+</div>
 </main>
 <footer class="zk-global-footer"><div class="zk-footer-shell"><div class="zk-footer-grid"><div class="zk-footer-brand"><img alt="ZKTeco WFM" class="zk-footer-logo" src="/assets/ZKTecowfm-white-green@4x.png" width="180"/><p>The Workforce Data Collection Company.<br/>Every Punch Matters.</p></div><div class="zk-footer-col"><h4>Solutions</h4><a href="workday">Workday Customers</a><a href="software-partners">Software Partners</a><a href="use-cases">Industry Use Cases</a><a href="customer-stories">Customer Stories</a></div><div class="zk-footer-col"><h4>Products</h4><a href="ultima-series">Ultima Series</a><a href="timetrack">TimeTrack</a><a href="cirrusconnect">CirrusConnect</a><a href="workday#cirrusdcs">CirrusDCS</a></div><div class="zk-footer-col"><h4>Resources &amp; Trust</h4><a href="resources">Resource Hub</a><a href="thought-leadership">Thought Leadership</a><a href="security-trust">Security &amp; Trust</a><span aria-disabled="true" class="zk-link-disabled">Trust Center — Coming Soon</span><a href="support">Support</a></div><div class="zk-footer-col"><h4>Company</h4><a href="why-zkteco-wfm">Why ZKTeco WFM</a><a href="contact">Contact</a><a href="https://zktecowfm.com/careers/">Careers</a><a href="events">Events</a><a href="https://zktecowfm.com/biometric-privacy-policy/">Biometric Privacy</a></div></div><div class="zk-footer-bottom"><span>© 2026 ZKTeco WFM. All rights reserved.</span><div class="zk-footer-legal"><a href="privacy">Privacy &amp; GDPR</a><a href="cookie-policy">Cookies</a><button data-cookie-settings="">Cookie Preferences</button><a href="terms">Terms</a><a href="accessibility">Accessibility</a><a href="educational-disclaimer">Educational Disclaimer</a></div></div></div></footer>
 <script is:inline>
@@ -302,6 +330,37 @@ import '../styles/pages/index.css';
       });
     });
   }
+</script>
+<script is:inline>
+  const zohoModal = document.querySelector('[data-zoho-modal]');
+  let zohoLastTrigger;
+  const closeZohoLeadForm = () => {
+    zohoModal?.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('zoho-modal-open');
+    zohoLastTrigger?.focus();
+  };
+  const openZohoLeadForm = (trigger) => {
+    zohoLastTrigger = trigger || document.activeElement;
+    zohoModal?.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('zoho-modal-open');
+    zohoModal?.querySelector('#Company')?.focus();
+  };
+  document.querySelectorAll('.final-cta-button, [data-zoho-form-open]').forEach((trigger) => trigger.addEventListener('click', (event) => {
+    event.preventDefault();
+    openZohoLeadForm(trigger);
+  }));
+  zohoModal?.querySelectorAll('[data-zoho-form-close]').forEach((button) => button.addEventListener('click', closeZohoLeadForm));
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && zohoModal?.getAttribute('aria-hidden') === 'false') closeZohoLeadForm(); });
+  zohoModal?.querySelector('[data-zoho-captcha-reload]')?.addEventListener('click', () => {
+    const captcha = document.getElementById('imgid4421205000000933108');
+    captcha.src = captcha.src.replace(/&d\d+$/, '') + '&d' + Date.now();
+  });
+  zohoModal?.querySelector('form')?.addEventListener('submit', (event) => {
+    const form = event.currentTarget;
+    if (!form.checkValidity()) { event.preventDefault(); form.reportValidity(); return; }
+    form.querySelector('.formsubmit')?.setAttribute('disabled', 'disabled');
+  });
+  if (new URLSearchParams(window.location.search).has('openZohoForm')) openZohoLeadForm();
 </script>
 <script is:inline src="assets/privacy.js"></script></body>
 </html>

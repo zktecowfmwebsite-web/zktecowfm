@@ -14,4 +14,4 @@ body{margin:0}*{box-sizing:border-box}
 .cc-h-top,
 .cc-flow-tag,
 .cc-console-top,
-.cc-final{background:var(--cc-navy)!important}
+.cc-final{background:var(--cc-navy)!important;padding-top:44px!important;padding-bottom:44px!important}.cc-final p{max-width:none!important;white-space:nowrap;margin-bottom:12px!important}@media(max-width:900px){.cc-final p{white-space:normal}}
