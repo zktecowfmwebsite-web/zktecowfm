@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zktecowfm.com/sitemap.xml

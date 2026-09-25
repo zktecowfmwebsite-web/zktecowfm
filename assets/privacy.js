@@ -12,7 +12,7 @@
   function closeModal(){modal.classList.remove('show');}
   function init(){
     banner=el('div','zk-consent-banner');
-    banner.innerHTML='<div class="zk-consent-inner"><div class="zk-consent-copy"><strong>Your privacy choices</strong><p>We use necessary technologies to operate this website. With your permission, we may also use analytics or marketing technologies. You can accept, reject non-essential technologies, or manage your preferences. <a href="'+(location.pathname.includes('/insights/')?'../cookie-policy.html':'cookie-policy.html')+'">Cookie Policy</a></p><div class="zk-consent-actions"></div></div></div>';
+    banner.innerHTML='<div class="zk-consent-inner"><div class="zk-consent-copy"><strong>Your privacy choices</strong><p>We use necessary technologies to operate this website. With your permission, we may also use analytics or marketing technologies. You can accept, reject non-essential technologies, or manage your preferences. <a href="/cookie-policy">Cookie Policy</a></p><div class="zk-consent-actions"></div></div></div>';
     const actions=banner.querySelector('.zk-consent-actions');
     const reject=el('button','zk-consent-reject','Reject Non-Essential');const manage=el('button','zk-consent-manage','Manage Preferences');const accept=el('button','zk-consent-accept','Accept All');
     actions.append(reject,manage,accept);document.body.appendChild(banner);
@@ -26,6 +26,60 @@
     let hasChoice=false;try{hasChoice=!!localStorage.getItem(KEY);}catch(e){}if(!hasChoice)banner.classList.add('show');
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+
+/* Mobile navigation: keep the compact header usable with tap-to-expand menus. */
+(()=>{
+  const enhance=()=>{
+    const header=document.querySelector('.zk-global-header');
+    const nav=header?.querySelector('.zk-menu');
+    const brand=header?.querySelector('.zk-brand');
+    if(!header||!nav||!brand||header.querySelector('.zk-mobile-menu-toggle'))return;
+    const toggle=document.createElement('button');
+    toggle.type='button';toggle.className='zk-mobile-menu-toggle';toggle.setAttribute('aria-label','Open navigation menu');toggle.setAttribute('aria-expanded','false');toggle.innerHTML='<span></span><span></span><span></span>';
+    brand.after(toggle);
+    toggle.addEventListener('click',()=>{const open=header.classList.toggle('zk-mobile-menu-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');});
+    nav.querySelectorAll('.zk-drop').forEach(drop=>{
+      const link=drop.querySelector(':scope > a');const menu=drop.querySelector(':scope > .zk-drop-menu');
+      if(!link||!menu)return;
+      const expand=document.createElement('button');expand.type='button';expand.className='zk-mobile-submenu-toggle';expand.setAttribute('aria-label','Show '+link.textContent.trim()+' menu');expand.setAttribute('aria-expanded','false');expand.innerHTML='<span aria-hidden="true"></span>';link.after(expand);
+      expand.addEventListener('click',()=>{const open=drop.classList.toggle('zk-mobile-submenu-open');expand.setAttribute('aria-expanded',String(open));expand.setAttribute('aria-label',(open?'Hide ':'Show ')+link.textContent.trim()+' menu');});
+    });
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enhance);else enhance();
+})();
+
+/* Repair legacy mojibake in CTA labels without touching script or URL content. */
+(()=>{
+  const badRight=String.fromCharCode(0x00e2,0x2020,0x2019);
+  const badLeft=String.fromCharCode(0x00e2,0x2020,0x0090);
+  const badUp=String.fromCharCode(0x00e2,0x2020,0x2018);
+  const badDown=String.fromCharCode(0x00e2,0x2020,0x201c);
+  const badBoth=String.fromCharCode(0x00e2,0x2020,0x201d);
+  const repairs=[
+    [badRight,String.fromCharCode(0x2192)],[badLeft,String.fromCharCode(0x2190)],[badUp,String.fromCharCode(0x2191)],[badDown,String.fromCharCode(0x2193)],[badBoth,String.fromCharCode(0x2194)],
+    [String.fromCharCode(0x00c2,0x00b7),String.fromCharCode(0x00b7)],
+    [String.fromCharCode(0x00c2,0x00a9),String.fromCharCode(0x00a9)],
+    [String.fromCharCode(0x00c2,0x00ae),String.fromCharCode(0x00ae)],
+    [String.fromCharCode(0x00e2,0x20ac,0x201d),String.fromCharCode(0x2014)],
+    [String.fromCharCode(0x00e2,0x20ac,0x201c),String.fromCharCode(0x2013)],
+    [String.fromCharCode(0x00e2,0x20ac,0x2122),String.fromCharCode(0x2019)],
+    [String.fromCharCode(0x00e2,0x20ac,0x0153),String.fromCharCode(0x201c)],
+    [String.fromCharCode(0x00e2,0x20ac,0x009d),String.fromCharCode(0x201d)],
+    [String.fromCharCode(0x00e2,0x0153,0x201c),String.fromCharCode(0x2713)]
+  ];
+  const repair=(root=document)=>{
+    const walker=document.createTreeWalker(root.body||root,NodeFilter.SHOW_TEXT);
+    let node;
+    while(node=walker.nextNode()){
+      if(node.parentElement?.closest('script,style,noscript,textarea'))continue;
+      let value=node.nodeValue;
+      repairs.forEach(([broken,correct])=>{value=value.split(broken).join(correct);});
+      if(value!==node.nodeValue)node.nodeValue=value;
+    }
+  };
+  const start=()=>{repair();new MutationObserver(()=>repair()).observe(document.body,{childList:true,subtree:true,characterData:true});};
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();
 
 /* The Contact-page headquarters CTA uses the shared, styled Zoho modal. */
@@ -122,7 +176,7 @@
   if(!scope){
     scope=document.createElement('section');
     scope.className='zk-global-bottom-cta';
-    scope.innerHTML='<div class="zk-global-bottom-cta__inner"><a class="zk-standard-bottom-cta" href="/?openZohoForm=1#contact"></a></div>';
+    scope.innerHTML='<div class="zk-global-bottom-cta__inner"><a class="zk-standard-bottom-cta" href="/?openZohoForm=1#contact" aria-label="Talk to an Expert">Talk to an Expert</a></div>';
     (document.querySelector('.zk-global-footer,footer')||document.body).before(scope);
   }
   if(page==='thought-leadership'){
