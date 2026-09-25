@@ -1,12 +1,25 @@
 body{margin:0}*{box-sizing:border-box}
 
+/* Give the Resource Hub hero a little more vertical space than the shared default. */
+.zk-page .zk-hero{padding-top:76px!important;padding-bottom:72px!important}
+@media(max-width:650px){.zk-page .zk-hero{padding-top:60px!important;padding-bottom:58px!important}}
+
 /* Center each Resource Hub heading group as a single unit. */
 .zk-page .zk-hero .zk-wrap,.zk-page .zk-section .zk-section-head{display:grid;justify-items:center;text-align:center}
 .zk-page .zk-hero p,.zk-page .zk-section .zk-section-head p{margin-left:auto;margin-right:auto;text-align:center}
 
+/* Resource cards use a restrained hover outline and CTA-arrow motion. */
+.zk-page .zk-card{cursor:pointer;transition:border-color .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1)}
+.zk-page .zk-card:hover{border-color:#c4ccd8;box-shadow:0 12px 26px rgba(24,29,74,.1)}
+.zk-page .zk-card p a{display:inline-flex;align-items:center;gap:8px}
+.zk-page .zk-card p a>span{display:inline-flex;color:#75bd3b;line-height:1;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.zk-page .zk-card:hover p a{color:#75bd3b!important}
+.zk-page .zk-card:hover p a>span{transform:translate3d(5px,0,0)}
+
 /* Resource-page heading punctuation and single-line desktop treatment. */
 @media(min-width:901px){
   .zk-page .zk-hero h1{max-width:none;white-space:nowrap}
+  .zk-page .zk-hero p{max-width:none!important;white-space:nowrap}
   .zk-page .zk-section .zk-section-head{max-width:none}
   .zk-page .zk-section .zk-section-head h2{white-space:nowrap}
 }

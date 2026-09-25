@@ -154,7 +154,7 @@ section{padding:82px 0}.section-head{max-width:800px;margin:0 auto 44px;text-ali
 /* v130: simplified partner hero copy and more compact architecture visual. */
 .sp130-positioning{max-width:610px;margin:0;color:#536177;font-size:19px;line-height:1.55;font-weight:600}
 .sp85-hero .sp85-hero-actions{margin-top:24px}
-.sp85-hero-visual{max-width:500px;width:100%;justify-self:end}
+.sp85-hero-visual{max-width:760px;width:100%;justify-self:end}
 .sp128-architecture-card{padding:14px 15px;border-radius:18px;box-shadow:0 20px 48px rgba(17,31,70,.16)}
 .sp128-platform-top,.sp128-workforce-bottom{grid-template-columns:42px 1fr;gap:11px;padding:10px 13px;border-radius:10px}
 .sp128-platform-top strong,.sp128-workforce-bottom strong{font-size:15.5px}
@@ -162,6 +162,20 @@ section{padding:82px 0}.section-head{max-width:800px;margin:0 auto 44px;text-ali
 .sp128-node-icon{width:36px;height:36px;font-size:17px}
 .sp128-node-icon.workforce{font-size:8px}
 .sp128-flow-arrow{font-size:20px;padding:2px 0}
+
+/* Give the hero architecture visual a little more presence at desktop sizes. */
+.sp128-platform-top strong,.sp128-workforce-bottom strong{font-size:20px}
+.sp128-platform-top small,.sp128-workforce-bottom small{font-size:13.5px}
+.sp128-layer-title{font-size:19px}
+.sp128-tech-tile b{font-size:14.5px}
+.sp128-tech-tile small{font-size:11.5px}
+
+/* Keep the endpoint-card copy centered independently of its leading icon. */
+.sp128-platform-top,.sp128-workforce-bottom{display:flex;justify-content:center;text-align:center}
+.sp128-platform-top>.sp128-node-icon,.sp128-workforce-bottom>.sp128-node-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%)}
+
+/* The hero endpoint cards rely on their labels alone. */
+.sp128-platform-top>.sp128-node-icon,.sp128-workforce-bottom>.sp128-node-icon{display:none}
 .sp128-tech-layer{padding:11px 12px;border-radius:12px}
 .sp128-layer-title{font-size:14.5px;margin-bottom:8px}
 .sp128-tech-grid{gap:6px}
@@ -288,9 +302,9 @@ section{padding:82px 0}.section-head{max-width:800px;margin:0 auto 44px;text-ali
 .sp128-tech-tile .sp128-cirrus-mark img{filter:none!important}
 
 /* Larger partner-enablement icons, with the supplied Define asset. */
-.sp85-enable-steps:before{top:38px}
-.sp85-step-icon{width:76px;height:76px;border-width:8px}
-.sp85-step-icon img{max-width:34px;max-height:34px}
+.sp85-enable-steps:before{top:62px}
+.sp85-step-icon{width:84px;height:84px;border:0}
+.sp85-step-icon img{max-width:38px;max-height:38px}
 .sp85-enable-step:first-child .sp85-step-icon svg{display:none}
 .sp85-enable-step:first-child .sp85-step-icon:after{content:"";width:34px;height:34px;background:#000;-webkit-mask:url("../../../assets/define.svg") center/contain no-repeat;mask:url("../../../assets/define.svg") center/contain no-repeat}
-@media(max-width:680px){.sp85-enable-steps:before{top:31px}.sp85-step-icon{width:62px;height:62px;border-width:7px}.sp85-step-icon img{max-width:28px;max-height:28px}.sp85-enable-step:first-child .sp85-step-icon:after{width:28px;height:28px}}
+@media(max-width:680px){.sp85-enable-steps:before{top:31px}.sp85-step-icon{width:68px;height:68px;border:0}.sp85-step-icon img{max-width:30px;max-height:30px}.sp85-enable-step:first-child .sp85-step-icon:after{width:30px;height:30px}}

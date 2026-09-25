@@ -446,6 +446,8 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 .ultima-model-name{position:absolute;z-index:2;bottom:-14px;left:50%;transform:translateX(-50%);padding:6px 10px;border:1px solid #d9d6eb;border-radius:5px;background:#fff;color:#1d2261;font-size:17px;font-weight:850;line-height:1;white-space:nowrap;box-shadow:0 2px 7px rgba(0,0,0,.28);transition:transform .28s cubic-bezier(.22,1,.36,1),background-color .28s ease,color .28s ease,border-color .28s ease}
 .ultima-model-name b{display:inline-block;margin-left:2px;padding:2px 4px;border-radius:1px;background:#7ecb40;color:#fff;font-size:.84em}
 .ultima-model-card:hover img{transform:scale(1.1)}
+.ultima-model-card.ultima-model-7p img{align-self:center;object-position:center;transform:translateX(-10px) scale(1.28)}
+.ultima-model-card.ultima-model-7p:hover img{transform:translateX(-10px) scale(1.38)}
 .ultima-model-card:hover .ultima-model-name{transform:translateX(-50%) scale(1.08);background:var(--green);border-color:#a8e274;color:#fff}
 .ultima-model-card:hover .ultima-model-name b{background:rgba(255,255,255,.22);color:#fff}
 @media(max-width:980px){.ultima-model-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 38px;max-width:660px}}

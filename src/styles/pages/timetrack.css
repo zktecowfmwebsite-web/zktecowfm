@@ -54,6 +54,9 @@ body:has(.ttv147) .zk-global-header .zk-nav-shell{height:var(--zk-global-header-
 
 @media(min-width:701px){.flexibility-section .tt-center h2{white-space:nowrap}.flexibility-section .tt-center h2 br{display:none}}
 
+/* Let the TimeTrack experience title use the full viewport width at its existing type size. */
+@media(min-width:901px){.experience-section .tt-center{width:calc(100vw - 48px);max-width:none;margin-left:50%;margin-right:0;transform:translateX(-50%)}.experience-section .tt-center h2{white-space:nowrap}}
+
 .flex-card:not(.dark){border:1.5px solid #c8d1dd;background:#f5f7fa}
 
 /* Prominent destination links for the Workday and Software Partner architecture cards. */

@@ -5,7 +5,8 @@
 @media(prefers-reduced-motion:reduce){.zk-eyebrow::before{animation:none}}
 
 .cc-remote-copy>p:first-of-type,.cc-scale>div:first-child>p,.cc-final>div>p{font-size:0}
-.cc-remote-copy>p:first-of-type:after{content:"See the device. Control it. Diagnose it. Take action, from anywhere.";font-size:17px;line-height:1.55}
+.cc-remote-copy>p:first-of-type:after{content:"See the device. Control it. Diagnose it. Take action,\A from anywhere.";font-size:17px;line-height:1.55;white-space:pre-line}
+.cc-remote-copy>p:nth-of-type(2){font-size:0!important}.cc-remote-copy>p:nth-of-type(2):after{content:"Troubleshoot remotely. Resolve faster.\A Reduce onsite intervention.";font-size:17px;line-height:1.55;font-weight:800;white-space:pre-line}
 .cc-scale>div:first-child>p:after{content:"Centralize operations across customers, locations and Ultima deployments, while maintaining the visibility and control each environment requires.";font-size:16px;line-height:1.55}
 .cc-final>div>p:after{content:"One cloud platform connecting your workforce software to the Ultima Series, and the technology to operate it.";font-size:17px;line-height:1.55}
 @media(max-width:600px){.cc-remote-copy>p:first-of-type:after,.cc-final>div>p:after{font-size:16px}}
@@ -33,7 +34,7 @@
 .cc-final{position:relative;overflow:hidden;padding:64px 0!important;background:linear-gradient(135deg,#10143b 0%,#171d55 54%,#202568 100%)!important}
 .cc-final:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 9% 8%,rgba(117,189,59,.22),transparent 24%),radial-gradient(circle at 92% 14%,rgba(117,189,59,.10),transparent 26%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:auto,auto,44px 44px,44px 44px}
 .cc-final:after{display:none}
-.cc-final>.zk-wrap{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px}
+.cc-final>.zk-wrap{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
 .cc-final .zk-eyebrow{justify-content:center;color:#a2da49;margin:0 0 14px;font-size:11px;font-weight:900;line-height:1.2;letter-spacing:.18em}
 .cc-final h2{max-width:1100px;margin:0 0 20px;color:#fff;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:clamp(48px,5vw,50px);font-weight:700;line-height:1.01;letter-spacing:-.05em}
 .cc-final>div>p{max-width:650px;margin:0 auto 28px;color:#fff;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:18px;font-weight:400;line-height:1.65}
@@ -53,8 +54,8 @@ html body .cc-final .zk-btn.zk-standard-bottom-cta:hover>span{transform:translat
 /* Headline punctuation removed for the CirrusConnect page. */
 .cc-hero h1,.cc-remote-copy h2,#platform .cc-section-head h2,.cc-section-head:has(+.cc-partner-arch) h2{font-size:0!important}
 .cc-hero h1:after,.cc-remote-copy h2:after,#platform .cc-section-head h2:after,.cc-section-head:has(+.cc-partner-arch) h2:after{display:block;color:currentColor;font-weight:inherit;letter-spacing:inherit}
-.cc-hero h1:after{content:"Connect Your Platform\A Control the Entire Experience";font-size:50px;line-height:1.04;white-space:pre-line}
-.cc-remote-copy h2:after{content:"Be There\A Without Being There";font-size:42px;line-height:1.06;white-space:pre-line}
+.cc-hero h1:after{content:"Connect Your Platform\A Control the Entire\A Experience";font-size:50px;line-height:1.04;white-space:pre-line}
+.cc-remote-copy h2:after{content:"Be There,\A Without Being There";font-size:42px;line-height:1.06;white-space:pre-line}
 #platform .cc-section-head h2:after{content:"The Technology Layer Behind the Clock";font-size:38px;line-height:1.12}
 .cc-section-head:has(+.cc-partner-arch) h2:after{content:"Your Platform\A Our Technology Behind the Clock";font-size:38px;line-height:1.12;white-space:pre-line}
 @media(max-width:900px){.cc-hero h1:after{font-size:42px}}
@@ -62,14 +63,82 @@ html body .cc-final .zk-btn.zk-standard-bottom-cta:hover>span{transform:translat
 
 /* Keep the scale heading to its intended two lines without periods. */
 .cc-scale h2{font-size:0!important}
-.cc-scale h2:after{content:"One Customer or Thousands\A One Clock or an Entire Fleet";display:block;color:currentColor;font-size:39px;font-weight:inherit;line-height:1.08;letter-spacing:inherit;white-space:pre}
+.cc-scale h2:after{content:"One Customer or Thousands,\A One Clock or an Entire Fleet";display:block;color:currentColor;font-size:39px;font-weight:inherit;line-height:1.08;letter-spacing:inherit;white-space:pre}
 @media(max-width:600px){.cc-scale h2:after{font-size:32px}}
 
 /* Connected-workforce heading without terminal punctuation. */
 .cc-section.soft .cc-section-head h2{font-size:0!important}
-.cc-section.soft .cc-section-head h2:after{content:"Your Platform to the Clock\A And Back Again";display:block;color:currentColor;font-size:38px;font-weight:inherit;line-height:1.12;letter-spacing:inherit;white-space:pre-line}
+.cc-section.soft .cc-section-head{max-width:none}.cc-section.soft .cc-section-head h2:after{content:"Your Platform to the Clock And Back Again";display:block;color:currentColor;font-size:38px;font-weight:inherit;line-height:1.12;letter-spacing:inherit;white-space:nowrap}
 @media(max-width:600px){.cc-section.soft .cc-section-head h2:after{font-size:32px}}
 
 /* Keep the platform description on one desktop line. */
 #platform .cc-section-head{max-width:none}
 #platform .cc-section-head p{max-width:none;white-space:nowrap}
+
+/* Align CirrusConnect typography with the Ultima Series visual system. */
+:root{--cc-green:#75bd3b;--cc-green2:#a6ce39;--cc-navy:#201f62;--cc-ink:#151842;--cc-muted:#62677e}
+.cc-hero,.cc-section,.cc-cap-strip,.cc-final{font-family:Inter,"Segoe UI",Arial,sans-serif}
+.cc-hero h1,.cc-section-head h2,.cc-pillar h3,.cc-node h3,.cc-scale h2,.cc-archbox h3,.cc-statement,.cc-h-core,.cc-op strong,.cc-value strong{font-family:Inter,"Segoe UI",Arial,sans-serif;font-weight:700;color:var(--cc-navy)}
+.cc-hero h1{letter-spacing:-.05em}.cc-section-head h2{letter-spacing:-.04em}
+.cc-hero .lead,.cc-hero .sublead,.cc-section-head p,.cc-pillar p,.cc-node p,.cc-scale p,.cc-archbox p,.cc-value span,.cc-op span{font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--cc-muted)}
+.cc-hero .sublead{font-weight:700;color:var(--cc-navy)}
+.cc-hero .sublead{font-size:0!important;line-height:1.45}
+.cc-hero .sublead:after{content:"Connect workforce data. Manage devices. Operate remotely.\A Scale across customers.";display:block;font-size:20px;line-height:1.45;white-space:pre-line}
+.cc-section.navy .cc-section-head h2,.cc-section.navy .cc-section-head p,.cc-section.navy .cc-remote-copy h2,.cc-section.navy .cc-remote-copy p,.cc-node.core h3,.cc-node.core p,.cc-pillar.center h3,.cc-pillar.center p,.cc-archbox.core h3,.cc-archbox.core p{color:#fff}
+@media(min-width:901px){.cc-hero-grid{grid-template-columns:1.15fr .85fr}.cc-hero h1{max-width:680px}}
+
+/* Let the partner-operations console extend into the unused left-side space. */
+@media(min-width:901px){.cc-console{width:calc(100% + 80px)}}
+
+/* Remove only the platform-architecture section from CirrusConnect. */
+#platform{display:none!important}
+.cc-section:has(.cc-partner-arch){display:none!important}
+
+/* The platform section is removed, so its matching hero CTA is removed as well. */
+.cc-actions .zk-btn.primary[href="#platform"]{display:none!important}
+
+/* Reverse the partner hierarchy: customer fleets first, partner layer last. */
+.cc-hierarchy{display:flex;flex-direction:column}
+.cc-hierarchy .cc-customers{order:1}
+.cc-hierarchy .cc-h-core{order:2;margin:0 auto!important;position:relative}
+.cc-hierarchy .cc-h-top{order:3;padding:20px!important;position:relative}
+.cc-hierarchy{gap:48px}
+.cc-hierarchy .cc-h-core:before,.cc-hierarchy .cc-h-top:before{content:"↕";position:absolute;left:50%;top:-42px;transform:translateX(-50%);color:var(--cc-green);font-size:32px;font-weight:800;line-height:1}
+@media(max-width:600px){.cc-hierarchy{gap:38px}.cc-hierarchy .cc-h-core:before,.cc-hierarchy .cc-h-top:before{top:-35px;font-size:27px}}
+
+/* Connect the three customer fleets while preserving the cards above the line. */
+.cc-hierarchy .cc-customers{position:relative}
+.cc-hierarchy .cc-customers:before{content:"";position:absolute;z-index:0;top:50%;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,var(--cc-green) 12%,var(--cc-green) 88%,transparent);transform:translateY(-50%)}
+.cc-hierarchy .cc-customer{position:relative;z-index:1}
+.cc-hierarchy .cc-customer:first-child img{width:82%;height:60px}
+@media(max-width:600px){.cc-hierarchy .cc-customers:before{display:none}}
+
+/* The data-flow node labels use plain text without the shared animated marker. */
+.cc-dataflow .zk-eyebrow{display:flex;justify-content:center;width:100%;gap:0}
+.cc-dataflow .zk-eyebrow:before{display:none}
+
+/* Compact and center the platform-flow tag beneath the operations console. */
+.cc-hero-visual .cc-flow-tag{left:50%!important;right:auto!important;bottom:20px;display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:500px;min-height:38px!important;max-width:calc(100% - 24px);height:38px!important;padding:0 18px!important;font-size:13px;line-height:1;white-space:nowrap;transform:translateX(-50%)}
+@media(min-width:901px){.cc-hero-visual .cc-flow-tag{left:calc(50% - 40px)!important}}
+
+/* Keep the final call-to-action compact without changing its type scale. */
+.cc-final{padding:54px 0!important}
+.cc-final .zk-eyebrow{margin-bottom:10px}
+.cc-final h2{margin-bottom:14px}
+.cc-final p{margin-bottom:20px!important}
+
+/* CirrusConnect lifecycle cards share the Workday implementation-stage treatment. */
+.cc-cap-strip{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:50px;padding:18px 48px;background:#fff;border:0;overflow:visible}
+.cc-cap-strip:before{content:"";position:absolute;z-index:0;left:8%;right:8%;top:50%;height:2px;background:rgba(32,31,98,.34);border-radius:999px}
+.cc-cap-card{position:relative;z-index:1;min-height:174px;padding:18px 7px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:18px;background:var(--cc-navy);box-shadow:0 14px 28px rgba(17,21,62,.14);color:#fff;transform-origin:center;animation:cc-cap-stage-highlight 6s cubic-bezier(.22,1,.36,1) infinite;will-change:background,box-shadow}
+.cc-cap-card:nth-child(1){animation-delay:0s}.cc-cap-card:nth-child(2){animation-delay:1s}.cc-cap-card:nth-child(3){animation-delay:2s}.cc-cap-card:nth-child(4){animation-delay:3s}.cc-cap-card:nth-child(5){animation-delay:4s}.cc-cap-card:nth-child(6){animation-delay:5s}
+.cc-cap-icon{width:44px;height:44px;margin:0 auto 12px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);border-radius:12px;background:rgba(255,255,255,.12)}
+.cc-cap-icon img{display:block;width:27px;height:27px;object-fit:contain;animation:cc-cap-stage-foreground 6s cubic-bezier(.22,1,.36,1) infinite}
+.cc-cap-card h3{max-width:128px;margin:0;color:#fff;font-size:15px;line-height:1.16;text-align:center;font-weight:800;animation:cc-cap-stage-foreground 6s cubic-bezier(.22,1,.36,1) infinite}
+.cc-cap-card:nth-child(1) h3,.cc-cap-card:nth-child(1) img{animation-delay:0s}.cc-cap-card:nth-child(2) h3,.cc-cap-card:nth-child(2) img{animation-delay:1s}.cc-cap-card:nth-child(3) h3,.cc-cap-card:nth-child(3) img{animation-delay:2s}.cc-cap-card:nth-child(4) h3,.cc-cap-card:nth-child(4) img{animation-delay:3s}.cc-cap-card:nth-child(5) h3,.cc-cap-card:nth-child(5) img{animation-delay:4s}.cc-cap-card:nth-child(6) h3,.cc-cap-card:nth-child(6) img{animation-delay:5s}
+.cc-cap-card:not(:last-child):after{content:"→";position:absolute;z-index:4;top:50%;right:-38px;width:26px;height:26px;display:grid;place-items:center;transform:translateY(-50%);border-radius:50%;background:var(--cc-green);color:var(--cc-navy);font-size:17px;font-weight:900;box-shadow:0 5px 12px rgba(81,157,35,.22)}
+@keyframes cc-cap-stage-highlight{0%,16.5%{z-index:2;background:var(--cc-green);box-shadow:0 22px 42px rgba(83,160,35,.32)}16.6%,100%{z-index:1;background:var(--cc-navy);box-shadow:0 14px 28px rgba(17,21,62,.14)}}
+@keyframes cc-cap-stage-foreground{0%,16.5%{color:var(--cc-navy);filter:brightness(0) saturate(100%) invert(12%) sepia(42%) saturate(2426%) hue-rotate(220deg) brightness(80%) contrast(105%)}16.6%,100%{color:#fff;filter:brightness(0) invert(1)}}
+@media(max-width:1100px){.cc-cap-strip{grid-template-columns:repeat(3,1fr);gap:16px;padding:20px 24px}.cc-cap-strip:before,.cc-cap-card:after{display:none!important}}
+@media(max-width:600px){.cc-cap-strip{grid-template-columns:1fr 1fr;padding:16px}.cc-cap-card{min-height:150px}}
+@media(prefers-reduced-motion:reduce){.cc-cap-card,.cc-cap-card h3,.cc-cap-icon img{animation:none!important}}

@@ -129,7 +129,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 /* Workday hero illustration and a more generous top inset. */
 @media(min-width:721px){.hero-grid{padding-top:78px!important}}
 .hero .workday-hero-visual{min-height:0;display:flex;align-items:center;justify-content:center}
-.hero .workday-hero-image{display:block;width:116%;max-width:720px;height:auto;object-fit:contain;transform:translateY(-14px)}
+.hero .workday-hero-image{display:block;width:122%;max-width:760px;height:auto;object-fit:contain;transform:translateY(-14px)}
 @media(max-width:720px){.hero .workday-hero-image{width:100%;max-width:560px;transform:translateY(-8px)}}
 
 /* Flexible Punch Options product visual. */

@@ -33,12 +33,40 @@
   const labels={
     index:'Find Your Solution', workday:'Request a Demo', 'use-cases':'Find Your Solution',
     'customer-stories':"Let's Talk", 'ultima-series':'Find Your Ultima', timetrack:'Request a Demo',
-    'why-zkteco-wfm':"Let's Talk", 'manufacturing-facilities':'Explore Solutions',
+    'why-zkteco-wfm':"Let's Talk",
     'thought-leadership':"Let's Talk",
-    support:'Get Support', contact:"Let's Talk"
+    support:'Get Support'
   };
   const page=(location.pathname.split('/').filter(Boolean).pop()||'index').replace(/\.html$/,'');
   document.body.classList.add('zk-page-'+page);
+  if(page==='cirrusconnect'){
+    document.querySelector('#platform')?.remove();
+    document.querySelector('.cc-partner-arch')?.closest('section')?.remove();
+    const platformLabel=document.querySelector('.cc-dataflow .cc-node:last-child h3');
+    if(platformLabel)platformLabel.textContent='HCM / WFM Platform';
+    const flow=document.querySelector('.cc-flow-tag');
+    if(flow)flow.innerHTML='ULTIMA <em>↔</em> CIRRUSCONNECT <em>↔</em> YOUR PLATFORM';
+  }
+  if(page==='resources'){
+    document.querySelectorAll('.zk-card p a').forEach(link=>{
+      if(link.querySelector('span'))return;
+      const match=link.textContent.trim().match(/^(.*?)(→)$/);
+      if(!match)return;
+      const arrow=document.createElement('span');
+      arrow.setAttribute('aria-hidden','true');
+      arrow.textContent=match[2];
+      link.replaceChildren(document.createTextNode(match[1].trim()+' '),arrow);
+    });
+    document.querySelectorAll('.zk-card').forEach(card=>{
+      const link=card.querySelector('p a[href]');
+      if(!link)return;
+      card.tabIndex=0;
+      card.setAttribute('role','link');
+      const open=()=>{location.href=link.href;};
+      card.addEventListener('click',event=>{if(!event.target.closest('a'))open();});
+      card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open();}});
+    });
+  }
   const zohoCtas={
     'software-partners':'.sp85-final .sp85-btn-primary',
     'why-zkteco-wfm':'.brand-close .btn.primary',

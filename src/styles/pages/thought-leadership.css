@@ -5,10 +5,22 @@
 /* Match the site-wide heading punctuation treatment without forcing a wrap on wide screens. */
 @media(min-width:1200px){
   .hero-grid>div:first-child{grid-column:1 / -1}
+  .hero-grid>.hero-panel{grid-column:1 / -1;width:min(1220px,100%);margin-left:auto;margin-right:auto}
   .hero h1{max-width:none;white-space:nowrap}
 }
 .hero h1{font-size:0}
 .hero h1::after{content:"Better Technology Starts With Better Questions";font-size:50px;line-height:1.02;letter-spacing:-.045em}
 .hero-grid>div:first-child{text-align:center}.hero-grid>div:first-child p{margin-left:auto;margin-right:auto;text-align:center}
+.hero-panel{text-align:center}.hero-panel p{margin-left:auto;margin-right:auto;text-align:center}.hero-panel .statline div{text-align:center}
+@media(min-width:901px){.controls .section-head{max-width:none}.controls .section-head p{max-width:none;white-space:nowrap}}
+/* Match the Resource Hub card interaction on Thought Leadership articles. */
+.controls .grid .card{transition:border-color .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1)!important}
+.controls .grid .card:hover{transform:none!important;border-color:#c4ccd8;box-shadow:0 12px 26px rgba(24,29,74,.1)!important}
+.controls .grid .card .read{display:inline-flex;align-items:center;gap:8px;transition:color .35s cubic-bezier(.22,1,.36,1)}
+.controls .grid .card .read span{display:inline-flex;color:#75bd3b;line-height:1;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.controls .grid .card:hover .read{color:#75bd3b}
+.controls .grid .card:hover .read span{transform:translate3d(5px,0,0)}
+/* Keep every library filter outlined until the user hovers it. */
+.controls .filter,.controls .filter.active{border:1px solid #bcc5d2!important;background:#fff!important;color:var(--navy2)!important;box-shadow:none!important;transition:background .35s cubic-bezier(.22,1,.36,1),border-color .35s cubic-bezier(.22,1,.36,1),color .35s cubic-bezier(.22,1,.36,1)!important}
+.controls .filter:hover,.controls .filter.active:hover{border-color:#a8e274!important;background:radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.42),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%)!important;color:#102044!important}
 @media(max-width:650px){.hero h1::after{font-size:46px}}
-

@@ -135,6 +135,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 #models{background:linear-gradient(180deg,#fff 0%,#f6f8fb 100%)}
 .models .model-image{height:180px}
 .models .model-image img{max-height:170px}
+.models .model-card:nth-child(2) .model-image img{transform:translateX(-10px) scale(1.26)}
 
 .configuration-footer{flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:14px!important;border-radius:16px!important;text-align:center}
 .configuration-footer strong,.configuration-footer span{max-width:780px;text-align:center}
@@ -193,7 +194,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 .model-details .device-panel.ultima-carousel{min-height:0;padding:0;border:0;background:transparent;overflow:visible}
 .model-details .device-panel.ultima-carousel:before{display:none}
 .ultima-carousel:after{content:"";position:relative;z-index:2;display:block;width:100%;height:390px;background:center / 115% auto no-repeat}
-#ultima5 .ultima-carousel:after{background-image:url("/assets/Ultima 5 image.png")}
+#ultima5 .ultima-carousel:after{background-image:url("/assets/Ultima%205%20G3%20image.png")}
 #ultima7 .ultima-carousel:after{background-image:url("/assets/Ultima 7 image.png")}
 #ultima7p .ultima-carousel:after{background-image:url("/assets/Ultima 7p image.png")}
 #ultima10 .ultima-carousel:after{background-image:url("/assets/Ultima 10 image.png")}
@@ -279,5 +280,5 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 
 /* Use the approved Ultima 7P and Ultima 5 assets for their leading product views. */
 #ultima7p .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%207p%20image.png")}
-#ultima5 .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%205%20image.png")}
+#ultima5 .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%205%20G3%20image.png")}
 .cta-section .hero-actions{justify-content:center!important}.cta-section .hero-actions .btn.secondary{display:none!important}
