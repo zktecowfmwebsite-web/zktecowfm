@@ -15,3 +15,7 @@ body{margin:0}*{box-sizing:border-box}
 .cc-flow-tag,
 .cc-console-top,
 .cc-final{background:var(--cc-navy)!important;padding-top:44px!important;padding-bottom:44px!important}.cc-final p{max-width:none!important;white-space:nowrap;margin-bottom:12px!important}@media(max-width:900px){.cc-final p{white-space:normal}}
+
+/* Give the partner hero more breathing room beneath its content. */
+.cc-hero{padding-top:76px!important;padding-bottom:76px!important}
+@media(max-width:600px){.cc-hero{padding-top:64px!important;padding-bottom:68px!important}}

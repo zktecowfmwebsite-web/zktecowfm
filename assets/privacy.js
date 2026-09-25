@@ -28,6 +28,46 @@
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 
+/* The Contact-page headquarters CTA uses the shared, styled Zoho modal. */
+(()=>{
+  if(!/^\/contact\/?$/.test(location.pathname))return;
+  document.addEventListener('click',(event)=>{
+    const trigger=event.target.closest('.zk-section.alt .zk-actions .zk-btn.primary');
+    if(!trigger)return;
+    event.preventDefault();
+    document.dispatchEvent(new CustomEvent('zoho:open',{detail:trigger}));
+  });
+})();
+
+/* Add the supplied Google Maps location to the Contact-page headquarters card. */
+(()=>{
+  if(!/^\/contact\/?$/.test(location.pathname))return;
+  const card=document.querySelector('.zk-section.alt .zk-card');
+  if(!card||card.querySelector('.contact-hq-map'))return;
+  const copy=document.createElement('div');
+  copy.className='contact-hq-copy';
+  while(card.firstChild)copy.append(card.firstChild);
+  const contactButton=copy.querySelector('.zk-actions .zk-btn.primary');
+  if(contactButton){
+    contactButton.textContent='Contact Form';
+    contactButton.style.setProperty('color','#201f62','important');
+  }
+  const map=document.createElement('div');
+  map.className='contact-hq-map';
+  map.innerHTML='<iframe title="Map showing ZKTeco WFM headquarters in Tampa, Florida" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=27.984623%2C-82.549549&amp;z=17&amp;output=embed"></iframe>';
+  const link=document.createElement('a');
+  link.className='contact-hq-map-link';
+  link.href='https://maps.app.goo.gl/Yq5XRWizXGR9YEsw6';
+  link.target='_blank';
+  link.rel='noopener noreferrer';
+  link.textContent='Open in Google Maps →';
+  map.append(link);
+  const layout=document.createElement('div');
+  layout.className='contact-hq-layout';
+  layout.append(copy,map);
+  card.append(layout);
+})();
+
 /* Standardize local-page bottom CTAs and route them to the shared Home Zoho form. */
 (()=>{
   const labels={

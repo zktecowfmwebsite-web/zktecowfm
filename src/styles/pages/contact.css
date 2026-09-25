@@ -1,1 +1,61 @@
 body{margin:0}*{box-sizing:border-box}
+
+.zk-hero>.zk-wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
+.zk-hero>.zk-wrap>p{max-width:none;white-space:nowrap}
+@media(max-width:980px){.zk-hero>.zk-wrap>p{white-space:normal}}
+
+.zk-section-head{max-width:none;text-align:center;margin-left:auto;margin-right:auto}
+.zk-section-head p{max-width:none;white-space:nowrap}
+@media(max-width:980px){.zk-section-head p{white-space:normal}}
+
+.zk-section.alt .zk-section-head{max-width:none!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+.zk-section.alt .zk-section-head p{max-width:none!important;white-space:nowrap}
+@media(max-width:980px){.zk-section.alt .zk-section-head p{white-space:normal}}
+
+/* Contact paths use the same component treatment as the Support page. */
+.contact-path{position:relative;overflow:hidden;padding:32px;border:1px solid #e4e7ef;border-radius:20px;background:#fff;box-shadow:0 14px 36px rgba(18,24,55,.08)}
+.contact-path:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--zk-green,#79bd42)}
+.contact-path.partner:before{background:#5b68d8}
+.contact-path-head{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.contact-path-icon{display:grid;place-items:center;flex:0 0 auto;width:52px;height:52px;border-radius:14px;background:#eef7e8;color:#477a27}
+.contact-path.partner .contact-path-icon{background:#eef0ff;color:#4856bb}
+.contact-path-icon svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.contact-path h3{margin:0;color:var(--zk-navy,#201f62);font-size:30px;line-height:1.15}
+.contact-path>p{margin:0 0 20px;color:#5c6276;font-size:16px;line-height:1.6}
+.contact-scope{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.contact-scope span{padding:7px 10px;border-radius:999px;background:#f5f6f9;color:#3f465d;font-size:12px;font-weight:800}
+.contact-path-button{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;min-height:0;padding:13px 20px;border:1px solid #a8e274;border-radius:14px;background:radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.42),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%);box-shadow:inset 0 1px 0 rgba(237,255,216,.4),0 14px 30px rgba(0,0,0,.18);color:#102044;text-align:left;text-decoration:none;font-size:16px;font-weight:700;line-height:1.2;transition:transform .6s cubic-bezier(.22,1,.36,1),box-shadow .6s cubic-bezier(.22,1,.36,1),filter .6s cubic-bezier(.22,1,.36,1);will-change:transform}
+.contact-path.partner .contact-path-button{border-color:rgba(113,126,220,.78);background:radial-gradient(ellipse 80% 145% at 8% 6%,rgba(116,132,232,.24),transparent 62%),radial-gradient(ellipse 68% 120% at 94% 95%,rgba(33,31,110,.2),transparent 72%),linear-gradient(115deg,#3a4398 0%,#2b2a79 54%,#24236b 100%);box-shadow:inset 0 1px 0 rgba(225,230,255,.16),0 14px 30px rgba(20,23,83,.2);color:#fff}
+.contact-path-button span{display:inline-flex;line-height:1;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.contact-path-button:hover{transform:translateY(-3px);filter:brightness(1.075);box-shadow:inset 0 1px 0 rgba(237,255,216,.5),0 16px 28px rgba(68,139,35,.25)}
+.contact-path.partner .contact-path-button:hover{box-shadow:inset 0 1px 0 rgba(225,230,255,.48),0 16px 28px rgba(20,23,83,.28)}
+.contact-path-button:hover span{transform:translate3d(6px,0,0)}
+.contact-fine{margin-top:14px;color:#7b8193;font-size:11px;line-height:1.45}
+.contact-path{display:flex;flex-direction:column}.contact-path>p{min-height:77px}.contact-path-button{margin-top:0}.contact-fine{min-height:32px;margin-bottom:0}
+@media(max-width:560px){.contact-path{padding:24px}.contact-path h3{font-size:25px}.contact-path-button{width:100%}}
+@media(max-width:560px){.contact-path>p{min-height:0}.contact-fine{min-height:0}}
+@media(prefers-reduced-motion:reduce){.contact-path-button,.contact-path-button span{transition:none}.contact-path-button:hover,.contact-path-button:hover span{transform:none}}
+
+/* Tampa headquarters map. */
+.contact-hq-layout{display:grid;grid-template-columns:minmax(260px,.72fr) minmax(360px,1.28fr);gap:28px;align-items:stretch}.contact-hq-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;padding-block:4px}.contact-hq-map{min-height:240px;overflow:hidden;border:1px solid #e1e6ee;border-radius:14px;background:#edf1f5}.contact-hq-map iframe{display:block;width:100%;height:100%;min-height:240px;border:0}.contact-hq-map-link{display:inline-flex;margin-top:12px;color:var(--zk-navy,#201f62);font-size:12px;font-weight:800;text-decoration:none}.contact-hq-map-link:hover{color:#4f8f1f}@media(max-width:760px){.contact-hq-layout{grid-template-columns:1fr}.contact-hq-copy{gap:18px;padding-block:0}.contact-hq-map{min-height:220px}.contact-hq-map iframe{min-height:220px}}
+
+/* Match the Workday-conversation CTA treatment in the headquarters card. */
+.zk-section.alt .zk-actions .zk-btn.primary{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:56px;padding:13px 20px;border:1px solid #a8e274;border-radius:14px;background:radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.42),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%);box-shadow:inset 0 1px 0 rgba(237,255,216,.4),0 14px 30px rgba(0,0,0,.18);color:#102044;transition:transform .6s cubic-bezier(.22,1,.36,1),box-shadow .6s cubic-bezier(.22,1,.36,1),filter .6s cubic-bezier(.22,1,.36,1);will-change:transform}.zk-section.alt .zk-actions .zk-btn.primary:after{content:"→";font-size:24px;line-height:1;transition:transform .6s cubic-bezier(.22,1,.36,1)}.zk-section.alt .zk-actions .zk-btn.primary:hover{transform:translateY(-3px);filter:brightness(1.075);box-shadow:inset 0 1px 0 rgba(237,255,216,.5),0 16px 28px rgba(68,139,35,.25)}.zk-section.alt .zk-actions .zk-btn.primary:hover:after{transform:translate3d(6px,0,0)}
+@media(prefers-reduced-motion:reduce){.zk-section.alt .zk-actions .zk-btn.primary,.zk-section.alt .zk-actions .zk-btn.primary:after{transition:none}.zk-section.alt .zk-actions .zk-btn.primary:hover,.zk-section.alt .zk-actions .zk-btn.primary:hover:after{transform:none}}
+@media(prefers-reduced-motion:reduce){.zk-section.alt .zk-actions .zk-btn.secondary,.zk-section.alt .zk-actions .zk-btn.secondary:after{transition:none}.zk-section.alt .zk-actions .zk-btn.secondary:hover,.zk-section.alt .zk-actions .zk-btn.secondary:hover:after{transform:none}}
+
+/* Headquarters CTA uses the reference's white-on-green button treatment. */
+.zk-section.alt .zk-actions .zk-btn.primary{min-height:80px;padding:18px 36px;border-color:#9bdd67;border-radius:24px;background:linear-gradient(135deg,#9add58 0%,#78c53a 52%,#68b82f 100%);box-shadow:inset 0 2px 0 rgba(238,255,213,.55),0 18px 34px rgba(69,139,35,.22);color:#fff!important;font-size:20px;font-weight:850}.zk-section.alt .zk-actions .zk-btn.primary:after{color:#fff;font-size:39px;font-weight:400}.zk-section.alt .zk-actions .zk-btn.primary:hover{box-shadow:inset 0 2px 0 rgba(238,255,213,.65),0 20px 34px rgba(69,139,35,.3)}
+
+.zk-section.alt .zk-actions .zk-btn.secondary{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:80px;padding:18px 28px;border:2px solid #d7ddeb;border-radius:18px;background:#fff;color:var(--zk-navy,#201f62)!important;font-size:18px;font-weight:850;transition:transform .6s cubic-bezier(.22,1,.36,1),border-color .6s cubic-bezier(.22,1,.36,1),box-shadow .6s cubic-bezier(.22,1,.36,1),color .6s cubic-bezier(.22,1,.36,1)}.zk-section.alt .zk-actions .zk-btn.secondary:after{content:"→";font-size:32px;line-height:1;font-weight:400;transition:transform .6s cubic-bezier(.22,1,.36,1)}.zk-section.alt .zk-actions .zk-btn.secondary:hover{transform:translateY(-3px);border-color:#aeb9d0;box-shadow:0 14px 28px rgba(17,21,62,.1);color:var(--zk-navy,#201f62)!important}.zk-section.alt .zk-actions .zk-btn.secondary:hover:after{transform:translate3d(6px,0,0)}
+@media(prefers-reduced-motion:reduce){.zk-section.alt .zk-actions .zk-btn.secondary,.zk-section.alt .zk-actions .zk-btn.secondary:after{transition:none}.zk-section.alt .zk-actions .zk-btn.secondary:hover,.zk-section.alt .zk-actions .zk-btn.secondary:hover:after{transform:none}}
+
+/* Keep the white-on-green CTA compact. */
+.zk-section.alt .zk-actions .zk-btn.primary{min-height:56px;padding:13px 20px;border-radius:14px;font-size:16px}.zk-section.alt .zk-actions .zk-btn.primary:after{font-size:24px}
+
+.zk-section.alt .zk-actions .zk-btn.primary{background:radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.42),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%)}
+
+/* Keep the headquarters actions compact and aligned as a pair. */
+.contact-hq-copy .zk-actions{flex-wrap:nowrap}.contact-hq-copy .zk-actions .zk-btn.primary{white-space:nowrap}.zk-section.alt .zk-actions .zk-btn.secondary{min-height:56px;padding:13px 20px;border-radius:14px;font-size:16px;white-space:nowrap}.zk-section.alt .zk-actions .zk-btn.secondary:after{font-size:24px}@media(max-width:760px){.contact-hq-copy .zk-actions{flex-wrap:wrap}}
+
+.contact-hq-copy .zk-actions .zk-btn.primary,.contact-hq-copy .zk-actions .zk-btn.primary:after{color:var(--zk-navy,#201f62)!important}
