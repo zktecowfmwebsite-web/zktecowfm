@@ -33,6 +33,11 @@ footer{background:#0d1233;color:#fff;padding:54px 0 24px}.foot-grid{display:grid
 .configuration-icon{width:50px;height:50px;border-radius:13px;background:#f9fcf6;display:grid;place-items:center;margin-bottom:17px}
 
 .model-card .text-link.green{font-size:15px}
+.models .text-link.green{display:inline-flex;align-items:center;gap:8px;color:var(--navy);transition:color .22s ease}
+.models .text-link.green span{display:inline-block;color:currentColor;transition:transform .22s cubic-bezier(.22,1,.36,1)}
+.models .text-link.green:hover,.models .text-link.green:focus-visible{color:var(--green)}
+.models .text-link.green:hover span,.models .text-link.green:focus-visible span{transform:translateX(6px)}
+.models .text-link.green:focus-visible{outline:2px solid var(--green);outline-offset:4px;border-radius:2px}
 
 #ultima10 .spec-chips .chip:last-child{display:none}
 
@@ -132,10 +137,15 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 .configuration-section .configuration-card p{font-size:15px}
 
 /* Keep the model range visually distinct from the white configuration section. */
-#models{background:linear-gradient(180deg,#fff 0%,#f6f8fb 100%)}
+#models,#compare{background:linear-gradient(180deg,#fff 0%,#f6f8fb 100%)}
 .models .model-image{height:180px}
 .models .model-image img{max-height:170px}
-.models .model-card:nth-child(2) .model-image img{transform:translateX(-10px) scale(1.26)}
+/* Scale the product renders by their display size: 10-inch largest, both 7-inch
+   models matched, and the 5-inch model smallest. */
+.models .model-card:nth-child(1) .model-image img{transform:scale(1.12)}
+.models .model-card:nth-child(2) .model-image img{transform:translateX(-10px) scale(1.22)}
+.models .model-card:nth-child(3) .model-image img{transform:scale(.74)}
+.models .model-card:nth-child(4) .model-image img{transform:scale(.58)}
 
 .configuration-footer{flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:14px!important;border-radius:16px!important;text-align:center}
 .configuration-footer strong,.configuration-footer span{max-width:780px;text-align:center}
@@ -216,6 +226,11 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 @media(min-width:1001px){#resources .section-head{max-width:none}#resources .section-head p{white-space:nowrap}}
 
 #resources .resource{border:1px solid var(--line)!important;border-radius:14px;background:#fff}
+#resources .resource-link{display:inline-flex;align-items:center;gap:8px;margin-top:auto;color:var(--navy);font-weight:850;transition:color .22s ease}
+#resources .resource-link span{display:inline-block;color:currentColor;transition:transform .22s cubic-bezier(.22,1,.36,1)}
+#resources .resource-link:hover,#resources .resource-link:focus-visible{color:var(--green)}
+#resources .resource-link:hover span,#resources .resource-link:focus-visible span{transform:translateX(6px)}
+#resources .resource-link:focus-visible{outline:2px solid var(--green);outline-offset:4px;border-radius:2px}
 #resources .resource p{font-size:15px}
 .detail-grid div{font-size:15px}
 
@@ -254,6 +269,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 /* Keep every product-navigation label on one horizontal row. */
 .quicknav .wrap{display:flex;flex-wrap:nowrap;width:100%;max-width:none;padding:0;overflow-x:auto}
 .quicknav a{flex:1 0 auto;white-space:nowrap}
+.quicknav a:last-child{border-right:0}
 
 /* Preserve the model-card kicker size while keeping its phrase together. */
 .model-kicker{white-space:nowrap}

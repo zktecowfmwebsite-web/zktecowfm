@@ -1,0 +1,19 @@
+---
+interface Props { current: string }
+const { current } = Astro.props;
+const links = [
+  ['privacy', 'Privacy Notice'],
+  ['cookie-policy', 'Cookie Policy'],
+  ['terms', 'Website Terms of Use'],
+  ['biometric-privacy-policy', 'U.S. Biometric Privacy Policy'],
+  ['accessibility', 'Accessibility Statement'],
+  ['educational-disclaimer', 'Educational Content Disclaimer'],
+];
+---
+<aside class="zk-document-sidebar">
+  <nav class="zk-policy-related" aria-label="Legal and privacy policies">
+    <h2>Legal &amp; Privacy</h2>
+    {links.map(([href, label]) => <a href={href} aria-current={href === current ? 'page' : undefined}>{label}</a>)}
+  </nav>
+  <slot />
+</aside>

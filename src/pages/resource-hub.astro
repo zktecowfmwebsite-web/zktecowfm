@@ -1,0 +1,138 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import '../styles/pages/resources.css';
+import '../styles/pages/resource-hub-zoho.css';
+---
+
+<!-- tailwind.css is loaded by SiteLayout. -->
+<SiteLayout title="Resource Hub | ZKTeco WFM" description="Product documents, practical insights, and important policies from ZKTeco WFM.">
+  <section class="zk-resource-intro"><div class="zk-wrap"><div class="zk-eyebrow">Resources</div><h1>Find What You Need</h1><p>Product documents, practical insights, and important policies, organized in three clear destinations.</p></div></section>
+  <section class="zk-resource-directory"><div class="zk-wrap"><div class="zk-directory-grid">
+    <a class="zk-directory-card" href="/product-collaterals"><span class="zk-directory-icon zk-icon-product"><img src="/assets/Product-Resources.svg" alt="" /></span><h2>Product Collaterals</h2><p>Data sheets, installation guides, user manuals, and approved product images for ZKTeco WFM solutions.</p><span class="zk-directory-link">Find product resources <b>→</b></span></a>
+    <a class="zk-directory-card" href="/thought-leadership"><span class="zk-directory-icon zk-icon-insights"><img src="/assets/Insights-&amp;-Expertise.svg" alt="" /></span><h2>Thought Leadership</h2><p>Practical perspectives on workforce data collection, Workday, time clocks, integrations, and operations.</p><span class="zk-directory-link">Explore insights <b>→</b></span></a>
+    <a class="zk-directory-card" href="/legal-privacy"><span class="zk-directory-icon zk-icon-legal"><img src="/assets/Legal and privacy.svg" alt="" /></span><h2>Legal &amp; Privacy</h2><p>Privacy, terms, accessibility, security, and compliance information in one straightforward location.</p><span class="zk-directory-link">View legal &amp; privacy <b>→</b></span></a>
+  </div></div></section>
+  <section class="zk-resource-cta"><div class="zk-wrap"><div><div class="zk-eyebrow">Need Assistance?</div><h2>Looking for a specific resource?</h2><p>Our team can direct you to the right product document or support path.</p></div><button class="resource-expert-cta" type="button" data-zoho-form-open>Ask an Expert <span aria-hidden="true">→</span></button></div></section>
+  <div class="zoho-modal" data-zoho-modal aria-hidden="true">
+    <div class="zoho-modal__backdrop" data-zoho-form-close></div>
+    <div class="zoho-modal__panel">
+      <button class="zoho-modal__close" type="button" aria-label="Close form" data-zoho-form-close>&times;</button>
+      <section class="zoho-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="zoho-form-title">
+        <div class="zoho-modal__scroll">
+          <h2 id="zoho-form-title">Talk to an Expert</h2>
+          <p>Tell us a little about your organization and our team will be in touch.</p>
+          <form id="webform4421205000000933108" action="https://crm.zoho.com/crm/WebToLeadForm" name="WebToLeads4421205000000933108" method="POST" accept-charset="UTF-8">
+            <input class="zoho-honeypot" type="text" name="xnQsjsdp" value="872c03678ecc4b4111f9efb8966fe6493cfe1c936260305fabd0fc9f63bb7b30" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+            <input class="zoho-honeypot" type="text" name="xmIwtLD" value="b9ccac7a7188bc20e9b7429bee83b067f0d7147775c97d6170c432c4f02eebfede4959ae7b605fba17994219441f08cb" tabindex="-1" autocomplete="off" />
+            <input class="zoho-honeypot" type="text" name="actionType" value="TGVhZHM=" tabindex="-1" autocomplete="off" />
+            <input class="zoho-honeypot" type="text" name="returnURL" value="https://www.zktecowfm.com" tabindex="-1" autocomplete="off" />
+            <label>Company <b>*</b><input id="Company" name="Company" maxlength="200" required /></label>
+            <div class="zoho-form__grid"><label>First name <b>*</b><input name="First Name" maxlength="40" required /></label><label>Last name <b>*</b><input name="Last Name" maxlength="80" required /></label></div>
+            <label>Email <b>*</b><input name="Email" type="email" maxlength="100" required /></label>
+            <label>Customer type <b>*</b><select name="LEADCF1" required><option value="-None-">Select one</option><option value="Workday End User">Workday End User</option><option value="Workforce Management Software Provider">Workforce Management Software Provider</option><option value="Time Attendance Dealer">Time Attendance Dealer</option><option value="Workday - Account Manager">Workday - Account Manager</option><option value="Workday - Implementer">Workday - Implementer</option><option value="Other">Other</option></select></label>
+            <label>How can we help?<textarea name="Description" rows="4"></textarea></label>
+            <label>Enter the CAPTCHA <b>*</b><input id="captchaField4421205000000933108" name="enterdigest" maxlength="10" required /></label>
+            <div class="zoho-captcha"><img id="imgid4421205000000933108" src="https://crm.zoho.com/crm/CaptchaServlet?formId=b9ccac7a7188bc20e9b7429bee83b067f0d7147775c97d6170c432c4f02eebfede4959ae7b605fba17994219441f08cb&amp;grpid=872c03678ecc4b4111f9efb8966fe6493cfe1c936260305fabd0fc9f63bb7b30" alt="CAPTCHA" /><button type="button" data-zoho-captcha-reload>Reload</button></div>
+            <input class="zoho-honeypot" type="text" name="aG9uZXlwb3Q" value="" tabindex="-1" autocomplete="off" />
+            <div class="zoho-form__actions"><button type="submit" class="formsubmit">Submit</button><button type="reset" class="zoho-reset">Reset</button></div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <style is:global>
+    @media (min-width: 621px) {
+      .zk-resource-intro .zk-wrap { text-align: center; }
+      .zk-resource-intro p { max-width: none; white-space: nowrap; }
+    }
+    .zk-directory-icon { width: 54px; height: 54px; margin-top: 0; }
+    .zk-directory-icon img { width: 32px; height: 32px; object-fit: contain; }
+    .zk-directory-icon.zk-icon-product { background: #fff0e8; }
+    .zk-directory-icon.zk-icon-insights { background: #e8efff; }
+    .zk-directory-icon.zk-icon-legal { background: #e6f5ef; }
+    .zk-directory-link { display: inline-flex; align-items: center; gap: 8px; color: #171b48; transition: color .3s cubic-bezier(.22,1,.36,1); }
+    .zk-directory-link b { margin: 0; color: currentColor; transition: transform .4s cubic-bezier(.22,1,.36,1); }
+    .zk-directory-card:hover .zk-directory-link { color: #78bd43; }
+    .zk-directory-card:hover .zk-directory-link b { transform: translateX(5px); }
+    .zk-resource-cta { position: relative; isolation: isolate; overflow: hidden; padding: 64px 24px; background: radial-gradient(circle at 9% 8%,rgba(117,189,59,.22),transparent 24%),radial-gradient(circle at 92% 14%,rgba(117,189,59,.10),transparent 26%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(135deg,#10143b 0%,#171d55 54%,#202568 100%); background-size: auto,auto,44px 44px,44px 44px,auto; color: #fff; text-align: center; }
+    .zk-resource-cta .zk-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 0; }
+    .zk-resource-cta .zk-eyebrow { margin: 0 0 12px; color: #a2da49; }
+    .zk-resource-cta h2 { margin: 0 0 12px; color: #fff; font-size: clamp(36px,4vw,48px); font-weight: 800; line-height: 1.08; letter-spacing: -.035em; }
+    .zk-resource-cta p { max-width: 840px; margin: 0 0 32px; color: #fff; font-size: 18px; line-height: 1.55; }
+    .resource-expert-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 22px; padding: 13px 20px; border: 1px solid #a8e274; border-radius: 12px; background: radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.42),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%); color: #102044; font: inherit; font-size: 16px; font-weight: 700; line-height: 1.2; text-decoration: none; cursor: pointer; box-shadow: inset 0 1px 0 rgba(237,255,216,.4),0 14px 30px rgba(0,0,0,.18); transition: transform .6s cubic-bezier(.22,1,.36,1),box-shadow .6s cubic-bezier(.22,1,.36,1),filter .6s cubic-bezier(.22,1,.36,1); }
+    .resource-expert-cta span { transition: transform .6s cubic-bezier(.22,1,.36,1); }
+    .resource-expert-cta:hover { transform: translateY(-3px); filter: brightness(1.075); box-shadow: inset 0 1px 0 rgba(237,255,216,.5),0 16px 28px rgba(68,139,35,.25); }
+    .resource-expert-cta:hover span { transform: translate3d(6px,0,0); }
+    .zk-global-footer .zk-footer-col h4 { margin-bottom: 18px; }
+    .zk-global-footer .zk-footer-col a, .zk-global-footer .zk-footer-col .zk-link-disabled { margin-block: 12px; }
+    body.zoho-modal-open { overflow: hidden; }
+    .zoho-modal { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; padding: 24px; visibility: hidden; opacity: 0; transition: opacity .2s ease, visibility .2s ease; }
+    .zoho-modal[aria-hidden="false"] { visibility: visible; opacity: 1; }
+    .zoho-modal__backdrop { position: absolute; inset: 0; background: rgba(11,16,56,.72); }
+    .zoho-modal__panel { position: relative; z-index: 1; width: min(100%,640px); max-height: 90vh; }
+    .zoho-modal__dialog { width: 100%; max-height: 90vh; overflow: hidden; border-radius: 18px; background: #fff; box-shadow: 0 28px 70px rgba(0,0,0,.35); }
+    .zoho-modal__scroll { width: calc(100% - 16px); max-height: 90vh; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; border-radius: inherit; padding: 32px; }
+    .zoho-modal__scroll::-webkit-scrollbar { width: 10px; }
+    .zoho-modal__scroll::-webkit-scrollbar-thumb { border: 3px solid #fff; border-radius: 99px; background: #97a0ae; }
+    .zoho-modal__dialog h2 { margin: 0 0 8px; color: var(--zk-navy); font-size: 30px; }
+    .zoho-modal__scroll > p { margin: 0 0 24px; color: #60697d; font-size: 15px; line-height: 1.5; }
+    .zoho-modal__close { position: absolute; z-index: 2; top: -17px; right: -17px; width: 42px; height: 38px; border: 1px solid #fff; border-radius: 8px; display: grid; place-items: center; background: #d83b35; color: #fff; font-size: 32px; font-weight: 800; line-height: 1; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,.22); }
+    .zoho-modal form { display: grid; gap: 14px; }
+    .zoho-modal label { display: block; color: var(--zk-navy); font-size: 13px; font-weight: 800; }
+    .zoho-modal label b { color: #d83b35; }
+    .zoho-modal label input:not(.zoho-honeypot), .zoho-modal label select, .zoho-modal label textarea { display: block; margin-top: 6px; }
+    .zoho-modal input:not(.zoho-honeypot), .zoho-modal select, .zoho-modal textarea { box-sizing: border-box; width: 100%; border: 1px solid #cfd7e3; border-radius: 8px; padding: 10px 12px; font: inherit; font-size: 15px; color: #17244d; background: #fff; }
+    .zoho-modal textarea { resize: vertical; }
+    .zoho-form__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .zoho-honeypot { display: none !important; }
+    .zoho-captcha { display: flex; align-items: center; gap: 12px; }
+    .zoho-captcha img { max-height: 42px; }
+    .zoho-captcha button { border: 0; background: transparent; color: #416f20; font-weight: 800; cursor: pointer; }
+    .zoho-form__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 6px; }
+    .zoho-form__actions .formsubmit { border: 0; border-radius: 9px; background: var(--zk-green); color: #102044; padding: 12px 19px; font-weight: 900; cursor: pointer; }
+    .zoho-form__actions .formsubmit:disabled { opacity: .6; cursor: wait; }
+    .zoho-form__actions .zoho-reset { border: 2px solid var(--zk-navy); border-radius: 9px; background: #fff; color: var(--zk-navy); padding: 10px 17px; font-weight: 900; cursor: pointer; }
+    .zoho-form__actions .zoho-reset:hover { background: var(--zk-navy); color: #fff; }
+    @media (max-width: 620px) {
+      .zk-resource-cta { padding: 44px 20px; }
+      .zk-resource-cta .zk-wrap { display: flex; }
+      .zk-resource-cta h2 { font-size: 34px; }
+      .zk-resource-cta p { margin-bottom: 26px; font-size: 16px; }
+      .resource-expert-cta { width: 100%; }
+      .zoho-modal { padding: 12px; }
+      .zoho-modal__panel { width: calc(100% - 20px); max-height: 88vh; }
+      .zoho-modal__dialog, .zoho-modal__scroll { max-height: 88vh; }
+      .zoho-modal__scroll { width: calc(100% - 12px); padding: 26px 20px; }
+      .zoho-modal__close { top: -12px; right: -8px; }
+      .zoho-form__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script is:inline>
+    const zohoModal = document.querySelector('[data-zoho-modal]');
+    let zohoLastTrigger;
+    const closeZohoLeadForm = () => {
+      zohoModal?.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('zoho-modal-open');
+      zohoLastTrigger?.focus();
+    };
+    const openZohoLeadForm = (trigger) => {
+      zohoLastTrigger = trigger || document.activeElement;
+      zohoModal?.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('zoho-modal-open');
+      zohoModal?.querySelector('#Company')?.focus();
+    };
+    document.querySelectorAll('[data-zoho-form-open]').forEach((trigger) => trigger.addEventListener('click', () => openZohoLeadForm(trigger)));
+    zohoModal?.querySelectorAll('[data-zoho-form-close]').forEach((button) => button.addEventListener('click', closeZohoLeadForm));
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && zohoModal?.getAttribute('aria-hidden') === 'false') closeZohoLeadForm(); });
+    zohoModal?.querySelector('[data-zoho-captcha-reload]')?.addEventListener('click', () => {
+      const captcha = document.getElementById('imgid4421205000000933108');
+      captcha.src = captcha.src.replace(/&d\d+$/, '') + '&d' + Date.now();
+    });
+    zohoModal?.querySelector('form')?.addEventListener('submit', (event) => {
+      const form = event.currentTarget;
+      if (!form.checkValidity()) { event.preventDefault(); form.reportValidity(); return; }
+      form.querySelector('.formsubmit')?.setAttribute('disabled', 'disabled');
+    });
+  </script>
+</SiteLayout>

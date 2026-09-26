@@ -1,0 +1,5 @@
+.zk-page .zk-hero>.zk-wrap,.zk-page .zk-section>.zk-wrap{width:min(1220px,calc(100% - 48px));max-width:none;padding:0}
+.zk-page .zk-hero>.zk-wrap{text-align:center}
+.zk-page .zk-hero h1,.zk-page .zk-hero p{margin-left:auto;margin-right:auto}
+.zk-page .zk-section .zk-legal-copy{max-width:none}
+@media(max-width:760px){.zk-page .zk-hero>.zk-wrap,.zk-page .zk-section>.zk-wrap{width:calc(100% - 30px)}}

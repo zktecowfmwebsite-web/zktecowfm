@@ -1,0 +1,51 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import '../styles/pages/product-collaterals.css';
+
+const downloads = [
+  ['Ultima 5 Data Sheet','Ultima 5','timeclocks','ultima5','Data Sheet','PDF','time clock biometric credential connectivity'],['Ultima 7 Data Sheet','Ultima 7','timeclocks','ultima7','Data Sheet','PDF','time clock biometric credential connectivity'],['Ultima 7P Data Sheet','Ultima 7P','timeclocks','ultima7p','Data Sheet','PDF','rugged portable cellular battery'],['Ultima 10 Data Sheet','Ultima 10','timeclocks','ultima10','Data Sheet','PDF','large screen time clock workforce'],
+  ['Ultima 5 Installation Guide','Ultima 5','timeclocks','ultima5','Installation Guide','PDF','mounting power cabling poe network'],['Ultima 7 Installation Guide','Ultima 7','timeclocks','ultima7','Installation Guide','PDF','mounting power cabling poe network'],['Ultima 7P Installation Guide','Ultima 7P','timeclocks','ultima7p','Installation Guide','PDF','rugged mounting power cellular battery'],['Ultima 10 Installation Guide','Ultima 10','timeclocks','ultima10','Installation Guide','PDF','mounting power cabling poe network'],
+  ['Ultima 5 User Manual','Ultima 5','timeclocks','ultima5','User Manual','PDF','manual administrator operations'],['Ultima 7 User Manual','Ultima 7','timeclocks','ultima7','User Manual','PDF','manual administrator operations'],['Ultima 7P User Manual','Ultima 7P','timeclocks','ultima7p','User Manual','PDF','manual administrator operations'],['Ultima 10 User Manual','Ultima 10','timeclocks','ultima10','User Manual','PDF','manual administrator operations'],
+  ['Ultima 5 Product Images','Ultima 5','timeclocks','ultima5','Product Images','MEDIA','approved product images media'],['Ultima 7 Product Images','Ultima 7','timeclocks','ultima7','Product Images','MEDIA','approved product images media'],['Ultima 7P Product Images','Ultima 7P','timeclocks','ultima7p','Product Images','MEDIA','approved product images media'],['Ultima 10 Product Images','Ultima 10','timeclocks','ultima10','Product Images','MEDIA','approved product images media'],
+  ['CirrusTime Data Sheet','CirrusTime','cirrustime','','Data Sheet','PDF','time collection application'],['CirrusWeb Data Sheet','CirrusWeb','cirrusweb','','Data Sheet','PDF','web browser time collection'],['CirrusMobile Data Sheet','CirrusMobile','cirrusmobile','','Data Sheet','PDF','mobile ios android workforce'],['CirrusKiosk Data Sheet','CirrusKiosk','cirruskiosk','','Data Sheet','PDF','kiosk tablet shared terminal'],['CirrusConnect Data Sheet','CirrusConnect','cirrusconnect','','Data Sheet','PDF','cloud device management connectivity'],['CirrusDCS for Workday Overview','CirrusDCS','cirrusdcs','','Brochure','PDF','workday integration middleware cloud'],['ZKTeco WFM Company Overview','Company','company','','Brochure','PDF','company brochure ecosystem workforce data']
+];
+---
+
+<!-- tailwind.css is loaded by SiteLayout. -->
+<SiteLayout title="Product Collaterals | ZKTeco WFM" description="Find current ZKTeco WFM product data sheets, manuals, installation guides, media assets, brochures, and videos.">
+  <section class="zk-collateral-hero"><div class="zk-wrap"><div class="zk-eyebrow">Product Collaterals</div><h1>Product Downloads</h1><p>Find product documents, deployment guides, media assets, brochures, and videos.</p></div></section>
+  <section class="zk-library"><div class="zk-wrap">
+    <label class="zk-library-search"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.25 4.25"></path></svg><input id="resource-search" type="search" placeholder="Search downloads" aria-label="Search downloads" autocomplete="off" /></label>
+    <div class="zk-library-controls">
+      <div class="zk-filter-group"><span class="zk-filter-label">Product</span><div class="zk-library-filters" id="product-filters"><button class="active" data-filter="all">All</button><button data-filter="timeclocks">Time Clocks</button><button data-filter="cirrustime">CirrusTime</button><button data-filter="cirrusweb">CirrusWeb</button><button data-filter="cirrusmobile">CirrusMobile</button><button data-filter="cirruskiosk">CirrusKiosk</button><button data-filter="cirrusconnect">CirrusConnect</button><button data-filter="cirrusdcs">CirrusDCS</button><button data-filter="company">Company</button></div></div>
+      <div class="zk-filter-group" id="model-filter-group" hidden><span class="zk-filter-label">Time Clock Model</span><div class="zk-library-filters" id="model-filters"><button class="active" data-filter="all">All Time Clocks</button><button data-filter="ultima5">Ultima 5</button><button data-filter="ultima7">Ultima 7</button><button data-filter="ultima7p">Ultima 7P</button><button data-filter="ultima10">Ultima 10</button></div></div>
+      <div class="zk-filter-group"><span class="zk-filter-label">Resource Type</span><div class="zk-library-filters" id="type-filters"><button class="active" data-filter="all">All</button><button data-filter="Data Sheet">Data Sheets</button><button data-filter="User Manual">Manuals</button><button data-filter="Installation Guide">Install Guides</button><button data-filter="Product Images">Images</button><button data-filter="Brochure">Brochures</button></div></div>
+    </div>
+    <div class="zk-library-results-head"><div><h2 id="results-title">Downloads</h2><p class="zk-library-help">Only available collateral is shown.</p></div><p id="resource-count" aria-live="polite"></p></div>
+    <div class="zk-download-groups" id="resource-grid">{downloads.map(([title, product, productKey, modelKey, type, format, keywords]) => <a class="zk-download-row" data-product={productKey} data-model={modelKey} data-type={type} data-search={`${title} ${product} ${type} ${keywords}`} href={`/contact?resource=${encodeURIComponent(title)}`}><span class="zk-file-badge">{format}</span><span class="zk-download-name">{title}<small>{product} · {type}</small></span><span class="zk-download-action">Download <b>→</b></span></a>)}</div>
+    <div class="zk-library-empty" id="resource-empty" hidden><h3>No matching downloads found.</h3><p>Try another product, model, resource type, or search term.</p></div>
+  </div></section>
+</SiteLayout>
+
+<script is:inline>
+  const resourceRows = [...document.querySelectorAll('#resource-grid .zk-download-row')];
+  const search = document.querySelector('#resource-search');
+  const count = document.querySelector('#resource-count');
+  const title = document.querySelector('#results-title');
+  const empty = document.querySelector('#resource-empty');
+  const modelGroup = document.querySelector('#model-filter-group');
+  let product = 'all', model = 'all', type = 'all', query = '';
+  const render = () => {
+    modelGroup.hidden = product !== 'timeclocks';
+    if (product !== 'timeclocks') model = 'all';
+    let matching = resourceRows.filter((row) => (product === 'all' || row.dataset.product === product) && (model === 'all' || row.dataset.model === model) && (type === 'all' || row.dataset.type === type) && row.dataset.search.toLowerCase().includes(query));
+    resourceRows.forEach((row) => row.hidden = !matching.includes(row));
+    count.textContent = `${matching.length} download${matching.length === 1 ? '' : 's'}`;
+    title.textContent = model === 'all' ? 'Downloads' : `${modelGroup.querySelector(`[data-filter="${model}"]`).textContent} Downloads`;
+    empty.hidden = matching.length > 0;
+  };
+  const bind = (id, setter) => document.querySelectorAll(`#${id} button`).forEach((button) => button.addEventListener('click', () => { document.querySelectorAll(`#${id} button`).forEach((item) => item.classList.remove('active')); button.classList.add('active'); setter(button.dataset.filter); render(); }));
+  bind('product-filters', (value) => product = value); bind('model-filters', (value) => model = value); bind('type-filters', (value) => type = value);
+  search.addEventListener('input', () => { query = search.value.trim().toLowerCase(); render(); });
+  render();
+</script>

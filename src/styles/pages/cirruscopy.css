@@ -111,6 +111,9 @@ html body .cc-final .zk-btn.zk-standard-bottom-cta:hover>span{transform:translat
 .cc-hierarchy .cc-customers:before{content:"";position:absolute;z-index:0;top:50%;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,var(--cc-green) 12%,var(--cc-green) 88%,transparent);transform:translateY(-50%)}
 .cc-hierarchy .cc-customer{position:relative;z-index:1}
 .cc-hierarchy .cc-customer:first-child img{width:82%;height:60px}
+.cc-hierarchy .cc-customer:first-child img{width:100%;height:70px;transform:scale(.69)}
+.cc-hierarchy .cc-customer:nth-child(2) img{transform:translateX(-4px) scale(1.15)}
+.cc-hierarchy .cc-customer:nth-child(3) img{transform:scale(1.12)}
 @media(max-width:600px){.cc-hierarchy .cc-customers:before{display:none}}
 
 /* The data-flow node labels use plain text without the shared animated marker. */

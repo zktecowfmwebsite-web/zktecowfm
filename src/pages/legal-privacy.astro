@@ -1,0 +1,54 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import '../styles/pages/legal-privacy.css';
+import '../styles/pages/legal-privacy-overrides.css';
+import '../styles/pages/home-zoho.css';
+import ZohoLeadForm from '../components/ZohoLeadForm.astro';
+const policies = [
+  ['Privacy Notice', 'How we collect, use, and protect personal information.', 'Read notice', 'privacy'],
+  ['U.S. Biometric Privacy Policy', 'Our practices for eligible cloud-based biometric processing.', 'Read policy', 'biometric-privacy-policy'],
+  ['Cookie Policy', 'Information about cookies and website preference storage.', 'Read policy', 'cookie-policy'],
+  ['Website Terms of Use', 'The terms that apply to use of this website.', 'Read terms', 'terms'],
+  ['Accessibility Statement', 'Our commitment to accessible digital experiences.', 'Read statement', 'accessibility'],
+  ['Educational Content Disclaimer', 'Important context for our educational and insight content.', 'Read disclaimer', 'educational-disclaimer'],
+];
+---
+<!-- tailwind.css is loaded by SiteLayout. -->
+<SiteLayout title="Legal & Privacy | ZKTeco WFM" description="Legal, privacy, accessibility, security, and compliance resources from ZKTeco WFM.">
+  <section class="zk-legal-hero"><div class="zk-wrap"><div class="zk-eyebrow">Resources</div><h1>Legal &amp; Privacy</h1><p>Privacy notices, policies, terms, accessibility, and security information.</p></div></section>
+  <section class="zk-legal-directory"><div class="zk-wrap"><div class="zk-policy-grid">{policies.map(([title, description, action, href]) => <a href={href}><h2>{title}</h2><p>{description}</p><b>{action} <span aria-hidden="true">→</span></b></a>)}</div></div></section>
+  <style is:global>
+    /* Page-level rule keeps the directory cards compact even when shared CSS is cached. */
+    .zk-legal-directory .zk-policy-grid > a { box-sizing: border-box; height: 220px !important; min-height: 220px !important; padding: 24px !important; }
+    .zk-legal-directory .zk-policy-grid > a > b { margin-top: auto !important; padding-top: 12px !important; color: #201f62 !important; }
+    .zk-legal-directory .zk-policy-grid > a > b > span { color: currentColor !important; }
+    .zk-legal-directory .zk-policy-grid > a:hover > b { color: #78bd43 !important; }
+    @media (max-width: 620px) { .zk-legal-directory .zk-policy-grid > a { height: auto !important; min-height: 0 !important; } }
+  </style>
+  <section class="zk-security-bridge"><div class="zk-wrap"><div><div class="zk-eyebrow">Security &amp; Trust</div><h2>Security information for your review process</h2><p>Learn about ZKTeco WFM’s approach to security, privacy, and trust.</p></div><button class="security-bridge-cta" type="button" data-zoho-form-open>Let’s Talk <span aria-hidden="true">→</span></button></div></section>
+  <ZohoLeadForm />
+  <style is:global>
+    .zk-security-bridge { position: relative; isolation: isolate; overflow: hidden; padding: 64px 24px; background: radial-gradient(circle at 9% 8%,rgba(117,189,59,.22),transparent 24%),radial-gradient(circle at 92% 14%,rgba(117,189,59,.10),transparent 26%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(135deg,#10143b 0%,#171d55 54%,#202568 100%); background-size: auto,auto,44px 44px,44px 44px,auto; color: #fff; text-align: center; }
+    .zk-security-bridge .zk-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 0; }
+    .zk-security-bridge .zk-eyebrow { margin: 0 0 12px; color: #a2da49; }
+    .zk-security-bridge h2 { margin: 0 0 12px; color: #fff; font-size: clamp(36px,4vw,48px); font-weight: 800; line-height: 1.08; letter-spacing: -.035em; }
+    .zk-security-bridge p { max-width: 840px; margin: 0 0 32px; color: #fff; font-size: 18px; line-height: 1.55; }
+    .security-bridge-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 22px; padding: 13px 20px; border: 1px solid #a8e274; border-radius: 12px; background: radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.42),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%); color: #102044; font-size: 16px; font-weight: 700; line-height: 1.2; text-decoration: none; box-shadow: inset 0 1px 0 rgba(237,255,216,.4),0 14px 30px rgba(0,0,0,.18); transition: transform .6s cubic-bezier(.22,1,.36,1),box-shadow .6s cubic-bezier(.22,1,.36,1),filter .6s cubic-bezier(.22,1,.36,1); }
+    .security-bridge-cta span { transition: transform .6s cubic-bezier(.22,1,.36,1); }
+    .security-bridge-cta:hover { transform: translateY(-3px); filter: brightness(1.075); box-shadow: inset 0 1px 0 rgba(237,255,216,.5),0 16px 28px rgba(68,139,35,.25); }
+    .security-bridge-cta:hover span { transform: translate3d(6px,0,0); }
+    button.security-bridge-cta { font-family: inherit; cursor: pointer; }
+    @media (max-width: 620px) {
+      .zk-security-bridge { padding: 44px 20px; }
+      .zk-security-bridge .zk-wrap { display: flex; }
+      .zk-security-bridge h2 { font-size: 34px; }
+      .zk-security-bridge p { margin-bottom: 26px; font-size: 16px; }
+      .security-bridge-cta { width: 100%; }
+    }
+  </style>
+  <script is:inline>
+    document.querySelector('[data-zoho-form-open]')?.addEventListener('click', (event) => {
+      document.dispatchEvent(new CustomEvent('zoho:open', { detail: event.currentTarget }));
+    });
+  </script>
+</SiteLayout>

@@ -44,6 +44,12 @@ body{margin:0}*{box-sizing:border-box}
 @media(prefers-reduced-motion:reduce){.zk-section.alt .zk-actions .zk-btn.primary,.zk-section.alt .zk-actions .zk-btn.primary:after{transition:none}.zk-section.alt .zk-actions .zk-btn.primary:hover,.zk-section.alt .zk-actions .zk-btn.primary:hover:after{transform:none}}
 @media(prefers-reduced-motion:reduce){.zk-section.alt .zk-actions .zk-btn.secondary,.zk-section.alt .zk-actions .zk-btn.secondary:after{transition:none}.zk-section.alt .zk-actions .zk-btn.secondary:hover,.zk-section.alt .zk-actions .zk-btn.secondary:hover:after{transform:none}}
 
+/* Use the Workday-conversation button treatment without changing this button's width. */
+.zk-section.alt .zk-actions .zk-btn.primary{justify-content:space-between;gap:24px;min-height:0;padding:13px 20px;text-align:left;text-decoration:none;font-size:16px;font-weight:700;line-height:1.2}
+.zk-section.alt .zk-actions .zk-btn.primary:after{display:inline-flex;font-size:inherit;line-height:1}
+.zk-section.alt .zk-actions .zk-btn.primary{box-shadow:inset 0 .5px 0 rgba(237,255,216,.4),0 14px 30px rgba(0,0,0,.18)}
+.zk-section.alt .zk-actions .zk-btn.primary:hover{box-shadow:inset 0 .5px 0 rgba(237,255,216,.5),0 16px 28px rgba(68,139,35,.25)}
+
 /* Headquarters CTA uses the reference's white-on-green button treatment. */
 .zk-section.alt .zk-actions .zk-btn.primary{min-height:80px;padding:18px 36px;border-color:#9bdd67;border-radius:24px;background:linear-gradient(135deg,#9add58 0%,#78c53a 52%,#68b82f 100%);box-shadow:inset 0 2px 0 rgba(238,255,213,.55),0 18px 34px rgba(69,139,35,.22);color:#fff!important;font-size:20px;font-weight:850}.zk-section.alt .zk-actions .zk-btn.primary:after{color:#fff;font-size:39px;font-weight:400}.zk-section.alt .zk-actions .zk-btn.primary:hover{box-shadow:inset 0 2px 0 rgba(238,255,213,.65),0 20px 34px rgba(69,139,35,.3)}
 
@@ -58,4 +64,21 @@ body{margin:0}*{box-sizing:border-box}
 /* Keep the headquarters actions compact and aligned as a pair. */
 .contact-hq-copy .zk-actions{flex-wrap:nowrap}.contact-hq-copy .zk-actions .zk-btn.primary{white-space:nowrap}.zk-section.alt .zk-actions .zk-btn.secondary{min-height:56px;padding:13px 20px;border-radius:14px;font-size:16px;white-space:nowrap}.zk-section.alt .zk-actions .zk-btn.secondary:after{font-size:24px}@media(max-width:760px){.contact-hq-copy .zk-actions{flex-wrap:wrap}}
 
-.contact-hq-copy .zk-actions .zk-btn.primary,.contact-hq-copy .zk-actions .zk-btn.primary:after{color:var(--zk-navy,#201f62)!important}
+.contact-hq-copy .zk-actions .zk-btn.primary,.contact-hq-copy .zk-actions .zk-btn.primary:after{color:#000!important}
+
+/* Override the later 2px inset highlight with the reduced top edge. */
+.contact-hq-copy .zk-actions .zk-btn.primary{box-shadow:inset 0 .5px 0 rgba(237,255,216,.4),0 14px 30px rgba(0,0,0,.18)!important}
+.contact-hq-copy .zk-actions .zk-btn.primary:hover{box-shadow:inset 0 .5px 0 rgba(237,255,216,.5),0 16px 28px rgba(68,139,35,.25)!important}
+
+/* The headquarters card uses the general actions wrapper, not .contact-hq-copy. */
+.zk-section.alt .zk-actions .zk-btn.primary,.zk-section.alt .zk-actions .zk-btn.primary:after{color:#000!important}
+
+/* Match the Workday Conversation CTA typography exactly. */
+.zk-section.alt .zk-actions .zk-btn.primary{font-size:16px;font-weight:700;line-height:1.2;letter-spacing:normal}
+.zk-section.alt .zk-actions .zk-btn.secondary{font-size:16px;font-weight:700;line-height:1.2;letter-spacing:normal}
+.zk-section.alt .zk-actions .zk-btn.secondary,.zk-section.alt .zk-actions .zk-btn.secondary:after{color:#000!important}
+
+/* Override the later shared secondary-button color rule. */
+html body.zk-page main .zk-section.alt .zk-actions>.zk-btn.secondary,html body.zk-page main .zk-section.alt .zk-actions>.zk-btn.secondary:after{color:#000!important}
+
+.zk-section.alt .zk-actions>.zk-btn.primary:after,.zk-section.alt .zk-actions>.zk-btn.secondary:after{color:currentColor!important}
