@@ -1,4 +1,7 @@
----
+﻿---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
 import '../styles/pages/index.css';
 ---
 <!DOCTYPE html>
@@ -17,15 +20,7 @@ import '../styles/pages/index.css';
 
 <link href="assets/layout-standard-v114.css" rel="stylesheet"/><link rel="canonical" href="https://zktecowfm.com/" /></head>
 <body>
-<header class="zk-global-header"><div class="zk-nav-shell"><a class="zk-brand" href="/"><img alt="ZKTeco WFM — Every Punch Matters" class="zk-brand-logo" src="assets/zkteco-wfm-every-punch-matters.png"/></a><nav aria-label="Primary navigation" class="zk-menu">
-<a href="workday">Workday Solution</a>
-<a href="software-partners">Software Partners</a>
-<div class="zk-drop"><a href="ultima-series">Products</a><div class="zk-drop-menu"><a href="ultima-series">Ultima Series</a><a href="timetrack">TimeTrack</a><a href="cirrusconnect">CirrusConnect</a></div></div>
-<a href="why-zkteco-wfm">Why ZKTeco WFM</a>
-<div class="zk-drop"><a href="resources">Resources</a><div class="zk-drop-menu"><a href="resources">Resource Hub</a><a href="thought-leadership">Thought Leadership</a><a href="customer-stories">Customer Stories</a><a href="security-trust">Security &amp; Trust</a></div></div>
-<a href="events">Events</a><a href="support">Support</a>
-<a class="zk-talk" href="contact">Talk to an Expert</a>
-</nav></div></header>
+<Header />
 <main>
 <section aria-label="ZKTeco WFM market overview" class="hero">
 <div class="wrap hero-inner">
@@ -186,7 +181,7 @@ import '../styles/pages/index.css';
 <div class="segments-intro tw-mx-auto tw-mb-[44px] tw-max-w-[850px] tw-text-center">
 <div class="section-label">Solutions by Market</div>
 <h2>One Foundation, Built for Workday and<br/>Software Partners</h2>
-<p>Choose the solution designed for your organization—or the time clock technology strategy that fits your software platform.</p>
+<p>Choose the solution designed for your organization or the time clock technology strategy that fits your software platform.</p>
 </div>
 <div class="segments-grid tw-grid tw-grid-cols-2 tw-gap-[22px] max-[800px]:tw-grid-cols-1">
 <article class="segment-card workday-segment">
@@ -224,6 +219,7 @@ import '../styles/pages/index.css';
 </div>
 <h3>Product Resources</h3>
 <p>Access product datasheets, installation guides, user manuals and approved product images.</p>
+<a class="resource-link" href="resources">Explore Product Resources <span aria-hidden="true">→</span></a>
 </article>
 <article class="resource-card resource-insights">
 <div class="resource-icon">
@@ -231,6 +227,7 @@ import '../styles/pages/index.css';
 </div>
 <h3>Insights &amp; Expertise</h3>
 <p>Read practical perspectives on workforce data collection, integrations, compliance and emerging technology.</p>
+<a class="resource-link" href="thought-leadership">Explore Insights &amp; Expertise <span aria-hidden="true">→</span></a>
 </article>
 <article class="resource-card resource-support" id="support">
 <div class="resource-icon">
@@ -238,6 +235,7 @@ import '../styles/pages/index.css';
 </div>
 <h3>Customer &amp; Partner Support</h3>
 <p>Access dedicated technical support resources for Workday customers and software partners.</p>
+<a class="resource-link" href="support">Contact Support <span aria-hidden="true">→</span></a>
 </article>
 </div>
 </div>
@@ -282,7 +280,7 @@ import '../styles/pages/index.css';
   </div>
 </div>
 </main>
-<footer class="zk-global-footer"><div class="zk-footer-shell"><div class="zk-footer-grid"><div class="zk-footer-brand"><img alt="ZKTeco WFM" class="zk-footer-logo" src="/assets/ZKTecowfm-white-green@4x.png" width="180"/><p>The Workforce Data Collection Company.<br/>Every Punch Matters.</p></div><div class="zk-footer-col"><h4>Solutions</h4><a href="workday">Workday Customers</a><a href="software-partners">Software Partners</a><a href="use-cases">Industry Use Cases</a><a href="customer-stories">Customer Stories</a></div><div class="zk-footer-col"><h4>Products</h4><a href="ultima-series">Ultima Series</a><a href="timetrack">TimeTrack</a><a href="cirrusconnect">CirrusConnect</a><a href="workday#cirrusdcs">CirrusDCS</a></div><div class="zk-footer-col"><h4>Resources &amp; Trust</h4><a href="resources">Resource Hub</a><a href="thought-leadership">Thought Leadership</a><a href="security-trust">Security &amp; Trust</a><span aria-disabled="true" class="zk-link-disabled">Trust Center — Coming Soon</span><a href="support">Support</a></div><div class="zk-footer-col"><h4>Company</h4><a href="why-zkteco-wfm">Why ZKTeco WFM</a><a href="contact">Contact</a><a href="https://zktecowfm.com/careers/">Careers</a><a href="events">Events</a><a href="https://zktecowfm.com/biometric-privacy-policy/">Biometric Privacy</a></div></div><div class="zk-footer-bottom"><span>© 2026 ZKTeco WFM. All rights reserved.</span><div class="zk-footer-legal"><a href="privacy">Privacy &amp; GDPR</a><a href="cookie-policy">Cookies</a><button data-cookie-settings="">Cookie Preferences</button><a href="terms">Terms</a><a href="accessibility">Accessibility</a><a href="educational-disclaimer">Educational Disclaimer</a></div></div></div></footer>
+<Footer />
 <script is:inline>
     const menu=document.querySelector('.menu'),hamb=document.querySelector('.hamb');if(menu&&hamb)hamb.onclick=()=>{const open=menu.classList.toggle('open');hamb.setAttribute('aria-expanded',String(open))};
   </script>
@@ -314,22 +312,78 @@ import '../styles/pages/index.css';
         cardLink.click();
       });
     });
-    solutionCards.forEach((card) => {
-      const otherCard = [...solutionCards].find((candidate) => candidate !== card);
-      card.addEventListener('mouseenter', () => {
-        card.classList.remove('is-card-hover-muted');
-        card.classList.add('is-card-hover-focus');
-        otherCard?.classList.remove('is-card-hover-focus');
-        otherCard?.classList.add('is-card-hover-muted');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const cards = [...solutionCards];
+      const cardMotions = new Map();
+      const focusedTarget = { transform: 'scale(1.07)', shadow: '0 0 22px rgba(117,189,59,.28)' };
+      const restingTarget = { transform: 'scale(1)', shadow: '0 0 0 rgba(117,189,59,0)' };
+      let animationRun = 0;
+      let sectionIsVisible = false;
+      const wait = (milliseconds) => new Promise((resolve) => window.setTimeout(resolve, milliseconds));
+      const moveCard = (card, target, focused) => {
+        const currentStyle = getComputedStyle(card);
+        cardMotions.get(card)?.cancel();
+        card.classList.toggle('is-card-focused', focused);
+        const motion = card.animate([
+          { transform: currentStyle.transform, boxShadow: currentStyle.boxShadow },
+          { transform: target.transform, boxShadow: target.shadow }
+        ], { duration: 250, easing: 'linear', fill: 'forwards' });
+        cardMotions.set(card, motion);
+        return motion.finished.then(() => {
+          if (cardMotions.get(card) !== motion) return;
+          card.style.transform = target.transform;
+          card.style.boxShadow = target.shadow;
+        }).catch(() => {});
+      };
+      const stopAnimation = (cancelMotions = false) => {
+        animationRun += 1;
+        if (cancelMotions) cardMotions.forEach((motion) => motion.cancel());
+      };
+      const runCardLoop = async (focusedCard, alreadyFocused = false) => {
+        const run = ++animationRun;
+        const otherCard = cards.find((card) => card !== focusedCard);
+        if (!alreadyFocused) await Promise.all([moveCard(focusedCard, focusedTarget, true), moveCard(otherCard, restingTarget, false)]);
+        let activeCard = focusedCard;
+        while (sectionIsVisible && run === animationRun) {
+          await wait(3000);
+          if (!sectionIsVisible || run !== animationRun) return;
+          const nextCard = cards.find((card) => card !== activeCard);
+          await Promise.all([moveCard(activeCard, restingTarget, false), moveCard(nextCard, focusedTarget, true)]);
+          activeCard = nextCard;
+        }
+      };
+      const startAnimation = (focusedCard, alreadyFocused = false) => { if (sectionIsVisible) runCardLoop(focusedCard, alreadyFocused); };
+      cards.forEach((card) => {
+        card.addEventListener('mouseenter', () => {
+          stopAnimation();
+          moveCard(card, focusedTarget, true);
+          moveCard(cards.find((candidate) => candidate !== card), restingTarget, false);
+        });
+        card.addEventListener('mouseleave', (event) => {
+          const nextCard = event.relatedTarget?.closest('.segment-card');
+          if (!nextCard || !solutionsSection.contains(nextCard)) startAnimation(card, true);
+        });
       });
-      card.addEventListener('mouseleave', (event) => {
-        const nextCard = event.relatedTarget?.closest('.segment-card');
-        if (nextCard && solutionsSection.contains(nextCard)) return;
-        card.classList.remove('is-card-hover-focus');
-        otherCard?.classList.remove('is-card-hover-muted');
-      });
-    });
+      new IntersectionObserver(([entry]) => {
+        sectionIsVisible = entry.isIntersecting;
+        if (sectionIsVisible) startAnimation(cards[0]);
+        else {
+          stopAnimation(true);
+          cards.forEach((card) => { card.style.transform = ''; card.style.boxShadow = ''; card.classList.remove('is-card-focused'); });
+        }
+      }, { threshold: 0.25 }).observe(solutionsSection);
+    }
   }
+ </script>
+<script is:inline>
+  document.querySelectorAll('.zk-drop').forEach((drop) => {
+    const trigger = drop.querySelector(':scope > a[href="resources"]');
+    const productResources = drop.querySelector('.zk-drop-menu a[href="resources"]');
+    if (trigger) trigger.textContent = 'Resource Hub';
+    if (trigger) trigger.href = 'resource-hub';
+    if (productResources) productResources.textContent = 'Product Collaterals';
+    if (productResources) productResources.href = 'product-collaterals';
+  });
 </script>
 <script is:inline>
   const zohoModal = document.querySelector('[data-zoho-modal]');

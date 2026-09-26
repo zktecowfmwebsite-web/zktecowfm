@@ -26,6 +26,30 @@
     let hasChoice=false;try{hasChoice=!!localStorage.getItem(KEY);}catch(e){}if(!hasChoice)banner.classList.add('show');
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+  document.querySelectorAll('.zk-drop-menu').forEach((menu)=>{
+    const links=[...menu.querySelectorAll('a')];
+    const thoughtLeadership=links.find((link)=>link.textContent.trim()==='Thought Leadership');
+    const isResourcesMenu=thoughtLeadership||links.some((link)=>/Resource Hub|Product Collaterals/.test(link.textContent));
+    if(!isResourcesMenu)return;
+    links.filter((link)=>/^(Security & Trust|Legal & Privacy|Privacy & Policy)$/.test(link.textContent.trim())).forEach((link)=>link.remove());
+    const privacyLink=document.createElement('a');
+    privacyLink.href='legal-privacy';
+    privacyLink.textContent='Legal & Privacy';
+    if(thoughtLeadership)thoughtLeadership.after(privacyLink);else menu.append(privacyLink);
+  });
+})();
+
+/* Give legacy pages the same primary navigation as component-based pages. */
+(()=>{
+  document.querySelectorAll('.zk-global-header .zk-menu').forEach(nav=>{
+    nav.innerHTML=`
+      <a href="/workday">Workday Solution</a>
+      <a href="/software-partners">Software Partners</a>
+      <div class="zk-drop"><a data-nav-trigger="products" href="/ultima-series">Products</a><div class="zk-drop-menu"><a href="/ultima-series">Ultima Series</a><a href="/timetrack">TimeTrack</a><a href="/cirrusconnect">CirrusConnect</a></div></div>
+      <a href="/why-zkteco-wfm">Why ZKTeco WFM</a>
+      <div class="zk-drop"><a data-nav-trigger="resources" href="/resource-hub">Resource Hub</a><div class="zk-drop-menu"><a href="/product-collaterals">Product Collaterals</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a></div></div>
+      <a href="/events">Events</a><a href="/support">Support</a><a class="zk-talk" href="/contact">Talk to an Expert</a>`;
+  });
 })();
 
 /* Mobile navigation: keep the compact header usable with tap-to-expand menus. */
@@ -204,3 +228,32 @@
   if(primary.tagName==='A')primary.href='/?openZohoForm=1#contact';
   else primary.setAttribute('data-zoho-form-open','');
 })();
+
+/* Use the Resource Hub footer as the shared footer on every page. */
+(()=>{
+  const standardizeFooter=()=>{
+    const footer=document.querySelector('.zk-global-footer');
+    if(!footer||footer.dataset.standardizedFooter)return;
+    if(!document.getElementById('zk-standard-footer-style')){
+      const style=document.createElement('style');
+      style.id='zk-standard-footer-style';
+      style.textContent='.zk-global-footer .zk-footer-col h4{margin-bottom:18px}.zk-global-footer .zk-footer-col a,.zk-global-footer .zk-footer-col .zk-link-disabled{margin-block:12px}';
+      document.head.append(style);
+    }
+    footer.dataset.standardizedFooter='true';
+    footer.innerHTML=`
+      <div class="zk-footer-shell">
+        <div class="zk-footer-grid">
+          <div class="zk-footer-brand"><img alt="ZKTeco WFM" class="zk-footer-logo" src="/assets/ZKTecowfm-white-green@4x.png" width="180"><p>The Workforce Data Collection Company.<br>Every Punch Matters.</p></div>
+          <div class="zk-footer-col"><h4>Solutions</h4><a href="/workday">Workday Customers</a><a href="/software-partners">Software Partners</a><a href="/use-cases">Industry Use Cases</a><a href="/customer-stories">Customer Stories</a></div>
+          <div class="zk-footer-col"><h4>Products</h4><a href="/ultima-series">Ultima Series</a><a href="/timetrack">TimeTrack</a><a href="/cirrusconnect">CirrusConnect</a><a href="/workday#cirrusdcs">CirrusDCS</a></div>
+          <div class="zk-footer-col"><h4>Resources</h4><a href="/resource-hub">Resources</a><a href="/product-collaterals">Product Collaterals</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a><a href="/security-trust">Security &amp; Trust</a></div>
+          <div class="zk-footer-col"><h4>Company</h4><a href="/why-zkteco-wfm">Why ZKTeco WFM</a><a href="/contact">Contact</a><a href="https://zktecowfm.com/careers/">Careers</a><a href="/events">Events</a><a href="/support">Support</a></div>
+        </div>
+        <div class="zk-footer-bottom"><span>© 2026 ZKTeco WFM. All rights reserved.</span><div class="zk-footer-legal"><a href="/privacy">Privacy &amp; GDPR</a><a href="/cookie-policy">Cookies</a><button type="button" data-cookie-settings>Cookie Preferences</button><a href="/terms">Terms</a><a href="/accessibility">Accessibility</a><a href="/educational-disclaimer">Educational Disclaimer</a></div></div>
+      </div>`;
+    footer.querySelector('[data-cookie-settings]')?.addEventListener('click',()=>window.ZKConsent?.open());
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',standardizeFooter);else standardizeFooter();
+})();
+

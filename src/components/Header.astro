@@ -1,6 +1,4 @@
 ---
-const currentPath = Astro.url.pathname;
-const isActive = (path: string) => currentPath === path;
 ---
 
 <header class="zk-global-header">
@@ -9,14 +7,17 @@ const isActive = (path: string) => currentPath === path;
       <img class="zk-brand-logo" src="/assets/zkteco-wfm-every-punch-matters.png" alt="ZKTeco WFM — Every Punch Matters" />
     </a>
     <nav class="zk-menu" aria-label="Primary navigation">
-      <a href="/workday.html">Workday Solution</a>
-      <a href="/software-partners.html">Software Partners</a>
-      <a href="/ultima-series.html">Products</a>
-      <a href="/why-zkteco-wfm.html">Why ZKTeco WFM</a>
-      <a class:list={[{ active: isActive('/resources.html') }]} href="/resources.html">Resources</a>
-      <a href="https://zktecowfm.com/events/">Events</a>
-      <a href="/support.html">Support</a>
-      <a class="zk-talk" href="/contact.html">Talk to an Expert</a>
+      <a href="/workday">Workday Solution</a>
+      <a href="/software-partners">Software Partners</a>
+      <div class="zk-drop"><a data-nav-trigger="products" href="/ultima-series">Products</a><div class="zk-drop-menu"><a href="/ultima-series">Ultima Series</a><a href="/timetrack">TimeTrack</a><a href="/cirrusconnect">CirrusConnect</a></div></div>
+      <a href="/why-zkteco-wfm">Why ZKTeco WFM</a>
+      <div class="zk-drop">
+        <a data-nav-trigger="resources" href="/resource-hub">Resource Hub</a>
+        <div class="zk-drop-menu"><a href="/product-collaterals">Product Collaterals</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a></div>
+      </div>
+      <a href="/events">Events</a>
+      <a href="/support">Support</a>
+      <a class="zk-talk" href="/contact">Talk to an Expert</a>
     </nav>
   </div>
 </header>
