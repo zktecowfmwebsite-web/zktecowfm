@@ -77,6 +77,7 @@ html body .cc-final .zk-btn.zk-standard-bottom-cta:hover>span{transform:translat
 
 /* Align CirrusConnect typography with the Ultima Series visual system. */
 :root{--cc-green:#75bd3b;--cc-green2:#a6ce39;--cc-navy:#201f62;--cc-ink:#151842;--cc-muted:#62677e}
+.cc-hero .cc-bars i:nth-child(2),.cc-hero .cc-bars i:nth-child(5){background:#056e40}
 .cc-hero,.cc-section,.cc-cap-strip,.cc-final{font-family:Inter,"Segoe UI",Arial,sans-serif}
 .cc-hero h1,.cc-section-head h2,.cc-pillar h3,.cc-node h3,.cc-scale h2,.cc-archbox h3,.cc-statement,.cc-h-core,.cc-op strong,.cc-value strong{font-family:Inter,"Segoe UI",Arial,sans-serif;font-weight:700;color:var(--cc-navy)}
 .cc-hero h1{letter-spacing:-.05em}.cc-section-head h2{letter-spacing:-.04em}

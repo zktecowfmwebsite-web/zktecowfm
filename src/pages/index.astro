@@ -1,4 +1,4 @@
----
+﻿---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -181,7 +181,7 @@ import '../styles/pages/index.css';
 <div class="segments-intro tw-mx-auto tw-mb-[44px] tw-max-w-[850px] tw-text-center">
 <div class="section-label">Solutions by Market</div>
 <h2>One Foundation, Built for Workday and<br/>Software Partners</h2>
-<p>Choose the solution designed for your organization—or the time clock technology strategy that fits your software platform.</p>
+<p>Choose the solution designed for your organization or the time clock technology strategy that fits your software platform.</p>
 </div>
 <div class="segments-grid tw-grid tw-grid-cols-2 tw-gap-[22px] max-[800px]:tw-grid-cols-1">
 <article class="segment-card workday-segment">
@@ -312,21 +312,67 @@ import '../styles/pages/index.css';
         cardLink.click();
       });
     });
-    solutionCards.forEach((card) => {
-      const otherCard = [...solutionCards].find((candidate) => candidate !== card);
-      card.addEventListener('mouseenter', () => {
-        card.classList.remove('is-card-hover-muted');
-        card.classList.add('is-card-hover-focus');
-        otherCard?.classList.remove('is-card-hover-focus');
-        otherCard?.classList.add('is-card-hover-muted');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const cards = [...solutionCards];
+      const cardMotions = new Map();
+      const focusedTarget = { transform: 'scale(1.07)', shadow: '0 0 22px rgba(117,189,59,.28)' };
+      const restingTarget = { transform: 'scale(1)', shadow: '0 0 0 rgba(117,189,59,0)' };
+      let animationRun = 0;
+      let sectionIsVisible = false;
+      const wait = (milliseconds) => new Promise((resolve) => window.setTimeout(resolve, milliseconds));
+      const moveCard = (card, target, focused) => {
+        const currentStyle = getComputedStyle(card);
+        cardMotions.get(card)?.cancel();
+        card.classList.toggle('is-card-focused', focused);
+        const motion = card.animate([
+          { transform: currentStyle.transform, boxShadow: currentStyle.boxShadow },
+          { transform: target.transform, boxShadow: target.shadow }
+        ], { duration: 250, easing: 'linear', fill: 'forwards' });
+        cardMotions.set(card, motion);
+        return motion.finished.then(() => {
+          if (cardMotions.get(card) !== motion) return;
+          card.style.transform = target.transform;
+          card.style.boxShadow = target.shadow;
+        }).catch(() => {});
+      };
+      const stopAnimation = (cancelMotions = false) => {
+        animationRun += 1;
+        if (cancelMotions) cardMotions.forEach((motion) => motion.cancel());
+      };
+      const runCardLoop = async (focusedCard, alreadyFocused = false) => {
+        const run = ++animationRun;
+        const otherCard = cards.find((card) => card !== focusedCard);
+        if (!alreadyFocused) await Promise.all([moveCard(focusedCard, focusedTarget, true), moveCard(otherCard, restingTarget, false)]);
+        let activeCard = focusedCard;
+        while (sectionIsVisible && run === animationRun) {
+          await wait(3000);
+          if (!sectionIsVisible || run !== animationRun) return;
+          const nextCard = cards.find((card) => card !== activeCard);
+          await Promise.all([moveCard(activeCard, restingTarget, false), moveCard(nextCard, focusedTarget, true)]);
+          activeCard = nextCard;
+        }
+      };
+      const startAnimation = (focusedCard, alreadyFocused = false) => { if (sectionIsVisible) runCardLoop(focusedCard, alreadyFocused); };
+      cards.forEach((card) => {
+        card.addEventListener('mouseenter', () => {
+          stopAnimation();
+          moveCard(card, focusedTarget, true);
+          moveCard(cards.find((candidate) => candidate !== card), restingTarget, false);
+        });
+        card.addEventListener('mouseleave', (event) => {
+          const nextCard = event.relatedTarget?.closest('.segment-card');
+          if (!nextCard || !solutionsSection.contains(nextCard)) startAnimation(card, true);
+        });
       });
-      card.addEventListener('mouseleave', (event) => {
-        const nextCard = event.relatedTarget?.closest('.segment-card');
-        if (nextCard && solutionsSection.contains(nextCard)) return;
-        card.classList.remove('is-card-hover-focus');
-        otherCard?.classList.remove('is-card-hover-muted');
-      });
-    });
+      new IntersectionObserver(([entry]) => {
+        sectionIsVisible = entry.isIntersecting;
+        if (sectionIsVisible) startAnimation(cards[0]);
+        else {
+          stopAnimation(true);
+          cards.forEach((card) => { card.style.transform = ''; card.style.boxShadow = ''; card.classList.remove('is-card-focused'); });
+        }
+      }, { threshold: 0.25 }).observe(solutionsSection);
+    }
   }
  </script>
 <script is:inline>
