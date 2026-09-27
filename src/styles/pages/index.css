@@ -533,6 +533,16 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
   .architecture-v112 .partner-dest-kicker,.architecture-v112 .workday-dest-kicker{max-width:44px!important;margin-inline:auto!important;line-height:1.15!important;white-space:normal!important}
 }
 
+/* Keep the capture device and its collection-method labels legible on phones. */
+@media(max-width:900px){
+  .architecture-v112 .arch112-device,.architecture-v112 .arch112-device img{width:108px!important;height:64px!important}
+  .architecture-v112 .arch112-device{margin-bottom:10px!important}
+  .architecture-v112 .arch112-methods{gap:3px!important}
+  .architecture-v112 .arch112-methods span{padding:4px!important;font-size:6.5px!important;line-height:1.1!important}
+  .architecture-v112 .arch112-chips{gap:3px!important}
+  .architecture-v112 .arch112-chips span{padding:4px 5px!important;font-size:8px!important;line-height:1.15!important}
+}
+
 /* Zoho form actions */
 .zoho-form__actions{gap:24px}
 .zoho-form__actions .zoho-reset{border:2px solid var(--navy);border-radius:9px;background:#fff;color:var(--navy);padding:10px 17px;font-weight:900}

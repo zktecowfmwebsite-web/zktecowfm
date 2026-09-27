@@ -139,6 +139,9 @@ import '../styles/pages/ultima-zoho.css';
     '#ultima7-card': '.model-card:nth-child(3)',
     '#ultima5-card': '.model-card:nth-child(4)',
   };
+  Object.entries(modelCardTargets).forEach(([hash, selector]) => {
+    document.querySelector(selector)?.setAttribute('id', hash.slice(1));
+  });
   const targetSelector = modelCardTargets[location.hash];
   if (location.hash === '#models' || targetSelector) {
     const modelsSection = targetSelector ? document.querySelector(targetSelector) : document.querySelector('#models');

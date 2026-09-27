@@ -20,7 +20,9 @@ footer{background:#0d1233;color:#fff;padding:54px 0 24px}.foot-grid{display:grid
 /* Keep anchored product sections clear of the sticky site header. */
 #models{scroll-margin-top:calc(var(--zk-global-header-h,100px) + 20px)}
 #ultima5,#ultima7,#ultima7p,#ultima10{scroll-margin-top:132px}
+#ultima5-card,#ultima7-card,#ultima7p-card,#ultima10-card{scroll-margin-top:132px}
 @media(max-width:640px){#ultima5,#ultima7,#ultima7p,#ultima10{scroll-margin-top:108px}}
+@media(max-width:640px){#ultima5-card,#ultima7-card,#ultima7p-card,#ultima10-card{scroll-margin-top:108px}}
 
 /* Hide the standalone datasheet link placed after the Ultima 5 detail block. */
 #ultima5+a.btn.secondary{display:none}
