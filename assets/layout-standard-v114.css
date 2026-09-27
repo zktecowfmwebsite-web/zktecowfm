@@ -184,6 +184,38 @@ body>main>section:first-child .company-hero-grid>:first-child,body>main>section:
   html body .zk-global-footer a{font-size:12px!important}
 }
 
+/* Mobile resilience: contain page-specific layouts without changing desktop composition. */
+@media(max-width:760px){
+  html{scroll-padding-top:12px}
+  html,body{overflow-x:clip}
+  /* Compact, consistently wrapped headings across every page on mobile. */
+  html body main h1{font-size:clamp(2.18rem,8.4vw,2.55rem)!important;line-height:1.08!important;letter-spacing:-.03em!important;text-wrap:balance}
+  html body main h2{font-size:clamp(1.72rem,6.9vw,2.05rem)!important;line-height:1.12!important;letter-spacing:-.02em!important;text-wrap:balance}
+  html body main h3{font-size:clamp(1.38rem,5.8vw,1.65rem)!important;line-height:1.15!important;letter-spacing:-.01em!important;text-wrap:balance}
+  html body main h4,html body main h5,html body main h6{font-size:1.12rem!important;line-height:1.2!important;text-wrap:balance}
+  html body main :is(.zk-title,.section-title,.section-heading){font-size:96%!important;line-height:1.15!important;text-wrap:balance}
+  /* Consistent, compact section titles and introductions across all mobile pages. */
+  html body main section [class]:is([class*="head"],[class*="intro"],[class*="title"],[class*="section"],[class*="cta"]) h2{font-size:32px!important;line-height:1.08!important;letter-spacing:-.04em!important;text-wrap:balance}
+  html body main section [class]:is([class*="head"],[class*="intro"],[class*="title"],[class*="section"],[class*="cta"])>p{font-size:16px!important;line-height:1.55!important}
+  html body main :is([class*="cta"]) h3{font-size:1.55rem!important;line-height:1.1!important;letter-spacing:-.03em!important;text-wrap:balance}
+  html body main section:not(.cc-hero):not(.why-hero) [class] :is(h1,h2){font-size:32px!important;line-height:1.08!important;letter-spacing:-.04em!important;text-wrap:balance}
+  html body main section:not(.cc-hero):not(.why-hero) [class]>p{font-size:16px!important;line-height:1.55!important}
+  html body main section.cc-hero h1:after,html body main section.why-hero h1:before,html body main section.why-hero h1 span:after{font-size:32px!important;line-height:1.08!important}
+  html body main :is(.hero,[class*="hero"]):not(.cc-hero):not(.why-hero) h1{font-size:clamp(2.35rem,9.4vw,3.1rem)!important;line-height:1.04!important;letter-spacing:-.045em!important;text-wrap:balance}
+  html body main,html body main section,html body main article,html body main aside,html body main div{min-width:0}
+  html body .zk-global-header.zk-mobile-menu-open{max-height:100dvh!important;overflow-y:auto!important;overscroll-behavior:contain!important}
+  html body .zk-global-header .zk-menu{max-height:calc(100dvh - 64px)!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch}
+  html body .zk-global-header .zk-menu>a:not(.zk-talk),html body .zk-global-header .zk-drop>a,html body .zk-mobile-submenu-toggle{min-height:44px!important}
+  html body main :where(img,picture,video,canvas){max-width:100%!important;height:auto}
+  html body main iframe{max-width:100%!important}
+  html body main :where(h1,h2,h3,h4,p,li,a,button){overflow-wrap:break-word}
+  html body main :where(pre,code){max-width:100%;overflow-x:auto;white-space:pre-wrap}
+  html body main table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  html body main .zk-actions{align-items:stretch}
+  html body main .zk-actions>.zk-btn{width:100%;min-height:46px}
+  html body main .zk-card{padding:22px 18px}
+}
+
 /* Preserve v112 architecture treatment used by the homepage. */
 .architecture-v112{position:relative;overflow:hidden;background:linear-gradient(180deg,#fbfcff 0%,#f5f8fc 100%)!important}
 .architecture-v112:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 20%,rgba(117,189,59,.12),transparent 25%),radial-gradient(circle at 88% 76%,rgba(32,31,98,.10),transparent 28%);opacity:.9}

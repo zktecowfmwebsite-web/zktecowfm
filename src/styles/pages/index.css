@@ -334,6 +334,10 @@ body.zoho-modal-open{overflow:hidden}.zoho-modal{position:fixed;inset:0;z-index:
 /* Consistent action corners */
 .audience-btn,.segment-link,.ultima-cta,.final-cta-button{border-radius:12px!important}
 
+/* Keep the audience CTA title and supporting line aligned to the card's left edge. */
+.audience-btn>span,.audience-btn>span strong,.audience-btn>span small{text-align:left!important}
+.audience-btn.partner>span,.audience-btn.partner>span strong,.audience-btn.partner>span small{text-align:left!important}
+
 .ultima-cta{padding:12px 20px!important;font-size:16px!important;font-weight:700!important;letter-spacing:normal!important;color:#102044!important}
 .ultima-cta span{font-size:22px!important}
 
@@ -457,8 +461,8 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 .ultima-model-card.ultima-model-7:hover img{transform:scale(.98)}
 .ultima-model-card.ultima-model-5 img{transform:scale(.69)}
 .ultima-model-card.ultima-model-5:hover img{transform:scale(.79)}
-.ultima-model-card.ultima-model-7p img{align-self:center;object-position:center;transform:translateX(-10px) scale(1.48)}
-.ultima-model-card.ultima-model-7p:hover img{transform:translateX(-10px) scale(1.58)}
+.ultima-model-card.ultima-model-7p img{align-self:center;object-position:center;transform:translateX(-10px) scale(.8)}
+.ultima-model-card.ultima-model-7p:hover img{transform:translateX(-10px) scale(.88)}
 .ultima-model-card:hover .ultima-model-name{transform:translateX(-50%) scale(1.08);background:var(--green);border-color:#a8e274;color:#fff}
 .ultima-model-card:hover .ultima-model-name b{background:rgba(255,255,255,.22);color:#fff}
 @media(max-width:980px){.ultima-model-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 38px;max-width:660px}}
@@ -491,11 +495,87 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 .arch112-flow-note,.arch112-flow-note strong,.arch112-flow-note span{font-size:16px!important}
 @media(min-width:901px){.architecture-v112 .arch112-flow-note{width:100%;max-width:1120px;white-space:nowrap}}
 
+/* Keep the integration architecture horizontal on phones and scale it to the viewport. */
+@media(max-width:900px){
+  .architecture-v112>.wrap{overflow:visible!important;padding-bottom:0!important}
+  .architecture-v112 .arch112-map{grid-template-columns:.72fr 1.32fr .7fr!important;grid-template-rows:none!important;gap:10px!important;min-width:0!important;width:100%!important;margin:0!important}
+  .architecture-v112 .arch112-foundation,.architecture-v112 .arch112-path,.architecture-v112 .arch112-destination{min-width:0!important}
+  .architecture-v112 .arch112-foundation,.architecture-v112 .arch112-path,.architecture-v112 .arch112-destination{border-radius:14px!important}
+  .architecture-v112 .arch112-foundation{min-height:326px!important;padding:10px 5px!important}
+  .architecture-v112 .arch112-kicker,.architecture-v112 .arch112-route-tag,.architecture-v112 .arch112-path-label,.architecture-v112 .arch112-path-copy small,.architecture-v112 .arch112-destination>small,.architecture-v112 .partner-dest-kicker,.architecture-v112 .workday-dest-kicker{font-size:4.5px!important;letter-spacing:.05em!important}
+  .architecture-v112 .arch112-foundation h3{font-size:11px!important;line-height:1.04!important;margin:4px 0 6px!important}
+  .architecture-v112 .arch112-device,.architecture-v112 .arch112-device img{width:82px!important;height:48px!important}
+  .architecture-v112 .arch112-device{margin:0 auto 8px!important}
+  .architecture-v112 .arch112-methods{gap:2px!important}.architecture-v112 .arch112-methods span{padding:3px!important;font-size:5px!important;line-height:1.05!important}
+  .architecture-v112 .arch112-paths{grid-template-rows:auto 1fr 1fr!important;gap:5px!important}
+  .architecture-v112 .arch112-path{min-height:156px!important;padding:12px 5px!important}
+  .architecture-v112 .arch112-route-tag{top:7px!important;right:0!important;left:0!important;text-align:center!important}
+  .architecture-v112 .arch112-path-copy p{font-size:7px!important;line-height:1.2!important;margin:4px 0 6px!important}
+  .architecture-v112 .cirrusdcs-inline-logo{width:100px!important;margin:4px auto 0!important}.architecture-v112 .cirrusdcs-inline-logo img{max-height:40px!important}
+  .architecture-v112 .cirrusconnect-inline-logo{width:92px!important;margin:4px auto 0!important}.architecture-v112 .cirrusconnect-inline-logo img{max-height:37px!important}
+  .architecture-v112 .arch112-chips{gap:2px!important}.architecture-v112 .arch112-chips span{padding:3px!important;font-size:5px!important;line-height:1.05!important}
+  .architecture-v112 .arch112-destinations{grid-template-rows:1fr 1fr!important;gap:5px!important;padding-top:12px!important}
+  .architecture-v112 .arch112-destination{min-height:156px!important;padding:6px 2px!important}.architecture-v112 .arch112-destination>small,.architecture-v112 .partner-dest-kicker,.architecture-v112 .workday-dest-kicker{display:block!important;width:100%!important;text-align:center!important}
+  .architecture-v112 .workday-destination{width:76px!important;min-height:88px!important;border-radius:8px!important}.architecture-v112 .workday-logo{width:66px!important}
+  .architecture-v112 .partner-dest .dest-platform{width:76px!important;height:88px!important;padding:7px!important;border-radius:8px!important}.architecture-v112 .partner-dest .dest-platform img{width:56px!important;height:56px!important}
+  .architecture-v112 .dest-platform-caption{font-size:5px!important;white-space:normal!important}
+  html body .architecture-v112 .arch112-bi{display:grid!important;z-index:6!important;width:12px!important;height:20px!important}html body .architecture-v112 .arch112-bi.left{left:-14px!important}html body .architecture-v112 .arch112-bi.right{right:-16px!important}
+  html body .architecture-v112 .arch112-bi:before,html body .architecture-v112 .arch112-bi:after{width:12px!important;height:7px!important}html body .architecture-v112 .arch112-bi:before{animation:arch112-send-mobile 1.6s cubic-bezier(.45,0,.55,1) infinite!important}html body .architecture-v112 .arch112-bi:after{top:13px!important;animation:arch112-receive-mobile 1.6s cubic-bezier(.45,0,.55,1) infinite!important}
+}
+@keyframes arch112-send-mobile{0%{transform:translateX(-2px) scale(.76);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateX(6px) scale(.76);opacity:0}}
+@keyframes arch112-receive-mobile{0%{transform:translateX(6px) scale(.76);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateX(-2px) scale(.76);opacity:0}}
+
 /* Consistent sizing for the architecture route labels and capture pills. */
 .architecture-v112 .arch112-path-label,.architecture-v112 .arch112-route-tag,.architecture-v112 .arch112-path-copy small{font-size:10px!important}
 .architecture-v112 .partner-dest-kicker,.architecture-v112 .workday-dest-kicker,.architecture-v112 .arch112-destination>small{font-size:10px!important}
+@media(max-width:900px){
+  .architecture-v112 .arch112-route-tag,.architecture-v112 .partner-dest-kicker,.architecture-v112 .workday-dest-kicker{font-size:6px!important;letter-spacing:.05em!important}
+  .architecture-v112 .partner-dest-kicker,.architecture-v112 .workday-dest-kicker{max-width:44px!important;margin-inline:auto!important;line-height:1.15!important;white-space:normal!important}
+}
 
 /* Zoho form actions */
 .zoho-form__actions{gap:24px}
 .zoho-form__actions .zoho-reset{border:2px solid var(--navy);border-radius:9px;background:#fff;color:var(--navy);padding:10px 17px;font-weight:900}
 .zoho-form__actions .zoho-reset:hover{background:var(--navy);color:#fff}
+
+/* Compact mobile journey: icon left, content right, no intermediary arrows. */
+@media(max-width:760px){
+  .journey-rail{grid-template-columns:1fr!important;gap:20px!important;padding:6px 0!important}
+  .journey-stage,.journey-stage:last-child{display:grid!important;grid-template-columns:46px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:14px!important;row-gap:3px!important;max-width:none!important;margin:0!important;padding:0 4px!important;text-align:left!important;align-items:start!important}
+  .journey-stage .journey-node{grid-column:1!important;grid-row:1!important;align-self:center!important;width:42px!important;height:42px!important;margin:0!important;border-radius:13px!important;animation:journey-stage-highlight-mobile 3s cubic-bezier(.16,1,.3,1) infinite!important}
+  .journey-stage .journey-node:before{inset:-1px!important;border-radius:14px!important}.journey-stage .journey-node:after{inset:6px!important;border-radius:8px!important}
+  .journey-stage .journey-icon{width:22px!important;height:22px!important}.journey-stage .journey-icon svg{width:20px!important;height:20px!important}.journey-stage:first-child .journey-icon img{width:26px!important;height:26px!important;transform:translateY(-3px)!important}.journey-stage:nth-child(3) .journey-icon img{width:19px!important;height:19px!important}
+  .journey-stage h3{grid-column:2!important;grid-row:1!important;align-self:center!important;margin:0!important;font-size:16px!important;line-height:1.15!important}
+  .journey-stage p{grid-column:2!important;grid-row:2!important;max-width:none!important;margin:0!important;font-size:11px!important;line-height:1.42!important}
+  html body main section .segment-card h3{font-size:19px!important;line-height:1.12!important}
+  html body main section .segment-card>p{font-size:14px!important;line-height:1.48!important}
+  html body main #workday-solution-copy{font-size:14px!important;line-height:1.48!important}
+  .segment-link{white-space:nowrap!important;font-size:13px!important}
+  .segment-link span{transform:translateX(-10px)!important}
+  .journey-stage .journey-arrow{display:none!important}
+  .journey-rail{isolation:isolate!important}
+  .journey-rail:before{display:block!important;z-index:0!important;left:25px!important;right:auto!important;top:21px!important;bottom:72px!important;width:3px!important;height:auto!important;background:rgba(255,255,255,.86)!important;box-shadow:0 0 12px rgba(255,255,255,.18)!important}
+  .journey-rail:after{content:""!important;display:block!important;z-index:1!important;left:25px!important;right:auto!important;top:21px!important;bottom:72px!important;width:3px!important;height:auto!important;opacity:1!important;background:linear-gradient(180deg,#75bd3b 0%,#c9f486 52%,#75bd3b 100%)!important;box-shadow:0 0 7px rgba(155,214,77,.9),0 0 16px rgba(117,189,59,.38)!important;transform:scaleY(0)!important;transform-origin:top center!important;animation:journey-green-progress-vertical 3s linear infinite!important;will-change:transform}
+  .journey-stage{z-index:2!important}
+}
+@keyframes journey-stage-highlight-mobile{0%,100%{transform:translateY(0) scale(1);box-shadow:0 10px 22px rgba(8,14,51,.22)}4%,14%{transform:translateY(1px) scale(1.08);box-shadow:0 0 16px rgba(255,255,255,.18),0 14px 28px rgba(2,5,24,.52)}20%{transform:translateY(0) scale(1);box-shadow:0 10px 22px rgba(8,14,51,.22)}}
+@keyframes journey-green-progress-vertical{0%{transform:scaleY(0)}20%{transform:scaleY(.25)}40%{transform:scaleY(.5)}60%{transform:scaleY(.75)}80%,100%{transform:scaleY(1)}}
+
+/* Keep solution-card value copy and partner marks side by side on mobile. */
+@media(max-width:760px){
+  .segments-grid .segment-card{padding:24px!important;min-height:390px!important}
+  .segments-grid .segment-value{display:flex!important;align-items:center!important;min-height:76px!important;max-width:calc(100% - 106px)!important;margin-top:auto!important;padding-top:14px!important;font-size:17px!important;line-height:1.18!important}
+  .segments-grid .segment-workday-bottom,.segments-grid .segment-partner-bottom{right:24px!important;bottom:108px!important;width:82px!important;height:82px!important;object-fit:contain!important}
+  .segments-grid .segment-workday-bottom{bottom:82px!important;width:120px!important;height:auto!important}
+  .segments-grid .segment-link{position:relative!important;z-index:1!important;width:100%!important;margin-top:16px!important}
+}
+
+/* Homepage hero subheading only. */
+@media(max-width:760px){
+  html body main #home-ecosystem-heading{font-size:18px!important;line-height:1.16!important}
+  html body main #home-ecosystem-description{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+  .why-close strong{font-size:19px!important;line-height:1.15!important}
+  .why-close span{font-size:14px!important;line-height:1.45!important}
+  .arch112-flow-note,.arch112-flow-note span{font-size:12px!important;line-height:1.35!important}
+  .arch112-flow-note strong{font-size:14px!important;line-height:1.25!important}
+}

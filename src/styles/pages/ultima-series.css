@@ -18,6 +18,7 @@ footer{background:#0d1233;color:#fff;padding:54px 0 24px}.foot-grid{display:grid
 @media(max-width:700px){.detail-grid{grid-template-columns:1fr}.detail-copy h3{font-size:30px}.detail-copy h4{font-size:16px}.device-panel{min-height:250px;padding:22px}.device-panel img{max-height:210px}}
 
 /* Keep anchored product sections clear of the sticky site header. */
+#models{scroll-margin-top:calc(var(--zk-global-header-h,100px) + 20px)}
 #ultima5,#ultima7,#ultima7p,#ultima10{scroll-margin-top:132px}
 @media(max-width:640px){#ultima5,#ultima7,#ultima7p,#ultima10{scroll-margin-top:108px}}
 
@@ -98,6 +99,21 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 
 .hero-grid{}
 
+/* Match the compact Workday value-heading treatment for the Ultima hero strapline. */
+.hero h2{
+  font-size:20px!important;
+  font-weight:800!important;
+  line-height:1.2!important;
+  letter-spacing:-.02em!important;
+}
+
+@media(max-width:640px){
+  .hero .hero-grid>div:first-child{text-align:center!important}
+  .hero .hero-grid>div:first-child .eyebrow{justify-content:center!important}
+  .hero .hero-grid>div:first-child p{margin-left:auto!important;margin-right:auto!important}
+  .hero .hero-actions{justify-content:center!important}
+}
+
 /* Keep the centered Ultima section introductions to two desktop lines. */
 @media (min-width:721px){
   #models .section-head > p,
@@ -143,7 +159,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 /* Scale the product renders by their display size: 10-inch largest, both 7-inch
    models matched, and the 5-inch model smallest. */
 .models .model-card:nth-child(1) .model-image img{transform:scale(1.12)}
-.models .model-card:nth-child(2) .model-image img{transform:translateX(-10px) scale(1.22)}
+.models .model-card:nth-child(2) .model-image img{transform:translateX(-10px) scale(.78)}
 .models .model-card:nth-child(3) .model-image img{transform:scale(.74)}
 .models .model-card:nth-child(4) .model-image img{transform:scale(.58)}
 
@@ -233,6 +249,11 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 #resources .resource-link:focus-visible{outline:2px solid var(--green);outline-offset:4px;border-radius:2px}
 #resources .resource p{font-size:15px}
 .detail-grid div{font-size:15px}
+
+/* Slightly larger action labels across the Ultima Series page. */
+.hero .hero-actions .btn,.cta-section .hero-actions .btn{font-size:17px!important}
+.detail-copy>.btn,.ultima-cta{font-size:17px!important}
+#resources .resource-link,.text-link{font-size:13px!important}
 
 /* Match the Workday CTA action treatment. */
 .cta-section .hero-actions{gap:20px}

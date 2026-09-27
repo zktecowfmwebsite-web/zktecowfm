@@ -82,3 +82,6 @@ body{margin:0}*{box-sizing:border-box}
 html body.zk-page main .zk-section.alt .zk-actions>.zk-btn.secondary,html body.zk-page main .zk-section.alt .zk-actions>.zk-btn.secondary:after{color:#000!important}
 
 .zk-section.alt .zk-actions>.zk-btn.primary:after,.zk-section.alt .zk-actions>.zk-btn.secondary:after{color:currentColor!important}
+
+/* Center the label-and-arrow pairs in the headquarters contact actions. */
+.zk-section.alt .zk-actions>.zk-btn.primary,.zk-section.alt .zk-actions>.zk-btn.secondary{justify-content:center}

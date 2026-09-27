@@ -308,3 +308,7 @@ section{padding:82px 0}.section-head{max-width:800px;margin:0 auto 44px;text-ali
 .sp85-enable-step:first-child .sp85-step-icon svg{display:none}
 .sp85-enable-step:first-child .sp85-step-icon:after{content:"";width:34px;height:34px;background:#000;-webkit-mask:url("../../../assets/define.svg") center/contain no-repeat;mask:url("../../../assets/define.svg") center/contain no-repeat}
 @media(max-width:680px){.sp85-enable-steps:before{top:31px}.sp85-step-icon{width:68px;height:68px;border:0}.sp85-step-icon img{max-width:30px;max-height:30px}.sp85-enable-step:first-child .sp85-step-icon:after{width:30px;height:30px}}
+
+/* Integration paths stack on phones; display as three columns on desktop widths. */
+.sp85-path-cards{grid-template-columns:1fr}
+@media(min-width:768px){.sp85-path-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}

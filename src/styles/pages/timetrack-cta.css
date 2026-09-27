@@ -156,8 +156,8 @@
 /* Refined timestamp and architecture heading punctuation. */
 #timestamp .tt-center h2{font-size:0}
 #timestamp .tt-center h2:after{content:"More Than a Timestamp";font-size:clamp(36px,4vw,48px);line-height:1.05}
-.tt-section.mist:not(#timestamp) .tt-center h2{font-size:0}
-.tt-section.mist:not(#timestamp) .tt-center h2:after{content:"One Workforce Application,\A Multiple Workforce Environments";white-space:pre;font-size:clamp(36px,4vw,48px);line-height:1.05}
+.tt-section.mist:not(#timestamp) .tt-center h2{font-size:clamp(36px,4vw,48px)!important}
+.tt-section.mist:not(#timestamp) .tt-center h2:after{content:none!important}
 
 /* Match the Workday hero display-heading treatment in the flexibility cards. */
 .flex-card h3{color:#201f62;font-size:24px;font-weight:700;line-height:1.01;letter-spacing:-.05em;margin:12px 0 20px}
@@ -170,11 +170,13 @@
 .flex-plus{color:#201f62;font-weight:600}
 
 /* Match the TimeTrack hero subheading treatment in architecture cards. */
-.arch-tag{font-size:21px;font-weight:760;color:#313664}
+.arch-tag{font-size:19px;font-weight:760;color:#313664}
 .arch-card.partner .arch-tag{font-size:0}
-.arch-card.partner .arch-tag:after{content:"Extend employee interactions to your platform";font-size:21px;font-weight:760;color:#313664}
+.arch-card.partner .arch-tag:after{content:"Extend employee interactions to your platform";font-size:19px;font-weight:760;color:#313664}
 .arch-card:not(.partner) .arch-tag{font-size:0}
-.arch-card:not(.partner) .arch-tag:after{content:"Time & Labor Data Collection, Built for Workday";font-size:21px;font-weight:760;color:#313664}
+.arch-card:not(.partner) .arch-tag:after{content:"Time & Labor Data Collection, Built for Workday";font-size:19px;font-weight:760;color:#313664}
+
+.arch-value{font-size:17px!important}
 
 @media (min-width:721px){
   .tt-final h2{font-size:0;white-space:nowrap}

@@ -6,7 +6,7 @@
 
 .cc-remote-copy>p:first-of-type,.cc-scale>div:first-child>p,.cc-final>div>p{font-size:0}
 .cc-remote-copy>p:first-of-type:after{content:"See the device. Control it. Diagnose it. Take action,\A from anywhere.";font-size:17px;line-height:1.55;white-space:pre-line}
-.cc-remote-copy>p:nth-of-type(2){font-size:0!important}.cc-remote-copy>p:nth-of-type(2):after{content:"Troubleshoot remotely. Resolve faster.\A Reduce onsite intervention.";font-size:17px;line-height:1.55;font-weight:800;white-space:pre-line}
+.cc-remote-copy>p:nth-of-type(2){font-size:0!important}.cc-remote-copy>p:nth-of-type(2):after{content:"Troubleshoot remotely.\A Resolve faster. Reduce onsite intervention.";font-size:17px;line-height:1.55;font-weight:800;white-space:pre}
 .cc-scale>div:first-child>p:after{content:"Centralize operations across customers, locations and Ultima deployments, while maintaining the visibility and control each environment requires.";font-size:16px;line-height:1.55}
 .cc-final>div>p:after{content:"One cloud platform connecting your workforce software to the Ultima Series, and the technology to operate it.";font-size:17px;line-height:1.55}
 @media(max-width:600px){.cc-remote-copy>p:first-of-type:after,.cc-final>div>p:after{font-size:16px}}
@@ -64,12 +64,12 @@ html body .cc-final .zk-btn.zk-standard-bottom-cta:hover>span{transform:translat
 /* Keep the scale heading to its intended two lines without periods. */
 .cc-scale h2{font-size:0!important}
 .cc-scale h2:after{content:"One Customer or Thousands,\A One Clock or an Entire Fleet";display:block;color:currentColor;font-size:39px;font-weight:inherit;line-height:1.08;letter-spacing:inherit;white-space:pre}
-@media(max-width:600px){.cc-scale h2:after{font-size:32px}}
+@media(max-width:600px){.cc-scale h2:after{font-size:32px;white-space:normal!important;overflow-wrap:anywhere}}
 
 /* Connected-workforce heading without terminal punctuation. */
 .cc-section.soft .cc-section-head h2{font-size:0!important}
 .cc-section.soft .cc-section-head{max-width:none}.cc-section.soft .cc-section-head h2:after{content:"Your Platform to the Clock And Back Again";display:block;color:currentColor;font-size:38px;font-weight:inherit;line-height:1.12;letter-spacing:inherit;white-space:nowrap}
-@media(max-width:600px){.cc-section.soft .cc-section-head h2:after{font-size:32px}}
+@media(max-width:600px){.cc-section.soft .cc-section-head h2:after{font-size:32px;white-space:normal!important;overflow-wrap:anywhere}}
 
 /* Keep the platform description on one desktop line. */
 #platform .cc-section-head{max-width:none}
@@ -84,7 +84,7 @@ html body .cc-final .zk-btn.zk-standard-bottom-cta:hover>span{transform:translat
 .cc-hero .lead,.cc-hero .sublead,.cc-section-head p,.cc-pillar p,.cc-node p,.cc-scale p,.cc-archbox p,.cc-value span,.cc-op span{font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--cc-muted)}
 .cc-hero .sublead{font-weight:700;color:var(--cc-navy)}
 .cc-hero .sublead{font-size:0!important;line-height:1.45}
-.cc-hero .sublead:after{content:"Connect workforce data. Manage devices. Operate remotely.\A Scale across customers.";display:block;font-size:20px;line-height:1.45;white-space:pre-line}
+.cc-hero .sublead:after{content:"Connect workforce data. Manage devices.\A Operate remotely. Scale across customers.";display:block;font-size:20px;line-height:1.45;white-space:pre}
 .cc-section.navy .cc-section-head h2,.cc-section.navy .cc-section-head p,.cc-section.navy .cc-remote-copy h2,.cc-section.navy .cc-remote-copy p,.cc-node.core h3,.cc-node.core p,.cc-pillar.center h3,.cc-pillar.center p,.cc-archbox.core h3,.cc-archbox.core p{color:#fff}
 @media(min-width:901px){.cc-hero-grid{grid-template-columns:1.15fr .85fr}.cc-hero h1{max-width:680px}}
 
@@ -124,6 +124,21 @@ html body .cc-final .zk-btn.zk-standard-bottom-cta:hover>span{transform:translat
 /* Compact and center the platform-flow tag beneath the operations console. */
 .cc-hero-visual .cc-flow-tag{left:50%!important;right:auto!important;bottom:20px;display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:500px;min-height:38px!important;max-width:calc(100% - 24px);height:38px!important;padding:0 18px!important;font-size:13px;line-height:1;white-space:nowrap;transform:translateX(-50%)}
 @media(min-width:901px){.cc-hero-visual .cc-flow-tag{left:calc(50% - 40px)!important}}
+@media(max-width:600px){
+  .cc-hero-visual .cc-flow-tag{left:50%!important;right:auto!important;bottom:-12px!important;min-width:0!important;width:calc(100% - 32px)!important;max-width:none!important;margin:0!important}
+}
+
+/* Keep one clean hero title, without the punctuation from the source copy. */
+.cc-hero h1{font-size:0!important;line-height:1.04!important;color:var(--cc-navy)!important}
+.cc-hero h1:after{content:"Connect Your Platform\A Control the Entire\A Experience";display:block!important;font-size:50px!important;line-height:1.04!important;white-space:pre-line}
+@media(max-width:600px){
+  .cc-hero-grid>div:first-child{text-align:center!important}
+  .cc-hero .zk-eyebrow,.cc-hero .cc-actions{justify-content:center!important}
+  .cc-hero h1:after{font-size:37px!important}
+  .cc-hero .lead{font-size:16px!important}
+  .cc-hero .sublead:after{font-size:18px!important}
+  .cc-hero .lead,.cc-hero .sublead{margin-left:auto!important;margin-right:auto!important}
+}
 
 /* Keep the final call-to-action compact without changing its type scale. */
 .cc-final{padding:54px 0!important}
@@ -146,3 +161,22 @@ html body .cc-final .zk-btn.zk-standard-bottom-cta:hover>span{transform:translat
 @media(max-width:1100px){.cc-cap-strip{grid-template-columns:repeat(3,1fr);gap:16px;padding:20px 24px}.cc-cap-strip:before,.cc-cap-card:after{display:none!important}}
 @media(max-width:600px){.cc-cap-strip{grid-template-columns:1fr 1fr;padding:16px}.cc-cap-card{min-height:150px}}
 @media(prefers-reduced-motion:reduce){.cc-cap-card,.cc-cap-card h3,.cc-cap-icon img{animation:none!important}}
+
+/* Mobile lifecycle journey: connected icons left, titles right. */
+@media(max-width:600px){
+  .cc-cap-strip{position:relative!important;display:grid!important;grid-template-columns:1fr!important;gap:16px!important;width:calc(100% - 32px)!important;margin:0 16px!important;padding:18px 14px!important;border:0!important;border-radius:18px!important;background:#15194d!important;box-shadow:none!important;overflow:hidden!important}
+  .cc-cap-strip:before{content:""!important;display:block!important;position:absolute!important;z-index:0!important;left:calc(50% - 102px)!important;right:auto!important;top:39px!important;bottom:39px!important;width:3px!important;height:auto!important;background:#75bd3b!important;box-shadow:0 0 8px rgba(117,189,59,.42)!important;border-radius:99px!important}
+  .cc-cap-card{position:relative!important;z-index:1!important;display:grid!important;grid-template-columns:42px 190px!important;grid-template-rows:auto!important;justify-content:center!important;column-gap:14px!important;min-height:42px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;text-align:left!important;align-items:center!important;animation:none!important}
+  .cc-cap-card:after{display:none!important}
+  .cc-cap-icon{position:relative!important;z-index:1!important;grid-column:1!important;grid-row:1!important;width:42px!important;height:42px!important;margin:0!important;border-radius:12px!important;background:#343775!important;border-color:rgba(255,255,255,.26)!important}
+  .cc-cap-icon img{width:25px!important;height:25px!important;filter:brightness(0) invert(1)!important;animation:none!important}
+  .cc-cap-card h3{grid-column:2!important;grid-row:1!important;max-width:none!important;margin:0!important;font-size:16px!important;line-height:1.15!important;color:#fff!important;text-align:left!important;animation:none!important}
+  .cc-dataflow .cc-arrows{display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;transform:none!important;font-size:0!important}
+  .cc-dataflow .cc-arrows:before{content:"↕";font-size:29px;font-weight:900;color:var(--cc-green)}
+  .cc-dataflow .cc-arrows small{display:block!important;white-space:nowrap!important;transform:none!important;font-size:11px!important}
+  .cc-screen{padding:10px!important}
+  .cc-live{height:205px!important}
+  .cc-customers{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
+  .cc-customer{padding:10px 6px!important;font-size:9px!important}
+  .cc-customer img{height:52px!important;margin-top:6px!important}
+}

@@ -59,16 +59,23 @@
     const nav=header?.querySelector('.zk-menu');
     const brand=header?.querySelector('.zk-brand');
     if(!header||!nav||!brand||header.querySelector('.zk-mobile-menu-toggle'))return;
+    nav.id=nav.id||'zk-primary-navigation';
+    const closeSubmenus=()=>nav.querySelectorAll('.zk-drop.zk-mobile-submenu-open').forEach(drop=>{drop.classList.remove('zk-mobile-submenu-open');drop.querySelector('.zk-mobile-submenu-toggle')?.setAttribute('aria-expanded','false');});
+    const closeMenu=()=>{header.classList.remove('zk-mobile-menu-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu');closeSubmenus();};
     const toggle=document.createElement('button');
-    toggle.type='button';toggle.className='zk-mobile-menu-toggle';toggle.setAttribute('aria-label','Open navigation menu');toggle.setAttribute('aria-expanded','false');toggle.innerHTML='<span></span><span></span><span></span>';
+    toggle.type='button';toggle.className='zk-mobile-menu-toggle';toggle.setAttribute('aria-label','Open navigation menu');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-controls',nav.id);toggle.innerHTML='<span></span><span></span><span></span>';
     brand.after(toggle);
-    toggle.addEventListener('click',()=>{const open=header.classList.toggle('zk-mobile-menu-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');});
+    toggle.addEventListener('click',()=>{const open=header.classList.toggle('zk-mobile-menu-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');if(!open)closeSubmenus();});
     nav.querySelectorAll('.zk-drop').forEach(drop=>{
       const link=drop.querySelector(':scope > a');const menu=drop.querySelector(':scope > .zk-drop-menu');
       if(!link||!menu)return;
       const expand=document.createElement('button');expand.type='button';expand.className='zk-mobile-submenu-toggle';expand.setAttribute('aria-label','Show '+link.textContent.trim()+' menu');expand.setAttribute('aria-expanded','false');expand.innerHTML='<span aria-hidden="true"></span>';link.after(expand);
-      expand.addEventListener('click',()=>{const open=drop.classList.toggle('zk-mobile-submenu-open');expand.setAttribute('aria-expanded',String(open));expand.setAttribute('aria-label',(open?'Hide ':'Show ')+link.textContent.trim()+' menu');});
+      expand.addEventListener('click',()=>{const open=!drop.classList.contains('zk-mobile-submenu-open');closeSubmenus();drop.classList.toggle('zk-mobile-submenu-open',open);expand.setAttribute('aria-expanded',String(open));expand.setAttribute('aria-label',(open?'Hide ':'Show ')+link.textContent.trim()+' menu');});
     });
+    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{if(window.matchMedia('(max-width: 760px)').matches)closeMenu();}));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&header.classList.contains('zk-mobile-menu-open')){closeMenu();toggle.focus();}});
+    document.addEventListener('click',event=>{if(window.matchMedia('(max-width: 760px)').matches&&!header.contains(event.target))closeMenu();});
+    window.addEventListener('resize',()=>{if(!window.matchMedia('(max-width: 760px)').matches)closeMenu();});
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enhance);else enhance();
 })();
@@ -109,6 +116,8 @@
 /* The Contact-page headquarters CTA uses the shared, styled Zoho modal. */
 (()=>{
   if(!/^\/contact\/?$/.test(location.pathname))return;
+  const heroDescription=document.querySelector('.zk-hero p');
+  if(heroDescription)heroDescription.textContent='Workday customer, software company or enterprise buyer, we’ll route you to the right team.';
   document.addEventListener('click',(event)=>{
     const trigger=event.target.closest('.zk-section.alt .zk-actions .zk-btn.primary');
     if(!trigger)return;
@@ -158,8 +167,6 @@
   const page=(location.pathname.split('/').filter(Boolean).pop()||'index').replace(/\.html$/,'');
   document.body.classList.add('zk-page-'+page);
   if(page==='cirrusconnect'){
-    document.querySelector('#platform')?.remove();
-    document.querySelector('.cc-partner-arch')?.closest('section')?.remove();
     const platformLabel=document.querySelector('.cc-dataflow .cc-node:last-child h3');
     if(platformLabel)platformLabel.textContent='HCM / WFM Platform';
     const flow=document.querySelector('.cc-flow-tag');
@@ -205,7 +212,7 @@
   }
   if(page==='thought-leadership'){
     const description=scope.querySelector('p');
-    if(description)description.innerHTML='ZKTeco WFM can evaluate your environment and recommend<br>an appropriate technology and integration approach.';
+    if(description)description.innerHTML='<span style="font-size:16px;white-space:nowrap">ZKTeco WFM can evaluate your environment<br>and recommend an appropriate technology<br>and integration approach.</span>';
     const headline=scope.querySelector('h2');
     if(headline&&!scope.querySelector('.zk-cta-eyebrow')){
       const eyebrow=document.createElement('div');

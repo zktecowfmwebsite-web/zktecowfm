@@ -73,7 +73,7 @@ footer{background:#0d1233;color:#fff;padding:54px 0 24px}.foot-grid{display:grid
 .implementation-footer .btn{white-space:nowrap}
 @media(min-width:721px){.implementation-footer>div{display:flex;align-items:baseline;justify-content:center;gap:12px;flex-wrap:wrap;white-space:normal}.implementation-footer strong{margin:0;color:var(--green)}.implementation-footer span{font-size:16px}}
 @media(max-width:1100px){.implementation-path{grid-template-columns:repeat(3,1fr)}.implementation-step:nth-child(3){border-right:0}.implementation-step:nth-child(-n+3){border-bottom:1px solid var(--line)}}
-@media(max-width:720px){.implementation-section{padding:72px 0}.implementation-path{grid-template-columns:1fr}.implementation-step{min-height:auto;border-right:0;border-bottom:1px solid var(--line)}.implementation-step:last-child{border-bottom:0}.step-line{display:none}.implementation-footer{flex-direction:column;align-items:flex-start}.implementation-footer .btn{white-space:normal}.implementation-promise{gap:8px;font-size:10px}}
+@media(max-width:720px){.implementation-section{padding:72px 0}.implementation-path{grid-template-columns:1fr}.implementation-step{min-height:auto;border-right:0;border-bottom:1px solid var(--line)}.implementation-step:last-child{border-bottom:0}.step-line{display:none}.implementation-footer{flex-direction:column;align-items:flex-start;border-radius:28px}.implementation-footer .btn{white-space:normal}.implementation-promise{gap:8px;font-size:10px}}
 
 
 /* v28 public-page simplification */
@@ -132,6 +132,16 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 .hero .workday-hero-image{display:block;width:122%;max-width:760px;height:auto;object-fit:contain;transform:translateY(-14px)}
 @media(max-width:720px){.hero .workday-hero-image{width:100%;max-width:560px;transform:translateY(-8px)}}
 
+/* Center the Workday hero copy as a single mobile composition. */
+@media(max-width:720px){
+  .hero-grid{min-height:0!important;padding-bottom:18px!important}
+  .hero-grid>div:first-child,.brand-promise,.hero .hero-position,.hero .hero-offering,.hero .value-line{text-align:center!important}
+  .hero .hero-offering{margin-left:auto!important;margin-right:auto!important}
+  .hero .hero-actions,.hero .value-line{justify-content:center!important}
+  .hero .trust-lockup,.hero .trust-lockup div{text-align:left!important}
+  .hero .workday-hero-visual{margin-top:-80px!important}
+}
+
 /* Flexible Punch Options product visual. */
 .punch-layout .workday-products-image{display:block;width:100%;max-width:560px;border-radius:16px}
 .workday-static-models{display:flex!important;flex-direction:column;align-items:center;gap:30px;width:100%;max-width:980px;padding:32px 28px 26px;border-radius:18px;background:var(--navy);pointer-events:none}
@@ -163,6 +173,10 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 .flexible-punch-section .punch-section-head p{max-width:980px;margin:0;color:var(--muted);font-size:18px;line-height:1.65}
 .flexible-punch-section .device-family{display:flex;justify-content:center}
 @media(max-width:720px){.flexible-punch-section .punch-section-head{margin-bottom:32px}.flexible-punch-section .punch-section-head h2{font-size:42px}}
+@media(max-width:720px){
+  main>section:has(#workday-offering){padding-bottom:14px!important}
+  .flexible-punch-section{padding-top:14px!important}
+}
 
 /* CirrusDCS is a dedicated white, vertical section. */
 .cirrusdcs-section{background:#fff!important}
@@ -259,6 +273,12 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 @media(max-width:650px){
   .hero .hero-actions{grid-template-columns:1fr;max-width:none}
   .hero .hero-actions .btn{min-height:54px;padding:9px 18px;font-size:14px;border-radius:16px}
+}
+
+/* Keep a single Workday hero CTA compact and centred on phones. */
+@media(max-width:650px){
+  .hero .hero-actions{justify-items:center!important}
+  .hero .hero-actions .btn{width:fit-content!important;max-width:calc(100% - 24px)!important;justify-self:center!important}
 }
 
 /* Flexible collection heading */
@@ -820,11 +840,72 @@ body.zoho-modal-open{overflow:hidden}
 .commercial-warranty-badge strong{color:#fff;font-size:12px;font-weight:600;letter-spacing:.035em}
 @media(max-width:900px){.commercial-heading{padding-bottom:166px}.commercial-warranty-badge{top:auto;bottom:0;right:50%;transform:translateX(50%)}}
 
+/* On phones, introduce the warranty offer before its seal. */
+@media(max-width:720px){
+  .compact-warranty{padding:32px 22px 28px!important;gap:22px!important}
+  .compact-warranty>div:not(.warranty-badge){grid-row:1!important;text-align:center}
+  .compact-warranty h3{font-size:clamp(30px,9vw,38px)!important;line-height:1.08!important;margin-bottom:10px!important}
+  .compact-warranty .warranty-badge{grid-row:2!important;margin-top:8px}
+}
+
 /* Match the green-gradient Workday CTA treatment on the Switch Program action. */
 .migration-motion-section .program-card:nth-child(2) .program-link{padding:13px 16px;border:1px solid #a8e274;border-radius:14px;background:radial-gradient(ellipse 78% 130% at 8% 8%,rgba(196,239,137,.42),transparent 62%),linear-gradient(115deg,#84c94b 0%,#78bd43 54%,#70b73e 100%);color:#102044;box-shadow:inset 0 1px 0 rgba(237,255,216,.4),0 14px 30px rgba(0,0,0,.18);transition:transform .45s cubic-bezier(.22,1,.36,1),filter .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1)}
 .migration-motion-section .program-card:nth-child(2) .program-link span{font-size:24px;transition:transform .45s cubic-bezier(.22,1,.36,1)}
 .migration-motion-section .program-card:nth-child(2) .program-link:hover{transform:translateY(-3px);filter:brightness(1.075);box-shadow:inset 0 1px 0 rgba(237,255,216,.5),0 16px 28px rgba(68,139,35,.25)}
 .migration-motion-section .program-card:nth-child(2) .program-link:hover span{transform:translateX(5px)}
-/* Correct the label embedded in the legacy integration artwork. */
+/* Correct the embedded diagram label in place without changing the artwork layout. */
 .cirrusdcs-section .visual-card{position:relative}
-.cirrusdcs-section .visual-card:after{content:"PROCESS & CONNECT";position:absolute;z-index:2;top:10.7%;left:50%;transform:translateX(-50%);padding:6px 16px 7px;border-radius:10px 10px 0 0;background:#211f62;color:#fff;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:clamp(10px,1.45vw,22px);font-weight:700;line-height:1;white-space:nowrap}
+.cirrusdcs-section .visual-card:after{content:"PROCESS & CONNECT";position:absolute;z-index:2;top:24.1%;left:50%;width:20.4%;height:5.4%;transform:translateX(-50%);display:grid;place-items:center;border-radius:10px 10px 0 0;background:#211f62;color:#fff;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:clamp(10px,1.45vw,22px);font-weight:700;line-height:1;white-space:nowrap}
+
+/* Crop the transparent lower edge of the mobile workflow artwork and keep the next section close. */
+@media(max-width:720px){
+  .hero .workday-hero-image{margin-bottom:-82px!important}
+  .flexible-punch-section{padding-top:22px!important}
+  .flexible-punch-section .punch-section-head h2{font-size:32px!important;line-height:1.08!important}
+  .flexible-punch-section .punch-section-head p{font-size:16px!important;line-height:1.55!important}
+  .hero .hero-position{font-size:32px!important;line-height:1.08!important}
+  .hero .hero-offering{font-size:16px!important;line-height:1.55!important}
+  .cirrusdcs-section .cirrusdcs-top>p{font-size:12px!important;line-height:1.5!important}
+  .cirrusdcs-section .cirrusdcs-top .eyebrow{position:relative!important;display:block!important;width:fit-content!important;max-width:calc(100% - 24px)!important;padding-left:14px!important;text-align:center!important}
+  .cirrusdcs-section .cirrusdcs-top .eyebrow:before{position:absolute!important;left:0!important;top:.52em!important}
+  .implementation-path{gap:8px!important}
+  .implementation-step{min-height:112px!important;padding:16px 12px!important;border-radius:16px!important}
+  .implementation-step .step-icon{width:40px!important;height:40px!important;margin:0 auto 10px!important;border-radius:11px!important}
+  .implementation-step .step-icon img{width:24px!important;height:24px!important}
+  .implementation-step h3{font-size:16px!important;line-height:1.15!important}
+}
+
+/* Mobile implementation journey: connected icons left, content right. */
+@media(max-width:720px){
+  html body main .implementation-footer{border-radius:20px!important}
+  .implementation-path{position:relative!important;display:grid!important;grid-template-columns:1fr!important;gap:16px!important;padding:18px 14px!important;border:0!important;border-radius:18px!important;background:#15194d!important;box-shadow:none!important;overflow:hidden!important}
+  .implementation-path:before{content:""!important;display:block!important;position:absolute!important;z-index:0!important;left:calc(50% - 102px)!important;right:auto!important;top:39px!important;bottom:39px!important;width:3px!important;height:auto!important;background:#75bd3b!important;box-shadow:0 0 8px rgba(117,189,59,.42)!important;border-radius:99px!important}
+  .implementation-step{position:relative!important;z-index:1!important;display:grid!important;grid-template-columns:42px 190px!important;grid-template-rows:auto auto!important;justify-content:center!important;column-gap:14px!important;row-gap:3px!important;min-height:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;text-align:left!important;align-items:start!important;animation:none!important}
+  .implementation-step .step-icon{position:relative!important;z-index:1!important;grid-column:1!important;grid-row:1!important;align-self:center!important;width:42px!important;height:42px!important;margin:0!important;border-radius:12px!important;background:#343775!important;border-color:rgba(255,255,255,.26)!important}
+  .implementation-step .step-icon img{width:25px!important;height:25px!important;animation:none!important;filter:none!important}
+  .implementation-step h3{grid-column:2!important;grid-row:1!important;align-self:center!important;max-width:none!important;margin:0!important;font-size:16px!important;line-height:1.15!important;color:#fff!important;animation:none!important}
+  .implementation-step p{display:none!important}
+}
+
+/* Keep the warranty-seal lettering comfortably inside the mobile artwork. */
+@media(max-width:720px){
+  .compact-warranty .warranty-badge:before,
+  .compact-warranty .warranty-badge:after{font-size:16px!important}
+  .compact-warranty .warranty-badge:before{top:56px!important}
+  .compact-warranty .warranty-badge:after{top:78px!important}
+}
+
+@media(max-width:820px){
+  .manufacturing-control-section .mfg-compact-copy h2{
+    text-align:center;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+}
+
+@media(max-width:650px){
+  .manufacturing-control-section .mfg-gallery-strip{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+  .manufacturing-control-section .mfg-gallery-strip span{display:block}
+  .manufacturing-control-section .mfg-gallery-strip small{display:block;margin-top:8px;font-size:14px!important;line-height:1.4!important}
+  .manufacturing-control-section .mfg-gallery-strip b{justify-self:start}
+}
