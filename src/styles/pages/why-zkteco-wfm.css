@@ -30,8 +30,8 @@ section{padding:58px 0}.section-head{max-width:760px;margin:0 auto 34px;text-ali
 /* Lifecycle labels intentionally omit terminal punctuation. */
 .proof-stage h2{font-size:0}.proof-stage h2:after{font-size:14px;line-height:1.15;font-weight:900}.proof-stage:nth-child(1) h2:after{content:"WE DESIGN IT"}.proof-stage:nth-child(2) h2:after{content:"WE ENGINEER IT"}.proof-stage:nth-child(3) h2:after{content:"WE MANUFACTURE IT"}.proof-stage:nth-child(4) h2:after{content:"WE SUPPORT IT"}
 
-/* More vertical breathing room within the Why-page hero. */
-.why-hero .hero-grid{padding-top:90px;padding-bottom:90px}
+/* Balanced vertical spacing within the Why-page hero. */
+.why-hero .hero-grid{padding-top:60px;padding-bottom:60px}
 @media(max-width:640px){.why-hero .hero-grid{padding-top:64px;padding-bottom:64px}}
 
 /* v120 Why-page refinements */
@@ -131,8 +131,8 @@ section{padding:58px 0}.section-head{max-width:760px;margin:0 auto 34px;text-ali
 .why-hero h1{font-size:0}
 .why-hero h1:before{content:"We Do Not Assemble the Solution";font-size:clamp(40px,4vw,46px);line-height:.97;letter-spacing:-.056em;color:#fff}
 .why-hero h1 span{font-size:0}
-.why-hero h1 span:after{content:"We Control It";display:inline-block;margin-top:12px;font-size:clamp(40px,4vw,46px);line-height:.97;letter-spacing:-.056em;color:var(--green)}
-@media(min-width:981px){.why-hero .hero-grid{grid-template-columns:1.2fr .8fr;gap:34px}.why-hero h1{white-space:nowrap}}
+.why-hero h1 span:after{content:"We Control It";display:inline-block;margin-top:12px;margin-left:12px;font-size:clamp(40px,4vw,46px);line-height:.97;letter-spacing:-.056em;color:var(--green)}
+@media(min-width:981px){.why-hero .hero-grid{grid-template-columns:1.14fr .86fr;gap:34px}.why-hero h1{white-space:normal}.why-hero h1 span:after{margin-top:0;margin-left:12px}}
 @media(max-width:640px){
   .why-hero{border-radius:0 0 28px 28px!important}
   .why-hero .hero-grid>div:first-child{text-align:center!important;align-items:center!important}
@@ -157,6 +157,12 @@ section{padding:58px 0}.section-head{max-width:760px;margin:0 auto 34px;text-ali
 /* Center the specialized workforce-data message within its column. */
 .special-copy{margin-inline:auto;text-align:center;align-items:center}
 .special-copy .eyebrow{justify-content:center}
+
+/* Keep this message left-aligned in the desktop two-column layout. */
+@media(min-width:981px){
+  .special-copy{margin-inline:0;text-align:left;align-items:flex-start}
+  .special-copy .eyebrow{justify-content:flex-start}
+}
 
 @media(max-width:640px){
   #control .section-head h2,

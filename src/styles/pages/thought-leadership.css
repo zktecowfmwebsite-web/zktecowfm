@@ -35,3 +35,11 @@
 @media(max-width:650px){.mobile-break{display:inline}.close p{font-size:14px}}
 @media(min-width:961px){.hero-grid>div:first-child,.hero-grid>.hero-panel{grid-column:auto!important;width:auto!important;margin:0!important}.hero h1{white-space:normal!important}}
 .hero h1{font-size:clamp(46px,5vw,50px)!important}.hero h1::after{display:none}.hero-grid>div:first-child,.hero-grid>div:first-child p{text-align:center}.hero-grid>div:first-child p{margin-left:auto;margin-right:auto}.hero-panel{text-align:left}.hero-panel p{margin-left:0;margin-right:0;text-align:left;font-size:13px}.controls .grid .card{position:relative;min-height:270px!important;padding-top:76px!important;overflow:hidden}.controls .grid .card:before{content:"";position:absolute;inset:0 0 auto;height:58px;background:radial-gradient(circle at 88% 0,rgba(148,205,85,.42),transparent 42%),linear-gradient(115deg,#11184c,#20366f)}.controls .grid .card:after{content:"THOUGHT LEADERSHIP";position:absolute;top:23px;left:24px;color:#9bd569;font-size:10px;font-weight:900;letter-spacing:.12em}.controls .grid .card .cat{position:absolute;top:23px;right:24px;z-index:1;color:#fff;font-size:9px}.controls .grid .card h3{font-size:20px!important}.controls .filters{position:relative;padding-left:310px;min-height:44px}.controls .filters:before{content:"Search insights by topic or keyword";position:absolute;left:0;top:0;width:280px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;color:#8a93a6;font-size:12px;text-align:left}.controls .filters:after{content:"56 insights found";position:absolute;bottom:-27px;left:0;right:0;color:#697386;font-size:12px}@media(max-width:900px){.controls .filters{padding-left:0;padding-top:52px}.controls .filters:before{left:50%;transform:translateX(-50%);width:min(280px,100%)}.controls .grid .card{padding-top:76px!important}}
+
+/* Desktop hero alignment; retain the centered layout on tablet and mobile. */
+@media(min-width:961px){
+  .hero-grid>div:first-child{text-align:left}
+  .hero-grid>div:first-child p{margin-left:0;margin-right:0;text-align:left}
+  .hero-grid>div:first-child .eyebrow{justify-content:flex-start}
+  .close p br:first-of-type{display:none}
+}
