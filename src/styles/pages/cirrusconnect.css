@@ -19,3 +19,30 @@ body{margin:0}*{box-sizing:border-box}
 /* Give the partner hero more breathing room beneath its content. */
 .cc-hero{padding-top:76px!important;padding-bottom:76px!important}
 @media(max-width:600px){.cc-hero{padding-top:64px!important;padding-bottom:68px!important}}
+
+/* Keep the operating-stage descriptions readable throughout the stacked layout. */
+@media(max-width:900px){.cc-operate .cc-op>span{font-size:12px!important;line-height:1.35!important}}
+
+/* Compact the hero console navigation so its labels fit on small screens. */
+@media(max-width:600px){
+  .cc-console-body{grid-template-columns:88px minmax(0,1fr)!important}
+  .cc-side{min-width:0;overflow:hidden;padding:14px 6px!important}
+  .cc-side b,.cc-side span{font-size:12px!important;line-height:1.25!important}
+  .cc-side b{margin-bottom:13px!important}
+  .cc-side span{margin:10px 0!important;overflow-wrap:anywhere}
+}
+
+/* Prioritize readable remote-control labels over the live-image height on phones. */
+@media(max-width:600px){
+  .cc-screen{padding:10px!important}
+  .cc-screen-body{grid-template-columns:1fr!important;gap:10px!important}
+  .cc-live{height:150px!important}
+  .cc-live img{max-height:132px!important}
+  .cc-tool{font-size:12px!important;line-height:1.2!important;padding:10px!important}
+}
+
+/* Separate the primary mobile alert from the content below it. */
+@media(max-width:600px){.cc-panel .cc-alert:first-of-type{padding-bottom:12px!important;margin-bottom:8px!important}}
+
+/* Use more of the available width inside the compact Fleet Overview panel. */
+@media(max-width:600px){.cc-dash{padding:12px!important}}

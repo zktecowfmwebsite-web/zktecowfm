@@ -320,4 +320,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 /* Use the approved Ultima 7P and Ultima 5 assets for their leading product views. */
 #ultima7p .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%207p%20image.png")}
 #ultima5 .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%205%20G3%20image.png")}
+
+/* Preserve a readable featured-model badge on phones. */
+@media(max-width:640px){.model-card .badge{font-size:12px;line-height:1.2;padding:7px 10px}}
 .cta-section .hero-actions{justify-content:center!important}.cta-section .hero-actions .btn.secondary{display:none!important}

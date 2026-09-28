@@ -589,3 +589,13 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
   .arch112-flow-note,.arch112-flow-note span{font-size:12px!important;line-height:1.35!important}
   .arch112-flow-note strong{font-size:14px!important;line-height:1.25!important}
 }
+
+/* Preserve legible labels in the responsive ecosystem diagram. */
+@media(max-width:900px){
+  .architecture-v112 .arch112-methods span{width:100%;flex-basis:100%;font-size:12px!important;font-weight:400!important;line-height:1.2!important;padding:6px!important;border-radius:10px!important;text-align:center!important}
+  .architecture-v112 .arch112-chips span{font-size:12px!important;line-height:1.2!important;padding:5px 6px!important}
+  .architecture-v112 .arch112-methods span:nth-child(4),
+  .architecture-v112 .arch112-methods span:nth-child(5){flex-basis:100%}
+  .architecture-v112 .workday-path .arch112-path-copy,
+  .architecture-v112 .partner-path .arch112-path-copy{transform:translateY(6px)}
+}
