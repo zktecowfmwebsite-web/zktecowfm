@@ -1,6 +1,14 @@
 ---
 ---
 
+<script is:inline>
+  const favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.type = 'image/svg+xml';
+  favicon.href = '/assets/zkteco-wfm-favicon.svg?v=7';
+  document.head.appendChild(favicon);
+</script>
+
 <header class="zk-global-header">
   <div class="zk-nav-shell">
     <a class="zk-brand" href="/" aria-label="ZKTeco WFM home">
