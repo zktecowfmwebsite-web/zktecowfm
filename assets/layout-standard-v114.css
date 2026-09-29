@@ -170,8 +170,31 @@ body>main>section:first-child .company-hero-grid>:first-child,body>main>section:
   html body .zk-global-header .zk-talk{height:auto!important;min-height:0!important;margin:10px 0 0!important;padding:11px 14px!important}
 }
 
+/* Use the tested mobile navigation through tablet widths; the compact desktop
+   nav previously left no usable menu control between 761px and 1023px. */
+@media(min-width:761px) and (max-width:1023px){
+  html body{padding-top:0!important}
+  html body .zk-global-header{height:auto!important;max-height:none!important;min-height:0!important;position:sticky!important;top:0!important}
+  html body .zk-global-header .zk-nav-shell{width:calc(100% - 44px)!important;height:auto!important;max-height:none!important;min-height:0!important;padding:10px 0!important;flex-wrap:wrap!important;gap:8px!important}
+  html body .zk-global-header .zk-brand{height:44px!important;width:146px!important;min-width:146px!important;flex-basis:146px!important}
+  html body .zk-global-header .zk-brand .zk-brand-logo{width:140px!important;max-width:140px!important;max-height:39px!important}
+  html body .zk-mobile-menu-toggle{display:inline-flex!important;margin-left:auto!important;width:42px!important;height:42px!important;border:1px solid #d9deea!important;border-radius:8px!important;background:#fff!important;align-items:center!important;justify-content:center!important;flex-direction:column!important;gap:4px!important;cursor:pointer!important}
+  html body .zk-mobile-menu-toggle span{display:block!important;width:18px!important;height:2px!important;background:#201f62!important;border-radius:2px!important}
+  html body .zk-global-header .zk-menu{display:none!important;height:auto!important;min-height:0!important;flex:1 1 100%!important;width:100%!important;justify-content:flex-start!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:4px 0 8px!important}
+  html body .zk-global-header.zk-mobile-menu-open .zk-menu{display:flex!important}
+  html body .zk-global-header .zk-menu>a:not(.zk-talk),html body .zk-global-header .zk-drop>a{height:auto!important;min-height:44px!important;font-size:14px!important;padding:12px 6px!important}
+  html body .zk-global-header a[data-nav-trigger]::after{display:none!important}
+  html body .zk-global-header .zk-drop{height:auto!important;display:grid!important;grid-template-columns:1fr auto!important;border-bottom:1px solid #edf0f5!important}
+  html body .zk-global-header .zk-drop>a{grid-column:1!important;grid-row:1!important}
+  html body .zk-mobile-submenu-toggle{display:grid!important;place-items:center!important;grid-column:2!important;grid-row:1!important;width:42px!important;border:0!important;background:transparent!important;color:#201f62!important;cursor:pointer!important}
+  html body .zk-global-header .zk-drop-menu{display:none!important;position:static!important;grid-column:1/-1!important;grid-row:2!important;width:auto!important;min-width:0!important;margin:0 0 8px!important;padding:4px!important;box-shadow:none!important;border:0!important;background:#f7f9fc!important}
+  html body .zk-global-header .zk-drop.zk-mobile-submenu-open .zk-drop-menu{display:block!important}
+  html body .zk-global-header .zk-drop-menu a{display:block!important;padding:10px 12px!important;font-size:13px!important}
+  html body .zk-global-header .zk-talk{height:auto!important;min-height:44px!important;margin:10px 0 0!important;padding:11px 14px!important}
+}
+
 /* Keep the desktop navigation in a fixed viewport position on every page. */
-@media(min-width:761px){
+@media(min-width:1024px){
   html body{padding-top:var(--zk-global-header-h)!important}
   html body .zk-global-header{position:fixed!important;top:0!important;left:0!important;right:0!important}
 }
@@ -234,10 +257,21 @@ body>main>section:first-child .company-hero-grid>:first-child,body>main>section:
 @media(max-width:900px){.arch112-map{grid-template-columns:1fr;gap:18px}.arch112-foundation,.arch112-path,.arch112-destination{min-height:auto}.arch112-paths{grid-template-rows:auto auto auto}.arch112-destinations{grid-template-rows:auto auto;padding-top:0}.arch112-bi{display:none}.arch112-path{padding:28px 24px}.arch112-flow-note{border-radius:18px;flex-direction:column;gap:4px}}
 
 /* Final desktop dropdown-chevron override: supersedes the legacy pseudo arrow above. */
-@media(min-width:761px){
+@media(min-width:1024px){
   html body .zk-global-header a[data-nav-trigger]::after{content:none!important;display:none!important}
   html body .zk-global-header .zk-nav-chevron{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:auto!important;height:auto!important;margin:0 0 0 7px!important;border:0!important;opacity:.72;transform:translateY(-1px)!important;transition:transform .24s cubic-bezier(.22,1,.36,1),color .2s ease!important}
   html body .zk-global-header .zk-nav-chevron::before{content:none!important}
   html body .zk-global-header .zk-nav-chevron{font:400 18px/.7 Arial,sans-serif!important}
   html body .zk-global-header .zk-drop:hover .zk-nav-chevron,html body .zk-global-header .zk-drop:focus-within .zk-nav-chevron{transform:rotate(180deg) translateY(1px)!important}
+}
+
+/* Keep compact support actions usable on the narrowest supported phones. */
+@media(max-width:360px){
+  html body .support-path .btn.primary{width:100%!important;max-width:100%!important;gap:10px!important;padding-left:14px!important;padding-right:14px!important;font-size:14px!important}
+}
+
+/* The Workday integration graphic remains legible rather than overflowing on phones. */
+@media(max-width:640px){
+  html body .cirrusdcs-section .visual-card{padding:14px!important;min-width:0!important}
+  html body .cirrusdcs-section .workday-integration-image{display:block!important;width:100%!important;max-width:100%!important;height:auto!important}
 }

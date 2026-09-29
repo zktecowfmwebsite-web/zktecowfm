@@ -43,3 +43,5 @@
   .hero-grid>div:first-child .eyebrow{justify-content:flex-start}
   .close p br:first-of-type{display:none}
 }
+
+.hero-panel strong{font-size:24px}

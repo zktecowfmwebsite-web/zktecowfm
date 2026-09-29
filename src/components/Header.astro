@@ -47,9 +47,60 @@
       if (value) element.setAttribute(attribute, value.replace(companyNamePattern, companyName));
     });
   };
+  // Repair legacy UTF-8 text that was previously decoded as Windows-1252.
+  // This keeps article copy, labels, accessibility text and document titles readable.
+  const windows1252 = {
+    '\u20ac': 0x80, '\u201a': 0x82, '\u0192': 0x83, '\u201e': 0x84, '\u2026': 0x85,
+    '\u2020': 0x86, '\u2021': 0x87, '\u02c6': 0x88, '\u2030': 0x89, '\u0160': 0x8a,
+    '\u2039': 0x8b, '\u0152': 0x8c, '\u017d': 0x8e, '\u2018': 0x91, '\u2019': 0x92,
+    '\u201c': 0x93, '\u201d': 0x94, '\u2022': 0x95, '\u2013': 0x96, '\u2014': 0x97,
+    '\u02dc': 0x98, '\u2122': 0x99, '\u0161': 0x9a, '\u203a': 0x9b, '\u0153': 0x9c,
+    '\u017e': 0x9e, '\u0178': 0x9f
+  };
+  const repairMojibake = (value) => {
+    let repaired = value;
+    for (let attempt = 0; attempt < 2 && /[\u00c2\u00c3\u00e2]/.test(repaired); attempt += 1) {
+      const bytes = Uint8Array.from([...repaired], (character) => windows1252[character] ?? character.charCodeAt(0));
+      const next = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+      if (next === repaired) break;
+      repaired = next;
+    }
+    return repaired;
+  };
+  const repairDisplayEncoding = () => {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => {
+      if (node.parentElement?.closest('script, style')) return;
+      try { node.nodeValue = repairMojibake(node.nodeValue); } catch { /* retain text that is already valid */ }
+    });
+    document.querySelectorAll('[alt], [aria-label], [title], meta[content]').forEach((element) => {
+      const attribute = element.matches('meta') ? 'content' : ['alt', 'aria-label', 'title'].find((name) => element.hasAttribute(name));
+      if (!attribute) return;
+      try { element.setAttribute(attribute, repairMojibake(element.getAttribute(attribute))); } catch { /* no change */ }
+    });
+    try { document.title = repairMojibake(document.title); } catch { /* no change */ }
+    if (location.pathname === '/manufacturing-facilities') {
+      const intro = document.querySelector('.gallery-head p');
+      if (intro) intro.textContent = 'Inside the facilities where Ultima Series devices are designed, assembled and tested.';
+    }
+    if (location.pathname === '/ultima-series') {
+      const title = document.querySelector('#resources .section-head h2');
+      if (title) title.textContent = 'Ultima Resources in One Place';
+    }
+    if (location.pathname === '/workday') {
+      const label = document.querySelector('.cirrusdcs-section .eyebrow');
+      if (label) label.textContent = 'CirrusDCS + Workday = Certified Integration';
+    }
+  };
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', standardizeCompanyNameEverywhere, { once: true });
+    document.addEventListener('DOMContentLoaded', () => {
+      repairDisplayEncoding();
+      standardizeCompanyNameEverywhere();
+    }, { once: true });
   } else {
+    repairDisplayEncoding();
     standardizeCompanyNameEverywhere();
   }
 </script>
@@ -76,7 +127,7 @@
 </header>
 
 <style is:global>
-  @media (min-width: 761px) {
+  @media (min-width: 1024px) {
     html body .zk-global-header a[data-nav-trigger]::after {
       content: "" !important;
       display: inline-block !important;

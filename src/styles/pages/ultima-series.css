@@ -155,8 +155,9 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 .configuration-section .configuration-card p{font-size:15px}
 
 /* Keep the model range visually distinct from the white configuration section. */
-#models,#compare{background:linear-gradient(180deg,#fff 0%,#f6f8fb 100%)}
-#compare{background:#fff}
+#models{background:linear-gradient(180deg,#fff 0%,#f6f8fb 100%)}
+#compare{background:#f6f8fb}
+#resources{background:#fff}
 .quicknav{display:none!important}
 .models .model-image{height:180px}
 .models .model-image img{max-height:170px}

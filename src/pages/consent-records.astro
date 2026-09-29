@@ -1,0 +1,56 @@
+---
+const title = 'Consent records | ZKTecoWFM';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title}</title>
+    <link href="assets/tailwind.css" rel="stylesheet" />
+    <style>
+      :root{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#171b48;background:#f6f8fb}body{margin:0}.wrap{width:min(1180px,calc(100% - 40px));margin:54px auto}h1{margin:0 0 8px;font-size:36px}.intro{color:#5d6478;margin:0 0 26px}.login,.results{background:#fff;border:1px solid #e0e5ec;border-radius:16px;padding:24px;box-shadow:0 12px 34px rgba(20,25,70,.06)}.login{max-width:540px}.login label{display:block;font-size:13px;font-weight:800;margin-bottom:8px}.login input{width:100%;box-sizing:border-box;padding:12px 13px;border:1px solid #cfd6e1;border-radius:8px;font:inherit}.login button{margin-top:12px;border:0;border-radius:8px;padding:12px 15px;background:#201f62;color:#fff;font-weight:800;cursor:pointer}.status{min-height:22px;color:#5d6478;font-size:13px;margin:12px 0 0}.results{display:none;margin-top:24px;overflow:auto}table{border-collapse:collapse;width:100%;min-width:760px}th,td{padding:12px;border-bottom:1px solid #e6e9ef;text-align:left;font-size:13px}th{color:#5a6277;font-size:11px;letter-spacing:.06em;text-transform:uppercase}.yes{color:#397d16;font-weight:800}.no{color:#687185}.download{float:right;border:1px solid #cfd6e1;border-radius:8px;padding:9px 12px;background:#fff;color:#201f62;font-weight:800;cursor:pointer}@media(max-width:600px){.wrap{width:min(100% - 28px,1180px);margin:28px auto}h1{font-size:30px}}
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Consent records</h1>
+      <p class="intro">Private consent-audit view. Enter the <code>CONSENT_ADMIN_TOKEN</code> configured in Vercel.</p>
+      <section class="login" id="login">
+        <label for="token">Admin token</label>
+        <input id="token" type="password" autocomplete="off" />
+        <button id="load" type="button">Load records</button>
+        <p class="status" id="status" aria-live="polite"></p>
+      </section>
+      <section class="results" id="results">
+        <button class="download" id="download" type="button">Download CSV</button>
+        <table><thead><tr><th>Saved</th><th>Visitor ID</th><th>Necessary</th><th>Analytics</th><th>Marketing</th><th>Policy</th><th>Source</th></tr></thead><tbody id="rows"></tbody></table>
+      </section>
+    </main>
+    <script>
+      // @ts-nocheck -- this is a small browser-only reporting interface.
+      let consentEvents = [];
+      const status = document.querySelector('#status');
+      const rows = document.querySelector('#rows');
+      const cell = (value, enabled) => `<td class="${enabled === undefined ? '' : enabled ? 'yes' : 'no'}">${enabled === undefined ? String(value || '').replace(/[&<>]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[char])) : enabled ? 'Yes' : 'No'}</td>`;
+      document.querySelector('#load').addEventListener('click', async () => {
+        status.textContent = 'Loading…';
+        const response = await fetch('/api/consent?limit=500', { headers: { Authorization: `Bearer ${document.querySelector('#token').value}` } });
+        if (!response.ok) { status.textContent = response.status === 401 ? 'Invalid token.' : 'Unable to load records.'; return; }
+        consentEvents = (await response.json()).events;
+        rows.innerHTML = consentEvents.map(event => `<tr>${cell(new Date(event.consent_time).toLocaleString())}${cell(event.visitor_id)}${cell('', event.necessary)}${cell('', event.analytics)}${cell('', event.marketing)}${cell(event.policy_version)}${cell(event.source)}</tr>`).join('');
+        document.querySelector('#results').style.display = 'block';
+        status.textContent = `${consentEvents.length} record(s) loaded.`;
+      });
+      document.querySelector('#download').addEventListener('click', () => {
+        const columns = ['consent_time','visitor_id','necessary','analytics','marketing','policy_version','source'];
+        const quote = value => `"${String(value ?? '').replaceAll('"', '""')}"`;
+        const csv = [columns.join(','), ...consentEvents.map(event => columns.map(column => quote(event[column])).join(','))].join('\n');
+        const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+        const link = Object.assign(document.createElement('a'), { href: url, download: 'consent-records.csv' });
+        link.click(); URL.revokeObjectURL(url);
+      });
+    </script>
+  </body>
+</html>
