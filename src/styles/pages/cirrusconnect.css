@@ -32,6 +32,10 @@ body{margin:0}*{box-sizing:border-box}
   .cc-side span{margin:10px 0!important;overflow-wrap:anywhere}
 }
 
+.cc-console-top{font-size:18px!important;letter-spacing:.025em!important}
+.cc-console-top i{width:10px!important;height:10px!important}
+.cc-section.navy .zk-eyebrow,.cc-node.core .zk-eyebrow{color:#78bd43!important}
+
 /* Prioritize readable remote-control labels over the live-image height on phones. */
 @media(max-width:600px){
   .cc-screen{padding:10px!important}
@@ -46,3 +50,9 @@ body{margin:0}*{box-sizing:border-box}
 
 /* Use more of the available width inside the compact Fleet Overview panel. */
 @media(max-width:600px){.cc-dash{padding:12px!important}}
+
+/* Clear, title-case labels for the remote-tool controls. */
+.cc-tool{font-size:13px}
+@media(max-width:600px){.cc-tool{font-size:15px!important}}
+.cc-actionrail span{font-size:13px;color:var(--cc-navy);padding:8px 10px}
+.cc-actionrail{justify-content:center}

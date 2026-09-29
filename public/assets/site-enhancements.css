@@ -1,6 +1,8 @@
 
 /* ZKTeco WFM v56 global navigation, footer and launch-layer styles */
 :root{--zk-navy:#11153e;--zk-navy2:#201f62;--zk-green:#78bd43;--zk-orange:#f36a21;--zk-ink:#171b48;--zk-muted:#667085;--zk-border:#e5e7ef;--zk-bg:#f6f8fb}
+/* Shared solid accent color. Gradient fills intentionally retain their existing color stops. */
+html body .zk-eyebrow,html body .eyebrow,html body .section-label,html body .cat,html body .kicker,html body .segment-kicker,html body .model-kicker,html body .program-tag{color:#78bd43!important}
 html,body{max-width:100%;overflow-x:hidden}
 .zk-global-header{position:relative!important;top:auto!important;z-index:9998!important;background:#fff!important;border-bottom:1px solid #e7e9f2!important;box-shadow:0 3px 18px rgba(17,21,62,.04)!important;color:var(--zk-ink)!important;font-family:Inter,"Segoe UI",Arial,sans-serif!important}
 .zk-nav-shell{max-width:1240px;margin:auto;padding:0 24px;min-height:76px;display:flex;align-items:center;gap:26px}

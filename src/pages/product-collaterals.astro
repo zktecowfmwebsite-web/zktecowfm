@@ -16,12 +16,12 @@ const downloads = [
   <section class="zk-collateral-hero"><div class="zk-wrap"><div class="zk-eyebrow">Product Collaterals</div><h1>Product Downloads</h1><p>Find product documents, deployment guides, media assets, brochures, and videos.</p></div></section>
   <section class="zk-library"><div class="zk-wrap">
     <label class="zk-library-search"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.25 4.25"></path></svg><input id="resource-search" type="search" placeholder="Search downloads" aria-label="Search downloads" autocomplete="off" /></label>
-    <div class="zk-library-controls">
+    <div class="zk-library-controls" id="resource-filters">
       <div class="zk-filter-group"><span class="zk-filter-label">Product</span><div class="zk-library-filters" id="product-filters"><button class="active" data-filter="all">All</button><button data-filter="timeclocks">Time Clocks</button><button data-filter="cirrustime">CirrusTime</button><button data-filter="cirrusweb">CirrusWeb</button><button data-filter="cirrusmobile">CirrusMobile</button><button data-filter="cirruskiosk">CirrusKiosk</button><button data-filter="cirrusconnect">CirrusConnect</button><button data-filter="cirrusdcs">CirrusDCS</button><button data-filter="company">Company</button></div></div>
       <div class="zk-filter-group" id="model-filter-group" hidden><span class="zk-filter-label">Time Clock Model</span><div class="zk-library-filters" id="model-filters"><button class="active" data-filter="all">All Time Clocks</button><button data-filter="ultima5">Ultima 5</button><button data-filter="ultima7">Ultima 7</button><button data-filter="ultima7p">Ultima 7P</button><button data-filter="ultima10">Ultima 10</button></div></div>
-      <div class="zk-filter-group"><span class="zk-filter-label">Resource Type</span><div class="zk-library-filters" id="type-filters"><button class="active" data-filter="all">All</button><button data-filter="Data Sheet">Data Sheets</button><button data-filter="User Manual">Manuals</button><button data-filter="Installation Guide">Install Guides</button><button data-filter="Product Images">Images</button><button data-filter="Brochure">Brochures</button></div></div>
+      <div class="zk-filter-group"><span class="zk-filter-label">Resource Type</span><div class="zk-library-filters" id="type-filters"><button class="active" data-filter="all">All</button><button data-filter="Data Sheet">Product Datasheets</button><button data-filter="User Manual">User Manuals</button><button data-filter="Installation Guide">Installation Guides</button><button data-filter="Product Images">Product Images</button><button data-filter="Brochure">Brochures</button></div></div>
     </div>
-    <div class="zk-library-results-head"><div><h2 id="results-title">Downloads</h2><p class="zk-library-help">Only available collateral is shown.</p></div><p id="resource-count" aria-live="polite"></p></div>
+    <div class="zk-library-results-head" id="downloads"><div><h2 id="results-title">Downloads</h2><p class="zk-library-help">Only available collateral is shown.</p></div></div>
     <div class="zk-download-groups" id="resource-grid">{downloads.map(([title, product, productKey, modelKey, type, format, keywords]) => <a class="zk-download-row" data-product={productKey} data-model={modelKey} data-type={type} data-search={`${title} ${product} ${type} ${keywords}`} href={`/contact?resource=${encodeURIComponent(title)}`}><span class="zk-file-badge">{format}</span><span class="zk-download-name">{title}<small>{product} · {type}</small></span><span class="zk-download-action">Download <b>→</b></span></a>)}</div>
     <div class="zk-library-empty" id="resource-empty" hidden><h3>No matching downloads found.</h3><p>Try another product, model, resource type, or search term.</p></div>
   </div></section>
@@ -40,12 +40,30 @@ const downloads = [
     if (product !== 'timeclocks') model = 'all';
     let matching = resourceRows.filter((row) => (product === 'all' || row.dataset.product === product) && (model === 'all' || row.dataset.model === model) && (type === 'all' || row.dataset.type === type) && row.dataset.search.toLowerCase().includes(query));
     resourceRows.forEach((row) => row.hidden = !matching.includes(row));
-    count.textContent = `${matching.length} download${matching.length === 1 ? '' : 's'}`;
     title.textContent = model === 'all' ? 'Downloads' : `${modelGroup.querySelector(`[data-filter="${model}"]`).textContent} Downloads`;
     empty.hidden = matching.length > 0;
   };
   const bind = (id, setter) => document.querySelectorAll(`#${id} button`).forEach((button) => button.addEventListener('click', () => { document.querySelectorAll(`#${id} button`).forEach((item) => item.classList.remove('active')); button.classList.add('active'); setter(button.dataset.filter); render(); }));
   bind('product-filters', (value) => product = value); bind('model-filters', (value) => model = value); bind('type-filters', (value) => type = value);
   search.addEventListener('input', () => { query = search.value.trim().toLowerCase(); render(); });
+  const params = new URLSearchParams(window.location.search);
+  const setInitialFilter = (id, value, setValue) => {
+    const button = value && document.querySelector(`#${id} [data-filter="${value}"]`);
+    if (!button) return;
+    document.querySelectorAll(`#${id} button`).forEach((item) => item.classList.toggle('active', item === button));
+    setValue(value);
+  };
+  setInitialFilter('product-filters', params.get('product'), (value) => product = value);
+  setInitialFilter('model-filters', params.get('model'), (value) => model = value);
+  setInitialFilter('type-filters', params.get('type'), (value) => type = value);
   render();
+  if (params.get('jump') === 'filters' || params.has('type')) {
+    if (window.location.hash) history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    requestAnimationFrame(() => {
+      const filters = document.querySelector('#resource-filters');
+      if (!filters) return;
+      filters.style.scrollMarginTop = '104px';
+      filters.scrollIntoView({ block: 'start' });
+    });
+  }
 </script>

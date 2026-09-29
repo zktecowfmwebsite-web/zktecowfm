@@ -154,16 +154,12 @@
 #timestamp .question small{font-size:13px}
 
 /* Refined timestamp and architecture heading punctuation. */
-#timestamp .tt-center h2{font-size:0}
-#timestamp .tt-center h2:after{content:"More Than a Timestamp";font-size:clamp(36px,4vw,48px);line-height:1.05}
 .tt-section.mist:not(#timestamp) .tt-center h2{font-size:clamp(36px,4vw,48px)!important}
 .tt-section.mist:not(#timestamp) .tt-center h2:after{content:none!important}
 
 /* Match the Workday hero display-heading treatment in the flexibility cards. */
 .flex-card h3{color:#201f62;font-size:24px;font-weight:700;line-height:1.01;letter-spacing:-.05em;margin:12px 0 20px}
 .flex-card.dark h3{color:#fff}
-.flex-card.dark h3{font-size:0}
-.flex-card.dark h3:after{content:"Designed to fit the workforce";font-size:24px;font-weight:700;line-height:1.01;letter-spacing:-.05em}
 @media (min-width:921px){.flex-card h3{white-space:nowrap}}
 .flex-card .clean-item{font-size:18px;font-weight:400}
 @media (min-width:721px){.flex-caption{max-width:none;white-space:nowrap}}

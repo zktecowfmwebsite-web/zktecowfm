@@ -119,7 +119,7 @@
 /* Separate the Ultima introduction from its benefit list. */
 .sp85-ultima-grid{margin-top:32px!important}
 .sp85-ultima-grid .sp85-benefits{margin-top:0!important;gap:20px!important}
-.sp85-ultima-grid .sp85-hero-actions{justify-content:center}
+.sp85-ultima-grid .sp85-hero-actions{justify-content:flex-start!important;margin-left:0!important}
 
 /* Keep the manufacturing CTA below its description. */
 .sp85-atlanta-note{display:grid!important;grid-template-columns:34px minmax(0,1fr);align-items:start;column-gap:12px;row-gap:6px;position:static!important}

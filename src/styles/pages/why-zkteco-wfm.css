@@ -92,7 +92,7 @@ section{padding:58px 0}.section-head{max-width:760px;margin:0 auto 34px;text-ali
 .source-diagram{padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important}
 .source-diagram:after{display:none}
 .source-diagram>img{display:block;width:100%;height:auto}
-@media(min-width:981px){.source-diagram>img{width:108%;max-width:none}}
+@media(min-width:981px){.source-diagram>img{width:126%;max-width:none;transform:translateX(-20%)}}
 
 /* Supplied Global Scale artwork replaces the constructed wheel. */
 .mfg-wheel{background:url("/assets/global%20scale_why%20WFM.png") center/contain no-repeat}
@@ -131,8 +131,8 @@ section{padding:58px 0}.section-head{max-width:760px;margin:0 auto 34px;text-ali
 .why-hero h1{font-size:0}
 .why-hero h1:before{content:"We Do Not Assemble the Solution";font-size:clamp(40px,4vw,46px);line-height:.97;letter-spacing:-.056em;color:#fff}
 .why-hero h1 span{font-size:0}
-.why-hero h1 span:after{content:"We Control It";display:inline-block;margin-top:12px;margin-left:12px;font-size:clamp(40px,4vw,46px);line-height:.97;letter-spacing:-.056em;color:var(--green)}
-@media(min-width:981px){.why-hero .hero-grid{grid-template-columns:1.14fr .86fr;gap:34px}.why-hero h1{white-space:normal}.why-hero h1 span:after{margin-top:0;margin-left:12px}}
+.why-hero h1 span:after{content:"We Control It";display:inline-block;margin-top:12px;margin-left:0;font-size:clamp(40px,4vw,46px);line-height:.97;letter-spacing:-.056em;color:var(--green)}
+@media(min-width:981px){.why-hero .hero-grid{grid-template-columns:1.14fr .86fr;gap:34px}.why-hero h1{white-space:normal}.why-hero h1 span:after{margin-top:7px;margin-left:0}}
 @media(max-width:640px){
   .why-hero{border-radius:0 0 28px 28px!important}
   .why-hero .hero-grid>div:first-child{text-align:center!important;align-items:center!important}

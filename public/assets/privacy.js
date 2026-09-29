@@ -1,5 +1,43 @@
 
 (function(){
+  const normalizeCirrusConnectName=()=>{
+    if(!document.getElementById('zk-cirrusconnect-casing')){
+      const style=document.createElement('style');
+      style.id='zk-cirrusconnect-casing';
+      style.textContent='.zk-cirrusconnect-name,.zk-cirrusdcs-name{text-transform:none!important}';
+      document.head.appendChild(style);
+    }
+    const consoleTitle=document.querySelector('.cc-console-top');
+    if(consoleTitle)consoleTitle.innerHTML='<i></i><span class="zk-cirrusconnect-name">CirrusConnect</span> &middot; Partner Operations';
+    const flowLabel=document.querySelector('.cc-flow-tag');
+    if(flowLabel)flowLabel.innerHTML='Ultima <em>&harr;</em> <span class="zk-cirrusconnect-name">CirrusConnect</span> <em>&harr;</em> Your Platform';
+    const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+    const nodes=[];
+    while(walker.nextNode())nodes.push(walker.currentNode);
+    nodes.forEach((node)=>{
+      const parent=node.parentElement;
+      if(!parent||parent.closest('script,style'))return;
+      const value=node.nodeValue;
+      const matcher=/\bCIRRUSCONNECT\b|\bCirrusconnect\b|\bCirrusConnect\b|\bCIRRUSDCS\b|\bCirrusdcs\b|\bCirrusDCS\b/g;
+      if(!matcher.test(value))return;
+      matcher.lastIndex=0;
+      const fragment=document.createDocumentFragment();
+      let index=0;
+      value.replace(matcher,(match,offset)=>{
+        fragment.append(document.createTextNode(value.slice(index,offset)));
+        const name=document.createElement('span');
+        const isCirrusDCS=/dcs/i.test(match);
+        name.className=isCirrusDCS?'zk-cirrusdcs-name':'zk-cirrusconnect-name';
+        name.textContent=isCirrusDCS?'CirrusDCS':'CirrusConnect';
+        fragment.append(name);
+        index=offset+match.length;
+        return match;
+      });
+      fragment.append(document.createTextNode(value.slice(index)));
+      node.replaceWith(fragment);
+    });
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',normalizeCirrusConnectName);else normalizeCirrusConnectName();
   const KEY='zkwfm_cookie_preferences_v1';
   const defaults={necessary:true,analytics:false,marketing:false,timestamp:null};
   function load(){try{return Object.assign({},defaults,JSON.parse(localStorage.getItem(KEY)||'{}'));}catch(e){return Object.assign({},defaults);}}
@@ -41,6 +79,7 @@
 
 /* Give legacy pages the same primary navigation as component-based pages. */
 (()=>{
+  return;
   document.querySelectorAll('.zk-global-header .zk-menu').forEach(nav=>{
     nav.innerHTML=`
       <a href="/workday">Workday Solution</a>
@@ -239,6 +278,7 @@
 /* Use the Resource Hub footer as the shared footer on every page. */
 (()=>{
   const standardizeFooter=()=>{
+    return;
     const footer=document.querySelector('.zk-global-footer');
     if(!footer||footer.dataset.standardizedFooter)return;
     if(!document.getElementById('zk-standard-footer-style')){

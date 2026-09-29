@@ -29,7 +29,7 @@ footer{background:#0d1233;color:#fff;padding:54px 0 24px}.foot-grid{display:grid
 .hero-position{font-size:clamp(47px,5vw,50px)!important;line-height:1.01!important;letter-spacing:-.05em!important;margin:0 0 18px!important;color:var(--navy)!important}
 .hero-offering{font-size:17px;line-height:1.55;color:var(--muted);max-width:720px;margin:0 0 20px}
 .value-line{display:flex;gap:9px;flex-wrap:wrap;margin:23px 0 29px}.value-line span{background:var(--navy);color:#fff;border-radius:99px;padding:9px 14px;font-size:12px;font-weight:900;letter-spacing:.02em}.value-line span:nth-child(2){background:#296b86}.value-line span:nth-child(3){background:#173d53}
-.trust-lockup{display:flex;align-items:center;gap:16px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.trust-lockup img{width:58px;height:auto}.trust-lockup div{font-size:11.5px;color:var(--muted);line-height:1.45}.trust-lockup strong{display:block;color:var(--navy);font-size:13px;margin-bottom:2px}
+.trust-lockup{display:flex;align-items:center;gap:16px;width:520px;max-width:100%;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.trust-lockup img{width:58px;height:auto}.trust-lockup div{font-size:11.5px;color:var(--muted);line-height:1.45}.trust-lockup strong{display:block;color:var(--navy);font-size:13px;margin-bottom:2px}
 .offer-grid{}.offer-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:23px;box-shadow:0 12px 34px rgba(20,25,70,.055);min-height:180px}.offer-card .offer-num{font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--green)}.offer-card h3{font-size:19px;color:var(--navy);margin:9px 0 8px}.offer-card p{font-size:12.5px;line-height:1.53;color:var(--muted);margin:0}.offer-card.wide{grid-column:span 2}
 .commercial{background:linear-gradient(130deg,#11153e 0%,#201f62 68%,#2e2a78 100%);color:#fff}.commercial .section-head h2,.commercial .section-head p{color:#fff}.commercial .section-head p{color:#cdd3e5}.commercial-grid{}.commercial-card{border:1px solid rgba(255,255,255,.18);border-radius:17px;padding:26px;background:rgba(255,255,255,.06)}.commercial-card h3{font-size:25px;line-height:1.12;margin:0 0 11px;color:#fff}.commercial-card p{font-size:13px;line-height:1.55;color:#cfd4e7;margin:0}.commercial-proof{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.commercial-proof span{font-size:10.5px;font-weight:800;line-height:1.25;color:#eef3ff;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);border-radius:99px;padding:6px 9px}.commercial-card strong{color:#b8e17f}.commercial-actions{text-align:center;margin-top:26px}
 .cmp-grid{}.cmp-card{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#fff}.cmp-head{padding:13px 18px;color:#fff;font-weight:900;letter-spacing:.08em;text-align:center;background:var(--navy)}.cmp-card:nth-child(2) .cmp-head{background:#296b86}.cmp-card:nth-child(3) .cmp-head{background:#173d53}.cmp-body{padding:24px}.cmp-body strong{display:block;font-size:16px;color:var(--navy);margin-bottom:7px}.cmp-body p{font-size:13px;line-height:1.55;color:var(--muted);margin:0}.cmp-body ul{margin:13px 0 0;padding-left:17px;color:var(--muted);font-size:12px;line-height:1.6}
@@ -129,7 +129,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 /* Workday hero illustration and a more generous top inset. */
 @media(min-width:721px){.hero-grid{padding-top:78px!important}}
 .hero .workday-hero-visual{min-height:0;display:flex;align-items:center;justify-content:center}
-.hero .workday-hero-image{display:block;width:122%;max-width:760px;height:auto;object-fit:contain;transform:translateY(-14px)}
+.hero .workday-hero-image{display:block;width:122%;max-width:760px;height:auto;object-fit:contain;transform:translate(-35px,-14px)}
 @media(max-width:720px){.hero .workday-hero-image{width:100%;max-width:560px;transform:translateY(-8px)}}
 
 /* Center the Workday hero copy as a single mobile composition. */
@@ -241,6 +241,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
   gap:16px;
   max-width:636px;
 }
+@media(min-width:721px){.hero .hero-actions{transform:none}}
 .hero .hero-actions .btn{
   min-height:58px;
   padding:10px 20px;

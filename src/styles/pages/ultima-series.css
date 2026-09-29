@@ -156,8 +156,11 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 
 /* Keep the model range visually distinct from the white configuration section. */
 #models,#compare{background:linear-gradient(180deg,#fff 0%,#f6f8fb 100%)}
+#compare{background:#fff}
+.quicknav{display:none!important}
 .models .model-image{height:180px}
 .models .model-image img{max-height:170px}
+.models .model-card:nth-child(1) .model-image img{max-height:158px}
 /* Scale the product renders by their display size: 10-inch largest, both 7-inch
    models matched, and the 5-inch model smallest. */
 .models .model-card:nth-child(1) .model-image img{transform:scale(1.12)}
@@ -309,7 +312,7 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 /* Scale the static Ultima 10 image down so its complete device outline is visible. */
 #ultima5 .ultima-carousel:after,
 #ultima7 .ultima-carousel:after,
-#ultima10 .ultima-carousel:after{background-size:88% auto}
+#ultima10 .ultima-carousel:after{background-size:72% auto}
 
 /* Use the approved Ultima 10 asset for the leading product view. */
 #ultima10 .ultima-carousel-viewport img:first-child{content:url("/assets/Ultima%2010%20image.png")}

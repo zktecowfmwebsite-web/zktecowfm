@@ -380,6 +380,7 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 /* Home hero key title */
 .hero-copy>.eyebrow{display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;font-size:12px;font-weight:850;letter-spacing:.17em;text-transform:uppercase;color:var(--green)}
 .hero-copy>.eyebrow:before{content:"";width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:#9bdd67;box-shadow:0 0 0 0 rgba(155,221,103,.65);animation:ultima-label-pulse 2s cubic-bezier(.22,1,.36,1) infinite}
+.hero-copy>.eyebrow{text-transform:none!important}
 @media(prefers-reduced-motion:reduce){.hero-copy>.eyebrow:before{animation:none}}
 
 /* The two solution-card labels intentionally do not use a leading marker. */
@@ -455,8 +456,8 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 .ultima-model-name{position:absolute;z-index:2;bottom:-14px;left:50%;transform:translateX(-50%);padding:6px 10px;border:1px solid #d9d6eb;border-radius:5px;background:#fff;color:#1d2261;font-size:17px;font-weight:850;line-height:1;white-space:nowrap;box-shadow:0 2px 7px rgba(0,0,0,.28);transition:transform .28s cubic-bezier(.22,1,.36,1),background-color .28s ease,color .28s ease,border-color .28s ease}
 .ultima-model-name b{display:inline-block;margin-left:2px;padding:2px 4px;border-radius:1px;background:#7ecb40;color:#fff;font-size:.84em}
 .ultima-model-card:hover img{transform:scale(1.1)}
-.ultima-model-card.ultima-model-10 img{transform:scale(1.12)}
-.ultima-model-card.ultima-model-10:hover img{transform:scale(1.22)}
+.ultima-model-card.ultima-model-10 img{transform:scale(.88)}
+.ultima-model-card.ultima-model-10:hover img{transform:scale(.98)}
 .ultima-model-card.ultima-model-7 img{transform:scale(.88)}
 .ultima-model-card.ultima-model-7:hover img{transform:scale(.98)}
 .ultima-model-card.ultima-model-5 img{transform:scale(.69)}
