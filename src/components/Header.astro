@@ -9,7 +9,7 @@
   document.head.appendChild(favicon);
 
   const companyName = 'ZKTecoWFM';
-  const companyNamePattern = /\bZKTECO(?:\s*WFM)?\b|\bZKTeco(?:\s*WFM)?\b/g;
+  const companyNamePattern = /\bZKTECO\s*WFM\b|\bZKTeco\s*WFM\b/g;
   const standardizeCompanyName = (root = document.body) => {
     if (!root) return;
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
@@ -114,7 +114,7 @@
       <div class="zk-drop"><a data-nav-trigger="products" href="/ultima-series">Products<span class="zk-nav-chevron" aria-hidden="true"><svg viewBox="0 0 16 10"><path d="m1 1 7 7 7-7" /></svg></span></a><div class="zk-drop-menu"><a href="/ultima-series">Ultima Series</a><a href="/timetrack">TimeTrack</a><a href="/cirrusconnect">CirrusConnect</a></div></div>
       <a href="/workday">Workday Solution</a>
       <a href="/software-partners">Software Partners</a>
-      <a href="/why-zkteco-wfm">Why ZKTecoWFM</a>
+      <a href="/why-zkteco-wfm">Why&nbsp;ZKTecoWFM</a>
       <div class="zk-drop">
         <a data-nav-trigger="resources" href="/resource-hub">Resource Hub<span class="zk-nav-chevron" aria-hidden="true"><svg viewBox="0 0 16 10"><path d="m1 1 7 7 7-7" /></svg></span></a>
         <div class="zk-drop-menu"><a href="/product-collaterals">Product Collaterals</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a></div>

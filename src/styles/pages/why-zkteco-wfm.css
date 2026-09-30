@@ -170,6 +170,7 @@ section{padding:58px 0}.section-head{max-width:760px;margin:0 auto 34px;text-ali
 }
 
 #control .section-head{max-width:1100px}
+#control .section-head .eyebrow .zk-brand-casing{text-transform:none}
 
 @media(max-width:640px){.manufacturing .section-head h2{font-size:32px}}
 

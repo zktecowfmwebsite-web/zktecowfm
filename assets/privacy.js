@@ -41,20 +41,26 @@
   const KEY='zkwfm_cookie_preferences_v1';
   const defaults={necessary:true,analytics:false,marketing:false,timestamp:null};
   function load(){try{return Object.assign({},defaults,JSON.parse(localStorage.getItem(KEY)||'{}'));}catch(e){return Object.assign({},defaults);}}
-  const VISITOR_KEY='zkwfm_consent_visitor_v1';
-  function visitorId(){
-    try{
-      let id=localStorage.getItem(VISITOR_KEY);
-      if(!id){id=crypto.randomUUID?crypto.randomUUID():`${Date.now()}-${Math.random().toString(36).slice(2)}`;localStorage.setItem(VISITOR_KEY,id);}
-      return id;
-    }catch(e){return null;}
+  async function storeConsent(p) {
+    try {
+      let visitorId;
+      try { visitorId=localStorage.getItem('zkwfm_consent_visitor_id'); } catch {}
+      if (!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(visitorId || '')) {
+        visitorId=crypto.randomUUID();
+        try { localStorage.setItem('zkwfm_consent_visitor_id',visitorId); } catch {}
+      }
+      const response=await fetch('/api/cookie-consent', {
+        method:'POST', headers:{'Content-Type':'application/json'}, keepalive:true,
+        body:JSON.stringify({eventId:crypto.randomUUID(),visitorId,necessary:true,analytics:p.analytics,marketing:p.marketing,timestamp:p.timestamp})
+      });
+      if (!response.ok) throw new Error('Consent storage unavailable');
+      document.dispatchEvent(new CustomEvent('zkconsentstored'));
+    } catch {
+      console.warn('Cookie preferences saved locally; remote consent storage was unavailable.');
+      document.dispatchEvent(new CustomEvent('zkconsentstorageerror'));
+    }
   }
-  function recordConsent(p){
-    const id=visitorId();
-    if(!id||!window.fetch)return;
-    fetch('/api/consent',{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({visitorId:id,necessary:true,analytics:!!p.analytics,marketing:!!p.marketing,consentTime:p.timestamp,policyVersion:'2026-09-01',source:location.pathname})}).catch(()=>{});
-  }
-  function save(p){p.necessary=true;p.timestamp=new Date().toISOString();try{localStorage.setItem(KEY,JSON.stringify(p));}catch(e){}window.ZKConsent.preferences=p;recordConsent(p);document.dispatchEvent(new CustomEvent('zkconsentchange',{detail:p}));}
+  function save(p){p.necessary=true;p.timestamp=new Date().toISOString();try{localStorage.setItem(KEY,JSON.stringify(p));}catch(e){}window.ZKConsent.preferences=p;document.dispatchEvent(new CustomEvent('zkconsentchange',{detail:p}));void storeConsent(p);}
   window.ZKConsent={preferences:load(),has:function(c){return !!this.preferences[c];},open:function(){openModal();}};
   function el(tag,cls,txt){const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n;}
   let banner,modal,a,m;
