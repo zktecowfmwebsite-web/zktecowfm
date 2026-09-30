@@ -9,6 +9,42 @@ const downloads = [
   ['Ultima 5 Product Images','Ultima 5','timeclocks','ultima5','Product Images','MEDIA','approved product images media'],['Ultima 7 Product Images','Ultima 7','timeclocks','ultima7','Product Images','MEDIA','approved product images media'],['Ultima 7P Product Images','Ultima 7P','timeclocks','ultima7p','Product Images','MEDIA','approved product images media'],['Ultima 10 Product Images','Ultima 10','timeclocks','ultima10','Product Images','MEDIA','approved product images media'],
   ['CirrusTime Data Sheet','CirrusTime','cirrustime','','Data Sheet','PDF','time collection application'],['CirrusWeb Data Sheet','CirrusWeb','cirrusweb','','Data Sheet','PDF','web browser time collection'],['CirrusMobile Data Sheet','CirrusMobile','cirrusmobile','','Data Sheet','PDF','mobile ios android workforce'],['CirrusKiosk Data Sheet','CirrusKiosk','cirruskiosk','','Data Sheet','PDF','kiosk tablet shared terminal'],['CirrusConnect Data Sheet','CirrusConnect','cirrusconnect','','Data Sheet','PDF','cloud device management connectivity'],['CirrusDCS for Workday Overview','CirrusDCS','cirrusdcs','','Brochure','PDF','workday integration middleware cloud'],['ZKTeco WFM Company Overview','Company','company','','Brochure','PDF','company brochure ecosystem workforce data']
 ];
+
+const installationGuideFiles: Record<string, string> = {
+  'Ultima 5 Installation Guide': '/assets/Ultima-5-Installation-Guide.pdf',
+  'Ultima 7 Installation Guide': '/assets/Ultima7-Installation-Guide.pdf',
+  'Ultima 7P Installation Guide': '/assets/Ultima-7P-Installation-Guide.pdf',
+  'Ultima 10 Installation Guide': '/assets/Ultima-10-Installation-Guide.pdf',
+};
+
+const dataSheetFiles: Record<string, string> = {
+  'Ultima 5 Data Sheet': '/assets/Ext_U5-Datasheet_2026_v3.2-USP.pdf',
+  'Ultima 7 Data Sheet': '/assets/Ext_U7-Datasheet_2026_v3.2-USP.pdf',
+  'Ultima 7P Data Sheet': '/assets/Ext_U7P-Datasheet_2026_v3.2-USP.pdf',
+  'Ultima 10 Data Sheet': '/assets/Ext_U10-Datasheet_2026_v3.2-USP.pdf',
+  'CirrusWeb Data Sheet': '/assets/ZKTeco-WFM-Datasheet-Cirrus-Web.pdf',
+  'CirrusMobile Data Sheet': '/assets/ZKTeco-WFM-Datasheet-Cirrus-Mobile.pdf',
+  'CirrusKiosk Data Sheet': '/assets/ZKTeco-WFM-Datasheet-Cirrus-KIOS.pdf',
+  'CirrusConnect Data Sheet': '/assets/ZKTeco-WFM-Datasheet-Cirrus-Connect.pdf',
+};
+
+const userManualFiles: Record<string, string> = {
+  'Ultima 5 User Manual': '/assets/Ultima-Series-Admin-User-Guide.pdf',
+  'Ultima 7 User Manual': '/assets/Ultima-Series-Admin-User-Guide.pdf',
+  'Ultima 7P User Manual': '/assets/Ultima-Series-Admin-User-Guide.pdf',
+  'Ultima 10 User Manual': '/assets/Ultima-Series-Admin-User-Guide.pdf',
+};
+
+const brochureFiles: Record<string, string> = {
+  'CirrusDCS for Workday Overview': '/assets/Workday-Brochure_2025.pdf',
+};
+
+const productImageFiles: Record<string, string> = {
+  'Ultima 5 Product Images': '/assets/Ultima-5.zip',
+  'Ultima 7 Product Images': '/assets/Ultima7images.zip',
+  'Ultima 7P Product Images': '/assets/Ultima-7P.zip',
+  'Ultima 10 Product Images': '/assets/Ultima10-images.zip',
+};
 ---
 
 <!-- tailwind.css is loaded by SiteLayout. -->
@@ -22,7 +58,11 @@ const downloads = [
       <div class="zk-filter-group"><span class="zk-filter-label">Resource Type</span><div class="zk-library-filters" id="type-filters"><button class="active" data-filter="all">All</button><button data-filter="Data Sheet">Product Datasheets</button><button data-filter="User Manual">User Manuals</button><button data-filter="Installation Guide">Installation Guides</button><button data-filter="Product Images">Product Images</button><button data-filter="Brochure">Brochures</button></div></div>
     </div>
     <div class="zk-library-results-head" id="downloads"><div><h2 id="results-title">Downloads</h2><p class="zk-library-help">Only available collateral is shown.</p></div></div>
-    <div class="zk-download-groups" id="resource-grid">{downloads.map(([title, product, productKey, modelKey, type, format, keywords]) => <a class="zk-download-row" data-product={productKey} data-model={modelKey} data-type={type} data-search={`${title} ${product} ${type} ${keywords}`} href={`/contact?resource=${encodeURIComponent(title)}`}><span class="zk-file-badge">{format}</span><span class="zk-download-name">{title}<small>{product} · {type}</small></span><span class="zk-download-action">Download <b>→</b></span></a>)}</div>
+    <div class="zk-download-groups" id="resource-grid">{downloads.map(([title, product, productKey, modelKey, type, format, keywords]) => {
+      const directDownloadUrl = productImageFiles[title];
+      const documentUrl = installationGuideFiles[title] ?? dataSheetFiles[title] ?? userManualFiles[title] ?? brochureFiles[title] ?? directDownloadUrl;
+      return <a class="zk-download-row" data-product={productKey} data-model={modelKey} data-type={type} data-search={`${title} ${product} ${type} ${keywords}`} href={documentUrl ?? `/contact?resource=${encodeURIComponent(title)}`} target={documentUrl && !directDownloadUrl ? '_blank' : undefined} rel={documentUrl && !directDownloadUrl ? 'noopener noreferrer' : undefined} download={directDownloadUrl ? directDownloadUrl.split('/').pop() : undefined}><span class="zk-file-badge">{format}</span><span class="zk-download-name">{title}<small>{product} · {type}</small></span><span class="zk-download-action">Download <b>→</b></span></a>
+    })}</div>
     <div class="zk-library-empty" id="resource-empty" hidden><h3>No matching downloads found.</h3><p>Try another product, model, resource type, or search term.</p></div>
   </div></section>
 </SiteLayout>
