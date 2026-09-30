@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 import '../../assets/site-enhancements.css';
 import '../../assets/layout-standard-v114.css';
 import '../../assets/privacy.css';
@@ -25,5 +26,6 @@ const canonicalPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.repl
     <main><slot /></main>
     <Footer />
     <script is:inline src="/assets/privacy.js"></script>
+    <SpeedInsights />
   </body>
 </html>
