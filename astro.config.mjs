@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import vercel from '@astrojs/vercel';
 
 // The site was migrated from static HTML to file-based Astro routes. Some page
 // markup still contains legacy internal `*.html` links; normalize those links
@@ -19,6 +20,11 @@ const cleanInternalRoutes = {
 export default defineConfig({
   output: 'static',
   trailingSlash: 'never',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   vite: {
     plugins: [cleanInternalRoutes],
   },
