@@ -69,7 +69,7 @@
   function closeModal(){modal.classList.remove('show');}
   function init(){
     banner=el('div','zk-consent-banner');
-    banner.innerHTML='<div class="zk-consent-inner"><div class="zk-consent-copy"><strong>Your privacy choices</strong><p>We use necessary technologies to operate this website. With your permission, we may also use analytics or marketing technologies. You can accept, reject non-essential technologies, or manage your preferences. <a href="/cookie-policy">Cookie Policy</a></p><div class="zk-consent-actions"></div></div></div>';
+    banner.innerHTML='<div class="zk-consent-inner"><div class="zk-consent-copy"><strong>Your privacy choices</strong><p>We use necessary technologies to operate this website. With your permission, we may also use analytics or marketing technologies. You can accept all technologies, reject non-essential technologies or manage your preferences. <a href="/cookie-policy">Cookie Policy</a></p><div class="zk-consent-actions"></div></div></div>';
     const actions=banner.querySelector('.zk-consent-actions');
     const reject=el('button','zk-consent-reject','Reject Non-Essential');const manage=el('button','zk-consent-manage','Manage Preferences');const accept=el('button','zk-consent-accept','Accept All');
     actions.append(reject,manage,accept);document.body.appendChild(banner);
@@ -86,7 +86,7 @@
   document.querySelectorAll('.zk-drop-menu').forEach((menu)=>{
     const links=[...menu.querySelectorAll('a')];
     const thoughtLeadership=links.find((link)=>link.textContent.trim()==='Thought Leadership');
-    const isResourcesMenu=thoughtLeadership||links.some((link)=>/Resource Hub|Product Collaterals/.test(link.textContent));
+    const isResourcesMenu=thoughtLeadership||links.some((link)=>/Resource Hub|Product Collateral/.test(link.textContent));
     if(!isResourcesMenu)return;
     links.filter((link)=>/^(Security & Trust|Legal & Privacy|Privacy & Policy)$/.test(link.textContent.trim())).forEach((link)=>link.remove());
     const privacyLink=document.createElement('a');
@@ -105,7 +105,7 @@
       <a href="/software-partners">Software Partners</a>
       <div class="zk-drop"><a data-nav-trigger="products" href="/ultima-series">Products</a><div class="zk-drop-menu"><a href="/ultima-series">Ultima Series</a><a href="/timetrack">TimeTrack</a><a href="/cirrusconnect">CirrusConnect</a></div></div>
       <a href="/why-zkteco-wfm">Why ZKTeco WFM</a>
-      <div class="zk-drop"><a data-nav-trigger="resources" href="/resource-hub">Resource Hub</a><div class="zk-drop-menu"><a href="/product-collaterals">Product Collaterals</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a></div></div>
+      <div class="zk-drop"><a data-nav-trigger="resources" href="/resource-hub">Resource Hub</a><div class="zk-drop-menu"><a href="/product-collaterals">Product Collateral</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a></div></div>
       <a href="/events">Events</a><a href="/support">Support</a><a class="zk-talk" href="/contact">Talk to an Expert</a>`;
   });
 })();
@@ -311,9 +311,9 @@
       <div class="zk-footer-shell">
         <div class="zk-footer-grid">
           <div class="zk-footer-brand"><img alt="ZKTeco WFM" class="zk-footer-logo" src="/assets/ZKTecowfm-white-green@4x.png" width="180"><p>The Workforce Data Collection Company.<br>Every Punch Matters.</p></div>
-          <div class="zk-footer-col"><h4>Solutions</h4><a href="/workday">Workday Customers</a><a href="/software-partners">Software Partners</a><a href="/use-cases">Industry Use Cases</a><a href="/customer-stories">Customer Stories</a></div>
+          <div class="zk-footer-col"><h4>Solutions</h4><a href="/workday">Workday Solution</a><a href="/software-partners">Software Partners</a><a href="/use-cases">Use Cases</a><a href="/customer-stories">Customer Stories</a></div>
           <div class="zk-footer-col"><h4>Products</h4><a href="/ultima-series">Ultima Series</a><a href="/timetrack">TimeTrack</a><a href="/cirrusconnect">CirrusConnect</a><a href="/workday#cirrusdcs">CirrusDCS</a></div>
-          <div class="zk-footer-col"><h4>Resources</h4><a href="/resource-hub">Resources</a><a href="/product-collaterals">Product Collaterals</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a><a href="/security-trust">Security &amp; Trust</a></div>
+          <div class="zk-footer-col"><h4>Resources</h4><a href="/resource-hub">Resource Hub</a><a href="/product-collaterals">Product Collateral</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a><a href="/security-trust">Security &amp; Trust</a></div>
           <div class="zk-footer-col"><h4>Company</h4><a href="/why-zkteco-wfm">Why ZKTeco WFM</a><a href="/contact">Contact</a><a href="https://zktecowfm.com/careers/">Careers</a><a href="/events">Events</a><a href="/support">Support</a></div>
         </div>
         <div class="zk-footer-bottom"><span>© 2026 ZKTeco WFM. All rights reserved.</span><div class="zk-footer-legal"><a href="/privacy">Privacy &amp; GDPR</a><a href="/cookie-policy">Cookies</a><button type="button" data-cookie-settings>Cookie Preferences</button><a href="/terms">Terms</a><a href="/accessibility">Accessibility</a><a href="/educational-disclaimer">Educational Disclaimer</a></div></div>

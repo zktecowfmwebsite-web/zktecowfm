@@ -1,4 +1,4 @@
-:root{--navy:#201f62;--navy2:#11153e;--ink:#151842;--green:#75bd3b;--green2:#a6ce39;--orange:#ff5a13;--paper:#fff;--mist:#f6f8fb;--line:#dfe4ec;--muted:#62677e;--shadow:0 24px 70px rgba(23,28,74,.16)}
+:root{--navy:#201f62;--navy2:#11153e;--ink:#151842;--green:#78bd43;--green2:#a6ce39;--orange:#ff5a13;--paper:#fff;--mist:#f6f8fb;--line:#dfe4ec;--muted:#62677e;--shadow:0 24px 70px rgba(23,28,74,.16)}
     .hero h1{font-size:clamp(48px,5vw,50px);line-height:1.01;letter-spacing:-.05em;color:var(--navy);margin:0 0 20px}
     .hero-copy>h2,.hero-copy>.value{font-size:21px!important;white-space:nowrap}
     @media(max-width:720px){.hero-copy>h2,.hero-copy>.value{font-size:20px!important;white-space:normal}}
@@ -145,7 +145,7 @@
 .journey-stage:nth-child(3) .journey-node{background:radial-gradient(circle at 16% 10%,rgba(166,181,255,.3),transparent 45%),radial-gradient(circle at 90% 92%,rgba(17,20,75,.34),transparent 60%),linear-gradient(145deg,#454fa0,#28266d)!important}
 .why-close{margin:34px auto 0;padding:22px 24px;border:1px solid rgba(117,189,59,.42);border-radius:16px;background:rgba(255,255,255,.055);box-shadow:none}
 .why-close:after{display:none}
-.why-close strong{font-size:24px;color:#fff}
+.why-close strong{font-size:24px;color:var(--green)}
 .why-close span{margin-top:5px;font-size:18px;color:#d3daea}
 .why-close span em{color:#a9d774}
 @media(max-width:900px){.journey-rail:before{display:none}.journey-stage{padding:0 10px}}
@@ -379,6 +379,12 @@ html body .architecture-v112 .arch112-bi:after{top:26px;background:linear-gradie
 
 /* Home hero key title */
 .hero-copy>.eyebrow{display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;font-size:12px;font-weight:850;letter-spacing:.17em;text-transform:uppercase;color:var(--green)}
+
+/* Keep every green text accent on the homepage aligned to the brand green. */
+.ultima-section .section-label,
+.final-cta .section-label,
+.footer-column h3,
+.why-close span em{color:var(--green)!important}
 .hero-copy>.eyebrow:before{content:"";width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:#9bdd67;box-shadow:0 0 0 0 rgba(155,221,103,.65);animation:ultima-label-pulse 2s cubic-bezier(.22,1,.36,1) infinite}
 .hero-copy>.eyebrow{text-transform:none!important}
 @media(prefers-reduced-motion:reduce){.hero-copy>.eyebrow:before{animation:none}}

@@ -1,12 +1,25 @@
+---
+import SpeedInsights from '@vercel/speed-insights/astro';
+import Analytics from '@vercel/analytics/astro';
+
+interface Props {
+  includeAnalytics?: boolean;
+  includeSpeedInsights?: boolean;
+}
+const { includeAnalytics = true, includeSpeedInsights = true } = Astro.props;
+---
+
 <footer class="zk-global-footer">
   <div class="zk-footer-shell">
     <div class="zk-footer-grid">
       <div class="zk-footer-brand"><img alt="ZKTecoWFM" class="zk-footer-logo" src="/assets/ZKTecowfm-white-green@4x.png" width="180"/><p>The Workforce Data Collection Company.<br />Every Punch Matters.</p></div>
       <div class="zk-footer-col"><h4>Products</h4><a href="/ultima-series">Ultima Series</a><a href="/timetrack">TimeTrack</a><a href="/cirrusconnect">CirrusConnect</a><a href="/workday#cirrusdcs">CirrusDCS</a></div>
-      <div class="zk-footer-col"><h4>Solutions</h4><a href="/workday">Workday Customers</a><a href="/software-partners">Software Partners</a><a href="/use-cases">Industry Use Cases</a><a href="/customer-stories">Customer Stories</a></div>
-      <div class="zk-footer-col"><h4>Resources</h4><a href="/resource-hub">Resources</a><a href="/product-collaterals">Product Collaterals</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a></div>
+      <div class="zk-footer-col"><h4>Solutions</h4><a href="/workday">Workday Solution</a><a href="/software-partners">Software Partners</a><a href="/use-cases">Use Cases</a><a href="/customer-stories">Customer Stories</a></div>
+      <div class="zk-footer-col"><h4>Resources</h4><a href="/resource-hub">Resource Hub</a><a href="/product-collaterals">Product Collateral</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a></div>
       <div class="zk-footer-col"><h4>Company</h4><a href="/why-zkteco-wfm">Why ZKTecoWFM</a><a href="/contact">Contact</a><a href="/events">Events</a><a href="/support">Support</a></div>
     </div>
     <div class="zk-footer-bottom"><span>© 2026 ZKTecoWFM. All rights reserved.</span><div class="zk-footer-legal"><a href="/privacy">Privacy &amp; GDPR</a><a href="/cookie-policy">Cookies</a><button data-cookie-settings>Cookie Preferences</button><a href="/terms">Terms</a></div></div>
   </div>
 </footer>
+{includeAnalytics && <Analytics />}
+{includeSpeedInsights && <SpeedInsights />}

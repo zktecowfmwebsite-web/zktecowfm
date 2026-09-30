@@ -32,8 +32,26 @@ body{margin:0}*{box-sizing:border-box}
   .cc-side span{margin:10px 0!important;overflow-wrap:anywhere}
 }
 
+/* Match the homepage hero typography for CirrusConnect's display headings. */
+.cc-hero h1,
+.cc-section-head h2,
+.cc-scale h2{
+  font-family:Inter,"Segoe UI",Arial,sans-serif!important;
+  font-size:clamp(48px,5vw,50px)!important;
+  font-style:normal;
+  font-weight:700!important;
+  line-height:1.01!important;
+  letter-spacing:-.05em!important;
+}
+@media(max-width:600px){
+  .cc-hero h1,
+  .cc-section-head h2,
+  .cc-scale h2{font-size:32px!important;}
+}
+
 .cc-console-top{font-size:18px!important;letter-spacing:.025em!important}
 .cc-console-top i{width:10px!important;height:10px!important}
+@media(max-width:600px){.cc-console-top{font-size:16px!important}}
 .cc-section.navy .zk-eyebrow,.cc-node.core .zk-eyebrow{color:#78bd43!important}
 
 /* Prioritize readable remote-control labels over the live-image height on phones. */

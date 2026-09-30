@@ -45,3 +45,10 @@
 }
 
 .hero-panel strong{font-size:24px}
+
+/* Give the Thought Leadership hero title a little more separation between lines. */
+.hero h1{line-height:1.08!important}
+
+/* Match the Legal & Privacy CTA heading scale. */
+.close h2{font-size:clamp(36px,4vw,48px)!important}
+@media(max-width:620px){.close h2{font-size:34px!important}}

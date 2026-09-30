@@ -42,3 +42,17 @@
 /* Use the supplied manufacturing visual beneath a legible brand-navy overlay. */
 .manufacturing{background:linear-gradient(rgba(16,27,82,.85),rgba(16,27,82,.85)),url("/assets/GLOBAL%20MANUFACTURING%20ADVANTAGE.jpg") center/cover no-repeat}
 .manufacturing .mfg-card{background:rgba(32,41,99,.72)}
+
+/* Make the Specialized by Design section's top spacing explicit in the final page override. */
+main > section#specialized{padding-top:128px!important}
+@media(max-width:640px){main > section#specialized{padding-top:92px!important}}
+
+/* Match the Manufacturing Scale Matters heading size exactly. */
+.brand-close h2,.proof-top h2{font-size:clamp(36px,4.2vw,48px)!important}
+@media(max-width:640px){.brand-close h2,.proof-top h2{font-size:32px!important}}
+
+/* Keep the mobile lifecycle statement to two balanced lines. */
+@media(max-width:640px){.why-hero .hero-note:after{content:"One technology organization behind\A the complete collection lifecycle."}}
+
+/* Separate the white and green mobile headline phrases. */
+@media(max-width:640px){.why-hero h1 span:after{margin-left:10px!important}}

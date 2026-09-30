@@ -1,5 +1,10 @@
 ---
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 ---
+
+<Analytics />
+<SpeedInsights />
 
 <script is:inline>
   const favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
@@ -117,7 +122,7 @@
       <a href="/why-zkteco-wfm">Why&nbsp;ZKTecoWFM</a>
       <div class="zk-drop">
         <a data-nav-trigger="resources" href="/resource-hub">Resource Hub<span class="zk-nav-chevron" aria-hidden="true"><svg viewBox="0 0 16 10"><path d="m1 1 7 7 7-7" /></svg></span></a>
-        <div class="zk-drop-menu"><a href="/product-collaterals">Product Collaterals</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a></div>
+        <div class="zk-drop-menu"><a href="/product-collaterals">Product Collateral</a><a href="/thought-leadership">Thought Leadership</a><a href="/legal-privacy">Legal &amp; Privacy</a></div>
       </div>
       <a href="/events">Events</a>
       <a href="/support">Support</a>

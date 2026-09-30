@@ -317,3 +317,7 @@ section{padding:82px 0}.section-head{max-width:800px;margin:0 auto 44px;text-ali
 .sp85-path-card button{display:none!important}
 .sp85-path-effort.low{font-size:0}
 .sp85-path-effort.low:after{content:"Quickest to Market";font-size:11px}
+
+/* Keep these section titles aligned with the Software Partners hero navy. */
+.sp85-path-intro .sp85-title,
+.sp85-enable-head .sp85-title{color:#17244d!important}

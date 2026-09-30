@@ -212,3 +212,43 @@ section{padding:58px 0}.section-head{max-width:760px;margin:0 auto 34px;text-ali
   .proof-stage h2{grid-column:2!important;grid-row:1!important;max-width:none!important;margin:0!important;font-size:0!important;line-height:1.15!important;color:#fff!important;text-align:left!important;white-space:normal!important;animation:none!important}
   .proof-stage h2:after{display:block!important;font-size:16px!important;line-height:1.15!important;color:#fff!important;animation:none!important;filter:none!important}
 }
+
+/* Match the Workday hero title scale for this brand statement. */
+.special-copy h2:after{font-size:clamp(48px,5vw,50px)!important;line-height:1.01!important}
+@media(max-width:720px){.special-copy h2:after{font-size:32px!important;line-height:1.08!important}}
+
+/* Give the hero statement enough room to keep “Solution” on its first line. */
+@media(min-width:981px){.why-hero .hero-grid{grid-template-columns:1.45fr .55fr!important;gap:28px!important}}
+
+/* Reduce the specialized-section diagram column while keeping the artwork balanced. */
+@media(min-width:981px){.special-grid{grid-template-columns:1.1fr .9fr!important}.source-diagram>img{width:110%!important;transform:translateX(-10%)!important}}
+
+/* Preserve the intended two-line workforce-data heading at its current size. */
+@media(min-width:981px){.special-copy{max-width:none!important}}
+
+/* Reference-aligned Why ZKTeco WFM hero composition. */
+.why-hero .hero-actions .btn.secondary{display:none}
+@media(min-width:981px){
+  .why-hero{background:linear-gradient(110deg,#071035 0%,#111947 56%,#2a4460 100%)}
+  .why-hero:before{display:none}
+  .why-hero .wrap{width:min(1400px,calc(100% - 96px))}
+  .why-hero .hero-grid{grid-template-columns:1.2fr .8fr!important;gap:52px!important;min-height:620px;padding-top:64px!important;padding-bottom:64px!important}
+  .why-hero h1{max-width:none;margin:0 0 28px!important}
+  .why-hero h1:before,.why-hero h1 span:after{font-size:clamp(44px,3.5vw,52px)!important;line-height:1.02!important}
+  .why-hero h1 span:after{display:block;margin-top:10px!important}
+  .why-hero .lead:after{font-size:17px!important;line-height:1.55!important}
+  .why-hero .hero-note{margin-top:32px!important}
+  .why-hero .hero-note:after{font-size:22px!important;line-height:1.35!important}
+  .why-hero .hero-actions{width:auto!important;margin-top:28px!important}
+  .why-hero .hero-actions .btn.secondary{display:none}
+  .why-hero .hero-actions .btn.primary{flex:none;width:295px;justify-content:space-between;padding:18px 26px;font-size:16px}
+  .why-hero .control-visual>img{max-width:600px}
+}
+
+/* Tighter vertical breathing room in the Why-page hero. */
+@media(min-width:981px){.why-hero .hero-grid{padding-top:44px!important;padding-bottom:44px!important;min-height:0!important}}
+@media(max-width:980px){.why-hero .hero-grid{padding-top:40px!important;padding-bottom:40px!important}}
+
+/* Add breathing room above the Specialized by Design content. */
+#specialized{padding-top:96px!important}
+@media(max-width:640px){#specialized{padding-top:78px!important}}

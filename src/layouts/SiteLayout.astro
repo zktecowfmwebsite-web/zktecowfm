@@ -1,6 +1,8 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 import '../../assets/site-enhancements.css';
 import '../../assets/layout-standard-v114.css';
 import '../../assets/privacy.css';
@@ -19,11 +21,13 @@ const canonicalPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.repl
     <link rel="canonical" href={`https://zktecowfm.com${canonicalPath}`} />
     <title>{title}</title>
     <link href="/assets/tailwind.css" rel="stylesheet" />
+    <Analytics />
   </head>
   <body>
     <Header />
     <main><slot /></main>
-    <Footer />
+    <Footer includeAnalytics={false} includeSpeedInsights={false} />
     <script is:inline src="/assets/privacy.js"></script>
+    <SpeedInsights />
   </body>
 </html>
