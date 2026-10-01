@@ -62,6 +62,37 @@
   }
   function save(p){p.necessary=true;p.timestamp=new Date().toISOString();try{localStorage.setItem(KEY,JSON.stringify(p));}catch(e){}window.ZKConsent.preferences=p;document.dispatchEvent(new CustomEvent('zkconsentchange',{detail:p}));void storeConsent(p);}
   window.ZKConsent={preferences:load(),has:function(c){return !!this.preferences[c];},open:function(){openModal();}};
+  // Vercel measurement is optional: do not request either script until the
+  // visitor has explicitly allowed the Analytics category.
+  function loadVercelInsights(){
+    if(document.getElementById('zk-vercel-analytics'))return;
+    const addScript=(id,src,dataset)=>{
+      const script=document.createElement('script');script.id=id;script.src=src;script.defer=true;
+      Object.entries(dataset).forEach(([key,value])=>script.dataset[key]=value);
+      document.head.appendChild(script);return script;
+    };
+    const analytics=addScript('zk-vercel-analytics','/_vercel/insights/script.js',{sdkn:'@vercel/analytics/astro',sdkv:'2.0.1',disableAutoTrack:'1'});
+    analytics.addEventListener('load',()=>window.va?.('pageview',{route:location.pathname,path:location.pathname}),{once:true});
+    addScript('zk-vercel-speed-insights','/_vercel/speed-insights/script.js',{sdkn:'@vercel/speed-insights/astro',sdkv:'2.0.0',route:location.pathname});
+  }
+  if(window.ZKConsent.preferences.analytics)loadVercelInsights();
+  document.addEventListener('zkconsentchange',(event)=>{if(event.detail?.analytics)loadVercelInsights();});
+  // Zoho is requested only when a visitor opens a lead form. Its analytics
+  // helper is additionally restricted to visitors who allowed Analytics.
+  function loadZohoFormResources(){
+    document.querySelectorAll('img[data-src]').forEach((image)=>{if(!image.getAttribute('src'))image.src=image.dataset.src;});
+    if(!window.ZKConsent.preferences.analytics)return;
+    document.querySelectorAll('script[data-zoho-analytics-src]').forEach((placeholder)=>{
+      if(placeholder.dataset.loaded)return;
+      const script=document.createElement('script');script.src=placeholder.dataset.zohoAnalyticsSrc;script.async=true;
+      placeholder.dataset.loaded='true';placeholder.after(script);
+    });
+  }
+  document.addEventListener('zoho:open',loadZohoFormResources);
+  new MutationObserver((changes)=>changes.forEach((change)=>{
+    const modal=change.target;
+    if(modal instanceof Element&&modal.matches('[data-zoho-modal],[data-partner-zoho-modal]')&&modal.getAttribute('aria-hidden')==='false')loadZohoFormResources();
+  })).observe(document.body,{subtree:true,attributes:true,attributeFilter:['aria-hidden']});
   function el(tag,cls,txt){const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n;}
   let banner,modal,a,m;
   function closeBanner(){banner.classList.remove('show');}
@@ -90,7 +121,7 @@
     if(!isResourcesMenu)return;
     links.filter((link)=>/^(Security & Trust|Legal & Privacy|Privacy & Policy)$/.test(link.textContent.trim())).forEach((link)=>link.remove());
     const privacyLink=document.createElement('a');
-    privacyLink.href='legal-privacy';
+    privacyLink.href='/legal-privacy';
     privacyLink.textContent='Legal & Privacy';
     if(thoughtLeadership)thoughtLeadership.after(privacyLink);else menu.append(privacyLink);
   });

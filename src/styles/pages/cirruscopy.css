@@ -94,11 +94,11 @@ html body .cc-final .zk-btn.zk-standard-bottom-cta:hover>span{transform:translat
 @media(min-width:901px){.cc-console{width:calc(100% + 80px)}}
 
 /* Remove only the platform-architecture section from CirrusConnect. */
-#platform{display:none!important}
+#platform{display:block!important}
 .cc-section:has(.cc-partner-arch){display:none!important}
 
 /* The platform section is removed, so its matching hero CTA is removed as well. */
-.cc-actions .zk-btn.primary[href="#platform"]{display:none!important}
+.cc-actions .zk-btn.primary[href="#platform"]{display:inline-flex!important}
 
 /* Reverse the partner hierarchy: customer fleets first, partner layer last. */
 .cc-hierarchy{display:flex;flex-direction:column}

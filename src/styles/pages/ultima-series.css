@@ -307,6 +307,15 @@ section:not(.hero):not(.cta-section){padding-top:64px!important;padding-bottom:6
 /* Make the model specifications easier to read without allowing line wraps. */
 .fact{font-size:13px;white-space:nowrap}
 
+/* Tablet landscape: prevent model-card text and the configuration banner from
+   overflowing before the phone layout takes over. */
+@media (max-width:1100px){
+  .models{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .model-card,.model-card>*{min-width:0}
+  .model-kicker,.fact{white-space:normal;overflow-wrap:anywhere}
+  .configuration-footer strong,.configuration-footer span{white-space:normal!important}
+}
+
 /* Keep the final model-selection phrase on its own centered line. */
 .mist .section-head:has(+ .use-grid) p{max-width:760px;margin-left:auto;margin-right:auto}
 
