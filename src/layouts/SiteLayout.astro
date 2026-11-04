@@ -1,13 +1,13 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SeoHead from '../components/SeoHead.astro';
 import '../../assets/site-enhancements.css';
 import '../../assets/layout-standard-v114.css';
 import '../../assets/privacy.css';
 
 interface Props { title: string; description?: string }
 const { title, description = 'ZKTecoWFM workforce data collection solutions.' } = Astro.props;
-const canonicalPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
 ---
 
 <!doctype html>
@@ -16,7 +16,7 @@ const canonicalPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.repl
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <link rel="canonical" href={`https://www.zktecowfm.com${canonicalPath}`} />
+    <SeoHead description={description} />
     <title>{title}</title>
     <link href="/assets/tailwind.css" rel="stylesheet" />
   </head>

@@ -1,0 +1,37 @@
+---
+interface Props {
+  description?: string;
+}
+
+const { description = 'ZKTecoWFM workforce data collection solutions.' } = Astro.props;
+const path = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
+const canonicalUrl = `https://www.zktecowfm.com${path}`;
+const isHomePage = path === '/';
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.zktecowfm.com/#organization',
+      name: 'ZKTeco WFM',
+      url: 'https://www.zktecowfm.com/',
+      logo: 'https://www.zktecowfm.com/assets/wfm-hcm-logo.svg',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.zktecowfm.com/#website',
+      url: 'https://www.zktecowfm.com/',
+      name: 'ZKTeco WFM',
+      publisher: { '@id': 'https://www.zktecowfm.com/#organization' },
+    },
+  ],
+};
+---
+
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+<link rel="canonical" href={canonicalUrl} />
+<meta property="og:site_name" content="ZKTeco WFM" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:description" content={description} />
+{isHomePage && <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />}
