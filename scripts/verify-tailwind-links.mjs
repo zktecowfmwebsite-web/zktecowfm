@@ -15,7 +15,10 @@ const pages = await findAstroPages('src/pages');
 const missing = [];
 
 for (const page of pages) {
-  if (!(await readFile(page, 'utf8')).includes('tailwind.css')) missing.push(page);
+  const source = await readFile(page, 'utf8');
+  const loadsTailwindDirectly = source.includes('tailwind.css');
+  const inheritsTailwindFromSiteLayout = source.includes("layouts/SiteLayout.astro");
+  if (!loadsTailwindDirectly && !inheritsTailwindFromSiteLayout) missing.push(page);
 }
 
 if (missing.length) throw new Error(`Tailwind stylesheet missing from:\n${missing.join('\n')}`);
