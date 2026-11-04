@@ -18,7 +18,7 @@ import '../styles/pages/home-zoho.css';
         <h2 id="zoho-form-title">Talk to an Expert</h2>
         <p>Tell us a little about your organization and our team will be in touch.</p>
         <div id="crmWebToEntityForm" class="zcwf_lblRight crmWebToEntityForm">
-          <form id="webform4421205000000933108" action="https://crm.zoho.com/crm/WebToLeadForm" name="WebToLeads4421205000000933108" method="POST" accept-charset="UTF-8" onsubmit="document.charset='UTF-8';return checkMandatory4421205000000933108()">
+          <form id="webform4421205000000933108" action="https://crm.zoho.com/crm/WebToLeadForm" name="WebToLeads4421205000000933108" method="POST" accept-charset="UTF-8">
             <input type="text" class="zoho-honeypot" name="xnQsjsdp" value="872c03678ecc4b4111f9efb8966fe6493cfe1c936260305fabd0fc9f63bb7b30" tabindex="-1" autocomplete="off"/>
             <input type="hidden" name="zc_gad" id="zc_gad" value=""/>
             <input type="text" class="zoho-honeypot" name="xmIwtLD" value="b9ccac7a7188bc20e9b7429bee83b067f0d7147775c97d6170c432c4f02eebfede4959ae7b605fba17994219441f08cb" tabindex="-1" autocomplete="off"/>
@@ -72,6 +72,5 @@ import '../styles/pages/home-zoho.css';
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && zohoModal?.getAttribute('aria-hidden') === 'false') closeZohoLeadForm(); });
   zohoModal?.querySelector('[data-zoho-captcha-reload]')?.addEventListener('click', () => { const captcha = document.getElementById('imgid4421205000000933108'); captcha.src = captcha.src.replace(/&d\d+$/, '') + '&d' + Date.now(); });
   zohoModal?.querySelector('form')?.addEventListener('submit', (event) => { const form = event.currentTarget; if (!form.checkValidity()) { event.preventDefault(); form.reportValidity(); return; } form.querySelector('.formsubmit')?.setAttribute('disabled', 'disabled'); });
-  window.checkMandatory4421205000000933108 = () => { const form = document.forms.WebToLeads4421205000000933108; if (!form?.checkValidity()) { form?.reportValidity(); return false; } form.querySelector('.formsubmit')?.setAttribute('disabled', 'disabled'); return true; };
 </script>
 </main><Footer /><script is:inline src="assets/privacy.js"></script></body></html>

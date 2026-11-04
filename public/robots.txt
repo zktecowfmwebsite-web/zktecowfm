@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zktecowfm.com/sitemap.xml
+Sitemap: https://www.zktecowfm.com/sitemap.xml

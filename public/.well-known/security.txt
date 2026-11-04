@@ -1,0 +1,5 @@
+Contact: https://www.zktecowfm.com/contact
+Policy: https://www.zktecowfm.com/security-trust
+Canonical: https://www.zktecowfm.com/.well-known/security.txt
+Expires: 2027-10-01T00:00:00.000Z
+Preferred-Languages: en

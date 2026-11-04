@@ -12,7 +12,7 @@ const routes = pageFiles
 const sitemap = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  ...routes.map((route) => `  <url><loc>https://zktecowfm.com${route}</loc></url>`),
+  ...routes.map((route) => `  <url><loc>https://www.zktecowfm.com${route}</loc></url>`),
   '</urlset>',
   '',
 ].join('\n');
