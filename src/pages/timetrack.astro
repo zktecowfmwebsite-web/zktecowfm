@@ -59,7 +59,7 @@ import '../styles/pages/home-zoho.css';
 
 <section class="tt-final"><div class="wrap"><div class="tt-eyebrow">EVERY PUNCH MATTERS</div><h2>Better Workforce Data<br/>Starts Here</h2><p>Talk with ZKTeco WFM about your employee workflows, time and labor requirements,<br/>workforce controls and Ultima deployment strategy.</p><div class="tt-btns"><a class="tt-btn light" href="contact">Request a Demo →</a></div><div class="brand-value">Purpose-Built. Integrated. Scalable.</div></div></section>
 </main>
-<script>
+<script is:inline>
   const zohoModal = document.querySelector('[data-zoho-modal]');
   let zohoLastTrigger;
   const closeZohoLeadForm = () => { zohoModal?.setAttribute('aria-hidden', 'true'); document.body.classList.remove('zoho-modal-open'); zohoLastTrigger?.focus(); };
