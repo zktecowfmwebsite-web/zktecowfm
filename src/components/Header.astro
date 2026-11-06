@@ -104,6 +104,7 @@
   }
 </script>
 
+<a class="zk-skip-link" href="#main-content">Skip to main content</a>
 <header class="zk-global-header">
   <div class="zk-nav-shell">
     <a class="zk-brand" href="/" aria-label="ZKTecoWFM home">
@@ -124,6 +125,7 @@
     </nav>
   </div>
 </header>
+<script src="/assets/accessibility.js" defer></script>
 
 <style is:global>
   @media (min-width: 1024px) {
@@ -170,4 +172,7 @@
 
 <style is:global>
   .zk-company-name { text-transform: none !important; }
+  .zk-skip-link{position:fixed;z-index:100001;top:10px;left:10px;padding:10px 14px;border-radius:8px;background:#fff;color:#102044;font-weight:800;transform:translateY(-160%)}
+  .zk-skip-link:focus{transform:translateY(0);outline:3px solid #78bd43;outline-offset:2px}
+  .zk-visible-focus:focus-visible{outline:3px solid #17244d;outline-offset:3px}
 </style>

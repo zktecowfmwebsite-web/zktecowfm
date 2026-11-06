@@ -18,6 +18,8 @@
   "redirects": [
     { "source": "/(.*)", "has": [{ "type": "host", "value": "zktecowfm.com" }], "destination": "https://www.zktecowfm.com/$1", "permanent": true },
     { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/(.*).html", "destination": "/$1", "permanent": true },
+    { "source": "/time-track", "destination": "/timetrack", "permanent": true },
     { "source": "/resources", "destination": "/resource-hub", "permanent": true }
   ]
 }

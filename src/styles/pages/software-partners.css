@@ -313,8 +313,7 @@ section{padding:82px 0}.section-head{max-width:800px;margin:0 auto 44px;text-ali
 .sp85-path-cards{grid-template-columns:1fr}
 @media(min-width:768px){.sp85-path-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
-/* Keep the integration paths concise: no ownership disclosure controls. */
-.sp85-path-card button{display:none!important}
+/* Ownership details are disclosed on demand for keyboard and pointer users. */
 .sp85-path-effort.low{font-size:0}
 .sp85-path-effort.low:after{content:"Quickest to Market";font-size:11px}
 

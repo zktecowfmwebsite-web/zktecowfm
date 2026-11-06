@@ -35,10 +35,10 @@ import '../styles/pages/ultima-zoho.css';
             <input type="text" class="zoho-honeypot" name="xmIwtLD" value="b9ccac7a7188bc20e9b7429bee83b067f0d7147775c97d6170c432c4f02eebfede4959ae7b605fba17994219441f08cb" tabindex="-1" autocomplete="off"/>
             <input type="text" class="zoho-honeypot" name="actionType" value="TGVhZHM=" tabindex="-1" autocomplete="off"/>
             <input type="text" class="zoho-honeypot" name="returnURL" value="https://www.zktecowfm.com" tabindex="-1" autocomplete="off"/>
-            <label>Company <b>*</b><input id="Company" name="Company" maxlength="200" required/></label>
-            <div class="zoho-form__grid"><label>First name <b>*</b><input id="First_Name" name="First Name" maxlength="40" required/></label><label>Last name <b>*</b><input id="Last_Name" name="Last Name" maxlength="80" required/></label></div>
+            <label>Company <b>*</b><input id="Company" name="Company" maxlength="200" required pattern="\\S.*"/></label>
+            <div class="zoho-form__grid"><label>First name <b>*</b><input id="First_Name" name="First Name" maxlength="40" required pattern="\\S.*"/></label><label>Last name <b>*</b><input id="Last_Name" name="Last Name" maxlength="80" required pattern="\\S.*"/></label></div>
             <label>Email <b>*</b><input id="Email" name="Email" type="email" maxlength="100" required/></label>
-            <label>Customer type <b>*</b><select id="LEADCF1" name="LEADCF1" required><option value="-None-">Select one</option><option value="Workday End User">Workday End User</option><option value="Workforce Management Software Provider">Workforce Management Software Provider</option><option value="Time & Attendance Dealer">Time & Attendance Dealer</option><option value="Workday Account Manager">Workday Account Manager</option><option value="Workday Implementer">Workday Implementer</option><option value="Other" selected>Other</option></select></label>
+            <label>Customer type <b>*</b><select id="LEADCF1" name="LEADCF1" required><option value="" disabled selected>Select one</option><option value="Workday End User">Workday End User</option><option value="Workforce Management Software Provider">Workforce Management Software Provider</option><option value="Time & Attendance Dealer">Time & Attendance Dealer</option><option value="Workday Account Manager">Workday Account Manager</option><option value="Workday Implementer">Workday Implementer</option><option value="Other">Other</option></select></label>
             <label>How can we help?<textarea id="Description" name="Description" rows="4"></textarea></label>
             <label>Enter the CAPTCHA <b>*</b><input id="captchaField4421205000000933108" name="enterdigest" maxlength="10" required/></label>
             <div class="zoho-captcha"><img id="imgid4421205000000933108" data-src="https://crm.zoho.com/crm/CaptchaServlet?formId=b9ccac7a7188bc20e9b7429bee83b067f0d7147775c97d6170c432c4f02eebfede4959ae7b605fba17994219441f08cb&amp;grpid=872c03678ecc4b4111f9efb8966fe6493cfe1c936260305fabd0fc9f63bb7b30" alt="CAPTCHA"/><button type="button" data-zoho-captcha-reload>Reload</button></div>
@@ -132,7 +132,7 @@ import '../styles/pages/ultima-zoho.css';
 <section class="cta-section tw-border-t-[5px] tw-border-[var(--green)] tw-bg-[var(--navy)] tw-py-[64px] tw-text-center tw-text-white max-[720px]:tw-py-[52px]"><div class="wrap"><div class="eyebrow">Every Punch Matters</div><h2>Need Help Choosing the Right Ultima?</h2><p>We can help match the device, authentication, connectivity and power configuration to your workforce and environment.</p><div class="hero-actions" style="justify-content:center;margin-top:24px"><a class="btn primary" href="contact">Find Your Ultima →</a></div></div></section>
 </main>
 <Footer />
-<script is:inline>
+<script>
   const modelCardTargets = {
     '#ultima10-card': '.model-card:nth-child(1)',
     '#ultima7p-card': '.model-card:nth-child(2)',
@@ -169,7 +169,7 @@ import '../styles/pages/ultima-zoho.css';
       window.setInterval(() => show(current + 1), 2000);
     }
   });
-</script><script is:inline>
+</script><script>
   const comparisonTable = document.querySelector('#compare table');
   if (comparisonTable) {
     const productColumnOrder = [4, 2, 3, 1]; // Ultima 10, 7, 7P, 5
@@ -178,7 +178,7 @@ import '../styles/pages/ultima-zoho.css';
       row.replaceChildren(cells[0], ...productColumnOrder.map((index) => cells[index]));
     });
   }
-</script><script is:inline>
+</script><script>
   document.querySelectorAll('.cta-section .hero-actions .btn').forEach((button) => {
     const label = button.textContent.replace(/\s*→\s*$/, '').trim();
     const arrow = document.createElement('span');
@@ -186,7 +186,7 @@ import '../styles/pages/ultima-zoho.css';
     arrow.textContent = '→';
     button.replaceChildren(document.createTextNode(label), arrow);
   });
-</script><script is:inline>document.querySelector('#models .section-head p').textContent='One Ultima platform spans different screens, credentials, biometrics, connectivity and environments, without changing the workforce data strategy.';</script><script is:inline>
+</script><script>document.querySelector('#models .section-head p').textContent='One Ultima platform spans different screens, credentials, biometrics, connectivity and environments, without changing the workforce data strategy.';</script><script>
   const modelDatasheets = {
     '#ultima10': 'assets/Ext_U10-Datasheet_2026_v3.2-USP.pdf',
     '#ultima7': 'assets/Ext_U7-Datasheet_2026_v3.2-USP.pdf',
@@ -207,7 +207,7 @@ import '../styles/pages/ultima-zoho.css';
     link.target = '_blank';
     link.rel = 'noopener';
   });
-</script><script is:inline>
+</script><script>
   document.querySelectorAll('.zk-drop').forEach((drop) => {
     const trigger = drop.querySelector(':scope > a[href="resources"]');
     const productResources = drop.querySelector('.zk-drop-menu a[href="resources"]');
@@ -216,7 +216,7 @@ import '../styles/pages/ultima-zoho.css';
     if (productResources) productResources.textContent = 'Product Collateral';
     if (productResources) productResources.href = 'product-collaterals';
   });
-</script><script is:inline>
+</script><script>
   const zohoModal = document.querySelector('[data-zoho-modal]');
   let zohoLastTrigger;
   const closeZohoLeadForm = () => { zohoModal?.setAttribute('aria-hidden', 'true'); document.body.classList.remove('zoho-modal-open'); zohoLastTrigger?.focus(); };
